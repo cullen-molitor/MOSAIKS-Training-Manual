@@ -4,7 +4,17 @@
     "href": "index.html",
     "title": "MOSAIKS Training Manual",
     "section": "",
-    "text": "Welcome\n\n\n\n\n\n\n\nThis chapter is in early draft form and may be incomplete.\n\n\n\n\nThis is the first ever MOSAIKS Training Course! This book will serve as a reference for learning what MOSAIKS is and what it can be used for, along with practical guidance for using it.\n\n\n\nMade with: Your Name in Landsat\n\n\nMOSAIKS stands for Multi-task Observation using SAtellite Imagery & Kitchen Sinks. It is a framework that aims to simplify using satellite imagery and machine learning to answer questions about socioeconomic and environmental outcomes across different geographic contexts and time periods.\nThis comprehensive two-week program is designed for academics, professionals, and policy makers interested in leveraging MOSAIKS to better understand socioeconomic and environmental problems.\nThis course covers the fundamentals of working with MOSAIKS, from basic concepts to advanced applications. The training is particularly suited for those working in:\n\nRemote sensing and satellite imagery analysis\nMachine learning applications with geospatial data\nAgricultural monitoring and assessment\nDevelopment research and policy making\n\nThroughout this course, you’ll learn practical applications of MOSAIKS in real-world scenarios. Additionaly we will cover the basics of satellite imagery processing, MOSAIKS feature extraction, uncertainty quantification, and additional topics. We’ll combine theoretical knowledge with hands-on exercises, ensuring you gain both conceptual understanding and practical experience.\nThe curriculum includes working with various data sources, accessing the MOSAIKS API, processing satellite imagery, understanding Random Convolutional Features (RCFs), implementing machine learning models, interpreting results, and applying predictive models in various contexts.\nYou will also explore important considerations in using MOSAIKS for survey data, particularly relevant for development research applications.\nWhether you’re new to MOSAIKS or looking to deepen your expertise, this course will provide you with the tools and knowledge needed to effectively utilize this powerful framework in your work.",
+    "text": "Welcome\nThis is the first iteration of the MOSAIKS Training Manual! The manual serves as a comprehensive reference for understanding MOSAIKS, its capabilities, and practical implementation guidance.\nMOSAIKS stands for Multi-task Observation using SAtellite Imagery & Kitchen Sinks. It is a framework designed to simplify the use of satellite imagery and machine learning for analyzing socioeconomic and environmental outcomes across different geographic contexts and time periods.\nThis comprehensive two-week program is designed for academics, professionals, and policymakers interested in leveraging MOSAIKS to better understand socioeconomic and environmental challenges. The course is particularly valuable for those working in:\nThroughout this course, you’ll learn practical applications through a combination of:\nThe curriculum covers the complete MOSAIKS workflow:\nWhether you’re new to MOSAIKS or looking to deepen your expertise, this course provides the tools and knowledge needed to effectively utilize this powerful framework.",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#acknowledgements",
+    "href": "index.html#acknowledgements",
+    "title": "MOSAIKS Training Manual",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nMOSAIKS was developed and is supported by researchers across multiple partner organizations:\nCore Team:\nBenjamin Recht, Esther Rolf, Tamma Carleton, Eugenio Noda, Hikari Murayama, Hannah Druckenmiller, Ian Bolliger, Jeanette Tseng, Jessica Katz, Jonathan Proctor, Luke Sherman, Miyabi Ishihara, Simon Greenhill, Solomon Hsiang, Taryn Fransen, Trinetta Chong, Vaishaal Shankar, Graeme Blair, Darin Christensen, Shopnavo Biswas, Karena Yan, Cullen Molitor, Grace Lewin, Steven Cognac, Juliet Cohen\nPartner Organizations:\n\nCenter for Effective Global Action (CEGA; UCB)\nEnvironmental Markets Lab (emLab; UCSB)\nGlobal Policy Lab (GPL; Stanford University)\nHarvard Data Science Initiative (HDSI; Harvard University)\nProject on Resources and Governance (PRG; UCLA)\nMaster of Environmental Data Science Program (MEDS; UCSB)\n\nFunding Support:\n\nThe Patrick J. McGovern Foundation\nThe United States Agency for International Development (USAID)\nUnited Nations Development Programme (UNDP)",
     "crumbs": [
       "Welcome"
     ]
@@ -34,7 +44,7 @@
     "href": "intro.html#schedule-overview",
     "title": "Introduction",
     "section": "Schedule overview",
-    "text": "Schedule overview\n\nWeek 1\n\nMonday: Orientation and introduction to MOSAIKS\nTuesday: Ground labels and data processing fundamentals\nWednesday: Agriculture applications and MOSAIKS API\nThursday: Satellite imagery fundamentals and processing\nFriday: Deep dive into Random Convolutional Features (RCFs)\n\n\n\nWeek 2\n\nMonday: Martin Luther King Jr. Day (holiday - no class)\nTuesday: Task modeling and machine learning applications\nWednesday: Understanding uncertainty in MOSAIKS\nThursday: Survey data processing and design\nFriday: Future directions and advanced applications",
+    "text": "Schedule overview\n\nCourse schedule by week\n\n\n\n\n\n\n\nDay\nWeek 1\nWeek 2\n\n\n\n\nMonday\nOrientation and introduction to MOSAIKS\nHoliday - No Class\n\n\nTuesday\nGround labels and data processing fundamentals\nTask modeling and machine learning applications\n\n\nWednesday\nAgriculture applications and MOSAIKS API\nUnderstanding uncertainty in MOSAIKS\n\n\nThursday\nSatellite imagery fundamentals and processing\nSurvey data processing and design\n\n\nFriday\nDeep dive into random convolutional features (RCFs)\nFuture directions and advanced applications\n\n\n\nMain topics covered each day:\n\nWeek 1\n\nDay 1: MOSAIKS framework, accessing features, basic workflow\nDay 2: Understanding ground truth data, data cleaning, spatial resolution\nDay 3: Agricultural yield prediction, downloading features via API\nDay 4: Types of satellite imagery, processing considerations, quality control\nDay 5: Feature computation, theory behind RCFs, hands-on implementation\n\n\n\nWeek 2\n\nDay 1: Martin Luther King Jr. Day - No Class\nDay 2: Model selection, hyperparameter tuning, cross-validation\nDay 3: Error analysis, confidence intervals, reporting uncertainty\nDay 4: Survey design principles, geolocation methods, sampling strategies\nDay 5: Advanced topics, emerging applications, future development",
     "crumbs": [
       "Introduction"
     ]
@@ -44,7 +54,7 @@
     "href": "intro.html#training-expectations",
     "title": "Introduction",
     "section": "Training expectations",
-    "text": "Training expectations\n\nWhat you will learn\n\nUnderstanding of MOSAIKS framework and capabilities\nPractical skills in satellite imagery processing\nExperience with machine learning applications\nHands-on practice with real-world datasets\nKnowledge of survey data integration\nBest practices for model implementation\n\n\n\nPrerequisites\nThere are no explcicit prerequisites, though this course does cover some advanced topics in:\n\nThe Python programming language\n\nMachine Learning\n\nGeospatial data\n\n\n\nParticipant expectations\n\nActive participation in discussions and hands-on sessions\nCompletion of assigned homework (particularly the Week 1 Friday assignment)\nEngagement in Q&A sessions\nContribution to feedback sessions for course improvement\n\n\n\nComputing requirements\nThe course includes hands-on computing sessions. You will need:\n\nA computer with access to the internet\nA Google account\nAcess to Google Colaboratory\nAccess to necessary data (details to be provided)\n\n\n\nHomework and presentations\nThere will be a homework assignment at the end of Week 1, which participants will present on Tuesday of Week 2. This assignment is designed to reinforce learning and provide practical experience with MOSAIKS tools.",
+    "text": "Training expectations\n\nWhat you will learn\n\nUnderstanding of MOSAIKS framework and capabilities\nPractical skills in satellite imagery processing\n\nExperience with machine learning applications\nHands-on practice with real-world datasets\nKnowledge of survey data integration\nBest practices for model implementation\n\n\n\nPrerequisites\nThere are no explicit prerequisites, though this course does cover some advanced topics in:\n\nThe Python programming language\nMachine learning\nGeospatial data\n\n\n\nParticipant expectations\n\nActive participation in discussions and hands-on sessions\nCompletion of assigned homework (particularly the Week 1 Friday assignment)\n\nEngagement in Q&A sessions\nContribution to feedback sessions for course improvement\n\n\n\nComputing requirements\nThe course includes hands-on computing sessions. You will need:\n\nA computer with access to the internet\nA Google account\nAccess to Google Colaboratory\nAccess to necessary data (details to be provided)\n\n\n\nHomework and presentations\nThere will be a homework assignment at the end of Week 1, which participants will present on Tuesday of Week 2. This assignment is designed to reinforce learning and provide practical experience with MOSAIKS tools.",
     "crumbs": [
       "Introduction"
     ]
@@ -52,67 +62,56 @@
   {
     "objectID": "intro-compute.html",
     "href": "intro-compute.html",
-    "title": "1  Compute Setup",
+    "title": "1  Compute setup",
     "section": "",
     "text": "1.1 Requirements\nThis course will primarily use Google Colaboratory (Colab) for our computational needs. Colab is a free, cloud-based platform that allows you to write and execute Python code through your browser. It comes with many pre-installed libraries and provides free access to computing resources, including GPUs.\nTo participate in the coding portions of this course, you’ll need:",
     "crumbs": [
       "Introduction",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Compute Setup</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Compute setup</span>"
     ]
   },
   {
     "objectID": "intro-compute.html#requirements",
     "href": "intro-compute.html#requirements",
-    "title": "1  Compute Setup",
+    "title": "1  Compute setup",
     "section": "",
     "text": "A laptop or desktop computer\nReliable internet connection\nA Google account (if you don’t have one, create one at accounts.google.com)\nA modern web browser (Chrome recommended)",
     "crumbs": [
       "Introduction",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Compute Setup</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Compute setup</span>"
     ]
   },
   {
     "objectID": "intro-compute.html#getting-started-with-google-colab",
     "href": "intro-compute.html#getting-started-with-google-colab",
-    "title": "1  Compute Setup",
-    "section": "1.2 Getting Started with Google Colab",
-    "text": "1.2 Getting Started with Google Colab\n\n1.2.1 Accessing Colab\n\nGo to colab.research.google.com\nSign in with your Google account\nClick “New Notebook” to create your first Colab notebook\n\n\n\n1.2.2 Understanding the Interface\nThe Colab interface is similar to Jupyter notebooks, with a few key components:\n\nMenu Bar: Contains File, Edit, View, Insert, Runtime, Tools, and Help options\nToolbar: Quick access to common actions like adding code/text cells\nCell Area: Where you write and execute code or text\nRuntime Status: Shows the state of your notebook’s connection to Google’s servers\n\n\n\n1.2.3 Basic Operations\n\nCreating Cells:\n\nCode cells: Click “+ Code” or use Ctrl+M B\nText cells: Click “+ Text” or use Ctrl+M M\n\nRunning Cells:\n\nClick the play button next to the cell\nUse Shift+Enter\nSelect Runtime &gt; Run all from the menu\n\nCell Types:\n\nCode cells: For Python code execution\nText cells: For documentation (supports Markdown)\n\n\n\n\n1.2.4 Important Features\n\nRuntime Type:\n\nClick Runtime &gt; Change runtime type\nSelect Python 3 as the runtime\nFor GPU access: Change hardware accelerator to GPU when needed\n\nFile Management:\n\nFiles uploaded to Colab are temporary\nConnect to Google Drive for persistent storage:\n\n\nfrom google.colab import drive\ndrive.mount('/content/drive')\n\nPackage Installation:\n\nInstall additional packages using:\n\ncondapip\n\n\n# add a -c conda-forge to select the conda-forge channel\n# add a -q flag to install quietly (reduced output)\n# add a -y flag to prememptively accept other changes\n!conda install package_name\n\n\n!pip install package_name\n\n\n\n\n\n1.2.5 Best Practices\n\nSave Your Work:\n\nRegularly save to Google Drive (File &gt; Save a copy in Drive)\nDownload important notebooks locally as backups\n\nResource Management:\n\nClose unused notebooks to free up resources\nBe aware of idle timeouts (notebooks disconnect after extended inactivity)\n\nMemory Usage:\n\nMonitor memory usage through Runtime &gt; Resource usage\nUse Runtime &gt; Factory reset runtime if you run into memory issues\n\n\n\n\n1.2.6 Keyboard Shortcuts\nHere are the most useful keyboard shortcuts for working in Colab:\n\nWindows/LinuxMac\n\n\n\n\n\nAction\nShortcut\n\n\n\n\nRun current cell\nCtrl+Enter\n\n\nRun cell and move to next\nShift+Enter\n\n\nRun cell and insert below\nAlt+Enter\n\n\nInsert code cell above\nCtrl+M A\n\n\nInsert code cell below\nCtrl+M B\n\n\nConvert to text cell\nCtrl+M M\n\n\nConvert to code cell\nCtrl+M Y\n\n\nDelete current cell\nCtrl+M D\n\n\nToggle line numbers\nCtrl+M L\n\n\nToggle output\nCtrl+M O\n\n\nCut cell\nCtrl+M X\n\n\nCopy cell\nCtrl+M C\n\n\nPaste cell below\nCtrl+M V\n\n\nSelect multiple cells\nShift+Up/Down\n\n\nFind and replace\nCtrl+F\n\n\nSave notebook\nCtrl+S\n\n\n\n\n\n\n\n\nAction\nShortcut\n\n\n\n\nRun current cell\n⌘+Enter\n\n\nRun cell and move to next\nShift+Enter\n\n\nRun cell and insert below\nOption+Enter\n\n\nInsert code cell above\n⌘+M A\n\n\nInsert code cell below\n⌘+M B\n\n\nConvert to text cell\n⌘+M M\n\n\nConvert to code cell\n⌘+M Y\n\n\nDelete current cell\n⌘+M D\n\n\nToggle line numbers\n⌘+M L\n\n\nToggle output\n⌘+M O\n\n\nCut cell\n⌘+M X\n\n\nCopy cell\n⌘+M C\n\n\nPaste cell below\n⌘+M V\n\n\nSelect multiple cells\nShift+Up/Down\n\n\nFind and replace\n⌘+F\n\n\nSave notebook\n⌘+S\n\n\n\n\n\n\nYou can view all available shortcuts in Colab by pressing Ctrl+M H (⌘+M H on Mac) or through Help &gt; Keyboard shortcuts in the menu.\n\n\n1.2.7 Common Issues and Solutions\n\nRuntime Disconnections:\n\nClick “Reconnect” when prompted\nYour variables will be reset, but saved code remains\n\nPackage Installation Issues:\n\nRestart runtime after installing new packages\nUse Runtime &gt; Restart runtime\n\nMemory Errors:\n\nClear unnecessary variables\nRestart runtime\nConsider using smaller data samples during development\n\n\n\n\n1.2.8 Getting Help\n\nAccess Colab’s built-in documentation: Help &gt; Colab Overview\nView keyboard shortcuts: Help &gt; Keyboard shortcuts\nSearch the Help menu for specific topics\nUse the Help &gt; Search Solutions feature\n\n[Note: This would be a good place to add screenshots showing key interface elements and operations]\nIn the next sections of this course, we’ll be using Colab extensively for hands-on exercises. Make sure you’re comfortable with these basics before proceeding.",
+    "title": "1  Compute setup",
+    "section": "1.2 Getting started with Google Colab",
+    "text": "1.2 Getting started with Google Colab\n\n1.2.1 Accessing Colab\n\nGo to colab.research.google.com\nSign in with your Google account\nClick “New Notebook” to create your first Colab notebook\n\n\n\n1.2.2 Understanding the interface\nThe Colab interface is similar to Jupyter notebooks, with a few key components:\n\nMenu Bar: Contains File, Edit, View, Insert, Runtime, Tools, and Help options\nToolbar: Quick access to common actions like adding code/text cells\nCell Area: Where you write and execute code or text\nRuntime Status: Shows the state of your notebook’s connection to Google’s servers\n\n\n\n1.2.3 Basic operations\n\nCreating Cells:\n\nCode cells: Click “+ Code” or use Ctrl+M B\nText cells: Click “+ Text” or use Ctrl+M M\n\nRunning Cells:\n\nClick the play button next to the cell\nUse Shift+Enter\nSelect Runtime &gt; Run all from the menu\n\nCell Types:\n\nCode cells: For Python code execution\nText cells: For documentation (supports Markdown)\n\n\n\n\n1.2.4 Important features\n\nRuntime Type:\n\nClick Runtime &gt; Change runtime type\nSelect Python 3 as the runtime\nFor GPU access: Change hardware accelerator to GPU when needed\n\nFile Management:\n\nFiles uploaded to Colab are temporary\nConnect to Google Drive for persistent storage:\n\n\nfrom google.colab import drive\ndrive.mount('/content/drive')\n\nPackage Installation:\n\nInstall additional packages using:\n\ncondapip\n\n\n# add a -c conda-forge to select the conda-forge channel\n# add a -q flag to install quietly (reduced output)\n# add a -y flag to prememptively accept other changes\n!conda install package_name\n\n\n!pip install package_name\n\n\n\n\n\n1.2.5 Best practices\n\nSave Your Work:\n\nRegularly save to Google Drive (File &gt; Save a copy in Drive)\nDownload important notebooks locally as backups\n\nResource Management:\n\nClose unused notebooks to free up resources\nBe aware of idle timeouts (notebooks disconnect after extended inactivity)\n\nMemory Usage:\n\nMonitor memory usage through Runtime &gt; Resource usage\nUse Runtime &gt; Factory reset runtime if you run into memory issues\n\n\n\n\n1.2.6 Keyboard shortcuts\nHere are the most useful keyboard shortcuts for working in Colab:\n\nWindows/LinuxMac\n\n\n\n\n\nAction\nShortcut\n\n\n\n\nRun current cell\nCtrl+Enter\n\n\nRun cell and move to next\nShift+Enter\n\n\nRun cell and insert below\nAlt+Enter\n\n\nInsert code cell above\nCtrl+M A\n\n\nInsert code cell below\nCtrl+M B\n\n\nConvert to text cell\nCtrl+M M\n\n\nConvert to code cell\nCtrl+M Y\n\n\nDelete current cell\nCtrl+M D\n\n\nToggle line numbers\nCtrl+M L\n\n\nToggle output\nCtrl+M O\n\n\nCut cell\nCtrl+M X\n\n\nCopy cell\nCtrl+M C\n\n\nPaste cell below\nCtrl+M V\n\n\nSelect multiple cells\nShift+Up/Down\n\n\nFind and replace\nCtrl+F\n\n\nSave notebook\nCtrl+S\n\n\n\n\n\n\n\n\nAction\nShortcut\n\n\n\n\nRun current cell\n⌘+Enter\n\n\nRun cell and move to next\nShift+Enter\n\n\nRun cell and insert below\nOption+Enter\n\n\nInsert code cell above\n⌘+M A\n\n\nInsert code cell below\n⌘+M B\n\n\nConvert to text cell\n⌘+M M\n\n\nConvert to code cell\n⌘+M Y\n\n\nDelete current cell\n⌘+M D\n\n\nToggle line numbers\n⌘+M L\n\n\nToggle output\n⌘+M O\n\n\nCut cell\n⌘+M X\n\n\nCopy cell\n⌘+M C\n\n\nPaste cell below\n⌘+M V\n\n\nSelect multiple cells\nShift+Up/Down\n\n\nFind and replace\n⌘+F\n\n\nSave notebook\n⌘+S\n\n\n\n\n\n\nYou can view all available shortcuts in Colab by pressing Ctrl+M H (⌘+M H on Mac) or through Help &gt; Keyboard shortcuts in the menu.\n\n\n1.2.7 Common issues and solutions\n\nRuntime Disconnections:\n\nClick “Reconnect” when prompted\nYour variables will be reset, but saved code remains\n\nPackage Installation Issues:\n\nRestart runtime after installing new packages\nUse Runtime &gt; Restart runtime\n\nMemory Errors:\n\nClear unnecessary variables\nRestart runtime\nConsider using smaller data samples during development\n\n\n\n\n1.2.8 Getting help\n\nAccess Colab’s built-in documentation: Help &gt; Colab Overview\nView keyboard shortcuts: Help &gt; Keyboard shortcuts\nSearch the Help menu for specific topics\nUse the Help &gt; Search Solutions feature",
     "crumbs": [
       "Introduction",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Compute Setup</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Compute setup</span>"
     ]
   },
   {
     "objectID": "intro-compute.html#accessing-course-notebooks",
     "href": "intro-compute.html#accessing-course-notebooks",
-    "title": "1  Compute Setup",
-    "section": "1.3 Accessing Course Notebooks",
-    "text": "1.3 Accessing Course Notebooks\nAll course notebooks are hosted on GitHub and can be accessed directly in Google Colab. There are two ways to access the notebooks:\n\n1.3.1 Method 1: Direct Links\nEach section of this book includes direct “Open in Colab” links for relevant notebooks. Simply click the badge to open the notebook:\nExample \n\n\n1.3.2 Method 2: Clone the Notebook\nTo choose a notebook from the repository (Add link to demo/interactive notebooks here):\n\nOpen Google Colab (colab.research.google.com)\nClick File &gt; Open Notebook\nSelect the GitHub tab\nEnter the repository URL: https://github.com/[username]/[repo] (UPDATE WITH REPO)\nSelect the notebook you want to open",
+    "title": "1  Compute setup",
+    "section": "1.3 Accessing course notebooks",
+    "text": "1.3 Accessing course notebooks\nAll course notebooks are hosted on GitHub and can be accessed directly in Google Colab. There are two ways to access the notebooks:\n\n1.3.1 Method 1: Direct links\nEach section of this book includes direct “Open in Colab” links for relevant notebooks. Simply click the badge to open the notebook:\nExample \n\n\n1.3.2 Method 2: Clone the notebook\nTo choose a notebook from the repository (Add link to demo/interactive notebooks here):\n\nOpen Google Colab (colab.research.google.com)\nClick File &gt; Open Notebook\nSelect the GitHub tab\nEnter the repository URL: https://github.com/[username]/[repo] (UPDATE WITH REPO)\nSelect the notebook you want to open\n\n\n\n1.3.3 Saving your work\nWhen you open a notebook from GitHub in Colab, it creates a temporary copy. To save your work:\n\nClick File &gt; \"Save a copy in Drive\"\nThis creates your own editable copy in your Google Drive\nAll future changes will be saved to your copy\n\n\n\n1.3.4 Notebook organization\nThe course notebooks are organized into:\n\ndemos/: Complete demonstration notebooks\nexercises/: Interactive notebooks with exercises to complete\nsolutions/: Complete versions of exercise notebooks\n\nEach notebook includes:\n\nClear instructions in markdown cells\nCode cells with examples or exercises\nTODO sections for exercises\nValidation cells to check your work",
     "crumbs": [
       "Introduction",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Compute Setup</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Compute setup</span>"
     ]
   },
   {
-    "objectID": "intro-compute.html#saving-your-work",
-    "href": "intro-compute.html#saving-your-work",
-    "title": "1  Compute Setup",
-    "section": "1.4 Saving Your Work",
-    "text": "1.4 Saving Your Work\nWhen you open a notebook from GitHub in Colab, it creates a temporary copy. To save your work:\n\nClick File &gt; \"Save a copy in Drive\"\nThis creates your own editable copy in your Google Drive\nAll future changes will be saved to your copy",
+    "objectID": "intro-compute.html#data-access-and-management",
+    "href": "intro-compute.html#data-access-and-management",
+    "title": "1  Compute setup",
+    "section": "1.4 Data access and management",
+    "text": "1.4 Data access and management\nThere are several ways to access data in Colab notebooks. Here are the main approaches:\n\n1.4.1 Direct downloads\nFor data hosted on repositories like Zenodo, you can download directly using wget:\n# Set the data directory\ndata_dir = \"LSMS-ISA-data\"\n\n# Download the data\n!wget https://zenodo.org/records/14040658/files/Data.zip\n\n# Unzip and organize\n!unzip Data.zip\n!mv Data {data_dir}\n!rm Data.zip\n\n\n1.4.2 Google Drive integration\nFor data stored in Google Drive:\n\nFirst mount your Google Drive:\n\nfrom google.colab import drive\ndrive.mount('/content/drive')\n\nAccess your data using the mounted path:\n\ndrive_path = \"/content/drive/MyDrive/project_folder\"\n\nFor better performance, copy data to local VM storage:\n\n\n\n\n\n\n\nRemember that the VM’s storage is temporary - files will be deleted when the runtime disconnects. Always keep a backup of your data in Drive or another permanent storage location.\n\n\n\nimport os\nimport shutil\n\n# Create local directory\nlocal_dir = \"/content/data/\"\nos.makedirs(local_dir, exist_ok=True)\n\n# Copy data from Drive to VM\ndrive_data = os.path.join(drive_path, \"my_data\") \nshutil.copytree(drive_data, local_dir, dirs_exist_ok=True)\n\n\n1.4.3 Why copy data to the VM?\nWhen working with data in Colab, copying files from Google Drive to the virtual machine (VM) can significantly improve performance:\n\nFaster Access: Reading directly from Google Drive requires data to be transferred over the network for each operation. Local VM storage provides much faster read/write speeds.\nReduced Latency: Network latency between Colab and Google Drive can slow down operations that require multiple data accesses. Local data eliminates this latency.\nMore Reliable: Network connectivity issues or Drive access problems won’t interrupt your analysis once data is copied locally.\nBetter for Iterative Processing: If your code needs to read the same data multiple times (like in machine learning training loops), local access is much more efficient.\n\nFor example, reading a 1GB dataset from Drive might take 30 seconds, while reading from local VM storage could take just a few seconds. The time spent copying data once at the start of your session can save significant time during analysis. This can be especially true in a notebook environment when a user is developing code and may need to access and reaccess the data multiple times.\n\n\n\n\n\n\nLooking forward\n\n\n\nIn the next chapter we will take a closer look at MOSAIKS.",
     "crumbs": [
       "Introduction",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Compute Setup</span>"
-    ]
-  },
-  {
-    "objectID": "intro-compute.html#notebook-organization",
-    "href": "intro-compute.html#notebook-organization",
-    "title": "1  Compute Setup",
-    "section": "1.5 Notebook Organization",
-    "text": "1.5 Notebook Organization\nThe course notebooks are organized into:\n\ndemos/: Complete demonstration notebooks\nexercises/: Interactive notebooks with exercises to complete\nsolutions/: Complete versions of exercise notebooks\n\nEach notebook includes:\n\nClear instructions in markdown cells\nCode cells with examples or exercises\nTODO sections for exercises\nValidation cells to check your work",
-    "crumbs": [
-      "Introduction",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Compute Setup</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Compute setup</span>"
     ]
   },
   {
@@ -120,7 +119,18 @@
     "href": "intro-mosaiks.html",
     "title": "2  What is MOSAIKS?",
     "section": "",
-    "text": "2.1 How MOSAIKS works\nRight now, numerous public satellite systems collect huge amounts of data about the world every day. But there is so much imagery (terabytes per day) that it’s overwhelming to sort through by hand; and it’s too complex and unstructured to be usable in its raw form for most applications.\nThat is why linking satellite imaging to machine learning (SIML) is incredibly powerful. It enables vast amounts of unstructured image data to be transformed into structured information that can immediately be used for planning, research, and decision-making.\nWe believe that people all over the world should be able to access SIML technologies, but we also recognize that most people who would benefit the most from these tools don’t have the time or resources to manage enormous satellite imagery data sets and learn how to apply machine learning to them.\nThat’s why we developed MOSAIKS.\nMOSAIKS is designed to work “out of the box” for a wide array of SIML applications, for people with no SIML expertise who work on normal desktop computers. MOSAIKS users never actually have to touch satellite imagery themselves and only need to have basic statistical training.\nMOSAIKS empowers users to create their own new data sets from satellite imagery. We don’t control what variables users look at, and we never need to know. MOSAIKS is a system that allows users to quickly transform vast amounts of imagery into maps of new variables, using their own training data.\nIf you’ve ever been curious about trying machine learning with satellite imagery, but don’t know anything about machine learning or satellite imagery, MOSAIKS is for you.\nAnd if you know a lot about machine learning and satellite imagery, MOSAIKS might still be for you, since it performs competitively with deep learning methods but is much simpler and cheaper to use.\nThe basic idea of MOSAIKS is to seperate users from the costly and difficult process of transforming imagery into inputs (called “features”) for a machine learning algorithm (images → X). We do that part, so users never have to download or manage imagery. Users then download a table of MOSAIKS features (X), link them to their own geocoded data on the outcome (Y) they are interested in (called “labels”) and run a linear regression to predict their labels using MOSAIKS features (Y = Xβ).\nAll users use the same MOSAIKS features and just match them to their labels based on location. Users can run their analysis on any statistical software they are comfortable with. For most applications, the computing demands will not require users to work with specialized machines, since desktops and laptops work.\nMOSAIKS works because MOSAIKS features captures a huge amount of information about the colors, patterns and textures that show up in satellite imagery. We don’t know what patterns/colors/textures will be important for the application that users have (since we don’t know what applications users will try), so we just try to capture all of them. The purpose of the regression step is to teach the model which patterns/colors/textures predict the labels, and then to use that understanding to make predictions in locations where users don’t have labels. In addition, MOSAIKS encodes image information in a way that allows for nonlinear relationships between labels and images, even though the regression that users implement is a linear regression.\nFor users, the procedure for using MOSAIKS has five steps (corresponding figure from Rolf et al. is below):\nWe’ve found that MOSAIKS works well across diverse prediction tasks (e.g. forest cover, house price, population, road length, elevation, income) and it achieves accuracy competitive with deep neural networks at orders of magnitude lower computational cost.\nIf you are interested in using MOSAIKS, you can also see our tutorial and slide deck. And if you have a little bit of time, we recommend reading the paper we wrote when we introduced the system. We wrote it with users in mind, so we tried to make it as clear and accessible as possible.\nIf you use MOSAIKS, please reference: Rolf et al. “A generalizable and accessible approach to machine learning with global satellite imagery.” Nature Communications (2021).",
+    "text": "2.1 The challenge\nRight now, numerous public satellite systems collect huge amounts of data about the world every day. But there is so much imagery (terabytes per day) that it’s overwhelming to sort through by hand; and it’s too complex and unstructured to be usable in its raw form for most applications.\nThat is why linking satellite imaging to machine learning (SIML) is incredibly powerful. It enables vast amounts of unstructured image data to be transformed into structured information that can immediately be used for planning, research, and decision-making.\nWe believe that people all over the world should be able to access SIML technologies, but we also recognize that most people who would benefit the most from these tools don’t have the time or resources to manage enormous satellite imagery data sets and learn how to apply machine learning to them.",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>What is MOSAIKS?</span>"
+    ]
+  },
+  {
+    "objectID": "intro-mosaiks.html#the-solution",
+    "href": "intro-mosaiks.html#the-solution",
+    "title": "2  What is MOSAIKS?",
+    "section": "2.2 The solution",
+    "text": "2.2 The solution\nThat’s why we developed MOSAIKS.\nMOSAIKS is designed to work “out of the box” for a wide array of SIML applications, for people with no SIML expertise who work on normal desktop computers. MOSAIKS users never actually have to touch satellite imagery themselves and only need to have basic statistical training.\n\n\n\n\n\n\nIf you can run a regression, you can use MOSAIKS.\n\n\n\nMOSAIKS empowers users to create their own new data sets from satellite imagery. We don’t control what variables users look at, and we never need to know. MOSAIKS is a system that allows users to quickly transform vast amounts of imagery into maps of new variables, using their own training data.\nIf you’ve ever been curious about trying machine learning with satellite imagery, but don’t know anything about machine learning or satellite imagery, MOSAIKS is for you.\nAnd if you know a lot about machine learning and satellite imagery, MOSAIKS might still be for you, since it performs competitively with deep learning methods but is much simpler and cheaper to use.",
     "crumbs": [
       "Introduction",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>What is MOSAIKS?</span>"
@@ -130,8 +140,19 @@
     "objectID": "intro-mosaiks.html#how-mosaiks-works",
     "href": "intro-mosaiks.html#how-mosaiks-works",
     "title": "2  What is MOSAIKS?",
-    "section": "",
-    "text": "Download MOSAIKS features (X) in the areas where you have labels.\nMerge the features with your labels (Y) based on location (so features at position P are linked to labels at position P).\nRun a ridge regression of your labels on the MOSAIKS features (Y = Xβ).\nEvaluate performance.\nUse the results of the regression model (β) to make predictions (Xβ) in a new region of interest where you do not have labels, using only the MOSAIKS features that correspond with those new locations.\n\n\n\n\nRolf et al. 2021 Figure 1\n\n\n\n\n\n\nRolf et al. 2021 Figure 2",
+    "section": "2.3 How MOSAIKS works",
+    "text": "2.3 How MOSAIKS works\nThe basic idea of MOSAIKS is to seperate users from the costly and difficult process of transforming imagery into inputs (called “features”) for a machine learning algorithm (images → X). We do that part, so users never have to download or manage imagery. Users then download a table of MOSAIKS features (X), link them to their own geocoded data on the outcome (Y) they are interested in (called “labels”) and run a linear regression to predict their labels using MOSAIKS features (Y = Xβ).\nAll users use the same MOSAIKS features and just match them to their labels based on location. Users can run their analysis on any statistical software they are comfortable with. For most applications, the computing demands will not require users to work with specialized machines, since desktops and laptops work.\nMOSAIKS works because MOSAIKS features capture a huge amount of information about the colors, patterns and textures that show up in satellite imagery. We don’t know what patterns/colors/textures will be important for the application that users have (since we don’t know what applications users will try), so we just try to capture all of them. The purpose of the regression step is to teach the model which patterns/colors/textures predict the labels, and then to use that understanding to make predictions in locations where users don’t have labels. In addition, MOSAIKS encodes image information in a way that allows for nonlinear relationships between labels and images, even though the regression that users implement is a linear regression.\n\n2.3.1 Five steps to using MOSAIKS\nFor users, the procedure for using MOSAIKS has five steps (corresponding figure from Rolf et al. is below):\n\nDownload MOSAIKS features (X) in the areas where you have labels.\nMerge the features with your labels (Y) based on location (so features at position P are linked to labels at position P).\nRun a ridge regression of your labels on the MOSAIKS features (Y = Xβ).\nEvaluate performance.\nUse the results of the regression model (β) to make predictions (Xβ) in a new region of interest where you do not have labels, using only the MOSAIKS features that correspond with those new locations.\n\n\n\n\nRolf et al. 2021 Figure 1",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>What is MOSAIKS?</span>"
+    ]
+  },
+  {
+    "objectID": "intro-mosaiks.html#what-can-mosaiks-predict",
+    "href": "intro-mosaiks.html#what-can-mosaiks-predict",
+    "title": "2  What is MOSAIKS?",
+    "section": "2.4 What can MOSAIKS predict?",
+    "text": "2.4 What can MOSAIKS predict?\n\n\n\n\n\n\nThis question is answered in greater detail in Chapter 5\n\n\n\nMOSAIKS has been successfully used to predict a wide range of outcomes including:\n\nEnvironmental conditions (forest cover, elevation)\nPopulation patterns (density, nighttime lights)\nEconomic indicators (income, house prices)\nInfrastructure (road networks)\n\nThe figure below is from the original MOSAIKS publication (Rolf et al. 2021). The left maps show the input labels. The right map shows the modeled predictions. The scatter plot shows the modeled predictions against the true labels and reports the coefficient of determination (R²) as a measure of performance.\n\n\n\nRolf et al. 2021 Figure 2\n\n\nImportantly, all these predictions use the same set of satellite features - there’s no need to reprocess the imagery for different tasks. MOSAIKS achieves accuracy comparable to more complex deep learning methods, but at a fraction of the computational cost. This is the power of MOSAIKS, it removes the need for repreocessing the imagery after the initial encoding.\n\n2.4.1 Building understanding\nIf you are interested in using MOSAIKS, you can also see our tutorial and slide deck. And if you have a little bit of time, we recommend reading the paper we wrote when we introduced the system. We wrote it with users in mind, so we tried to make it as clear and accessible as possible.\nIf you use MOSAIKS, please reference: Rolf et al. “A generalizable and accessible approach to machine learning with global satellite imagery.” Nature Communications (2021).\n\n\n\n\n\n\nLooking forward\n\n\n\nIn the next chapter we will demonstrate MOSAIKS with real data.",
     "crumbs": [
       "Introduction",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>What is MOSAIKS?</span>"
@@ -153,7 +174,7 @@
     "href": "intro-api.html#api-overview",
     "title": "3  Access MOSAIKS",
     "section": "",
-    "text": "MOSAIKS API Link\n\n\n\napi.mosaiks.org\n\n\n\n\nGlobal Administrative Units (Planet imagery) You can download features aggregated to country, province, or municipality (ADM0/ADM1/ADM2 boundaries), as described in Sherman et al. (2023). These features are based on Planet imagery. These files are relatively small in size and can be used at these resolutions or to downscale administrative data. To download them, register at api.mosaiks.org and access them via the “Precomputed Files” tab.\nUSA grid from Rolf et al (Google basemap imagery) You can download features for a set of locations across the United States, as described in Rolf et al. (Nature Communications, 2021). These features are based on imagery from the Google Earth base map. You can download the features from the Code Ocean Capsule associated with that manuscript (the capsule will also allow you to replicate the analysis of that paper on a remote machine). The Github repository for that analysis is here.\nGlobal 0.01 x 0.01 degree grid (Planet imagery) You can download features for a complete and dense grid of global land areas via our API. These features are based on on quarterly mosaics from Planet’s Surface Reflectance Basemaps produce from 2019 Q3. Because the complete data set is large (multiple TB), you will need to request custom subsamples of the imagery. To download them, register at api.mosaiks.org and access them via the “Map Query” tool or by uploading a list of locations via the “File Query” tool.\nRecompute MOSAIKS features (Landsat & Sentinel imagery) You can recompute MOSAIKS features yourself using Microsoft’s Planetary Computer (Github repo which currently supports Gaussian random convolutional features). This approach will not provide the benefit of pre-computed features, since you will recompute features on-the-fly every time, but the massive compute power of the Planetary Computer makes this relatively fast and cheap for users.",
+    "text": "MOSAIKS API Link\n\n\n\napi.mosaiks.org\n\n\n\n\nGlobal Administrative Units (Planet imagery) You can download features aggregated to country, province, or municipality (ADM0/ADM1/ADM2 boundaries), as described in Sherman et al. (2023). These features are based on Planet imagery. These files are relatively small in size and can be used at these resolutions or to downscale administrative data. To download them, register at api.mosaiks.org and access them via the “Precomputed Files” tab.\nUSA grid from Rolf et al (Google basemap imagery) You can download features for a set of locations across the United States, as described in Rolf et al. (Nature Communications, 2021). These features are based on imagery from the Google Earth base map. You can download the features from the Code Ocean Capsule associated with that manuscript (the capsule will also allow you to replicate the analysis of that paper on a remote machine). The Github repository for that analysis is here.\nGlobal 0.01 x 0.01 degree grid (Planet imagery) You can download features for a complete and dense grid of global land areas via our API. These features are based on on quarterly mosaics from Planet’s Surface Reflectance Basemaps produce from 2019 Q3. Because the complete data set is large (multiple TB), you will need to request custom subsamples of the imagery. To download them, register at api.mosaiks.org and access them via the “Map Query” tool or by uploading a list of locations via the “File Query” tool.\nRecompute MOSAIKS features (Landsat & Sentinel imagery) You can recompute MOSAIKS features yourself using Microsoft’s Planetary Computer (Github repo which currently supports Gaussian random convolutional features). This approach will not provide the benefit of pre-computed features, since you will recompute features on-the-fly every time, but the massive compute power of the Planetary Computer makes this relatively fast and cheap for users.\nRecompute MOSAIKS features (general instruction) You can recompute MOSAIKS features yourself using instructions provided in Chapter 14. By following along with this chapter, you will gain in depth knowledge of how to compute customized features from any input imagery source. The process of dealing with satellite imagery and image featurization are the most challenging aspects of MOSAIKS. This section is only recommended for users with baseline knowledge of remote sensing methodologies, and ideally at least some understanding of convolutional nueral network models.",
     "crumbs": [
       "Introduction",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Access MOSAIKS</span>"
@@ -186,7 +207,7 @@
     "href": "intro-api.html#using-mosaiks-features-for-prediction",
     "title": "3  Access MOSAIKS",
     "section": "3.4 Using MOSAIKS features for prediction",
-    "text": "3.4 Using MOSAIKS features for prediction\nTo use MOSAIKS effectively:\n\nObtain ground truth measurements (“labels”) for your variable of interest\nDownload matching features using either Map Query or File Query\nPerform a spatial merge between your labels and the features\nUse regression to estimate the relationship between imagery features and your outcome variable\n\n\n\n\nUsing MOSAIKS, a simplified workflow design.\n\n\nYou can experiment with various machine learning approaches in the regression step. For beginners, we recommend starting with our example Jupyter notebook that demonstrates a simple ridge regression approach (suitable for both R and Python users).\nThis topic will be covered in greater depth in later chapters. In the next chapter, you will see a simple MOSAIKS workflow which starts from the point of having both features from the API and ground truth labels.",
+    "text": "3.4 Using MOSAIKS features for prediction\n\n\n\n\n\n\nThis is a brief overview. Detailed instructions appear later in the manual.\n\n\n\nBasic workflow:\n\nObtain ground truth measurements (“labels”)\nDownload matching features via Map/File Query\nSpatially merge labels and features\nUse regression to model relationship\n\n\n\n\nUsing MOSAIKS, a simplified workflow design.\n\n\nYou can experiment with various machine learning approaches in the regression step. For beginners, we recommend starting with our example Jupyter notebook (Chapter 4) that demonstrates a simple ridge regression approach (suitable for both R and Python users).\nThis topic will be covered in greater depth in later chapters. In the next chapter, you will see a simple MOSAIKS workflow which starts from the point of having both features from the API and ground truth labels.",
     "crumbs": [
       "Introduction",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Access MOSAIKS</span>"
@@ -206,12 +227,177 @@
   {
     "objectID": "mosaiks-demo-1.html",
     "href": "mosaiks-demo-1.html",
-    "title": "4  Demonstration of MOSAIKS",
+    "title": "MOSAIKS Demonstration: Identifying Internet Access in Togo",
     "section": "",
-    "text": "This chapter is in early draft form and may be incomplete.\n\n\n\n\n\nDescription of exercise\nLink to Google Colab Notebook\nVideo maybe?",
+    "text": "4.1 Methodology\nThis notebook demonstrates the application of Multi-task Observation using Satellite Imagery & Kitchen Sinks (MOSAIKS), a machine learning approach utilizing satellite imagery, to identify areas with and without internet access in Togo. This information can be crucial for understanding the digital divide and informing policies to improve connectivity.\nThe process involves the following steps:",
     "crumbs": [
       "Introduction",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Demonstration of MOSAIKS</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>MOSAIKS Demonstration: Identifying Internet Access in Togo</span>"
+    ]
+  },
+  {
+    "objectID": "mosaiks-demo-1.html#methodology",
+    "href": "mosaiks-demo-1.html#methodology",
+    "title": "MOSAIKS Demonstration: Identifying Internet Access in Togo",
+    "section": "",
+    "text": "Data Acquisition: Label data on internet access is provided by the Agence Togo Digital (ATD). Pre-processed satellite imagery features are derived using the MOSAIKS framework.\nData Preprocessing: The label and feature data are preprocessed and cleaned. This leaves a single dataset with labels and features that is ready to use.\nModel Training and Evaluation: A machine learning model, specifically Ridge Regression with isotonic calibration, is trained on the joined dataset to predict the likelihood of internet access. The model is evaluated using metrics like the Receiver Operating Characteristic Area Under the Curve (ROC AUC).\nVisualization and Interpretation: The model results are visualized using maps and plots. Important features identified by the model are analyzed to understand the patterns associated with internet access.",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>MOSAIKS Demonstration: Identifying Internet Access in Togo</span>"
+    ]
+  },
+  {
+    "objectID": "mosaiks-demo-1.html#setup",
+    "href": "mosaiks-demo-1.html#setup",
+    "title": "MOSAIKS Demonstration: Identifying Internet Access in Togo",
+    "section": "4.2 Setup",
+    "text": "4.2 Setup\nThis notebook utilizes several key Python libraries:\n\nData Handling and Analysis: pandas and numpy provide fundamental data structures and functions for manipulating and analyzing data. geopandas extends these capabilities to work with geospatial data.\nVisualization: matplotlib.pyplot and seaborn enable the creation of static and interactive visualizations, aiding in data exploration and result presentation.\nMachine Learning: sklearn offers a comprehensive suite of tools for building and evaluating machine learning models, including algorithms like Ridge Regression and methods for data preprocessing.\n\n\nimport shutil\nimport numpy as np\nimport pandas as pd\nimport seaborn as sns\nimport geopandas as gpd\nimport matplotlib.pyplot as plt\n\nfrom google.colab import drive\nfrom sklearn.linear_model import RidgeClassifierCV\nfrom sklearn.calibration import IsotonicRegression\nfrom sklearn.metrics import roc_auc_score, roc_curve\nfrom sklearn.model_selection import train_test_split, GridSearchCV",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>MOSAIKS Demonstration: Identifying Internet Access in Togo</span>"
+    ]
+  },
+  {
+    "objectID": "mosaiks-demo-1.html#mounting-google-drive",
+    "href": "mosaiks-demo-1.html#mounting-google-drive",
+    "title": "MOSAIKS Demonstration: Identifying Internet Access in Togo",
+    "section": "4.3 Mounting Google Drive",
+    "text": "4.3 Mounting Google Drive\nMounting Google Drive in Colab essentially connects your Google Drive storage to the Colab environment. This allows you to access files and folders stored in your Drive directly within your Colab notebook. Think of it as creating a shortcut to your Drive within Colab.\nWhy is this necessary?\nColab notebooks run on temporary virtual machines. Mounting your Drive ensures that you can load and save data to your personal storage, persisting even after the Colab session ends. It also enables seamless access to larger datasets stored in your Drive, which would be impractical to upload directly to Colab.\nAfter mounting Google Drive, we then define the path to the project folder on Google Drive. This directory contains the data files needed for the analysis.\n\ndrive.mount('/content/drive')\n\n\ndrive_directory = os.path.join(\n    \"/\",\n    \"content\",\n    \"drive\",\n    \"Shareddrives\",\n    \"MOSAIKS Workshop\",\n    \"Data\",\n\n)\ndrive_directory",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>MOSAIKS Demonstration: Identifying Internet Access in Togo</span>"
+    ]
+  },
+  {
+    "objectID": "mosaiks-demo-1.html#create-a-local-directory",
+    "href": "mosaiks-demo-1.html#create-a-local-directory",
+    "title": "MOSAIKS Demonstration: Identifying Internet Access in Togo",
+    "section": "4.4 Create a local directory",
+    "text": "4.4 Create a local directory\nThis section creates a local directory within the Colab environment to store the project data. Data files are copied from the Google Drive directory to this local folder.\nWhy use a local directory?\nAccessing data locally on the Colab virtual machine (VM) significantly improves processing speed compared to reading directly from Google Drive. While copying the data initially takes a bit of time, this is outweighed by the performance gains during analysis.\n\nlocal_dir = \"/content/data/\"\n\nos.makedirs(local_dir, exist_ok=True)\n\nfiles_to_copy = os.path.join(drive_directory, \"survey_data\")\n\nshutil.copytree(files_to_copy, local_dir, dirs_exist_ok=True)\n\nHere we take a look at the contents of the local drive to ensure we have the necessary files copied.\n\n!ls -lh /content/data",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>MOSAIKS Demonstration: Identifying Internet Access in Togo</span>"
+    ]
+  },
+  {
+    "objectID": "mosaiks-demo-1.html#load-in-the-internet-access-label-data",
+    "href": "mosaiks-demo-1.html#load-in-the-internet-access-label-data",
+    "title": "MOSAIKS Demonstration: Identifying Internet Access in Togo",
+    "section": "4.5 Load in the Internet Access Label Data",
+    "text": "4.5 Load in the Internet Access Label Data\nThis section focuses on loading and preparing the data on internet access in Togo.\nInitial Loading and Column Selection: We will load the data from a file and select the relevant columns, such as internet access status and the satellite features.\nLabel Data Visualization: We produce a bar plot to inspect the distribution of labels and check for any imbalances.\n\ndata = pd.read_feather(os.path.join(local_dir, \"survey_data.feather\"))\ndata\n\n\ndata.groupby('Internet').size().plot(kind='barh', color=sns.palettes.mpl_palette('Dark2'))\nplt.gca().spines[['top', 'right',]].set_visible(False)",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>MOSAIKS Demonstration: Identifying Internet Access in Togo</span>"
+    ]
+  },
+  {
+    "objectID": "mosaiks-demo-1.html#model-training-and-evaluation",
+    "href": "mosaiks-demo-1.html#model-training-and-evaluation",
+    "title": "MOSAIKS Demonstration: Identifying Internet Access in Togo",
+    "section": "4.6 Model Training and Evaluation",
+    "text": "4.6 Model Training and Evaluation\nThis section focuses on training and evaluating a machine learning model to predict internet access using the prepared data.\n1. Data Preparation:\n\nThe joined dataset is split into features (X) and the target variable (y).\n\nX contains the satellite imagery features, specifically the columns with names starting with ‘X_’.\ny contains the internet access label (1 for internet access, 0 for no access).\n\nThe data is further split into training and testing sets using train_test_split to evaluate the model’s performance on unseen data.\n\n\nfeature_cols = [f\"X_{i}\" for i in range(4000)]\n# feature_cols\n\n\nX = data[feature_cols].values\ny = data[\"Internet\"].values\n\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.2, random_state=1991\n)\n\n2. Model Selection and Training:\n\nA Ridge Regression Classifier model is used for prediction. This model is chosen for its ability to handle high-dimensional data and its robustness to outliers.\n\nRidge Regression is a linear model that adds a penalty term to the loss function, preventing overfitting.\n\nHyperparameter tuning is performed using GridSearchCV to find the best value for the regularization parameter (alpha) of the Ridge Regression model. This helps to optimize the model’s performance.\n\n\nalphas = [0.01, 0.1, 1.0, 10.0]\nridge = RidgeClassifierCV(alphas=alphas, cv=5, scoring='roc_auc')\n\nridge.fit(X_train, y_train)\n\n3. Model Evaluation:\n\nThe trained model is evaluated using the testing set, which was not used during training.\nThe primary evaluation metric is the Receiver Operating Characteristic Area Under the Curve (ROC AUC). This metric measures the model’s ability to distinguish between positive (internet presence) and negative (internet absence) cases.\nThe ROC curve is visualized to provide a graphical representation of the model’s performance across different thresholds.\n\n\n# Get uncalibrated predictions (decision function)\ny_pred_uncal = ridge.decision_function(X_test)\n\n# Fit isotonic calibration\niso_reg = IsotonicRegression(out_of_bounds='clip')\niso_reg.fit(y_pred_uncal, y_test)\n\n# Get calibrated predictions\ny_pred_cal = iso_reg.predict(y_pred_uncal)\n\n# Calculate AUC scores\nauc_uncal = roc_auc_score(y_test, y_pred_uncal)\nauc_cal = roc_auc_score(y_test, y_pred_cal)\n\nprint(f\"Best alpha: {ridge.alpha_}\")\nprint(f\"AUC before calibration: {auc_uncal:.3f}\")\nprint(f\"AUC after calibration: {auc_cal:.3f}\")\n\n\n# Calculate ROC curves\nfpr_uncal, tpr_uncal, _ = roc_curve(y_test, y_pred_uncal)\nfpr_cal, tpr_cal, _ = roc_curve(y_test, y_pred_cal)\n\n# Create the plot\nplt.figure(figsize=(5, 5))\n\n# Plot both curves\nplt.plot(fpr_uncal, tpr_uncal, 'b-', label=f'Uncalibrated (AUC = {auc_uncal:.3f})')\nplt.plot(fpr_cal, tpr_cal, 'r-', label=f'Calibrated (AUC = {auc_cal:.3f})')\n\n# Plot the diagonal reference line\nplt.plot([0, 1], [0, 1], 'k--', label='Random')\n\n# Customize the plot\nplt.xlabel('False Positive Rate')\nplt.ylabel('True Positive Rate')\nplt.title('ROC Curves - Before and After Calibration')\nplt.legend(loc='lower right')\nplt.grid(True, alpha=0.3)\n\n# Set the plot limits\nplt.xlim([-0.01, 1.01])\nplt.ylim([-0.01, 1.01])\n\nplt.tight_layout()\nplt.show()\n\n\nimport geopandas as gpd\n\n\nfeatures = pd.read_feather(os.path.join(local_dir, \"TGO_API_features.feather\"))\n\nfeatures = gpd.GeoDataFrame(\n    features,\n    geometry=gpd.points_from_xy(features.Lon, features.Lat),\n    crs=\"EPSG:4326\"\n  )\nfeatures.geometry = features.geometry.buffer(0.005, cap_style=3)\n\nfeatures\n\n\ny_pred_full = ridge.decision_function(features[feature_cols].values)\n\n# y_pred_full_cal = iso_reg.predict(y_pred_full)\n\nfeatures['predicted_probability'] = y_pred_full\nfeatures\n\n\nfeatures[features.predicted_probability &gt; 0].plot(\n    column=\"predicted_probability\",\n    cmap=\"viridis\",\n    legend=True,\n    legend_kwds={'label': \"Predicted Probability\"},\n    figsize=(10, 8)\n)\nplt.title(\"Prediction\")\nplt.xlabel(\"Longitude\")\nplt.ylabel(\"Latitude\")\nplt.show()",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>MOSAIKS Demonstration: Identifying Internet Access in Togo</span>"
+    ]
+  },
+  {
+    "objectID": "mosaiks-demo-1.html#conclusions",
+    "href": "mosaiks-demo-1.html#conclusions",
+    "title": "MOSAIKS Demonstration: Identifying Internet Access in Togo",
+    "section": "4.7 Conclusions",
+    "text": "4.7 Conclusions\nThis notebook demonstrated the use of MOSAIKS to predict internet access in Togo using satellite imagery features.\nKey Findings:\n\nThe model achieved a good level of predictive performance, indicated by the ROC AUC score.\nSatellite imagery features proved to be valuable predictors of internet access, highlighting their potential for understanding the digital divide.\n\nImplications and Future Directions:\n\nThe insights gained from this analysis can inform policy decisions and interventions aimed at expanding internet access in Togo.\nFurther research could explore the use of other machine learning algorithms and incorporate additional data sources to enhance predictive accuracy.\nThis approach can be extended to other regions and countries to address the global digital divide.\n\nLimitations:\n\nThe model’s performance might vary in different geographical contexts.\nThe accuracy of the predictions depends on the quality and availability of satellite imagery and label data.\nFurther validation and ground-truthing are needed to assess the real-world applicability of the model.\n\nOverall, this demonstration highlights the potential of MOSAIKS and machine learning in bridging the digital divide by providing insights into internet access patterns using satellite imagery.\n\nDescription of exercise\nLink to Google Colab Notebook\nVideo maybe?",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>MOSAIKS Demonstration: Identifying Internet Access in Togo</span>"
+    ]
+  },
+  {
+    "objectID": "mosaiks-demo-1.html#identifying-internet-access-in-togo",
+    "href": "mosaiks-demo-1.html#identifying-internet-access-in-togo",
+    "title": "MOSAIKS Demonstration: Identifying Internet Access in Togo",
+    "section": "4.8 Identifying Internet Access in Togo",
+    "text": "4.8 Identifying Internet Access in Togo\nThis notebook demonstrates the application of Multi-task Observation using Satellite Imagery & Kitchen Sinks (MOSAIKS), a machine learning approach utilizing satellite imagery, to identify areas with and without internet access in Togo. This information can be crucial for understanding the digital divide and informing policies to improve connectivity.",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>MOSAIKS Demonstration: Identifying Internet Access in Togo</span>"
+    ]
+  },
+  {
+    "objectID": "mosaiks-demo-1.html#methodology-1",
+    "href": "mosaiks-demo-1.html#methodology-1",
+    "title": "MOSAIKS Demonstration: Identifying Internet Access in Togo",
+    "section": "4.9 Methodology",
+    "text": "4.9 Methodology\nThe process involves the following steps:\n\nData Acquisition: Label data on internet access is provided by the Agence Togo Digital (ATD). Pre-processed satellite imagery features are derived using the MOSAIKS framework.\nData Preprocessing: The label and feature data are preprocessed and cleaned. This leaves a single dataset with labels and features that is ready to use.\nModel Training and Evaluation: A machine learning model, specifically Ridge Regression with isotonic calibration, is trained on the joined dataset to predict the likelihood of internet access. The model is evaluated using metrics like the Receiver Operating Characteristic Area Under the Curve (ROC AUC).\nVisualization and Interpretation: The model results are visualized using maps and plots. Important features identified by the model are analyzed to understand the patterns associated with internet access.",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>MOSAIKS Demonstration: Identifying Internet Access in Togo</span>"
+    ]
+  },
+  {
+    "objectID": "mosaiks-demo-1.html#setup-1",
+    "href": "mosaiks-demo-1.html#setup-1",
+    "title": "MOSAIKS Demonstration: Identifying Internet Access in Togo",
+    "section": "4.10 Setup",
+    "text": "4.10 Setup\nThis notebook utilizes several key Python libraries:\n\nData Handling and Analysis: pandas and numpy provide fundamental data structures and functions for manipulating and analyzing data. geopandas extends these capabilities to work with geospatial data.\nVisualization: matplotlib.pyplot and seaborn enable the creation of static and interactive visualizations, aiding in data exploration and result presentation.\nMachine Learning: sklearn offers a comprehensive suite of tools for building and evaluating machine learning models, including algorithms like Ridge Regression and methods for data preprocessing.\n\n\nimport os\nimport shutil\nimport numpy as np\nimport pandas as pd\nimport seaborn as sns\nimport geopandas as gpd\nimport matplotlib.pyplot as plt\n\nfrom google.colab import drive\nfrom sklearn.linear_model import RidgeClassifierCV\nfrom sklearn.calibration import IsotonicRegression\nfrom sklearn.metrics import roc_auc_score, roc_curve\nfrom sklearn.model_selection import train_test_split, GridSearchCV",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>MOSAIKS Demonstration: Identifying Internet Access in Togo</span>"
+    ]
+  },
+  {
+    "objectID": "mosaiks-demo-1.html#mounting-google-drive-1",
+    "href": "mosaiks-demo-1.html#mounting-google-drive-1",
+    "title": "MOSAIKS Demonstration: Identifying Internet Access in Togo",
+    "section": "4.11 Mounting Google Drive",
+    "text": "4.11 Mounting Google Drive\nMounting Google Drive in Colab essentially connects your Google Drive storage to the Colab environment. This allows you to access files and folders stored in your Drive directly within your Colab notebook. Think of it as creating a shortcut to your Drive within Colab.\nWhy is this necessary?\nColab notebooks run on temporary virtual machines. Mounting your Drive ensures that you can load and save data to your personal storage, persisting even after the Colab session ends. It also enables seamless access to larger datasets stored in your Drive, which would be impractical to upload directly to Colab.\nAfter mounting Google Drive, we then define the path to the project folder on Google Drive. This directory contains the data files needed for the analysis.\n\ndrive.mount('/content/drive')\n\n\ndrive_directory = os.path.join(\n    \"/\",\n    \"content\",\n    \"drive\",\n    \"Shareddrives\",\n    \"MOSAIKS Workshop\",\n    \"Data\",\n\n)\ndrive_directory",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>MOSAIKS Demonstration: Identifying Internet Access in Togo</span>"
+    ]
+  },
+  {
+    "objectID": "mosaiks-demo-1.html#create-a-local-directory-1",
+    "href": "mosaiks-demo-1.html#create-a-local-directory-1",
+    "title": "MOSAIKS Demonstration: Identifying Internet Access in Togo",
+    "section": "4.12 Create a local directory",
+    "text": "4.12 Create a local directory\nThis section creates a local directory within the Colab environment to store the project data. Data files are copied from the Google Drive directory to this local folder.\nWhy use a local directory?\nAccessing data locally on the Colab virtual machine (VM) significantly improves processing speed compared to reading directly from Google Drive. While copying the data initially takes a bit of time, this is outweighed by the performance gains during analysis.\n\nlocal_dir = \"/content/data/\"\n\nos.makedirs(local_dir, exist_ok=True)\n\nfiles_to_copy = os.path.join(drive_directory, \"survey_data\")\n\nshutil.copytree(files_to_copy, local_dir, dirs_exist_ok=True)\n\nHere we take a look at the contents of the local drive to ensure we have the necessary files copied.\n\n!ls -lh /content/data",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>MOSAIKS Demonstration: Identifying Internet Access in Togo</span>"
+    ]
+  },
+  {
+    "objectID": "mosaiks-demo-1.html#load-in-the-internet-access-label-data-1",
+    "href": "mosaiks-demo-1.html#load-in-the-internet-access-label-data-1",
+    "title": "MOSAIKS Demonstration: Identifying Internet Access in Togo",
+    "section": "4.13 Load in the Internet Access Label Data",
+    "text": "4.13 Load in the Internet Access Label Data\nThis section focuses on loading and preparing the data on internet access in Togo.\nInitial Loading and Column Selection: We will load the data from a file and select the relevant columns, such as internet access status and the satellite features.\nLabel Data Visualization: We produce a bar plot to inspect the distribution of labels and check for any imbalances.\n\ndata = pd.read_feather(os.path.join(local_dir, \"survey_data.feather\"))\ndata\n\n\ndata.groupby('Internet').size().plot(kind='barh', color=sns.palettes.mpl_palette('Dark2'))\nplt.gca().spines[['top', 'right',]].set_visible(False)",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>MOSAIKS Demonstration: Identifying Internet Access in Togo</span>"
+    ]
+  },
+  {
+    "objectID": "mosaiks-demo-1.html#model-training-and-evaluation-1",
+    "href": "mosaiks-demo-1.html#model-training-and-evaluation-1",
+    "title": "MOSAIKS Demonstration: Identifying Internet Access in Togo",
+    "section": "4.14 Model Training and Evaluation",
+    "text": "4.14 Model Training and Evaluation\nThis section focuses on training and evaluating a machine learning model to predict internet access using the prepared data.\n1. Data Preparation:\n\nThe joined dataset is split into features (X) and the target variable (y).\n\nX contains the satellite imagery features, specifically the columns with names starting with ‘X_’.\ny contains the internet access label (1 for internet access, 0 for no access).\n\nThe data is further split into training and testing sets using train_test_split to evaluate the model’s performance on unseen data.\n\n\nfeature_cols = [f\"X_{i}\" for i in range(4000)]\n# feature_cols\n\n\nX = data[feature_cols].values\ny = data[\"Internet\"].values\n\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.2, random_state=1991\n)\n\n2. Model Selection and Training:\n\nA Ridge Regression Classifier model is used for prediction. This model is chosen for its ability to handle high-dimensional data and its robustness to outliers.\n\nRidge Regression is a linear model that adds a penalty term to the loss function, preventing overfitting.\n\nHyperparameter tuning is performed using GridSearchCV to find the best value for the regularization parameter (alpha) of the Ridge Regression model. This helps to optimize the model’s performance.\n\n\nalphas = [0.01, 0.1, 1.0, 10.0]\nridge = RidgeClassifierCV(alphas=alphas, cv=5, scoring='roc_auc')\n\nridge.fit(X_train, y_train)\n\n3. Model Evaluation:\n\nThe trained model is evaluated using the testing set, which was not used during training.\nThe primary evaluation metric is the Receiver Operating Characteristic Area Under the Curve (ROC AUC). This metric measures the model’s ability to distinguish between positive (internet presence) and negative (internet absence) cases.\nThe ROC curve is visualized to provide a graphical representation of the model’s performance across different thresholds.\n\n\ny_pred_uncal = ridge.decision_function(X_test)\n\n# Fit isotonic calibration\niso_reg = IsotonicRegression(out_of_bounds='clip')\niso_reg.fit(y_pred_uncal, y_test)\n\n# Get calibrated predictions\ny_pred_cal = iso_reg.predict(y_pred_uncal)\n\n# Calculate AUC scores\nauc_uncal = roc_auc_score(y_test, y_pred_uncal)\nauc_cal = roc_auc_score(y_test, y_pred_cal)\n\nprint(f\"Best alpha: {ridge.alpha_}\")\nprint(f\"AUC before calibration: {auc_uncal:.3f}\")\nprint(f\"AUC after calibration: {auc_cal:.3f}\")\n\n\n# Calculate ROC curves\nfpr_uncal, tpr_uncal, _ = roc_curve(y_test, y_pred_uncal)\nfpr_cal, tpr_cal, _ = roc_curve(y_test, y_pred_cal)\n\n# Create the plot\nplt.figure(figsize=(5, 5))\n\n# Plot both curves\nplt.plot(fpr_uncal, tpr_uncal, 'b-', label=f'Uncalibrated (AUC = {auc_uncal:.3f})')\nplt.plot(fpr_cal, tpr_cal, 'r-', label=f'Calibrated (AUC = {auc_cal:.3f})')\n\n# Plot the diagonal reference line\nplt.plot([0, 1], [0, 1], 'k--', label='Random')\n\n# Customize the plot\nplt.xlabel('False Positive Rate')\nplt.ylabel('True Positive Rate')\nplt.title('ROC Curves - Before and After Calibration')\nplt.legend(loc='lower right')\nplt.grid(True, alpha=0.3)\n\n# Set the plot limits\nplt.xlim([-0.01, 1.01])\nplt.ylim([-0.01, 1.01])\n\nplt.tight_layout()\nplt.show()\n\n\nimport geopandas as gpd\n\n\nfeatures = pd.read_feather(os.path.join(local_dir, \"TGO_API_features.feather\"))\n\nfeatures = gpd.GeoDataFrame(\n    features,\n    geometry=gpd.points_from_xy(features.Lon, features.Lat),\n    crs=\"EPSG:4326\"\n  )\nfeatures.geometry = features.geometry.buffer(0.005, cap_style=3)\n\nfeatures\n\n\ny_pred_full = ridge.decision_function(features[feature_cols].values)\n\n# y_pred_full_cal = iso_reg.predict(y_pred_full)\n\nfeatures['predicted_probability'] = y_pred_full\nfeatures\n\n\nfeatures[features.predicted_probability &gt; 0].plot(\n    column=\"predicted_probability\",\n    cmap=\"viridis\",\n    legend=True,\n    legend_kwds={'label': \"Predicted Probability\"},\n    figsize=(10, 8)\n)\nplt.title(\"Prediction\")\nplt.xlabel(\"Longitude\")\nplt.ylabel(\"Latitude\")\nplt.show()",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>MOSAIKS Demonstration: Identifying Internet Access in Togo</span>"
+    ]
+  },
+  {
+    "objectID": "mosaiks-demo-1.html#conclusions-1",
+    "href": "mosaiks-demo-1.html#conclusions-1",
+    "title": "MOSAIKS Demonstration: Identifying Internet Access in Togo",
+    "section": "4.15 Conclusions",
+    "text": "4.15 Conclusions\nThis notebook demonstrated the use of MOSAIKS to predict internet access in Togo using satellite imagery features.\nKey Findings:\n\nThe model achieved a good level of predictive performance, indicated by the ROC AUC score.\nSatellite imagery features proved to be valuable predictors of internet access, highlighting their potential for understanding the digital divide.\n\nImplications and Future Directions:\n\nThe insights gained from this analysis can inform policy decisions and interventions aimed at expanding internet access in Togo.\nFurther research could explore the use of other machine learning algorithms and incorporate additional data sources to enhance predictive accuracy.\nThis approach can be extended to other regions and countries to address the global digital divide.\n\nLimitations:\n\nThe model’s performance might vary in different geographical contexts.\nThe accuracy of the predictions depends on the quality and availability of satellite imagery and label data.\nFurther validation and ground-truthing are needed to assess the real-world applicability of the model.\n\nOverall, this demonstration highlights the potential of MOSAIKS and machine learning in bridging the digital divide by providing insights into internet access patterns using satellite imagery.",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>MOSAIKS Demonstration: Identifying Internet Access in Togo</span>"
     ]
   },
   {
@@ -239,7 +425,7 @@
     "href": "labels.html#feature-data",
     "title": "Label Data",
     "section": "Feature data",
-    "text": "Feature data\n\n\n\n\n\n\nCreating satellite image features is covered in later chapters.\n\n\n\n\nRCF brief overview\nMOSAIKS relies on random convolutional features (RCFs) computed from satellite imagery. The random nature of the features means that they are task-agnostic. These features can be reused multiple times to model various tasks. Features are generally created over a standard grid of 0.01 by 0.01 degree cells (~1 km², depending on latitude). The output is a feature vector of length K for every grid location. Depending on the spatial scale and resolution of the label data, subsampling the MOSAIKS grid may be appropriate to reduce computation time and cost.\n\n\n\n\n\n\nFeatures can be computed at higher or lower resolutions than 1 km². This is discussed in 14  Computing Features.\n\n\n\n\n\nFeature aggrgegation\nThe default 1 km² resolution of MOSAIKS is generally the maximum resolution the label data should be in. If the labels are in lower resolution, the satellite features can be aggregated up to larger areas to match. Typical aggregation might be to larger grid cell, census tract, county/district, or state/province levels. The exact aggregation level is contingent on the spatial resolution of the label data.\nAdd feature maps figs\n\n\nAPI Features\nCurrently the MOSAIKS API has a single global set of features that are precalculated and ready to download. This static layer is computed from Planet Labs, Inc. Basemaps product Global Quarterly 2019 (qaurter 3) which has a native resolution of 4.77 m in the red, green, and blue bands of the visual spectrum (see 11  Private Satellites for more details). The features are publicly available for download; this is the fastest and easiest way to begin using MOSAIKS.\nGiven this, the easiest way to get started with MOSAIKS is to have label data for a recent time period (ideally from 2019 for fast changing labels, or a close year for more steady labels). To use MOSAIKS for time series data is possible, just not currently with precomputed and publicly available features. To access API features see 3  Access MOSAIKS\nadd details of api products available (0.1 degree and pop/area weighted etc)",
+    "text": "Feature data\n\n\n\n\n\n\nCreating satellite image features is covered in later chapters.\n\n\n\n\nRCF brief overview\nMOSAIKS relies on random convolutional features (RCFs) computed from satellite imagery. The random nature of the features means that they are task-agnostic. These features can be reused multiple times to model various tasks. Features are generally created over a standard grid of 0.01 by 0.01 degree cells (~1 km², depending on latitude). The output is a feature vector of length K for every grid location. Depending on the spatial scale and resolution of the label data, subsampling the MOSAIKS grid may be appropriate to reduce computation time and cost.\n\n\n\n\n\n\nFeatures can be computed at higher or lower resolutions than 1 km². This is discussed in 14  Computing Features.\n\n\n\n\n\nFeature aggrgegation\nThe default 1 km² resolution of MOSAIKS is generally the maximum resolution the label data should be in. If the labels are in lower resolution, the satellite features can be aggregated up to larger areas to match. Typical aggregation might be to larger grid cell, census tract, county/district, or state/province levels. The exact aggregation level is contingent on the spatial resolution of the label data.\nAdd feature maps figs\n\n\nAPI Features\nCurrently the MOSAIKS API has a single global set of features that are precalculated and ready to download. This static layer is computed from Planet Labs, Inc. Basemaps product Global Quarterly 2019 (qaurter 3) which has a native resolution of 4.77 m in the red, green, and blue bands of the visual spectrum (see 11.8 Private Satellites for more details). The features are publicly available for download; this is the fastest and easiest way to begin using MOSAIKS.\nGiven this, the easiest way to get started with MOSAIKS is to have label data for a recent time period (ideally from 2019 for fast changing labels, or a close year for more steady labels). To use MOSAIKS for time series data is possible, just not currently with precomputed and publicly available features. To access API features see 3  Access MOSAIKS\nadd details of api products available (0.1 degree and pop/area weighted etc)",
     "crumbs": [
       "Label Data"
     ]
@@ -259,7 +445,18 @@
     "href": "labels-100-maps.html",
     "title": "5  What labels work?",
     "section": "",
-    "text": "5.1 100 Maps",
+    "text": "5.1 Overview",
+    "crumbs": [
+      "Label Data",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>What labels work?</span>"
+    ]
+  },
+  {
+    "objectID": "labels-100-maps.html#original-publication",
+    "href": "labels-100-maps.html#original-publication",
+    "title": "5  What labels work?",
+    "section": "5.2 Original publication",
+    "text": "5.2 Original publication\n\nRecap the original 7 outcomes",
     "crumbs": [
       "Label Data",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>What labels work?</span>"
@@ -269,8 +466,8 @@
     "objectID": "labels-100-maps.html#maps",
     "href": "labels-100-maps.html#maps",
     "title": "5  What labels work?",
-    "section": "",
-    "text": "100 Maps results",
+    "section": "5.3 100 maps",
+    "text": "5.3 100 maps\n\n100 Maps results",
     "crumbs": [
       "Label Data",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>What labels work?</span>"
@@ -299,25 +496,36 @@
     ]
   },
   {
+    "objectID": "labels-survey.html",
+    "href": "labels-survey.html",
+    "title": "8  Survey Data",
+    "section": "",
+    "text": "This chapter is in early draft form and may be incomplete.\n\n\n\n\nNotes:\n\nWhy survey data needs it own section\nTypes of survey data\nHow to access survey data\nWorking with survey data\n\nLSMS data\nDHS data\n\nRemote sensing informed survey design",
+    "crumbs": [
+      "Label Data",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Survey Data</span>"
+    ]
+  },
+  {
     "objectID": "mosaiks-demo-2.html",
     "href": "mosaiks-demo-2.html",
-    "title": "8  Demo Number 2",
+    "title": "9  Demo Number 2",
     "section": "",
     "text": "This chapter is in early draft form and may be incomplete.\n\n\n\n\n\nIDK yet",
     "crumbs": [
       "Label Data",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Demo Number 2</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Demo Number 2</span>"
     ]
   },
   {
     "objectID": "interactive-agriculture.html",
     "href": "interactive-agriculture.html",
-    "title": "9  Agriculture example",
+    "title": "10  Agriculture example",
     "section": "",
     "text": "This chapter is in early draft form and may be incomplete.",
     "crumbs": [
       "Label Data",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Agriculture example</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Agriculture example</span>"
     ]
   },
   {
@@ -325,52 +533,139 @@
     "href": "satellite.html",
     "title": "Satellite Imagery",
     "section": "",
-    "text": "Overview\nBlurb about when to think about getting satellite imagery and what considerations need to be made.\nBased on your label resolution, a user needs to decide on:",
+    "text": "Overview\nThis part of the book provides some measure of direction on how to navigate the overwhelming world of satellite imagery. The main focus is how to choose imagery and considerations for proceessing with a focus on using the data in the MOSAIKS framework. However many of the concepts covered will be broadly applicapble to geospatial information science that utilizes remote sensing technologies.",
     "crumbs": [
       "Satellite Imagery"
     ]
   },
   {
-    "objectID": "satellite.html#choosing-imagery",
-    "href": "satellite.html#choosing-imagery",
+    "objectID": "satellite.html#moving-past-the-mosaiks-api",
+    "href": "satellite.html#moving-past-the-mosaiks-api",
     "title": "Satellite Imagery",
-    "section": "Choosing imagery",
-    "text": "Choosing imagery\n\nTime range\nHow long a satellite or satellite constellation have been operating.\n\n\n\nSource: NASA\n\n\n\n\nSensor resolution (pixel size)\nAnother important part of picking the best imagery is the resolution of the satellite sensor. This should be guided by intuition of what scale is necessary for the satellite to detect your labels, as well as availability of imagery. For example, tree cover may not require the same resolution of imagery to detect effectively as crop yield.\n\n\n\nSource: Radiant Earth\n\n\n\n\nSpectral resolution (EM range)\nThe avaialable electromagnetic radiation spectrum of the sensor\n\n\n\nSource: Radiant Earth\n\n\n\n\nTemporal resolution (revisit rate)\nSingle satellite revisit vs constellations\n\n\n\nSource: Radiant Earth\n\n\n\n\nCloud cover\nData quality can also be affected by cloud cover. This may affect your choice of satellite. For instance, if you require monthly features, the slower revisit time of Landsat may mean many months will lack coverage due to cloud cover limiting your ability to create high quality features.\n\n\nSensor Type\nActive vs passive sensors\nVisual range, NIR, etc - surface reflectance\nSAR, night/day clouds ok\n\n\n\nSource: Radiant Earth\n\n\nnote: find a place for this text, taken out of labels section from Togo doc\nHowever, satellite features can be created at varying temporal scales. Publicly available satellite imagery such as Landsat and Sentinel offer a rich time series, but their use with MOSAIKS will require custom feature generation. The label data’s timestep will play an important role in determining the satellite imagery required for computing features.\nThe simplest implementation uses composite satellite images that are highly processed to remove clouds and low quality pixels, and is often normalized and color balanced. This is available directly on the MOSAIKS API.",
+    "section": "Moving past the MOSAIKS API",
+    "text": "Moving past the MOSAIKS API\nBlurb about when to think about getting satellite imagery (i.e. when are API features no longer enough).\nBit of info on why EO satellites are needed, what they have been used for, and what they could be used for.",
     "crumbs": [
       "Satellite Imagery"
     ]
   },
   {
-    "objectID": "satellite-public.html",
-    "href": "satellite-public.html",
-    "title": "10  Public Satellites",
-    "section": "",
-    "text": "This chapter is in early draft form and may be incomplete.\n\n\n\n\n\nSentinel-1\nSentinel-2\nLandsat 8\nMODIS\nVIIRS\nASTER",
+    "objectID": "satellite.html#section-outline",
+    "href": "satellite.html#section-outline",
+    "title": "Satellite Imagery",
+    "section": "Section Outline",
+    "text": "Section Outline\n\nWhat considerations need to be made when choosing imagery.\nHow to process satellite imagery",
     "crumbs": [
-      "Satellite Imagery",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Public Satellites</span>"
+      "Satellite Imagery"
     ]
   },
   {
-    "objectID": "satellite-private.html",
-    "href": "satellite-private.html",
-    "title": "11  Private Satellites",
+    "objectID": "satellite-imagery.html",
+    "href": "satellite-imagery.html",
+    "title": "11  Choosing Imagery",
     "section": "",
-    "text": "This chapter is in early draft form and may be incomplete.\n\n\n\n\n\nWorldView\nPlanet\n\nSkySat\nRapidEye\n\n\na",
+    "text": "11.1 Time range\nBased on your label resolution, a user needs to decide on:\nHow long a satellite or satellite constellation have been operating.",
     "crumbs": [
       "Satellite Imagery",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Private Satellites</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Choosing Imagery</span>"
+    ]
+  },
+  {
+    "objectID": "satellite-imagery.html#time-range",
+    "href": "satellite-imagery.html#time-range",
+    "title": "11  Choosing Imagery",
+    "section": "",
+    "text": "Source: NASA",
+    "crumbs": [
+      "Satellite Imagery",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Choosing Imagery</span>"
+    ]
+  },
+  {
+    "objectID": "satellite-imagery.html#sensor-resolution-pixel-size",
+    "href": "satellite-imagery.html#sensor-resolution-pixel-size",
+    "title": "11  Choosing Imagery",
+    "section": "11.2 Sensor resolution (pixel size)",
+    "text": "11.2 Sensor resolution (pixel size)\nAnother important part of picking the best imagery is the resolution of the satellite sensor. This should be guided by intuition of what scale is necessary for the satellite to detect your labels, as well as availability of imagery. For example, tree cover may not require the same resolution of imagery to detect effectively as crop yield.\n\n\n\nSource: Radiant Earth",
+    "crumbs": [
+      "Satellite Imagery",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Choosing Imagery</span>"
+    ]
+  },
+  {
+    "objectID": "satellite-imagery.html#spectral-resolution-em-range",
+    "href": "satellite-imagery.html#spectral-resolution-em-range",
+    "title": "11  Choosing Imagery",
+    "section": "11.3 Spectral resolution (EM range)",
+    "text": "11.3 Spectral resolution (EM range)\nThe avaialable electromagnetic radiation spectrum of the sensor\n\n\n\nSource: Radiant Earth",
+    "crumbs": [
+      "Satellite Imagery",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Choosing Imagery</span>"
+    ]
+  },
+  {
+    "objectID": "satellite-imagery.html#temporal-resolution-revisit-rate",
+    "href": "satellite-imagery.html#temporal-resolution-revisit-rate",
+    "title": "11  Choosing Imagery",
+    "section": "11.4 Temporal resolution (revisit rate)",
+    "text": "11.4 Temporal resolution (revisit rate)\nSingle satellite revisit vs constellations\n\n\n\nSource: Radiant Earth",
+    "crumbs": [
+      "Satellite Imagery",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Choosing Imagery</span>"
+    ]
+  },
+  {
+    "objectID": "satellite-imagery.html#cloud-cover",
+    "href": "satellite-imagery.html#cloud-cover",
+    "title": "11  Choosing Imagery",
+    "section": "11.5 Cloud cover",
+    "text": "11.5 Cloud cover\nData quality can also be affected by cloud cover. This may affect your choice of satellite. For instance, if you require monthly features, the slower revisit time of Landsat may mean many months will lack coverage due to cloud cover limiting your ability to create high quality features.",
+    "crumbs": [
+      "Satellite Imagery",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Choosing Imagery</span>"
+    ]
+  },
+  {
+    "objectID": "satellite-imagery.html#sensor-type",
+    "href": "satellite-imagery.html#sensor-type",
+    "title": "11  Choosing Imagery",
+    "section": "11.6 Sensor Type",
+    "text": "11.6 Sensor Type\nActive vs passive sensors\nVisual range, NIR, etc - surface reflectance\nSAR, night/day clouds ok\n\n\n\nSource: Radiant Earth",
+    "crumbs": [
+      "Satellite Imagery",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Choosing Imagery</span>"
+    ]
+  },
+  {
+    "objectID": "satellite-imagery.html#sec-satellite-public",
+    "href": "satellite-imagery.html#sec-satellite-public",
+    "title": "11  Choosing Imagery",
+    "section": "11.7 Public Satellites",
+    "text": "11.7 Public Satellites\n\nSentinel-1\nSentinel-2\nLandsat 8\nMODIS\nVIIRS\nASTER",
+    "crumbs": [
+      "Satellite Imagery",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Choosing Imagery</span>"
+    ]
+  },
+  {
+    "objectID": "satellite-imagery.html#sec-satellite-private",
+    "href": "satellite-imagery.html#sec-satellite-private",
+    "title": "11  Choosing Imagery",
+    "section": "11.8 Private Satellites",
+    "text": "11.8 Private Satellites\n\nWorldView\nPlanet\n\nSkySat\nRapidEye\n\n\nnote: find a place for this text, taken out of labels section from Togo doc\nHowever, satellite features can be created at varying temporal scales. Publicly available satellite imagery such as Landsat and Sentinel offer a rich time series, but their use with MOSAIKS will require custom feature generation. The label data’s timestep will play an important role in determining the satellite imagery required for computing features.\nThe simplest implementation uses composite satellite images that are highly processed to remove clouds and low quality pixels, and is often normalized and color balanced. This is available directly on the MOSAIKS API.",
+    "crumbs": [
+      "Satellite Imagery",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Choosing Imagery</span>"
     ]
   },
   {
     "objectID": "satellite-processing.html",
     "href": "satellite-processing.html",
-    "title": "12  Processing Satellite Data",
+    "title": "12  Processing Imagery",
     "section": "",
     "text": "This chapter is in early draft form and may be incomplete.\n\n\n\n\n\nDownload vs cloud processing",
     "crumbs": [
       "Satellite Imagery",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Processing Satellite Data</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Processing Imagery</span>"
     ]
   },
   {

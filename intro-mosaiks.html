@@ -40,7 +40,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-94d0c0e6450d311653f472ab941817c1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-de088222b6e44666c18748040eb825c3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -132,7 +132,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./intro-compute.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Compute Setup</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Compute setup</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -150,7 +150,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./mosaiks-demo-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Demonstration of MOSAIKS</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">MOSAIKS Demonstration: Identifying Internet Access in Togo</span></span></a>
   </div>
 </li>
       </ul>
@@ -184,14 +184,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./labels-survey.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Survey Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./mosaiks-demo-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Demo Number 2</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Demo Number 2</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./interactive-agriculture.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Agriculture example</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Agriculture example</span></span></a>
   </div>
 </li>
       </ul>
@@ -207,20 +213,14 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./satellite-public.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Public Satellites</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./satellite-private.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Private Satellites</span></span></a>
+  <a href="./satellite-imagery.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Choosing Imagery</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./satellite-processing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Processing Satellite Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Processing Imagery</span></span></a>
   </div>
 </li>
       </ul>
@@ -316,7 +316,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#how-mosaiks-works" id="toc-how-mosaiks-works" class="nav-link active" data-scroll-target="#how-mosaiks-works"><span class="header-section-number">2.1</span> How MOSAIKS works</a></li>
+  <li><a href="#the-challenge" id="toc-the-challenge" class="nav-link active" data-scroll-target="#the-challenge"><span class="header-section-number">2.1</span> The challenge</a></li>
+  <li><a href="#the-solution" id="toc-the-solution" class="nav-link" data-scroll-target="#the-solution"><span class="header-section-number">2.2</span> The solution</a></li>
+  <li><a href="#how-mosaiks-works" id="toc-how-mosaiks-works" class="nav-link" data-scroll-target="#how-mosaiks-works"><span class="header-section-number">2.3</span> How MOSAIKS works</a>
+  <ul class="collapse">
+  <li><a href="#five-steps-to-using-mosaiks" id="toc-five-steps-to-using-mosaiks" class="nav-link" data-scroll-target="#five-steps-to-using-mosaiks"><span class="header-section-number">2.3.1</span> Five steps to using MOSAIKS</a></li>
+  </ul></li>
+  <li><a href="#what-can-mosaiks-predict" id="toc-what-can-mosaiks-predict" class="nav-link" data-scroll-target="#what-can-mosaiks-predict"><span class="header-section-number">2.4</span> What can MOSAIKS predict?</a>
+  <ul class="collapse">
+  <li><a href="#building-understanding" id="toc-building-understanding" class="nav-link" data-scroll-target="#building-understanding"><span class="header-section-number">2.4.1</span> Building understanding</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/edit/main/intro-mosaiks.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -367,9 +376,14 @@ MOSAIKS
 <p><strong><ins>M</ins>ulti-task <ins>O</ins>bservation using <ins>SA</ins>tellite <ins>I</ins>magery &amp; <ins>K</ins>itchen <ins>S</ins>inks</strong></p>
 </div>
 </div>
+<section id="the-challenge" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="the-challenge"><span class="header-section-number">2.1</span> The challenge</h2>
 <p>Right now, <a href="https://www.ucsusa.org/resources/satellite-database#.VF_jIlPF8Wg" target="_blank">numerous public satellite systems</a> collect huge amounts of data about the world every day. But there is so much imagery (terabytes per day) that it’s overwhelming to sort through by hand; and it’s too complex and unstructured to be usable in its raw form for most applications.</p>
 <p>That is why linking satellite imaging to machine learning (SIML) is incredibly powerful. It enables vast amounts of unstructured image data to be transformed into structured information that can immediately be used for planning, research, and decision-making.</p>
 <p><strong>We believe that people all over the world should be able to access SIML technologies</strong>, but we also recognize that most people who would benefit the most from these tools don’t have the time or resources to manage enormous satellite imagery data sets and learn how to apply machine learning to them.</p>
+</section>
+<section id="the-solution" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="the-solution"><span class="header-section-number">2.2</span> The solution</h2>
 <p>That’s why we developed MOSAIKS.</p>
 <p>MOSAIKS is designed to work “out of the box” for a wide array of SIML applications, for people with no SIML expertise who work on normal desktop computers. MOSAIKS users never actually have to touch satellite imagery themselves and only need to have basic statistical training.</p>
 <div class="callout callout-style-simple callout-none no-icon">
@@ -385,11 +399,14 @@ MOSAIKS
 <p>MOSAIKS empowers users to create their own new data sets from satellite imagery. We don’t control what variables users look at, and we never need to know. MOSAIKS is a system that allows users to quickly transform vast amounts of imagery into maps of new variables, using their own training data.</p>
 <p>If you’ve ever been curious about trying machine learning with satellite imagery, but don’t know anything about machine learning or satellite imagery, MOSAIKS is for you.</p>
 <p>And if you know a lot about machine learning and satellite imagery, MOSAIKS might still be for you, since it <a href="https://www.nature.com/articles/s41467-021-24638-z/figures/3" target="_blank">performs competitively with deep learning methods</a> but is much simpler and cheaper to use.</p>
-<section id="how-mosaiks-works" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="how-mosaiks-works"><span class="header-section-number">2.1</span> How MOSAIKS works</h2>
+</section>
+<section id="how-mosaiks-works" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="how-mosaiks-works"><span class="header-section-number">2.3</span> How MOSAIKS works</h2>
 <p>The basic idea of MOSAIKS is to seperate users from the costly and difficult process of transforming imagery into inputs (called <strong>“features”</strong>) for a machine learning algorithm (<strong>images → X</strong>). We do that part, so users never have to download or manage imagery. Users then download a table of MOSAIKS features (<strong>X</strong>), link them to their own geocoded data on the outcome (<strong>Y</strong>) they are interested in (called “labels”) and run a linear regression to predict their labels using MOSAIKS features (<strong>Y = Xβ</strong>).</p>
 <p>All users use the same MOSAIKS features and just match them to their labels based on location. Users can run their analysis on any statistical software they are comfortable with. For most applications, the computing demands will not require users to work with specialized machines, since desktops and laptops work.</p>
-<p>MOSAIKS works because MOSAIKS features captures a huge amount of information about the colors, patterns and textures that show up in satellite imagery. We don’t know what patterns/colors/textures will be important for the application that users have (since we don’t know what applications users will try), so we just try to capture all of them. The purpose of the regression step is to teach the model which patterns/colors/textures predict the labels, and then to use that understanding to make predictions in locations where users don’t have labels. In addition, MOSAIKS encodes image information in a way that allows for nonlinear relationships between labels and images, even though the regression that users implement is a linear regression.</p>
+<p>MOSAIKS works because MOSAIKS features capture a huge amount of information about the colors, patterns and textures that show up in satellite imagery. We don’t know what patterns/colors/textures will be important for the application that users have (since we don’t know what applications users will try), so we just try to capture all of them. The purpose of the regression step is to teach the model which patterns/colors/textures predict the labels, and then to use that understanding to make predictions in locations where users don’t have labels. In addition, MOSAIKS encodes image information in a way that allows for nonlinear relationships between labels and images, even though the regression that users implement is a linear regression.</p>
+<section id="five-steps-to-using-mosaiks" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="five-steps-to-using-mosaiks"><span class="header-section-number">2.3.1</span> Five steps to using MOSAIKS</h3>
 <p>For users, the procedure for using MOSAIKS has five steps (corresponding figure from Rolf et al.&nbsp;is below):</p>
 <ol type="1">
 <li><p><a href="https://api.mosaiks.org/" target="_blank">Download MOSAIKS features</a> (<strong>X</strong>) in the areas where you have labels.</p></li>
@@ -404,17 +421,55 @@ MOSAIKS
 <figcaption><a href="https://www.nature.com/articles/s41467-021-24638-z/figures/1" target="_blank">Rolf et al.&nbsp;2021 Figure 1</a></figcaption>
 </figure>
 </div>
-<p>We’ve found that MOSAIKS works well across diverse prediction tasks (e.g.&nbsp;forest cover, house price, population, road length, elevation, income) and it achieves accuracy competitive with deep neural networks at orders of magnitude lower computational cost.</p>
+</section>
+</section>
+<section id="what-can-mosaiks-predict" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="what-can-mosaiks-predict"><span class="header-section-number">2.4</span> What can MOSAIKS predict?</h2>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>This question is answered in greater detail in <a href="labels-100-maps.html" class="quarto-xref"><span>Chapter 5</span></a></p>
+</div>
+</div>
+</div>
+<p>MOSAIKS has been successfully used to predict a wide range of outcomes including:</p>
+<ul>
+<li>Environmental conditions (forest cover, elevation)</li>
+<li>Population patterns (density, nighttime lights)</li>
+<li>Economic indicators (income, house prices)</li>
+<li>Infrastructure (road networks)</li>
+</ul>
+<p>The figure below is from the original MOSAIKS publication (Rolf et al.&nbsp;2021). The left maps show the input labels. The right map shows the modeled predictions. The scatter plot shows the modeled predictions against the true labels and reports the coefficient of determination (R²) as a measure of performance.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/rolf_et_al_2021-Fig_2.png" class="img-fluid figure-img"></p>
 <figcaption><a href="https://www.nature.com/articles/s41467-021-24638-z/figures/2" target="_blank">Rolf et al.&nbsp;2021 Figure 2</a></figcaption>
 </figure>
 </div>
+<p>Importantly, all these predictions use the same set of satellite features - there’s no need to reprocess the imagery for different tasks. MOSAIKS achieves accuracy comparable to more complex deep learning methods, but at a fraction of the computational cost. This is the power of MOSAIKS, it removes the need for repreocessing the imagery after the initial encoding.</p>
+<section id="building-understanding" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="building-understanding"><span class="header-section-number">2.4.1</span> Building understanding</h3>
 <p>If you are interested in using MOSAIKS, you can also see our <a href="https://youtu.be/ux2c-ot3Ce0?feature=shared" target="_blank">tutorial</a> and <a href="https://www.dropbox.com/scl/fi/m46kn8jvnab5cra5e9ebz/NBER_MOSAIKS_2021.pdf?rlkey=xsi0fyg4dksugzwcgqslz4vu2&amp;e=1&amp;dl=0" target="_blank">slide deck</a>. And if you have a little bit of time, we recommend reading the <a href="https://www.nature.com/articles/s41467-021-24638-z" target="_blank">paper</a> we wrote when we introduced the system. We wrote it with users in mind, so we tried to make it as clear and accessible as possible.</p>
 <p>If you use MOSAIKS, please reference: <a href="https://www.nature.com/articles/s41467-021-24638-z" target="_blank">Rolf et al.&nbsp;“A generalizable and accessible approach to machine learning with global satellite imagery.” Nature Communications (2021).</a></p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Looking forward
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In the next chapter we will demonstrate MOSAIKS with real data.</p>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -837,8 +892,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./intro-compute.html" class="pagination-link" aria-label="Compute Setup">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Compute Setup</span></span>
+      <a href="./intro-compute.html" class="pagination-link" aria-label="Compute setup">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Compute setup</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

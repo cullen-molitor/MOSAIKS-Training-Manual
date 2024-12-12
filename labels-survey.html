@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>10&nbsp; Public Satellites – MOSAIKS Training Manual</title>
+<title>8&nbsp; Survey Data – MOSAIKS Training Manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./satellite-private.html" rel="next">
-<link href="./satellite.html" rel="prev">
+<link href="./mosaiks-demo-2.html" rel="next">
+<link href="./labels-data-prep.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -40,7 +40,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-94d0c0e6450d311653f472ab941817c1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-de088222b6e44666c18748040eb825c3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -81,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./satellite.html">Satellite Imagery</a></li><li class="breadcrumb-item"><a href="./satellite-public.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Public Satellites</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./labels.html">Label Data</a></li><li class="breadcrumb-item"><a href="./labels-survey.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Survey Data</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -132,7 +132,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./intro-compute.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Compute Setup</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Compute setup</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -150,7 +150,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./mosaiks-demo-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Demonstration of MOSAIKS</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">MOSAIKS Demonstration: Identifying Internet Access in Togo</span></span></a>
   </div>
 </li>
       </ul>
@@ -184,14 +184,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./labels-survey.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Survey Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./mosaiks-demo-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Demo Number 2</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Demo Number 2</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./interactive-agriculture.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Agriculture example</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Agriculture example</span></span></a>
   </div>
 </li>
       </ul>
@@ -207,20 +213,14 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./satellite-public.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Public Satellites</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./satellite-private.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Private Satellites</span></span></a>
+  <a href="./satellite-imagery.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Choosing Imagery</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./satellite-processing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Processing Satellite Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Processing Imagery</span></span></a>
   </div>
 </li>
       </ul>
@@ -317,9 +317,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./satellite.html">Satellite Imagery</a></li><li class="breadcrumb-item"><a href="./satellite-public.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Public Satellites</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./labels.html">Label Data</a></li><li class="breadcrumb-item"><a href="./labels-survey.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Survey Data</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Public Satellites</span></h1>
+<h1 class="title"><span id="sec-labels-survey" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Survey Data</span></span></h1>
 </div>
 
 
@@ -348,13 +348,17 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
+<p>Notes:</p>
 <ul>
-<li><a href="https://sentinel.esa.int/web/sentinel/missions/sentinel-1" target="_blank">Sentinel-1</a></li>
-<li><a href="https://sentinel.esa.int/web/sentinel/missions/sentinel-2" target="_blank">Sentinel-2</a></li>
-<li><a href="https://www.usgs.gov/land-resources/nli/landsat/landsat-8" target="_blank">Landsat 8</a></li>
-<li><a href="https://modis.gsfc.nasa.gov/" target="_blank">MODIS</a></li>
-<li><a href="https://www.ngdc.noaa.gov/eog/viirs/download_dnb_composites.html" target="_blank">VIIRS</a></li>
-<li><a href="https://asterweb.jpl.nasa.gov/" target="_blank">ASTER</a></li>
+<li>Why survey data needs it own section</li>
+<li>Types of survey data</li>
+<li>How to access survey data</li>
+<li>Working with survey data
+<ul>
+<li>LSMS data</li>
+<li>DHS data</li>
+</ul></li>
+<li>Remote sensing informed survey design</li>
 </ul>
 
 
@@ -779,13 +783,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./satellite.html" class="pagination-link" aria-label="Satellite Imagery">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Satellite Imagery</span>
+      <a href="./labels-data-prep.html" class="pagination-link" aria-label="Preparing labels">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Preparing labels</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./satellite-private.html" class="pagination-link" aria-label="Private Satellites">
-        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Private Satellites</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./mosaiks-demo-2.html" class="pagination-link" aria-label="Demo Number 2">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Demo Number 2</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -797,7 +801,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/edit/main/satellite-public.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/edit/main/labels-survey.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>

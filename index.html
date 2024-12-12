@@ -42,7 +42,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-94d0c0e6450d311653f472ab941817c1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-de088222b6e44666c18748040eb825c3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -134,7 +134,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./intro-compute.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Compute Setup</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Compute setup</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -152,7 +152,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./mosaiks-demo-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Demonstration of MOSAIKS</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">MOSAIKS Demonstration: Identifying Internet Access in Togo</span></span></a>
   </div>
 </li>
       </ul>
@@ -186,14 +186,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./labels-survey.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Survey Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./mosaiks-demo-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Demo Number 2</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Demo Number 2</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./interactive-agriculture.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Agriculture example</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Agriculture example</span></span></a>
   </div>
 </li>
       </ul>
@@ -209,20 +215,14 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./satellite-public.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Public Satellites</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./satellite-private.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Private Satellites</span></span></a>
+  <a href="./satellite-imagery.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Choosing Imagery</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./satellite-processing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Processing Satellite Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Processing Imagery</span></span></a>
   </div>
 </li>
       </ul>
@@ -318,7 +318,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a></li>
+  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a>
+  <ul class="collapse">
+  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -387,28 +390,62 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>This is the first ever MOSAIKS Training Course! This book will serve as a reference for learning what MOSAIKS is and what it can be used for, along with practical guidance for using it.</p>
+<p>This is the first iteration of the MOSAIKS Training Manual! The manual serves as a comprehensive reference for understanding MOSAIKS, its capabilities, and practical implementation guidance.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/mosaiks-in-landsat.png" class="img-fluid figure-img"></p>
 <figcaption>Made with: <a href="https://landsat.gsfc.nasa.gov/apps/YourNameInLandsat-main/" target="_blank">Your Name in Landsat</a></figcaption>
 </figure>
 </div>
-<p>MOSAIKS stands for <strong><ins>M</ins>ulti-task <ins>O</ins>bservation using <ins>SA</ins>tellite <ins>I</ins>magery &amp; <ins>K</ins>itchen <ins>S</ins>inks</strong>. It is a framework that aims to simplify using satellite imagery and machine learning to answer questions about socioeconomic and environmental outcomes across different geographic contexts and time periods.</p>
-<p>This comprehensive two-week program is designed for academics, professionals, and policy makers interested in leveraging MOSAIKS to better understand socioeconomic and environmental problems.</p>
-<p>This course covers the fundamentals of working with MOSAIKS, from basic concepts to advanced applications. The training is particularly suited for those working in:</p>
+<p>MOSAIKS stands for <strong><ins>M</ins>ulti-task <ins>O</ins>bservation using <ins>SA</ins>tellite <ins>I</ins>magery &amp; <ins>K</ins>itchen <ins>S</ins>inks</strong>. It is a framework designed to simplify the use of satellite imagery and machine learning for analyzing socioeconomic and environmental outcomes across different geographic contexts and time periods.</p>
+<p>This comprehensive two-week program is designed for academics, professionals, and policymakers interested in leveraging MOSAIKS to better understand socioeconomic and environmental challenges. The course is particularly valuable for those working in:</p>
 <ul>
 <li>Remote sensing and satellite imagery analysis</li>
 <li>Machine learning applications with geospatial data</li>
 <li>Agricultural monitoring and assessment</li>
 <li>Development research and policy making</li>
 </ul>
-<p>Throughout this course, you’ll learn practical applications of MOSAIKS in real-world scenarios. Additionaly we will cover the basics of satellite imagery processing, MOSAIKS feature extraction, uncertainty quantification, and additional topics. We’ll combine theoretical knowledge with hands-on exercises, ensuring you gain both conceptual understanding and practical experience.</p>
-<p>The curriculum includes working with various data sources, accessing the MOSAIKS API, processing satellite imagery, understanding Random Convolutional Features (RCFs), implementing machine learning models, interpreting results, and applying predictive models in various contexts.</p>
-<p>You will also explore important considerations in using MOSAIKS for survey data, particularly relevant for development research applications.</p>
-<p>Whether you’re new to MOSAIKS or looking to deepen your expertise, this course will provide you with the tools and knowledge needed to effectively utilize this powerful framework in your work.</p>
+<p>Throughout this course, you’ll learn practical applications through a combination of:</p>
+<ul>
+<li>Theoretical foundations and conceptual understanding</li>
+<li>Hands-on exercises with real-world data</li>
+<li>Best practices for implementation</li>
+<li>Strategies for analyzing and interpreting results</li>
+</ul>
+<p>The curriculum covers the complete MOSAIKS workflow:</p>
+<ul>
+<li>Accessing and processing satellite imagery</li>
+<li>Understanding MOSAIKS feature extraction</li>
+<li>Working with the MOSAIKS API</li>
+<li>Implementing machine learning models</li>
+<li>Quantifying and communicating uncertainty</li>
+<li>Applying models to various contexts</li>
+<li>Working with survey data</li>
+</ul>
+<p>Whether you’re new to MOSAIKS or looking to deepen your expertise, this course provides the tools and knowledge needed to effectively utilize this powerful framework.</p>
+<section id="acknowledgements" class="level2">
+<h2 class="anchored" data-anchor-id="acknowledgements">Acknowledgements</h2>
+<p>MOSAIKS was developed and is supported by researchers across multiple partner organizations:</p>
+<p><strong>Core Team:</strong></p>
+<p>Benjamin Recht, Esther Rolf, Tamma Carleton, Eugenio Noda, Hikari Murayama, Hannah Druckenmiller, Ian Bolliger, Jeanette Tseng, Jessica Katz, Jonathan Proctor, Luke Sherman, Miyabi Ishihara, Simon Greenhill, Solomon Hsiang, Taryn Fransen, Trinetta Chong, Vaishaal Shankar, Graeme Blair, Darin Christensen, Shopnavo Biswas, Karena Yan, Cullen Molitor, Grace Lewin, Steven Cognac, Juliet Cohen</p>
+<p><strong>Partner Organizations:</strong></p>
+<ul>
+<li>Center for Effective Global Action (<a href="https://cega.berkeley.edu/" target="_blank">CEGA</a>; UCB)</li>
+<li>Environmental Markets Lab (<a href="https://emlab.ucsb.edu/" target="_blank">emLab</a>; UCSB)</li>
+<li>Global Policy Lab (<a href="https://www.globalpolicy.science/" target="_blank">GPL</a>; Stanford University)</li>
+<li>Harvard Data Science Initiative (<a href="https://datascience.harvard.edu/" target="_blank">HDSI</a>; Harvard University)</li>
+<li>Project on Resources and Governance (<a href="https://projectrg.org/" target="_blank">PRG</a>; UCLA)</li>
+<li>Master of Environmental Data Science Program (<a href="https://bren.ucsb.edu/masters-programs/master-environmental-data-science" target="_blank">MEDS</a>; UCSB)</li>
+</ul>
+<p><strong>Funding Support:</strong></p>
+<ul>
+<li><a href="https://www.mcgovern.org/" target="_blank">The Patrick J. McGovern Foundation</a></li>
+<li><a href="https://www.usaid.gov/" target="_blank">The United States Agency for International Development (USAID)</a></li>
+<li><a href="https://www.undp.org/" target="_blank">United Nations Development Programme (UNDP)</a></li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
