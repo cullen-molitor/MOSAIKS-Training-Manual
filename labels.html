@@ -438,7 +438,7 @@ Figure&nbsp;1: Examples of label data formats that can be easily integrated into
 </div>
 <section id="rcf-brief-overview" class="level3">
 <h3 class="anchored" data-anchor-id="rcf-brief-overview">RCF brief overview</h3>
-<p>MOSAIKS relies on random convolutional features (RCFs) computed from satellite imagery. The random nature of the features means that they are task-agnostic. These features can be reused multiple times to model various tasks. Features are generally created over a standard grid of 0.01 by 0.01 degree cells (~1 km², depending on latitude). The output is a feature vector of length <em>K</em> for every grid location. Depending on the spatial scale and resolution of the label data, subsampling the MOSAIKS grid may be appropriate to reduce computation time and cost.</p>
+<p>MOSAIKS relies on random convolutional features (RCFs) computed from satellite imagery. The random nature of the features means that they are task-agnostic. These features can be reused multiple times to model various tasks. Features are generally created over a standard grid of 0.01 by 0.01 degree cells (~1 km², depending on latitude). The output is a feature vector of length <em>K</em> for every grid location.</p>
 <div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -453,13 +453,6 @@ Figure&nbsp;1: Examples of label data formats that can be easily integrated into
 <section id="feature-aggrgegation" class="level3">
 <h3 class="anchored" data-anchor-id="feature-aggrgegation">Feature aggrgegation</h3>
 <p>The default 1 km² resolution of MOSAIKS is generally the maximum resolution the label data should be in. If the labels are in lower resolution, the satellite features can be aggregated up to larger areas to match. Typical aggregation might be to larger grid cell, census tract, county/district, or state/province levels. The exact aggregation level is contingent on the spatial resolution of the label data.</p>
-<p><strong>Add feature maps figs</strong></p>
-</section>
-<section id="api-features" class="level3">
-<h3 class="anchored" data-anchor-id="api-features">API Features</h3>
-<p>Currently the MOSAIKS API has a single global set of features that are precalculated and ready to download. This static layer is computed from Planet Labs, Inc.&nbsp;<a href="https://developers.planet.com/docs/basemaps/" target="_blank">Basemaps</a> product Global Quarterly 2019 (qaurter 3) which has a native resolution of 4.77 m in the red, green, and blue bands of the visual spectrum (see <a href="satellite-imagery.html#sec-satellite-private" class="quarto-xref"><span>11.8 Private Satellites</span></a> for more details). The features are publicly available for download; this is the fastest and easiest way to begin using MOSAIKS.</p>
-<p>Given this, the easiest way to get started with MOSAIKS is to have label data for a recent time period (ideally from 2019 for fast changing labels, or a close year for more steady labels). To use MOSAIKS for time series data is possible, just not currently with precomputed and publicly available features. To access API features see <a href="intro-api.html" class="quarto-xref"><span>3&nbsp; Access MOSAIKS</span></a></p>
-<p><strong>add details</strong> of api products available (0.1 degree and pop/area weighted etc)</p>
 <div id="fig-feature-aggregation" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-feature-aggregation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -470,6 +463,12 @@ Figure&nbsp;2: Examples of 3 representative random convolutional features (downl
 </figcaption>
 </figure>
 </div>
+</section>
+<section id="api-features" class="level3">
+<h3 class="anchored" data-anchor-id="api-features">API Features</h3>
+<p>Currently the MOSAIKS API has a single global set of features that are precalculated and ready to download. This static layer is computed from Planet Labs, Inc.&nbsp;<a href="https://developers.planet.com/docs/basemaps/" target="_blank">Basemaps</a> product Global Quarterly 2019 (qaurter 3) which has a native resolution of 4.77 m in the red, green, and blue bands of the visual spectrum (see <a href="satellite-imagery.html#sec-satellite-private" class="quarto-xref"><span>11.8 Private Satellites</span></a> for more details). The features are publicly available for download; this is the fastest and easiest way to begin using MOSAIKS.</p>
+<p>Given this, the easiest way to get started with MOSAIKS is to have label data for a recent time period (ideally from 2019 for fast changing labels, or a close year for more steady labels). To use MOSAIKS for time series data is possible, just not currently with precomputed and publicly available features. To access API features see <a href="intro-api.html" class="quarto-xref"><span>3&nbsp; Access MOSAIKS</span></a></p>
+<p><strong>add details</strong> of api products available (0.1 degree and pop/area weighted etc)</p>
 </section>
 </section>
 <section id="joining-data" class="level2">

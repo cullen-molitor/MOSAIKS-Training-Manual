@@ -229,84 +229,7 @@
     "href": "mosaiks-demo-1.html",
     "title": "4  Try MOSAIKS",
     "section": "",
-    "text": "4.1 Identifying Internet Access in Togo\nFor instruction on how to use Google Colab, please refer to Chapter 1\nThis notebook demonstrates the application of Multi-task Observation using Satellite Imagery & Kitchen Sinks (MOSAIKS), a machine learning approach utilizing satellite imagery, to identify areas with and without internet access in Togo. This information can be crucial for understanding the digital divide and informing policies to improve connectivity.",
-    "crumbs": [
-      "Introduction",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Try MOSAIKS</span>"
-    ]
-  },
-  {
-    "objectID": "mosaiks-demo-1.html#methodology",
-    "href": "mosaiks-demo-1.html#methodology",
-    "title": "4  Try MOSAIKS",
-    "section": "4.2 Methodology",
-    "text": "4.2 Methodology\nThe process involves the following steps:\n\nData Acquisition: Label data on internet access is provided by the Agence Togo Digital (ATD). Pre-processed satellite imagery features are derived using the MOSAIKS framework.\nData Preprocessing: The label and feature data are preprocessed and cleaned. This leaves a single dataset with labels and features that is ready to use.\nModel Training and Evaluation: A machine learning model, specifically Ridge Regression with isotonic calibration, is trained on the joined dataset to predict the likelihood of internet access. The model is evaluated using metrics like the Receiver Operating Characteristic Area Under the Curve (ROC AUC).\nVisualization and Interpretation: The model results are visualized using maps and plots. Important features identified by the model are analyzed to understand the patterns associated with internet access.",
-    "crumbs": [
-      "Introduction",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Try MOSAIKS</span>"
-    ]
-  },
-  {
-    "objectID": "mosaiks-demo-1.html#setup",
-    "href": "mosaiks-demo-1.html#setup",
-    "title": "4  Try MOSAIKS",
-    "section": "4.3 Setup",
-    "text": "4.3 Setup\nThis notebook utilizes several key Python libraries:\n\nData Handling and Analysis: pandas and numpy provide fundamental data structures and functions for manipulating and analyzing data. geopandas extends these capabilities to work with geospatial data.\nVisualization: matplotlib.pyplot and seaborn enable the creation of static and interactive visualizations, aiding in data exploration and result presentation.\nMachine Learning: sklearn offers a comprehensive suite of tools for building and evaluating machine learning models, including algorithms like Ridge Regression and methods for data preprocessing.\n\n\nimport os\nimport shutil\nimport numpy as np\nimport pandas as pd\nimport seaborn as sns\nimport geopandas as gpd\nimport matplotlib.pyplot as plt\n\nfrom google.colab import drive\nfrom sklearn.linear_model import RidgeClassifierCV\nfrom sklearn.calibration import IsotonicRegression\nfrom sklearn.metrics import roc_auc_score, roc_curve\nfrom sklearn.model_selection import train_test_split, GridSearchCV",
-    "crumbs": [
-      "Introduction",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Try MOSAIKS</span>"
-    ]
-  },
-  {
-    "objectID": "mosaiks-demo-1.html#mounting-google-drive",
-    "href": "mosaiks-demo-1.html#mounting-google-drive",
-    "title": "4  Try MOSAIKS",
-    "section": "4.4 Mounting Google Drive",
-    "text": "4.4 Mounting Google Drive\nMounting Google Drive in Colab essentially connects your Google Drive storage to the Colab environment. This allows you to access files and folders stored in your Drive directly within your Colab notebook. Think of it as creating a shortcut to your Drive within Colab.\nWhy is this necessary?\nColab notebooks run on temporary virtual machines. Mounting your Drive ensures that you can load and save data to your personal storage, persisting even after the Colab session ends. It also enables seamless access to larger datasets stored in your Drive, which would be impractical to upload directly to Colab.\nAfter mounting Google Drive, we then define the path to the project folder on Google Drive. This directory contains the data files needed for the analysis.\n\ndrive.mount('/content/drive')\n\n\ndrive_directory = os.path.join(\n    \"/\",\n    \"content\",\n    \"drive\",\n    \"Shareddrives\",\n    \"MOSAIKS Workshop\",\n    \"Data\",\n\n)\ndrive_directory",
-    "crumbs": [
-      "Introduction",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Try MOSAIKS</span>"
-    ]
-  },
-  {
-    "objectID": "mosaiks-demo-1.html#create-a-local-directory",
-    "href": "mosaiks-demo-1.html#create-a-local-directory",
-    "title": "4  Try MOSAIKS",
-    "section": "4.5 Create a local directory",
-    "text": "4.5 Create a local directory\nThis section creates a local directory within the Colab environment to store the project data. Data files are copied from the Google Drive directory to this local folder.\nWhy use a local directory?\nAccessing data locally on the Colab virtual machine (VM) significantly improves processing speed compared to reading directly from Google Drive. While copying the data initially takes a bit of time, this is outweighed by the performance gains during analysis.\n\nlocal_dir = \"/content/data/\"\n\nos.makedirs(local_dir, exist_ok=True)\n\nfiles_to_copy = os.path.join(drive_directory, \"survey_data\")\n\nshutil.copytree(files_to_copy, local_dir, dirs_exist_ok=True)\n\nHere we take a look at the contents of the local drive to ensure we have the necessary files copied.\n\n!ls -lh /content/data",
-    "crumbs": [
-      "Introduction",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Try MOSAIKS</span>"
-    ]
-  },
-  {
-    "objectID": "mosaiks-demo-1.html#load-in-the-internet-access-label-data",
-    "href": "mosaiks-demo-1.html#load-in-the-internet-access-label-data",
-    "title": "4  Try MOSAIKS",
-    "section": "4.6 Load in the Internet Access Label Data",
-    "text": "4.6 Load in the Internet Access Label Data\nThis section focuses on loading and preparing the data on internet access in Togo.\nInitial Loading and Column Selection: We will load the data from a file and select the relevant columns, such as internet access status and the satellite features.\nLabel Data Visualization: We produce a bar plot to inspect the distribution of labels and check for any imbalances.\n\ndata = pd.read_feather(os.path.join(local_dir, \"survey_data.feather\"))\ndata\n\n\ndata.groupby('Internet').size().plot(kind='barh', color=sns.palettes.mpl_palette('Dark2'))\nplt.gca().spines[['top', 'right',]].set_visible(False)",
-    "crumbs": [
-      "Introduction",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Try MOSAIKS</span>"
-    ]
-  },
-  {
-    "objectID": "mosaiks-demo-1.html#model-training-and-evaluation",
-    "href": "mosaiks-demo-1.html#model-training-and-evaluation",
-    "title": "4  Try MOSAIKS",
-    "section": "4.7 Model Training and Evaluation",
-    "text": "4.7 Model Training and Evaluation\nThis section focuses on training and evaluating a machine learning model to predict internet access using the prepared data.\n1. Data Preparation:\n\nThe joined dataset is split into features (X) and the target variable (y).\n\nX contains the satellite imagery features, specifically the columns with names starting with ‘X_’.\ny contains the internet access label (1 for internet access, 0 for no access).\n\nThe data is further split into training and testing sets using train_test_split to evaluate the model’s performance on unseen data.\n\n\nfeature_cols = [f\"X_{i}\" for i in range(4000)]\n# feature_cols\n\n\nX = data[feature_cols].values\ny = data[\"Internet\"].values\n\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.2, random_state=1991\n)\n\n2. Model Selection and Training:\n\nA Ridge Regression Classifier model is used for prediction. This model is chosen for its ability to handle high-dimensional data and its robustness to outliers.\n\nRidge Regression is a linear model that adds a penalty term to the loss function, preventing overfitting.\n\nHyperparameter tuning is performed using GridSearchCV to find the best value for the regularization parameter (alpha) of the Ridge Regression model. This helps to optimize the model’s performance.\n\n\nalphas = [0.01, 0.1, 1.0, 10.0]\nridge = RidgeClassifierCV(alphas=alphas, cv=5, scoring='roc_auc')\n\nridge.fit(X_train, y_train)\n\n3. Model Evaluation:\n\nThe trained model is evaluated using the testing set, which was not used during training.\nThe primary evaluation metric is the Receiver Operating Characteristic Area Under the Curve (ROC AUC). This metric measures the model’s ability to distinguish between positive (internet presence) and negative (internet absence) cases.\nThe ROC curve is visualized to provide a graphical representation of the model’s performance across different thresholds.\n\n\ny_pred_uncal = ridge.decision_function(X_test)\n\n# Fit isotonic calibration\niso_reg = IsotonicRegression(out_of_bounds='clip')\niso_reg.fit(y_pred_uncal, y_test)\n\n# Get calibrated predictions\ny_pred_cal = iso_reg.predict(y_pred_uncal)\n\n# Calculate AUC scores\nauc_uncal = roc_auc_score(y_test, y_pred_uncal)\nauc_cal = roc_auc_score(y_test, y_pred_cal)\n\nprint(f\"Best alpha: {ridge.alpha_}\")\nprint(f\"AUC before calibration: {auc_uncal:.3f}\")\nprint(f\"AUC after calibration: {auc_cal:.3f}\")\n\n\n# Calculate ROC curves\nfpr_uncal, tpr_uncal, _ = roc_curve(y_test, y_pred_uncal)\nfpr_cal, tpr_cal, _ = roc_curve(y_test, y_pred_cal)\n\n# Create the plot\nplt.figure(figsize=(5, 5))\n\n# Plot both curves\nplt.plot(fpr_uncal, tpr_uncal, 'b-', label=f'Uncalibrated (AUC = {auc_uncal:.3f})')\nplt.plot(fpr_cal, tpr_cal, 'r-', label=f'Calibrated (AUC = {auc_cal:.3f})')\n\n# Plot the diagonal reference line\nplt.plot([0, 1], [0, 1], 'k--', label='Random')\n\n# Customize the plot\nplt.xlabel('False Positive Rate')\nplt.ylabel('True Positive Rate')\nplt.title('ROC Curves - Before and After Calibration')\nplt.legend(loc='lower right')\nplt.grid(True, alpha=0.3)\n\n# Set the plot limits\nplt.xlim([-0.01, 1.01])\nplt.ylim([-0.01, 1.01])\n\nplt.tight_layout()\nplt.show()\n\n\nimport geopandas as gpd\n\n\nfeatures = pd.read_feather(os.path.join(local_dir, \"TGO_API_features.feather\"))\n\nfeatures = gpd.GeoDataFrame(\n    features,\n    geometry=gpd.points_from_xy(features.Lon, features.Lat),\n    crs=\"EPSG:4326\"\n  )\nfeatures.geometry = features.geometry.buffer(0.005, cap_style=3)\n\nfeatures\n\n\ny_pred_full = ridge.decision_function(features[feature_cols].values)\n\n# y_pred_full_cal = iso_reg.predict(y_pred_full)\n\nfeatures['predicted_probability'] = y_pred_full\nfeatures\n\n\nfeatures[features.predicted_probability &gt; 0].plot(\n    column=\"predicted_probability\",\n    cmap=\"viridis\",\n    legend=True,\n    legend_kwds={'label': \"Predicted Probability\"},\n    figsize=(10, 8)\n)\nplt.title(\"Prediction\")\nplt.xlabel(\"Longitude\")\nplt.ylabel(\"Latitude\")\nplt.show()",
-    "crumbs": [
-      "Introduction",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Try MOSAIKS</span>"
-    ]
-  },
-  {
-    "objectID": "mosaiks-demo-1.html#conclusions",
-    "href": "mosaiks-demo-1.html#conclusions",
-    "title": "4  Try MOSAIKS",
-    "section": "4.8 Conclusions",
-    "text": "4.8 Conclusions\nThis notebook demonstrated the use of MOSAIKS to predict internet access in Togo using satellite imagery features.\nKey Findings:\n\nThe model achieved a good level of predictive performance, indicated by the ROC AUC score.\nSatellite imagery features proved to be valuable predictors of internet access, highlighting their potential for understanding the digital divide.\n\nImplications and Future Directions:\n\nThe insights gained from this analysis can inform policy decisions and interventions aimed at expanding internet access in Togo.\nFurther research could explore the use of other machine learning algorithms and incorporate additional data sources to enhance predictive accuracy.\nThis approach can be extended to other regions and countries to address the global digital divide.\n\nLimitations:\n\nThe model’s performance might vary in different geographical contexts.\nThe accuracy of the predictions depends on the quality and availability of satellite imagery and label data.\nFurther validation and ground-truthing are needed to assess the real-world applicability of the model.\n\nOverall, this demonstration highlights the potential of MOSAIKS and machine learning in bridging the digital divide by providing insights into internet access patterns using satellite imagery.",
+    "text": "This chapter is in early draft form and may be incomplete.\n\n\n\n\n\n\n\n\n\n\n\nClick the badge to run the demo in Google Colab!\n\n\n\n↓↓↓↓↓↓↓↓↓↓↓↓↓\n\n↑↑↑↑↑↑↑↑↑↑↑↑↑\n\n\nFor instruction on how to use Google Colab, please refer to Chapter 1\n\nDescription of exercise\nVideo maybe?",
     "crumbs": [
       "Introduction",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Try MOSAIKS</span>"
@@ -337,7 +260,7 @@
     "href": "labels.html#feature-data",
     "title": "Label Data",
     "section": "Feature data",
-    "text": "Feature data\n\n\n\n\n\n\nCreating satellite image features is covered in later chapters.\n\n\n\n\nRCF brief overview\nMOSAIKS relies on random convolutional features (RCFs) computed from satellite imagery. The random nature of the features means that they are task-agnostic. These features can be reused multiple times to model various tasks. Features are generally created over a standard grid of 0.01 by 0.01 degree cells (~1 km², depending on latitude). The output is a feature vector of length K for every grid location. Depending on the spatial scale and resolution of the label data, subsampling the MOSAIKS grid may be appropriate to reduce computation time and cost.\n\n\n\n\n\n\nFeatures can be computed at higher or lower resolutions than 1 km². This is discussed in 14  Computing Features.\n\n\n\n\n\nFeature aggrgegation\nThe default 1 km² resolution of MOSAIKS is generally the maximum resolution the label data should be in. If the labels are in lower resolution, the satellite features can be aggregated up to larger areas to match. Typical aggregation might be to larger grid cell, census tract, county/district, or state/province levels. The exact aggregation level is contingent on the spatial resolution of the label data.\nAdd feature maps figs\n\n\nAPI Features\nCurrently the MOSAIKS API has a single global set of features that are precalculated and ready to download. This static layer is computed from Planet Labs, Inc. Basemaps product Global Quarterly 2019 (qaurter 3) which has a native resolution of 4.77 m in the red, green, and blue bands of the visual spectrum (see 11.8 Private Satellites for more details). The features are publicly available for download; this is the fastest and easiest way to begin using MOSAIKS.\nGiven this, the easiest way to get started with MOSAIKS is to have label data for a recent time period (ideally from 2019 for fast changing labels, or a close year for more steady labels). To use MOSAIKS for time series data is possible, just not currently with precomputed and publicly available features. To access API features see 3  Access MOSAIKS\nadd details of api products available (0.1 degree and pop/area weighted etc)\n\n\n\n\n\n\nFigure 2: Examples of 3 representative random convolutional features (downloaded from the MOSAIKS API) aggregated to different levels, including (A) grid cells (0.1°), (B) counties, and (C) states. The features are originally computed at 0.01° resolution (not pictured).",
+    "text": "Feature data\n\n\n\n\n\n\nCreating satellite image features is covered in later chapters.\n\n\n\n\nRCF brief overview\nMOSAIKS relies on random convolutional features (RCFs) computed from satellite imagery. The random nature of the features means that they are task-agnostic. These features can be reused multiple times to model various tasks. Features are generally created over a standard grid of 0.01 by 0.01 degree cells (~1 km², depending on latitude). The output is a feature vector of length K for every grid location.\n\n\n\n\n\n\nFeatures can be computed at higher or lower resolutions than 1 km². This is discussed in 14  Computing Features.\n\n\n\n\n\nFeature aggrgegation\nThe default 1 km² resolution of MOSAIKS is generally the maximum resolution the label data should be in. If the labels are in lower resolution, the satellite features can be aggregated up to larger areas to match. Typical aggregation might be to larger grid cell, census tract, county/district, or state/province levels. The exact aggregation level is contingent on the spatial resolution of the label data.\n\n\n\n\n\n\nFigure 2: Examples of 3 representative random convolutional features (downloaded from the MOSAIKS API) aggregated to different levels, including (A) grid cells (0.1°), (B) counties, and (C) states. The features are originally computed at 0.01° resolution (not pictured).\n\n\n\n\n\nAPI Features\nCurrently the MOSAIKS API has a single global set of features that are precalculated and ready to download. This static layer is computed from Planet Labs, Inc. Basemaps product Global Quarterly 2019 (qaurter 3) which has a native resolution of 4.77 m in the red, green, and blue bands of the visual spectrum (see 11.8 Private Satellites for more details). The features are publicly available for download; this is the fastest and easiest way to begin using MOSAIKS.\nGiven this, the easiest way to get started with MOSAIKS is to have label data for a recent time period (ideally from 2019 for fast changing labels, or a close year for more steady labels). To use MOSAIKS for time series data is possible, just not currently with precomputed and publicly available features. To access API features see 3  Access MOSAIKS\nadd details of api products available (0.1 degree and pop/area weighted etc)",
     "crumbs": [
       "Label Data"
     ]
@@ -606,7 +529,7 @@
     "href": "features-computing.html",
     "title": "14  Computing Features",
     "section": "",
-    "text": "This chapter is in early draft form and may be incomplete.",
+    "text": "This chapter is in early draft form and may be incomplete.\n\n\n\n\nDepending on the spatial scale and resolution of the label data, subsampling the MOSAIKS grid may be appropriate to reduce computation time and cost.",
     "crumbs": [
       "Satellite Features",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Computing Features</span>"
