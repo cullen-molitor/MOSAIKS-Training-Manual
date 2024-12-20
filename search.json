@@ -229,7 +229,40 @@
     "href": "mosaiks-demo-1.html",
     "title": "4  Try MOSAIKS",
     "section": "",
-    "text": "This chapter is in early draft form and may be incomplete.\n\n\n\n\n\n\n\n\n\n\n\nClick the badge to run the demo in Google Colab!\n\n\n\n↓↓↓↓↓↓↓↓↓↓↓↓↓\n\n↑↑↑↑↑↑↑↑↑↑↑↑↑\n\n\nFor instruction on how to use Google Colab, please refer to Chapter 1\n\nDescription of exercise\nVideo maybe?",
+    "text": "4.1 Overview\nThis demo replicates key results from the original MOSAIKS publication (Rolf et al. 2021), using a subset of the data to work within Google Colab’s free tier memory constraints. While MOSAIKS was developed to improve access to satellite-based prediction in data-sparse environments, particularly in developing countries, the original paper focused on demonstrating performance in the United States where high-quality training data was readily available.\nThe US served as an ideal testing ground for several reasons:\nThis validation in a data-rich environment was crucial for establishing MOSAIKS as a reliable tool before deploying it in contexts where ground truth data is scarce or unreliable. The demo showcases MOSAIKS predicting several variables:",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Try MOSAIKS</span>"
+    ]
+  },
+  {
+    "objectID": "mosaiks-demo-1.html#overview",
+    "href": "mosaiks-demo-1.html#overview",
+    "title": "4  Try MOSAIKS",
+    "section": "",
+    "text": "Extensive ground truth data available across multiple variables\nReliable spatial referencing of data\nDiverse landscapes and built environments\nAbility to benchmark against existing methods\nSystematic validation of predictions\n\n\n\nForest cover\nElevation\nPopulation density\nNighttime lights\nIncome\nRoad length\nHousing prices",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Try MOSAIKS</span>"
+    ]
+  },
+  {
+    "objectID": "mosaiks-demo-1.html#demo-contents",
+    "href": "mosaiks-demo-1.html#demo-contents",
+    "title": "4  Try MOSAIKS",
+    "section": "4.2 Demo contents",
+    "text": "4.2 Demo contents\nThe notebook demonstrates:\n\nLoading pre-computed MOSAIKS features and labels\nMerging the features and labels\nTraining a ridge regression model\nEvaluating predictions\nVisualizing results\n\nThe data used is a 50% random sample of both features (K=4,000 instead of 8,192) and observations (N=50,000 instead of 100,000) compared to the original paper. Despite using this reduced dataset, the demo still achieves strong predictive performance, highlighting MOSAIKS’s efficiency.\n\n\n\n\n\n\nClick the badge to run the demo in Google Colab!\n\n\n\n↓↓↓↓↓↓↓↓↓↓↓↓↓\n\n↑↑↑↑↑↑↑↑↑↑↑↑↑\n\n\nFor instruction on how to use Google Colab, please refer to Chapter 1",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Try MOSAIKS</span>"
+    ]
+  },
+  {
+    "objectID": "mosaiks-demo-1.html#whats-next",
+    "href": "mosaiks-demo-1.html#whats-next",
+    "title": "4  Try MOSAIKS",
+    "section": "4.3 Whats next?",
+    "text": "4.3 Whats next?\nAfter establishing MOSAIKS’s capabilities in the US context, the MOSAIKS development team have successfully demonstrated the system in many additional settings. This includes on the global scale, or in settings with few or low quality data. In the coming chapters, we will explore some of these applications, showing how MOSAIKS can help address data gaps in regions where traditional data collection is challenging or costly.\n\n\n\n\n\n\nLooking forward\n\n\n\nIn the next section we will take a closer look at the label data that can be used with MOSAIKS.",
     "crumbs": [
       "Introduction",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Try MOSAIKS</span>"
