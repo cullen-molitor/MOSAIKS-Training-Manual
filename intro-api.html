@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./mosaiks-demo-1.html" rel="next">
+<link href="./intro-demo.html" rel="next">
 <link href="./intro-mosaiks.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -187,7 +187,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./mosaiks-demo-1.html" class="sidebar-item-text sidebar-link">
+  <a href="./intro-demo.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Try MOSAIKS</span></span></a>
   </div>
 </li>
@@ -453,8 +453,18 @@ MOSAIKS API Link
 <section id="downloading-features" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="downloading-features"><span class="header-section-number">3.3</span> Downloading features</h2>
 <p>The MOSAIKS features are organized using a 0.01 x 0.01 degree latitude-longitude global grid, centered at .005 degree intervals.</p>
-<p>When you download features, you’ll receive them in a tabular .csv format where: - Each row represents a unique grid cell - The first two columns contain latitude and longitude coordinates - The remaining columns represent K features (currently K = 4000 features)</p>
-<p>Important notes about downloads: - Files remain available for download for 15 days - After 15 days, files are automatically deleted from the system - There is a limit of 100,000 records per query</p>
+<p>When you download features, you’ll receive them in a tabular .csv format where:</p>
+<ul>
+<li>Each row represents a unique grid cell</li>
+<li>The first two columns contain latitude and longitude coordinates</li>
+<li>The remaining columns represent K features (currently K = 4000 features)</li>
+</ul>
+<p>Important notes about downloads:</p>
+<ul>
+<li>Files remain available for download for 15 days</li>
+<li>After 15 days, files are automatically deleted from the system</li>
+<li>There is a limit of 100,000 records per query</li>
+</ul>
 <section id="ways-to-query-features" class="level3" data-number="3.3.1">
 <h3 data-number="3.3.1" class="anchored" data-anchor-id="ways-to-query-features"><span class="header-section-number">3.3.1</span> Ways to query features</h3>
 <p>There are two main methods to obtain features through the API:</p>
@@ -510,7 +520,7 @@ MOSAIKS API Link
 <figcaption>Using MOSAIKS, a simplified workflow design.</figcaption>
 </figure>
 </div>
-<p>You can experiment with various machine learning approaches in the regression step. For beginners, we recommend starting with our example Jupyter notebook (<a href="mosaiks-demo-1.html" class="quarto-xref"><span>Chapter 4</span></a>) that demonstrates a simple ridge regression approach (suitable for both R and Python users).</p>
+<p>You can experiment with various machine learning approaches in the regression step. For beginners, we recommend starting with our example Jupyter notebook (<a href="intro-demo.html" class="quarto-xref"><span>Chapter 4</span></a>) that demonstrates a simple ridge regression approach (suitable for both R and Python users).</p>
 <p>This topic will be covered in greater depth in later chapters. In the next chapter, you will see a simple MOSAIKS workflow which starts from the point of having both features from the API and ground truth labels.</p>
 </section>
 <section id="citation-requirements" class="level2" data-number="3.5">
@@ -1122,7 +1132,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./mosaiks-demo-1.html" class="pagination-link" aria-label="Try MOSAIKS">
+      <a href="./intro-demo.html" class="pagination-link" aria-label="Try MOSAIKS">
         <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Try MOSAIKS</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
