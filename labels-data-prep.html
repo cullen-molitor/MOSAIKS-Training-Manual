@@ -315,8 +315,14 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#joining-data" id="toc-joining-data" class="nav-link active" data-scroll-target="#joining-data"><span class="header-section-number">7.1</span> Joining data</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/edit/main/labels-data-prep.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -356,8 +362,189 @@ ul.task-list li input[type="checkbox"] {
 <li>Considerations for data cleaning</li>
 <li>What should my data look like?</li>
 </ul>
+<section id="joining-data" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="joining-data"><span class="header-section-number">7.1</span> Joining data</h2>
+<p>Before model training, label data must be joined to imagery features. The joined data should be tabular with each row containing:</p>
+<ol type="1">
+<li><strong>Label</strong> - the observed value<br>
+</li>
+<li><strong>Geographic location</strong> - such as a MOSAIKS grid cell or larger geographic area<br>
+</li>
+<li><strong>Time (optional)</strong> - useful for time series data (year, mont, or day)<br>
+</li>
+<li><strong><em>K</em> feature columns</strong> - column for every random satellite feature (typically <em>k</em> = 4,000)</li>
+</ol>
+<p>For example, a dataset with crop yeild data could look like:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Observation</th>
+<th>District</th>
+<th>Year</th>
+<th>Crop Yield</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Chibombo</td>
+<td>2019</td>
+<td>1.520</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Kabwe</td>
+<td>2019</td>
+<td>1.878</td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr class="even">
+<td><em>N</em></td>
+<td>Kitwe</td>
+<td>2019</td>
+<td>2.383</td>
+</tr>
+</tbody>
+</table>
+<p>And a dataset with district level aggregate features could look like:</p>
+<table class="table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 15%">
+<col style="width: 8%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 7%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Observation</th>
+<th>District</th>
+<th>Year</th>
+<th>Feature 1</th>
+<th>Feature 2</th>
+<th>…</th>
+<th>Feature <em>K</em></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Chibombo</td>
+<td>2019</td>
+<td>4.2</td>
+<td>11.6</td>
+<td>…</td>
+<td>12.7</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Kabwe</td>
+<td>2019</td>
+<td>2.9</td>
+<td>5.3</td>
+<td>…</td>
+<td>11.2</td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr class="even">
+<td><em>N</em></td>
+<td>Kitwe</td>
+<td>2019</td>
+<td>10.6</td>
+<td>1.1</td>
+<td>…</td>
+<td>2.2</td>
+</tr>
+</tbody>
+</table>
+<p>Finally, the joined dataset would look like:</p>
+<table class="table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 13%">
+<col style="width: 7%">
+<col style="width: 14%">
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 6%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Observation</th>
+<th>District</th>
+<th>Year</th>
+<th>Crop Yield</th>
+<th>Feature 1</th>
+<th>Feature 2</th>
+<th>…</th>
+<th>Feature <em>K</em></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Chibombo</td>
+<td>2019</td>
+<td>1.520</td>
+<td>4.2</td>
+<td>11.6</td>
+<td>…</td>
+<td>12.7</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Kabwe</td>
+<td>2019</td>
+<td>1.878</td>
+<td>2.9</td>
+<td>5.3</td>
+<td>…</td>
+<td>11.2</td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr class="even">
+<td><em>N</em></td>
+<td>Kitwe</td>
+<td>2019</td>
+<td>2.383</td>
+<td>10.6</td>
+<td>1.1</td>
+<td>…</td>
+<td>2.2</td>
+</tr>
+</tbody>
+</table>
+<p>In the above example, our geographic location is the district and our label is the crop yield (mt/ha). We then have <em>K</em> columns containing the features and <em>N</em> observations.</p>
+<p>In this example, our features started at 1 km² resolution and were aggregated to the district level to match the crop yield data. To join this data, we first found all of the feature locations that fall within the district boundaries using a spatial join. Then we averaged the features within each district. This allowed us to have a single feature vector for each district. The resulting tabular data is ready for modeling.</p>
+<p><strong>Note:</strong> Add example code for joining data</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -941,7 +1128,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/edit/main/labels-data-prep.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/edit/main/labels-data-prep.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>

@@ -321,8 +321,12 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">5.1</span> Overview</a></li>
-  <li><a href="#original-publication" id="toc-original-publication" class="nav-link" data-scroll-target="#original-publication"><span class="header-section-number">5.2</span> Original publication</a></li>
-  <li><a href="#maps" id="toc-maps" class="nav-link" data-scroll-target="#maps"><span class="header-section-number">5.3</span> 100 maps</a></li>
+  <li><a href="#one-hundred-maps" id="toc-one-hundred-maps" class="nav-link" data-scroll-target="#one-hundred-maps"><span class="header-section-number">5.2</span> One hundred maps</a>
+  <ul class="collapse">
+  <li><a href="#original-publication" id="toc-original-publication" class="nav-link" data-scroll-target="#original-publication"><span class="header-section-number">5.2.1</span> Original publication</a></li>
+  <li><a href="#going-global" id="toc-going-global" class="nav-link" data-scroll-target="#going-global"><span class="header-section-number">5.2.2</span> Going global</a></li>
+  </ul></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results"><span class="header-section-number">5.3</span> Results</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/edit/main/labels-100-maps.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -362,19 +366,165 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="overview" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">5.1</span> Overview</h2>
-<p><img src="images/copernicus-satellite-needs.png" class="img-fluid"></p>
+<p>MOSAIKS is a designed to be useful for predicting anything one might see in satellite imagery. Some things are easier to predict than others, but the system is designed to be flexible. For instance, some variables can be seen directly in the imagery itself, such as forest cover. Other outcomes can only be seen through proxy variables like income and housing price which are not directly visible in the imagery but can be estimated by looking at objects in imagery that are correlated with them, such as roads, houses, and cars.</p>
+<div id="fig-army-knife" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-army-knife-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/army_knife.png" class="img-fluid figure-img" width="300">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-army-knife-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.1: MOSAIKS versatility makes it the perfect tool for a wide range of applications.
+</figcaption>
+</figure>
+</div>
+<p>In this chapter we will explore over 100 different outcomes that have been tested with MOSAIKS. We will discuss the results of a selection of these outcomes in detail, and provide a brief overview of the rest.</p>
 </section>
-<section id="original-publication" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="original-publication"><span class="header-section-number">5.2</span> Original publication</h2>
+<section id="one-hundred-maps" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="one-hundred-maps"><span class="header-section-number">5.2</span> One hundred maps</h2>
+<section id="original-publication" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="original-publication"><span class="header-section-number">5.2.1</span> Original publication</h3>
+<p>The original publication tested MOSAIKS on 7 outcomes: forest cover, income, housing price, population density, nighttime luminosity, and elevation. The primary results of Rolf et al.&nbsp;2021 are focused in the United States. This is an excellent starting point for understanding the capabilities of MOSAIKS as the data quality is high and the outcomes are diverse. While the results were promising and demonstrated the potential of MOSAIKS, the true test is in the application to new outcomes and new geographies.</p>
+</section>
+<section id="going-global" class="level3" data-number="5.2.2">
+<h3 data-number="5.2.2" class="anchored" data-anchor-id="going-global"><span class="header-section-number">5.2.2</span> Going global</h3>
+<p>To test the global applicability of MOSAIKS, across a diverse set of outcomes, there were 2 primary things that needed to happen:</p>
+<p><strong>1.</strong> The creation of a global set of features</p>
+<div id="fig-api-features" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-api-features-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/api-features.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-api-features-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.2: Planet Labs visual basemap imagery from quarter 3 of 2019 (left) and 4 of 4,000 MOSAIKS features downloaded from the API (right).
+</figcaption>
+</figure>
+</div>
+<p><strong>2.</strong> Collecting and currating a large set of outcomes with diversity in spatial structures and categories</p>
+<div id="tbl-labels" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<div aria-describedby="tbl-labels-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 28%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Category</strong></th>
+<th><strong>Number of Labels</strong></th>
+<th><strong>Example Label</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Agricultural Assets</td>
+<td>5</td>
+<td>Agricultural land ownership</td>
+</tr>
+<tr class="even">
+<td>Agriculture</td>
+<td>16</td>
+<td>Maize yield</td>
+</tr>
+<tr class="odd">
+<td>Built Infrastructure</td>
+<td>9</td>
+<td>Buildings</td>
+</tr>
+<tr class="even">
+<td>Demographics</td>
+<td>5</td>
+<td>Median age</td>
+</tr>
+<tr class="odd">
+<td>Education</td>
+<td>10</td>
+<td>Expected years of schooling</td>
+</tr>
+<tr class="even">
+<td>Health</td>
+<td>15</td>
+<td>Malaria in children</td>
+</tr>
+<tr class="odd">
+<td>Household Assets</td>
+<td>21</td>
+<td>Mobile phones</td>
+</tr>
+<tr class="even">
+<td>Income</td>
+<td>9</td>
+<td>Human development index</td>
+</tr>
+<tr class="odd">
+<td>Natural Systems</td>
+<td>8</td>
+<td>Tree cover</td>
+</tr>
+<tr class="even">
+<td>Occupation</td>
+<td>17</td>
+<td>Unemployment</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-labels-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5.1: The authors selected 115 variables across 10 categories and set to work testing each in the MOSAIKS system.
+</figcaption>
+</figure>
+</div>
+<p>With this data in hand, we were able to devise a few simple questions to test:</p>
 <ul>
-<li>Recap the original 7 outcomes</li>
+<li>Which variables can be effectively measured?</li>
+<li>What are the most compelling applications?</li>
+<li>What are the modes of failure?</li>
 </ul>
 </section>
-<section id="maps" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="maps"><span class="header-section-number">5.3</span> 100 maps</h2>
-<ul>
-<li>100 Maps results</li>
-</ul>
+</section>
+<section id="results" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="results"><span class="header-section-number">5.3</span> Results</h2>
+<div id="fig-100-maps-scatter" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-100-maps-scatter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/proctor_et_al_100_fig3_scatter.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-100-maps-scatter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.3: The results of the 100 maps experiment.
+</figcaption>
+</figure>
+</div>
+<div id="fig-100-maps-box" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-100-maps-box-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/proctor_et_al_100_fig3_box.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-100-maps-box-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.4: The results of the 100 maps experiment.
+</figcaption>
+</figure>
+</div>
+<div id="fig-100-maps-pipelines-plot" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-100-maps-pipelines-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/proctor_et_al_100_pipelines_plot.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-100-maps-pipelines-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.5: Where it fails
+</figcaption>
+</figure>
+</div>
+<div id="fig-100-maps-pipelines-img" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-100-maps-pipelines-img-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/proctor_et_al_100_pipelines_img.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-100-maps-pipelines-img-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.6: Why it fails
+</figcaption>
+</figure>
+</div>
 
 
 </section>

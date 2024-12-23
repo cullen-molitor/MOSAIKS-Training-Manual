@@ -258,11 +258,22 @@
     ]
   },
   {
-    "objectID": "intro-demo.html#demo-contents",
-    "href": "intro-demo.html#demo-contents",
+    "objectID": "intro-demo.html#demo",
+    "href": "intro-demo.html#demo",
     "title": "4  Try MOSAIKS",
-    "section": "4.2 Demo contents",
-    "text": "4.2 Demo contents\nThe notebook demonstrates:\n\nLoading pre-computed MOSAIKS features and labels\nMerging the features and labels\nTraining a ridge regression model\nEvaluating predictions\nVisualizing results\n\nThe data used is a 50% random sample of both features (K=4,000 instead of 8,192) and observations (N=50,000 instead of 100,000) compared to the original paper. Despite using this reduced dataset, the demo still achieves strong predictive performance, highlighting MOSAIKS’s efficiency.\n\n\n\n\n\n\nClick the badge to run the demo in Google Colab!\n\n\n\n↓↓↓↓↓↓↓↓↓↓↓↓↓\n\n↑↑↑↑↑↑↑↑↑↑↑↑↑\nRemember to click File -&gt; Save a copy in Drive to save any changes you make.\n\n\nFor instruction on how to use Google Colab, please refer to Chapter 1",
+    "section": "4.2 Demo",
+    "text": "4.2 Demo\nThe notebook demonstrates:\n\nLoading pre-computed MOSAIKS features and labels\nMerging the features and labels\nTraining a ridge regression model\nEvaluating predictions\nVisualizing results\n\nThe data used is a 50% random sample of both features (K=4,000 instead of 8,192) and observations (N=50,000 instead of 100,000) compared to the original paper. Despite using this reduced dataset, the demo still achieves strong predictive performance, highlighting MOSAIKS’s efficiency.\n\n\n\n\n\n\nClick the badge to run the demo in Google Colab!\n\n\n\n↓↓↓↓↓↓↓↓↓↓↓↓↓\n\n↑↑↑↑↑↑↑↑↑↑↑↑↑\nRemember to click File -&gt; Save a copy in Drive to save any changes you make.\n\n\nFor instruction on how to use Google Colab, please refer to Chapter 1",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Try MOSAIKS</span>"
+    ]
+  },
+  {
+    "objectID": "intro-demo.html#dont-want-to-run-code",
+    "href": "intro-demo.html#dont-want-to-run-code",
+    "title": "4  Try MOSAIKS",
+    "section": "4.3 Don’t want to run code?",
+    "text": "4.3 Don’t want to run code?\nConsider watching this demonstration instead!\n\n\n\n\n\n\nFigure 4.1: An overview of MOSAIKS and a live demonstration of generating novel predictions using the system. Video recoreded by CIGAR Generalized Planetary Remote Sensing - 2020 Convention session. Presented by Esther Rolf and Tamma Carleton.",
     "crumbs": [
       "Introduction",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Try MOSAIKS</span>"
@@ -272,8 +283,8 @@
     "objectID": "intro-demo.html#whats-next",
     "href": "intro-demo.html#whats-next",
     "title": "4  Try MOSAIKS",
-    "section": "4.3 What’s next?",
-    "text": "4.3 What’s next?\nAfter establishing MOSAIKS’s capabilities in the US context, the MOSAIKS development team have successfully demonstrated the system in many additional settings. This includes on the global scale, or in settings with few or low quality data. In the coming chapters, we will explore some of these applications, showing how MOSAIKS can help address data gaps in regions where traditional data collection is challenging or costly.\n\n\n\n\n\n\nLooking forward\n\n\n\nIn the next section we will take a closer look at the label data that can be used with MOSAIKS.",
+    "section": "4.4 What’s next?",
+    "text": "4.4 What’s next?\nAfter establishing MOSAIKS’s capabilities in the US context, the MOSAIKS development team have successfully demonstrated the system in many additional settings. This includes on the global scale, or in settings with few or low quality data. In the coming chapters, we will explore some of these applications, showing how MOSAIKS can help address data gaps in regions where traditional data collection is challenging or costly.\n\n\n\n\n\n\nLooking forward\n\n\n\nIn the next section we will take a closer look at the label data that can be used with MOSAIKS.",
     "crumbs": [
       "Introduction",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Try MOSAIKS</span>"
@@ -294,27 +305,7 @@
     "href": "labels.html#ground-observations",
     "title": "Label Data",
     "section": "",
-    "text": "Resolution\nThe preparation of label data for MOSAIKS hinges on multiple factors, particularly spatial information such as location, extent, and resolution. If the observations in a dataset have a higher resolution than 1 km², some form of selection or aggregation is required. Label data can come in any native spatial form: raster, point, polygon, or vector. As long as there is spatial information associated with each label data observation, these data can be joined to MOSAIKS imagery features for downstream prediction.\n\n\n\n\n\n\nThe MOSAIKS API is designed to predict outcomes at scales of 1 km² or larger. Customizable solutions are possible for higher resolution problems.\n\n\n\n\n\n\n\n\n\nFigure 1: Examples of label data formats that can be easily integrated into the MOSAIKS pipeline. Label data of any spatial format that can be aggregated to at least the scale of 1km² (or larger) can be used directly in combination with MOSAIKS imagery features for downstream prediction tasks. Examples shown here are from Rolf et al. (2021) and include: forest cover, elevation, population, and nighttime lights datasets (all raster format); income data (polygon format); road length (vector format); and housing price data (point format).\n\n\n\n\n\nSample size\nAs with many machine learning algorithms, a large sample size often results in higher performance than low. MOSAIKS has been used and shown to be effective with a wide range of sample sizes (N). The sample size for model training is determined by the spatial and temporal resolution of your label data. For example, when predicting maize yields in the US using ground data from one year of farmer-level surveys in the US, N=3,143 if farmers are geolocated based on their county (even if far more than 3,143 farmers were interviewed, as this is the number of counties in the US). Additional time periods increase sample size for training, but also require more up-front costs, as more imagery need to be “featurized”.\n\n\nExample variables\nThe original MOSAIKS publication (Rolf et al., 2021) tested performance for forest cover, income, housing price, population density, nighttime luminosity, and elevation using sample sizes ranging from 60,000 to 100,000, but showed that performance fell only modestly when N shrank to just a few hundred observations. Consistent with this finding, in recent experiments with crop yield, we see high with only around 400 observations (R² = 0.80). It is important to note that the original crop yield dataset included interview data from thousands of farmers across the study country, and this messy data was cleaned and aggregated to the district level prior to modeling. In this case, a clean dataset with a low number of observations was preferred to a large but noisy dataset. Despite the low sample size of the aggregate data, performance was still comparable to more complex CNN models trained specifically on crop yield.\n\n\nData types\nMOSAIKS accommodates both continuous (e.g., fraction of area forested) and discrete (e.g., presence/absence of water) labels, with data type influencing model development and testing. Performance metric selection is also determined by data type - for continuous variables, we typically use the coefficient of determination (R²), while for discrete variables, the area under the curve value from the receiver operator characteristic curve (ROC AUC score) is used.\n\n\nSummary checklist\nFor optimal use with MOSAIKS, label data should be:\n\nConsistently geolocated as point, polygon, vector, or raster data\nAggregatable to ≥1km² resolution\nObservable in daytime satellite imagery (directly or indirectly)\nRecent or slow-changing if using current API features\nSample size N≥300 (larger samples generally perform better)",
-    "crumbs": [
-      "Label Data"
-    ]
-  },
-  {
-    "objectID": "labels.html#feature-data",
-    "href": "labels.html#feature-data",
-    "title": "Label Data",
-    "section": "Feature data",
-    "text": "Feature data\n\n\n\n\n\n\nCreating satellite image features is covered in later chapters.\n\n\n\n\nRCF brief overview\nMOSAIKS relies on random convolutional features (RCFs) computed from satellite imagery. The random nature of the features means that they are task-agnostic. These features can be reused multiple times to model various tasks. Features are generally created over a standard grid of 0.01 by 0.01 degree cells (~1 km², depending on latitude). The output is a feature vector of length K for every grid location.\n\n\n\n\n\n\nFeatures can be computed at higher or lower resolutions than 1 km². This is discussed in 14  Computing Features.\n\n\n\n\n\nFeature aggrgegation\nThe default 1 km² resolution of MOSAIKS is generally the maximum resolution the label data should be in. If the labels are in lower resolution, the satellite features can be aggregated up to larger areas to match. Typical aggregation might be to larger grid cell, census tract, county/district, or state/province levels. The exact aggregation level is contingent on the spatial resolution of the label data.\n\n\n\n\n\n\nFigure 2: Examples of 3 representative random convolutional features (downloaded from the MOSAIKS API) aggregated to different levels, including (A) grid cells (0.1°), (B) counties, and (C) states. The features are originally computed at 0.01° resolution (not pictured).\n\n\n\n\n\nAPI Features\nCurrently the MOSAIKS API has a single global set of features that are precalculated and ready to download. This static layer is computed from Planet Labs, Inc. Basemaps product Global Quarterly 2019 (qaurter 3) which has a native resolution of 4.77 m in the red, green, and blue bands of the visual spectrum (see 11.8 Private Satellites for more details). The features are publicly available for download; this is the fastest and easiest way to begin using MOSAIKS.\nGiven this, the easiest way to get started with MOSAIKS is to have label data for a recent time period (ideally from 2019 for fast changing labels, or a close year for more steady labels). To use MOSAIKS for time series data is possible, just not currently with precomputed and publicly available features. To access API features see 3  Access MOSAIKS\nadd details of api products available (0.1 degree and pop/area weighted etc)",
-    "crumbs": [
-      "Label Data"
-    ]
-  },
-  {
-    "objectID": "labels.html#joining-data",
-    "href": "labels.html#joining-data",
-    "title": "Label Data",
-    "section": "Joining data",
-    "text": "Joining data\nBefore model training, label data must be joined to imagery features. The joined data should be tabular with each row containing:\n\nLabel - the observed value\n\nGeographic location - such as a MOSAIKS grid cell or larger geographic area\n\nTime (optional) - useful for time series data (year, mont, or day)\n\nK feature columns - column for every random satellite feature (typically k = 4,000)\n\nFor example, a dataset with crop yeild data could look like:\n\n\n\nObservation\nDistrict\nYear\nCrop Yield\n\n\n\n\n1\nChibombo\n2019\n1.520\n\n\n2\nKabwe\n2019\n1.878\n\n\n…\n…\n…\n…\n\n\nN\nKitwe\n2019\n2.383\n\n\n\nAnd a dataset with district level aggregate features could look like:\n\n\n\n\n\n\n\n\n\n\n\n\nObservation\nDistrict\nYear\nFeature 1\nFeature 2\n…\nFeature K\n\n\n\n\n1\nChibombo\n2019\n4.2\n11.6\n…\n12.7\n\n\n2\nKabwe\n2019\n2.9\n5.3\n…\n11.2\n\n\n…\n…\n…\n…\n…\n…\n…\n\n\nN\nKitwe\n2019\n10.6\n1.1\n…\n2.2\n\n\n\nFinally, the joined dataset would look like:\n\n\n\n\n\n\n\n\n\n\n\n\n\nObservation\nDistrict\nYear\nCrop Yield\nFeature 1\nFeature 2\n…\nFeature K\n\n\n\n\n1\nChibombo\n2019\n1.520\n4.2\n11.6\n…\n12.7\n\n\n2\nKabwe\n2019\n1.878\n2.9\n5.3\n…\n11.2\n\n\n…\n…\n…\n…\n…\n…\n…\n…\n\n\nN\nKitwe\n2019\n2.383\n10.6\n1.1\n…\n2.2\n\n\n\nIn the above example, our geographic location is the district and our label is the crop yield (mt/ha). We then have K columns containing the features and N observations.\nIn this example, our features started at 1 km² resolution and were aggregated to the district level to match the crop yield data. To join this data, we first found all of the feature locations that fall within the district boundaries using a spatial join. Then we averaged the features within each district. This allowed us to have a single feature vector for each district. The resulting tabular data is ready for modeling.\nNote: Add example code for joining data\n\n\n\n\n\n\nLooking forward\n\n\n\nIn the next chapter, we’ll explore specific examples of labels that work well with MOSAIKS.",
+    "text": "Resolution\nThe preparation of label data for MOSAIKS hinges on multiple factors, particularly spatial information such as location, extent, and resolution. If the observations in a dataset have a higher resolution than 1 km², some form of selection or aggregation is required. Label data can come in any native spatial form: raster, point, polygon, or vector. As long as there is spatial information associated with each label data observation, these data can be joined to MOSAIKS imagery features for downstream prediction.\n\n\n\n\n\n\nThe MOSAIKS API is designed to predict outcomes at scales of 1 km² or larger. Customizable solutions are possible for higher resolution problems.\n\n\n\n\n\n\n\n\n\nFigure 1: Examples of label data formats that can be easily integrated into the MOSAIKS pipeline. Label data of any spatial format that can be aggregated to at least the scale of 1km² (or larger) can be used directly in combination with MOSAIKS imagery features for downstream prediction tasks. Examples shown here are from Rolf et al. (2021) and include: forest cover, elevation, population, and nighttime lights datasets (all raster format); income data (polygon format); road length (vector format); and housing price data (point format).\n\n\n\n\n\nSample size\nAs with many machine learning algorithms, a large sample size often results in higher performance than low. MOSAIKS has been used and shown to be effective with a wide range of sample sizes (N). The sample size for model training is determined by the spatial and temporal resolution of your label data. For example, when predicting maize yields in the US using ground data from one year of farmer-level surveys in the US, N=3,143 if farmers are geolocated based on their county (even if far more than 3,143 farmers were interviewed, as this is the number of counties in the US). Additional time periods increase sample size for training, but also require more up-front costs, as more imagery need to be “featurized”.\nThe original MOSAIKS publication (Rolf et al., 2021) tested performance for forest cover, income, housing price, population density, nighttime luminosity, and elevation using sample sizes ranging from 60,000 to 100,000, but showed that performance fell only modestly when N shrank to just a few hundred observations. Consistent with this finding, in recent experiments with crop yield, we see high with only around 400 observations (R² = 0.80). It is important to note that the original crop yield dataset included interview data from thousands of farmers across the study country, and this messy data was cleaned and aggregated to the district level prior to modeling. In this case, a clean dataset with a low number of observations was preferred to a large but noisy dataset. Despite the low sample size of the aggregate data, performance was still comparable to more complex CNN models trained specifically on crop yield.\n\n\n\n\n\n\nAs a rule of thumb, we recommend a sample size of at least 300 observations for training a MOSAIKS model, though every application is unique and may require more or fewer observations.\n\n\n\n\n\nData types\nMOSAIKS accommodates both continuous (e.g., fraction of area forested) and discrete (e.g., presence/absence of water) labels, with data type influencing model development and testing. Performance metric selection is also determined by data type - for continuous variables, we typically use the coefficient of determination (R²), while for discrete variables, the area under the curve value from the receiver operator characteristic curve (ROC AUC score) is used.\n\n\nSummary checklist\nFor optimal use with MOSAIKS, label data should be:\n\nConsistently geolocated as point, polygon, vector, or raster data\nAggregatable to ≥1km² resolution\nObservable in daytime satellite imagery (directly or indirectly)\nRecent or slow-changing if using current API features\nSample size N≥300 (larger samples generally perform better)\n\n\n\n\n\n\n\nLooking forward\n\n\n\nIn the next chapter, we’ll explore more than 100 specific examples of labels that have been tested with MOSAIKS at varying levels of success.",
     "crumbs": [
       "Label Data"
     ]
@@ -324,29 +315,40 @@
     "href": "labels-100-maps.html",
     "title": "5  What labels work?",
     "section": "",
-    "text": "5.1 Overview",
+    "text": "5.1 Overview\nMOSAIKS is a designed to be useful for predicting anything one might see in satellite imagery. Some things are easier to predict than others, but the system is designed to be flexible. For instance, some variables can be seen directly in the imagery itself, such as forest cover. Other outcomes can only be seen through proxy variables like income and housing price which are not directly visible in the imagery but can be estimated by looking at objects in imagery that are correlated with them, such as roads, houses, and cars.\nIn this chapter we will explore over 100 different outcomes that have been tested with MOSAIKS. We will discuss the results of a selection of these outcomes in detail, and provide a brief overview of the rest.",
     "crumbs": [
       "Label Data",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>What labels work?</span>"
     ]
   },
   {
-    "objectID": "labels-100-maps.html#original-publication",
-    "href": "labels-100-maps.html#original-publication",
+    "objectID": "labels-100-maps.html#overview",
+    "href": "labels-100-maps.html#overview",
     "title": "5  What labels work?",
-    "section": "5.2 Original publication",
-    "text": "5.2 Original publication\n\nRecap the original 7 outcomes",
+    "section": "",
+    "text": "Figure 5.1: MOSAIKS versatility makes it the perfect tool for a wide range of applications.",
     "crumbs": [
       "Label Data",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>What labels work?</span>"
     ]
   },
   {
-    "objectID": "labels-100-maps.html#maps",
-    "href": "labels-100-maps.html#maps",
+    "objectID": "labels-100-maps.html#one-hundred-maps",
+    "href": "labels-100-maps.html#one-hundred-maps",
     "title": "5  What labels work?",
-    "section": "5.3 100 maps",
-    "text": "5.3 100 maps\n\n100 Maps results",
+    "section": "5.2 One hundred maps",
+    "text": "5.2 One hundred maps\n\n5.2.1 Original publication\nThe original publication tested MOSAIKS on 7 outcomes: forest cover, income, housing price, population density, nighttime luminosity, and elevation. The primary results of Rolf et al. 2021 are focused in the United States. This is an excellent starting point for understanding the capabilities of MOSAIKS as the data quality is high and the outcomes are diverse. While the results were promising and demonstrated the potential of MOSAIKS, the true test is in the application to new outcomes and new geographies.\n\n\n5.2.2 Going global\nTo test the global applicability of MOSAIKS, across a diverse set of outcomes, there were 2 primary things that needed to happen:\n1. The creation of a global set of features\n\n\n\n\n\n\nFigure 5.2: Planet Labs visual basemap imagery from quarter 3 of 2019 (left) and 4 of 4,000 MOSAIKS features downloaded from the API (right).\n\n\n\n2. Collecting and currating a large set of outcomes with diversity in spatial structures and categories\n\n\n\n\n\n\n\n\n\n\n\nCategory\nNumber of Labels\nExample Label\n\n\n\n\nAgricultural Assets\n5\nAgricultural land ownership\n\n\nAgriculture\n16\nMaize yield\n\n\nBuilt Infrastructure\n9\nBuildings\n\n\nDemographics\n5\nMedian age\n\n\nEducation\n10\nExpected years of schooling\n\n\nHealth\n15\nMalaria in children\n\n\nHousehold Assets\n21\nMobile phones\n\n\nIncome\n9\nHuman development index\n\n\nNatural Systems\n8\nTree cover\n\n\nOccupation\n17\nUnemployment\n\n\n\n\n\nTable 5.1: The authors selected 115 variables across 10 categories and set to work testing each in the MOSAIKS system.\n\n\n\nWith this data in hand, we were able to devise a few simple questions to test:\n\nWhich variables can be effectively measured?\nWhat are the most compelling applications?\nWhat are the modes of failure?",
+    "crumbs": [
+      "Label Data",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>What labels work?</span>"
+    ]
+  },
+  {
+    "objectID": "labels-100-maps.html#results",
+    "href": "labels-100-maps.html#results",
+    "title": "5  What labels work?",
+    "section": "5.3 Results",
+    "text": "5.3 Results\n\n\n\n\n\n\nFigure 5.3: The results of the 100 maps experiment.\n\n\n\n\n\n\n\n\n\nFigure 5.4: The results of the 100 maps experiment.\n\n\n\n\n\n\n\n\n\nFigure 5.5: Where it fails\n\n\n\n\n\n\n\n\n\nFigure 5.6: Why it fails",
     "crumbs": [
       "Label Data",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>What labels work?</span>"
@@ -368,7 +370,18 @@
     "href": "labels-data-prep.html",
     "title": "7  Preparing labels",
     "section": "",
-    "text": "This chapter is in early draft form and may be incomplete.\n\n\n\n\n\nConsiderations for data cleaning\nWhat should my data look like?",
+    "text": "7.1 Joining data\nBefore model training, label data must be joined to imagery features. The joined data should be tabular with each row containing:\nFor example, a dataset with crop yeild data could look like:\nAnd a dataset with district level aggregate features could look like:\nFinally, the joined dataset would look like:\nIn the above example, our geographic location is the district and our label is the crop yield (mt/ha). We then have K columns containing the features and N observations.\nIn this example, our features started at 1 km² resolution and were aggregated to the district level to match the crop yield data. To join this data, we first found all of the feature locations that fall within the district boundaries using a spatial join. Then we averaged the features within each district. This allowed us to have a single feature vector for each district. The resulting tabular data is ready for modeling.\nNote: Add example code for joining data",
+    "crumbs": [
+      "Label Data",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Preparing labels</span>"
+    ]
+  },
+  {
+    "objectID": "labels-data-prep.html#joining-data",
+    "href": "labels-data-prep.html#joining-data",
+    "title": "7  Preparing labels",
+    "section": "",
+    "text": "Label - the observed value\n\nGeographic location - such as a MOSAIKS grid cell or larger geographic area\n\nTime (optional) - useful for time series data (year, mont, or day)\n\nK feature columns - column for every random satellite feature (typically k = 4,000)\n\n\n\n\n\nObservation\nDistrict\nYear\nCrop Yield\n\n\n\n\n1\nChibombo\n2019\n1.520\n\n\n2\nKabwe\n2019\n1.878\n\n\n…\n…\n…\n…\n\n\nN\nKitwe\n2019\n2.383\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nObservation\nDistrict\nYear\nFeature 1\nFeature 2\n…\nFeature K\n\n\n\n\n1\nChibombo\n2019\n4.2\n11.6\n…\n12.7\n\n\n2\nKabwe\n2019\n2.9\n5.3\n…\n11.2\n\n\n…\n…\n…\n…\n…\n…\n…\n\n\nN\nKitwe\n2019\n10.6\n1.1\n…\n2.2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nObservation\nDistrict\nYear\nCrop Yield\nFeature 1\nFeature 2\n…\nFeature K\n\n\n\n\n1\nChibombo\n2019\n1.520\n4.2\n11.6\n…\n12.7\n\n\n2\nKabwe\n2019\n1.878\n2.9\n5.3\n…\n11.2\n\n\n…\n…\n…\n…\n…\n…\n…\n…\n\n\nN\nKitwe\n2019\n2.383\n10.6\n1.1\n…\n2.2",
     "crumbs": [
       "Label Data",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Preparing labels</span>"
@@ -592,7 +605,18 @@
     "href": "features-api.html",
     "title": "13  API Features",
     "section": "",
-    "text": "This chapter is in early draft form and may be incomplete.\n\n\n\n\n\nDefaults\n\n\n\n\nPlanet Labs basemap imagery (left) and 4 of 4,000 MOSAIKS features downloaded from the API (right).",
+    "text": "13.1 Feature data",
+    "crumbs": [
+      "Satellite Features",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>API Features</span>"
+    ]
+  },
+  {
+    "objectID": "features-api.html#feature-data",
+    "href": "features-api.html#feature-data",
+    "title": "13  API Features",
+    "section": "",
+    "text": "Creating satellite image features is covered in later chapters.\n\n\n\n\n13.1.1 RCF brief overview\nMOSAIKS relies on random convolutional features (RCFs) computed from satellite imagery. The random nature of the features means that they are task-agnostic. These features can be reused multiple times to model various tasks. Features are generally created over a standard grid of 0.01 by 0.01 degree cells (~1 km², depending on latitude). The output is a feature vector of length K for every grid location.\n\n\n\n\n\n\nFeatures can be computed at higher or lower resolutions than 1 km². This is discussed in Chapter 14.\n\n\n\n\n\n13.1.2 Feature aggrgegation\nThe default 1 km² resolution of MOSAIKS is generally the maximum resolution the label data should be in. If the labels are in lower resolution, the satellite features can be aggregated up to larger areas to match. Typical aggregation might be to larger grid cell, census tract, county/district, or state/province levels. The exact aggregation level is contingent on the spatial resolution of the label data.\n\n\n\n\n\n\nFigure 13.1: Example showing of 3 representative random convolutional features (rows). Features are downloaded from the MOSAIKS API at 0.01° resolution (the native resolution) and aggregated to 3 levels, including (A) larger grid cells (0.1°), (B) counties, and (C) states.\n\n\n\n\n\n13.1.3 API Features\nCurrently the MOSAIKS API has a single set of global features ready to download. The features are publicly available for download; this is the fastest and easiest way to begin using MOSAIKS. They come from Planet Labs, Inc. Basemaps product Global Quarterly 2019 (qaurter 3) which has a native resolution of 4.77 m in the red, green, and blue bands of the visual spectrum. Given this, the easiest way to get started with MOSAIKS is to have label data for a recent time period (ideally from 2019 for fast changing labels, or a close year for more steady labels). To use MOSAIKS for time series data is possible, just not currently with precomputed and publicly available features. To access API features see Chapter 3\n\n\n\n\n\n\n\n\n\n\n\n\n\nResolution\nTime Period\nPopulation Weighted\nArea Weighted\nDownload\n\n\n\n\n0.01°\n2019 Q3\n\n\nQuery\n\n\n0.1°\n2019 Q3\n✓\n✓\nChunked files\n\n\n1°\n2019 Q3\n✓\n✓\nSingle file\n\n\nADM2\n2019 Q3\n✓\n✓\nSingle file\n\n\nADM1\n2019 Q3\n✓\n✓\nSingle file\n\n\nADM0\n2019 Q3\n✓\n✓\nSingle file\n\n\n\n\n\nTable 13.1: The MOSAIKS API offers features at 0.01°, 0.1°, and 1° resolution for the entire globe. Additionally, we provide features aggregated to the ADM0 (country), ADM1 (state/province), and ADM2 (county/municipality) levels. All features share the same 4,000 feature columns, and are all created from the same Planet Labs imagery, the only difference is the resolution/aggregation level. At each level of aggregation, we offer area weighted features and population weighted features. Population weighted features use weights from the Gridded Population of the World (GPWv4) population density dataset.",
     "crumbs": [
       "Satellite Features",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>API Features</span>"

@@ -315,8 +315,19 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#feature-data" id="toc-feature-data" class="nav-link active" data-scroll-target="#feature-data"><span class="header-section-number">13.1</span> Feature data</a>
+  <ul class="collapse">
+  <li><a href="#rcf-brief-overview" id="toc-rcf-brief-overview" class="nav-link" data-scroll-target="#rcf-brief-overview"><span class="header-section-number">13.1.1</span> RCF brief overview</a></li>
+  <li><a href="#feature-aggrgegation" id="toc-feature-aggrgegation" class="nav-link" data-scroll-target="#feature-aggrgegation"><span class="header-section-number">13.1.2</span> Feature aggrgegation</a></li>
+  <li><a href="#api-features" id="toc-api-features" class="nav-link" data-scroll-target="#api-features"><span class="header-section-number">13.1.3</span> API Features</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/edit/main/features-api.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -361,8 +372,124 @@ ul.task-list li input[type="checkbox"] {
 <figcaption>Planet Labs basemap imagery (left) and 4 of 4,000 MOSAIKS features downloaded from the API (right).</figcaption>
 </figure>
 </div>
+<section id="feature-data" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="feature-data"><span class="header-section-number">13.1</span> Feature data</h2>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Creating satellite image features is covered in later chapters.</p>
+</div>
+</div>
+</div>
+<section id="rcf-brief-overview" class="level3" data-number="13.1.1">
+<h3 data-number="13.1.1" class="anchored" data-anchor-id="rcf-brief-overview"><span class="header-section-number">13.1.1</span> RCF brief overview</h3>
+<p>MOSAIKS relies on random convolutional features (RCFs) computed from satellite imagery. The random nature of the features means that they are task-agnostic. These features can be reused multiple times to model various tasks. Features are generally created over a standard grid of 0.01 by 0.01 degree cells (~1 km², depending on latitude). The output is a feature vector of length <em>K</em> for every grid location.</p>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Features can be computed at higher or lower resolutions than 1 km². This is discussed in <a href="features-computing.html" class="quarto-xref"><span>Chapter 14</span></a>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="feature-aggrgegation" class="level3" data-number="13.1.2">
+<h3 data-number="13.1.2" class="anchored" data-anchor-id="feature-aggrgegation"><span class="header-section-number">13.1.2</span> Feature aggrgegation</h3>
+<p>The default 1 km² resolution of MOSAIKS is generally the maximum resolution the label data should be in. If the labels are in lower resolution, the satellite features can be aggregated up to larger areas to match. Typical aggregation might be to larger grid cell, census tract, county/district, or state/province levels. The exact aggregation level is contingent on the spatial resolution of the label data.</p>
+<div id="fig-feature-aggregation" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-feature-aggregation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/US_feature_summaries.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-feature-aggregation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;13.1: Example showing of 3 representative random convolutional features (rows). Features are downloaded from the MOSAIKS API at 0.01° resolution (the native resolution) and aggregated to 3 levels, including (A) larger grid cells (0.1°), (B) counties, and (C) states.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="api-features" class="level3" data-number="13.1.3">
+<h3 data-number="13.1.3" class="anchored" data-anchor-id="api-features"><span class="header-section-number">13.1.3</span> API Features</h3>
+<p>Currently the MOSAIKS API has a single set of global features ready to download. The features are publicly available for download; this is the fastest and easiest way to begin using MOSAIKS. They come from Planet Labs, Inc.&nbsp;<a href="https://developers.planet.com/docs/basemaps/" target="_blank">Basemaps</a> product Global Quarterly 2019 (qaurter 3) which has a native resolution of 4.77 m in the red, green, and blue bands of the visual spectrum. Given this, the easiest way to get started with MOSAIKS is to have label data for a recent time period (ideally from 2019 for fast changing labels, or a close year for more steady labels). To use MOSAIKS for time series data is possible, just not currently with precomputed and publicly available features. To access API features see <a href="intro-api.html" class="quarto-xref"><span>Chapter 3</span></a></p>
+<div id="tbl-api-options" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<div aria-describedby="tbl-api-options-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 19%">
+<col style="width: 26%">
+<col style="width: 19%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Resolution</th>
+<th>Time Period</th>
+<th>Population Weighted</th>
+<th>Area Weighted</th>
+<th>Download</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0.01°</td>
+<td>2019 Q3</td>
+<td></td>
+<td></td>
+<td>Query</td>
+</tr>
+<tr class="even">
+<td>0.1°</td>
+<td>2019 Q3</td>
+<td>✓</td>
+<td>✓</td>
+<td>Chunked files</td>
+</tr>
+<tr class="odd">
+<td>1°</td>
+<td>2019 Q3</td>
+<td>✓</td>
+<td>✓</td>
+<td>Single file</td>
+</tr>
+<tr class="even">
+<td>ADM2</td>
+<td>2019 Q3</td>
+<td>✓</td>
+<td>✓</td>
+<td>Single file</td>
+</tr>
+<tr class="odd">
+<td>ADM1</td>
+<td>2019 Q3</td>
+<td>✓</td>
+<td>✓</td>
+<td>Single file</td>
+</tr>
+<tr class="even">
+<td>ADM0</td>
+<td>2019 Q3</td>
+<td>✓</td>
+<td>✓</td>
+<td>Single file</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-api-options-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;13.1: The MOSAIKS API offers features at 0.01°, 0.1°, and 1° resolution for the entire globe. Additionally, we provide features aggregated to the ADM0 (country), ADM1 (state/province), and ADM2 (county/municipality) levels. All features share the same 4,000 feature columns, and are all created from the same Planet Labs imagery, the only difference is the resolution/aggregation level. At each level of aggregation, we offer area weighted features and population weighted features. Population weighted features use weights from the <a href="https://sedac.ciesin.columbia.edu/data/collection/gpw-v4" target="_blank">Gridded Population of the World (GPWv4)</a> population density dataset.
+</figcaption>
+</figure>
+</div>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -946,7 +1073,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/edit/main/features-api.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/edit/main/features-api.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>

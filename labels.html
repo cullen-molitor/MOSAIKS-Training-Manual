@@ -324,17 +324,9 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#resolution" id="toc-resolution" class="nav-link" data-scroll-target="#resolution">Resolution</a></li>
   <li><a href="#sample-size" id="toc-sample-size" class="nav-link" data-scroll-target="#sample-size">Sample size</a></li>
-  <li><a href="#example-variables" id="toc-example-variables" class="nav-link" data-scroll-target="#example-variables">Example variables</a></li>
   <li><a href="#data-types" id="toc-data-types" class="nav-link" data-scroll-target="#data-types">Data types</a></li>
   <li><a href="#summary-checklist" id="toc-summary-checklist" class="nav-link" data-scroll-target="#summary-checklist">Summary checklist</a></li>
   </ul></li>
-  <li><a href="#feature-data" id="toc-feature-data" class="nav-link" data-scroll-target="#feature-data">Feature data</a>
-  <ul class="collapse">
-  <li><a href="#rcf-brief-overview" id="toc-rcf-brief-overview" class="nav-link" data-scroll-target="#rcf-brief-overview">RCF brief overview</a></li>
-  <li><a href="#feature-aggrgegation" id="toc-feature-aggrgegation" class="nav-link" data-scroll-target="#feature-aggrgegation">Feature aggrgegation</a></li>
-  <li><a href="#api-features" id="toc-api-features" class="nav-link" data-scroll-target="#api-features">API Features</a></li>
-  </ul></li>
-  <li><a href="#joining-data" id="toc-joining-data" class="nav-link" data-scroll-target="#joining-data">Joining data</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/edit/main/labels.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -407,10 +399,17 @@ Figure&nbsp;1: Examples of label data formats that can be easily integrated into
 <section id="sample-size" class="level3">
 <h3 class="anchored" data-anchor-id="sample-size">Sample size</h3>
 <p>As with many machine learning algorithms, a large sample size often results in higher performance than low. MOSAIKS has been used and shown to be effective with a wide range of sample sizes (<em>N</em>). The sample size for model training is determined by the spatial and temporal resolution of your label data. For example, when predicting maize yields in the US using ground data from one year of farmer-level surveys in the US, <em>N</em>=3,143 if farmers are geolocated based on their county (even if far more than 3,143 farmers were interviewed, as this is the number of counties in the US). Additional time periods increase sample size for training, but also require more up-front costs, as more imagery need to be “featurized”.</p>
-</section>
-<section id="example-variables" class="level3">
-<h3 class="anchored" data-anchor-id="example-variables">Example variables</h3>
 <p>The original MOSAIKS publication (Rolf et al., 2021) tested performance for forest cover, income, housing price, population density, nighttime luminosity, and elevation using sample sizes ranging from 60,000 to 100,000, but showed that performance fell only modestly when <em>N</em> shrank to just a few hundred observations. Consistent with this finding, in recent experiments with crop yield, we see high with only around 400 observations (R² = 0.80). It is important to note that the original crop yield dataset included interview data from thousands of farmers across the study country, and this messy data was cleaned and aggregated to the district level prior to modeling. In this case, a clean dataset with a low number of observations was preferred to a large but noisy dataset. Despite the low sample size of the aggregate data, performance was still comparable to more complex CNN models trained specifically on crop yield.</p>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>As a rule of thumb, we recommend a sample size of at least 300 observations for training a MOSAIKS model, though every application is unique and may require more or fewer observations.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="data-types" class="level3">
 <h3 class="anchored" data-anchor-id="data-types">Data types</h3>
@@ -426,235 +425,6 @@ Figure&nbsp;1: Examples of label data formats that can be easily integrated into
 <li><label><input type="checkbox"><strong>Recent or slow-changing</strong> if using current API features</label></li>
 <li><label><input type="checkbox"><strong>Sample size N≥300</strong> (larger samples generally perform better)</label></li>
 </ul>
-</section>
-</section>
-<section id="feature-data" class="level2">
-<h2 class="anchored" data-anchor-id="feature-data">Feature data</h2>
-<div class="callout callout-style-simple callout-note">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>Creating satellite image features is covered in later chapters.</p>
-</div>
-</div>
-</div>
-<section id="rcf-brief-overview" class="level3">
-<h3 class="anchored" data-anchor-id="rcf-brief-overview">RCF brief overview</h3>
-<p>MOSAIKS relies on random convolutional features (RCFs) computed from satellite imagery. The random nature of the features means that they are task-agnostic. These features can be reused multiple times to model various tasks. Features are generally created over a standard grid of 0.01 by 0.01 degree cells (~1 km², depending on latitude). The output is a feature vector of length <em>K</em> for every grid location.</p>
-<div class="callout callout-style-simple callout-note">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>Features can be computed at higher or lower resolutions than 1 km². This is discussed in <a href="features-computing.html" class="quarto-xref"><span>14&nbsp; Computing Features</span></a>.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="feature-aggrgegation" class="level3">
-<h3 class="anchored" data-anchor-id="feature-aggrgegation">Feature aggrgegation</h3>
-<p>The default 1 km² resolution of MOSAIKS is generally the maximum resolution the label data should be in. If the labels are in lower resolution, the satellite features can be aggregated up to larger areas to match. Typical aggregation might be to larger grid cell, census tract, county/district, or state/province levels. The exact aggregation level is contingent on the spatial resolution of the label data.</p>
-<div id="fig-feature-aggregation" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-feature-aggregation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/US_feature_summaries.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-feature-aggregation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Examples of 3 representative random convolutional features (downloaded from the MOSAIKS API) aggregated to different levels, including (A) grid cells (0.1°), (B) counties, and (C) states. The features are originally computed at 0.01° resolution (not pictured).
-</figcaption>
-</figure>
-</div>
-</section>
-<section id="api-features" class="level3">
-<h3 class="anchored" data-anchor-id="api-features">API Features</h3>
-<p>Currently the MOSAIKS API has a single global set of features that are precalculated and ready to download. This static layer is computed from Planet Labs, Inc.&nbsp;<a href="https://developers.planet.com/docs/basemaps/" target="_blank">Basemaps</a> product Global Quarterly 2019 (qaurter 3) which has a native resolution of 4.77 m in the red, green, and blue bands of the visual spectrum (see <a href="satellite-imagery.html#sec-satellite-private" class="quarto-xref"><span>11.8 Private Satellites</span></a> for more details). The features are publicly available for download; this is the fastest and easiest way to begin using MOSAIKS.</p>
-<p>Given this, the easiest way to get started with MOSAIKS is to have label data for a recent time period (ideally from 2019 for fast changing labels, or a close year for more steady labels). To use MOSAIKS for time series data is possible, just not currently with precomputed and publicly available features. To access API features see <a href="intro-api.html" class="quarto-xref"><span>3&nbsp; Access MOSAIKS</span></a></p>
-<p><strong>add details</strong> of api products available (0.1 degree and pop/area weighted etc)</p>
-</section>
-</section>
-<section id="joining-data" class="level2">
-<h2 class="anchored" data-anchor-id="joining-data">Joining data</h2>
-<p>Before model training, label data must be joined to imagery features. The joined data should be tabular with each row containing:</p>
-<ol type="1">
-<li><strong>Label</strong> - the observed value<br>
-</li>
-<li><strong>Geographic location</strong> - such as a MOSAIKS grid cell or larger geographic area<br>
-</li>
-<li><strong>Time (optional)</strong> - useful for time series data (year, mont, or day)<br>
-</li>
-<li><strong><em>K</em> feature columns</strong> - column for every random satellite feature (typically <em>k</em> = 4,000)</li>
-</ol>
-<p>For example, a dataset with crop yeild data could look like:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Observation</th>
-<th>District</th>
-<th>Year</th>
-<th>Crop Yield</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>Chibombo</td>
-<td>2019</td>
-<td>1.520</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>Kabwe</td>
-<td>2019</td>
-<td>1.878</td>
-</tr>
-<tr class="odd">
-<td>…</td>
-<td>…</td>
-<td>…</td>
-<td>…</td>
-</tr>
-<tr class="even">
-<td><em>N</em></td>
-<td>Kitwe</td>
-<td>2019</td>
-<td>2.383</td>
-</tr>
-</tbody>
-</table>
-<p>And a dataset with district level aggregate features could look like:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 18%">
-<col style="width: 15%">
-<col style="width: 8%">
-<col style="width: 15%">
-<col style="width: 15%">
-<col style="width: 7%">
-<col style="width: 18%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Observation</th>
-<th>District</th>
-<th>Year</th>
-<th>Feature 1</th>
-<th>Feature 2</th>
-<th>…</th>
-<th>Feature <em>K</em></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>Chibombo</td>
-<td>2019</td>
-<td>4.2</td>
-<td>11.6</td>
-<td>…</td>
-<td>12.7</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>Kabwe</td>
-<td>2019</td>
-<td>2.9</td>
-<td>5.3</td>
-<td>…</td>
-<td>11.2</td>
-</tr>
-<tr class="odd">
-<td>…</td>
-<td>…</td>
-<td>…</td>
-<td>…</td>
-<td>…</td>
-<td>…</td>
-<td>…</td>
-</tr>
-<tr class="even">
-<td><em>N</em></td>
-<td>Kitwe</td>
-<td>2019</td>
-<td>10.6</td>
-<td>1.1</td>
-<td>…</td>
-<td>2.2</td>
-</tr>
-</tbody>
-</table>
-<p>Finally, the joined dataset would look like:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 15%">
-<col style="width: 13%">
-<col style="width: 7%">
-<col style="width: 14%">
-<col style="width: 13%">
-<col style="width: 13%">
-<col style="width: 6%">
-<col style="width: 15%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Observation</th>
-<th>District</th>
-<th>Year</th>
-<th>Crop Yield</th>
-<th>Feature 1</th>
-<th>Feature 2</th>
-<th>…</th>
-<th>Feature <em>K</em></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>Chibombo</td>
-<td>2019</td>
-<td>1.520</td>
-<td>4.2</td>
-<td>11.6</td>
-<td>…</td>
-<td>12.7</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>Kabwe</td>
-<td>2019</td>
-<td>1.878</td>
-<td>2.9</td>
-<td>5.3</td>
-<td>…</td>
-<td>11.2</td>
-</tr>
-<tr class="odd">
-<td>…</td>
-<td>…</td>
-<td>…</td>
-<td>…</td>
-<td>…</td>
-<td>…</td>
-<td>…</td>
-<td>…</td>
-</tr>
-<tr class="even">
-<td><em>N</em></td>
-<td>Kitwe</td>
-<td>2019</td>
-<td>2.383</td>
-<td>10.6</td>
-<td>1.1</td>
-<td>…</td>
-<td>2.2</td>
-</tr>
-</tbody>
-</table>
-<p>In the above example, our geographic location is the district and our label is the crop yield (mt/ha). We then have <em>K</em> columns containing the features and <em>N</em> observations.</p>
-<p>In this example, our features started at 1 km² resolution and were aggregated to the district level to match the crop yield data. To join this data, we first found all of the feature locations that fall within the district boundaries using a spatial join. Then we averaged the features within each district. This allowed us to have a single feature vector for each district. The resulting tabular data is ready for modeling.</p>
-<p><strong>Note:</strong> Add example code for joining data</p>
 <div class="callout callout-style-simple callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -665,11 +435,12 @@ Looking forward
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>In the next chapter, we’ll explore specific examples of labels that work well with MOSAIKS.</p>
+<p>In the next chapter, we’ll explore more than 100 specific examples of labels that have been tested with MOSAIKS at varying levels of success.</p>
 </div>
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
