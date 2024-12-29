@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>12&nbsp; Processing Imagery – MOSAIKS Training Manual</title>
+<title>10&nbsp; Processing imagery – MOSAIKS Training Manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -84,7 +118,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./satellite.html">Satellite Imagery</a></li><li class="breadcrumb-item"><a href="./satellite-processing.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Processing Imagery</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./satellite.html">Satellite Imagery</a></li><li class="breadcrumb-item"><a href="./satellite-processing.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Processing imagery</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -176,8 +210,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./labels-over-time.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Time series data</span></span></a>
+  <a href="./labels-survey.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Survey data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -188,20 +222,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./labels-survey.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Survey Data</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./mosaiks-demo-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Demo Number 2</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./interactive-agriculture.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Agriculture example</span></span></a>
+  <a href="./labels-demo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Label data demo</span></span></a>
   </div>
 </li>
       </ul>
@@ -218,13 +240,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./satellite-imagery.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Choosing Imagery</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Choosing imagery</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./satellite-processing.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Processing Imagery</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Processing imagery</span></span></a>
   </div>
 </li>
       </ul>
@@ -241,13 +263,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./features-api.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">API Features</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">API Features</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./features-computing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Computing Features</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Computing Features</span></span></a>
   </div>
 </li>
       </ul>
@@ -264,19 +286,19 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./model-choice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Model Choice</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Model Choice</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./model-spatial.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Filling spatial data gaps</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Modeling over space</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./model-temporal.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Filling temporal data gaps</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Modeling over time</span></span></a>
   </div>
 </li>
       </ul>
@@ -293,13 +315,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./uncertainty-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Overview of uncertainty</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Overview of uncertainty</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./uncertainty-ethics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Ethical implications</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Ethical implications</span></span></a>
   </div>
 </li>
       </ul>
@@ -315,15 +337,53 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">10.1</span> Overview</a></li>
+  <li><a href="#cloud-vs-local-processing" id="toc-cloud-vs-local-processing" class="nav-link" data-scroll-target="#cloud-vs-local-processing"><span class="header-section-number">10.2</span> Cloud vs local processing</a>
+  <ul class="collapse">
+  <li><a href="#cloud-based-platforms" id="toc-cloud-based-platforms" class="nav-link" data-scroll-target="#cloud-based-platforms"><span class="header-section-number">10.2.1</span> Cloud-based platforms</a></li>
+  <li><a href="#local-processing" id="toc-local-processing" class="nav-link" data-scroll-target="#local-processing"><span class="header-section-number">10.2.2</span> Local processing</a></li>
+  </ul></li>
+  <li><a href="#accessing-imagery" id="toc-accessing-imagery" class="nav-link" data-scroll-target="#accessing-imagery"><span class="header-section-number">10.3</span> Accessing imagery</a>
+  <ul class="collapse">
+  <li><a href="#cloud-platforms" id="toc-cloud-platforms" class="nav-link" data-scroll-target="#cloud-platforms"><span class="header-section-number">10.3.1</span> Cloud platforms</a></li>
+  <li><a href="#local-downloads" id="toc-local-downloads" class="nav-link" data-scroll-target="#local-downloads"><span class="header-section-number">10.3.2</span> Local downloads</a></li>
+  </ul></li>
+  <li><a href="#processing-steps" id="toc-processing-steps" class="nav-link" data-scroll-target="#processing-steps"><span class="header-section-number">10.4</span> Processing steps</a>
+  <ul class="collapse">
+  <li><a href="#quality-assessment" id="toc-quality-assessment" class="nav-link" data-scroll-target="#quality-assessment"><span class="header-section-number">10.4.1</span> 1. Quality assessment</a></li>
+  <li><a href="#atmospheric-correction" id="toc-atmospheric-correction" class="nav-link" data-scroll-target="#atmospheric-correction"><span class="header-section-number">10.4.2</span> 2. Atmospheric correction</a></li>
+  <li><a href="#geometric-correction" id="toc-geometric-correction" class="nav-link" data-scroll-target="#geometric-correction"><span class="header-section-number">10.4.3</span> 3. Geometric correction</a></li>
+  <li><a href="#mosaicking" id="toc-mosaicking" class="nav-link" data-scroll-target="#mosaicking"><span class="header-section-number">10.4.4</span> 4. Mosaicking</a></li>
+  <li><a href="#temporal-compositing" id="toc-temporal-compositing" class="nav-link" data-scroll-target="#temporal-compositing"><span class="header-section-number">10.4.5</span> 5. Temporal compositing</a></li>
+  </ul></li>
+  <li><a href="#processing-workflows" id="toc-processing-workflows" class="nav-link" data-scroll-target="#processing-workflows"><span class="header-section-number">10.5</span> Processing workflows</a>
+  <ul class="collapse">
+  <li><a href="#example-cloud-based-workflow" id="toc-example-cloud-based-workflow" class="nav-link" data-scroll-target="#example-cloud-based-workflow"><span class="header-section-number">10.5.1</span> Example cloud-based workflow</a></li>
+  <li><a href="#example-local-workflow" id="toc-example-local-workflow" class="nav-link" data-scroll-target="#example-local-workflow"><span class="header-section-number">10.5.2</span> Example local workflow</a></li>
+  </ul></li>
+  <li><a href="#best-practices" id="toc-best-practices" class="nav-link" data-scroll-target="#best-practices"><span class="header-section-number">10.6</span> Best practices</a></li>
+  <li><a href="#common-challenges" id="toc-common-challenges" class="nav-link" data-scroll-target="#common-challenges"><span class="header-section-number">10.7</span> Common challenges</a>
+  <ul class="collapse">
+  <li><a href="#storage-requirements" id="toc-storage-requirements" class="nav-link" data-scroll-target="#storage-requirements"><span class="header-section-number">10.7.1</span> Storage requirements</a></li>
+  <li><a href="#computing-resources" id="toc-computing-resources" class="nav-link" data-scroll-target="#computing-resources"><span class="header-section-number">10.7.2</span> Computing resources</a></li>
+  <li><a href="#quality-issues" id="toc-quality-issues" class="nav-link" data-scroll-target="#quality-issues"><span class="header-section-number">10.7.3</span> Quality issues</a></li>
+  <li><a href="#time-management" id="toc-time-management" class="nav-link" data-scroll-target="#time-management"><span class="header-section-number">10.7.4</span> Time management</a></li>
+  </ul></li>
+  <li><a href="#future-considerations" id="toc-future-considerations" class="nav-link" data-scroll-target="#future-considerations"><span class="header-section-number">10.8</span> Future considerations</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/edit/main/satellite-processing.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./satellite.html">Satellite Imagery</a></li><li class="breadcrumb-item"><a href="./satellite-processing.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Processing Imagery</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./satellite.html">Satellite Imagery</a></li><li class="breadcrumb-item"><a href="./satellite-processing.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Processing imagery</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-satellite-processing" class="quarto-section-identifier"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Processing Imagery</span></span></h1>
+<h1 class="title"><span id="sec-satellite-processing" class="quarto-section-identifier"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Processing imagery</span></span></h1>
 </div>
 
 
@@ -352,11 +412,326 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
+<section id="overview" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">10.1</span> Overview</h2>
+<p>After selecting appropriate satellite imagery (as discussed in <span class="quarto-unresolved-ref">?sec-satellite-imagery</span>), the next step is accessing and processing that imagery for use with MOSAIKS. This chapter covers key considerations and practical approaches for working with satellite data.</p>
+</section>
+<section id="cloud-vs-local-processing" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="cloud-vs-local-processing"><span class="header-section-number">10.2</span> Cloud vs local processing</h2>
+<p>There are two main approaches to accessing and processing satellite imagery:</p>
+<section id="cloud-based-platforms" class="level3" data-number="10.2.1">
+<h3 data-number="10.2.1" class="anchored" data-anchor-id="cloud-based-platforms"><span class="header-section-number">10.2.1</span> Cloud-based platforms</h3>
+<p>Modern cloud platforms offer several advantages for satellite image processing:</p>
 <ul>
-<li>Download vs cloud processing</li>
+<li>No need to download raw imagery</li>
+<li>Scalable computing resources</li>
+<li>Pre-configured environments</li>
+<li>Often include common datasets</li>
+<li>Pay only for what you use</li>
 </ul>
+<p>Popular platforms include:</p>
+<ul>
+<li>Google Earth Engine</li>
+<li>Microsoft Planetary Computer</li>
+<li>Amazon Web Services</li>
+<li>Planet Platform</li>
+<li>Euro Data Cube</li>
+</ul>
+</section>
+<section id="local-processing" class="level3" data-number="10.2.2">
+<h3 data-number="10.2.2" class="anchored" data-anchor-id="local-processing"><span class="header-section-number">10.2.2</span> Local processing</h3>
+<p>Traditional local processing may be preferred when:</p>
+<ul>
+<li>Internet connectivity is limited</li>
+<li>Data privacy is paramount</li>
+<li>Working with proprietary algorithms</li>
+<li>Computing needs are modest</li>
+<li>Frequent reuse of same imagery</li>
+</ul>
+<p>Consider these factors when choosing:</p>
+<ul>
+<li>Data volume</li>
+<li>Processing complexity</li>
+<li>Budget constraints</li>
+<li>Time requirements</li>
+<li>Security needs</li>
+</ul>
+</section>
+</section>
+<section id="accessing-imagery" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="accessing-imagery"><span class="header-section-number">10.3</span> Accessing imagery</h2>
+<section id="cloud-platforms" class="level3" data-number="10.3.1">
+<h3 data-number="10.3.1" class="anchored" data-anchor-id="cloud-platforms"><span class="header-section-number">10.3.1</span> Cloud platforms</h3>
+<section id="google-earth-engine" class="level4" data-number="10.3.1.1">
+<h4 data-number="10.3.1.1" class="anchored" data-anchor-id="google-earth-engine"><span class="header-section-number">10.3.1.1</span> Google Earth Engine</h4>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ee</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>ee.Initialize()</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Get Sentinel-2 imagery</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>s2 <span class="op">=</span> ee.ImageCollection(<span class="st">'COPERNICUS/S2_SR'</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  .filterDate(<span class="st">'2019-01-01'</span>, <span class="st">'2019-12-31'</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  .filterBounds(region)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="microsoft-planetary-computer" class="level4" data-number="10.3.1.2">
+<h4 data-number="10.3.1.2" class="anchored" data-anchor-id="microsoft-planetary-computer"><span class="header-section-number">10.3.1.2</span> Microsoft Planetary Computer</h4>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> planetary_computer <span class="im">as</span> pc</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pystac_client</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Access STAC API</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>catalog <span class="op">=</span> pystac_client.Client.<span class="bu">open</span>(</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://planetarycomputer.microsoft.com/api/stac/v1"</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    modifier<span class="op">=</span>pc.sign_inplace,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="local-downloads" class="level3" data-number="10.3.2">
+<h3 data-number="10.3.2" class="anchored" data-anchor-id="local-downloads"><span class="header-section-number">10.3.2</span> Local downloads</h3>
+<section id="sentinel-2" class="level4" data-number="10.3.2.1">
+<h4 data-number="10.3.2.1" class="anchored" data-anchor-id="sentinel-2"><span class="header-section-number">10.3.2.1</span> Sentinel-2</h4>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sentinelsat <span class="im">import</span> SentinelAPI</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Connect to Copernicus Open Access Hub</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>api <span class="op">=</span> SentinelAPI(<span class="st">'user'</span>, <span class="st">'password'</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Search and download</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>products <span class="op">=</span> api.query(</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    area,</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    date<span class="op">=</span>(<span class="st">'20190101'</span>, <span class="st">'20191231'</span>),</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    platformname<span class="op">=</span><span class="st">'Sentinel-2'</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="landsat" class="level4" data-number="10.3.2.2">
+<h4 data-number="10.3.2.2" class="anchored" data-anchor-id="landsat"><span class="header-section-number">10.3.2.2</span> Landsat</h4>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> landsatxplore.api</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize API</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>api <span class="op">=</span> landsatxplore.api.API(<span class="st">'user'</span>, <span class="st">'password'</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Search scenes</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>scenes <span class="op">=</span> api.search(</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    dataset<span class="op">=</span><span class="st">'landsat_ot_c2_l2'</span>,</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    bbox<span class="op">=</span>bbox,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    start_date<span class="op">=</span><span class="st">'2019-01-01'</span>,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    end_date<span class="op">=</span><span class="st">'2019-12-31'</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+</section>
+<section id="processing-steps" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="processing-steps"><span class="header-section-number">10.4</span> Processing steps</h2>
+<section id="quality-assessment" class="level3" data-number="10.4.1">
+<h3 data-number="10.4.1" class="anchored" data-anchor-id="quality-assessment"><span class="header-section-number">10.4.1</span> 1. Quality assessment</h3>
+<ul>
+<li>Cloud detection</li>
+<li>Shadow masking</li>
+<li>Bad pixel identification</li>
+<li>Sensor artifacts removal</li>
+</ul>
+</section>
+<section id="atmospheric-correction" class="level3" data-number="10.4.2">
+<h3 data-number="10.4.2" class="anchored" data-anchor-id="atmospheric-correction"><span class="header-section-number">10.4.2</span> 2. Atmospheric correction</h3>
+<ul>
+<li>Convert to surface reflectance</li>
+<li>Account for atmospheric effects</li>
+<li>Standardize across images</li>
+</ul>
+</section>
+<section id="geometric-correction" class="level3" data-number="10.4.3">
+<h3 data-number="10.4.3" class="anchored" data-anchor-id="geometric-correction"><span class="header-section-number">10.4.3</span> 3. Geometric correction</h3>
+<ul>
+<li>Orthorectification</li>
+<li>Co-registration</li>
+<li>Projection alignment</li>
+</ul>
+</section>
+<section id="mosaicking" class="level3" data-number="10.4.4">
+<h3 data-number="10.4.4" class="anchored" data-anchor-id="mosaicking"><span class="header-section-number">10.4.4</span> 4. Mosaicking</h3>
+<ul>
+<li>Image stitching</li>
+<li>Feathering/blending</li>
+<li>Gap filling</li>
+<li>Color balancing</li>
+</ul>
+</section>
+<section id="temporal-compositing" class="level3" data-number="10.4.5">
+<h3 data-number="10.4.5" class="anchored" data-anchor-id="temporal-compositing"><span class="header-section-number">10.4.5</span> 5. Temporal compositing</h3>
+<ul>
+<li>Best-pixel selection</li>
+<li>Weighted averaging</li>
+<li>Gap filling</li>
+<li>Smoothing</li>
+</ul>
+</section>
+</section>
+<section id="processing-workflows" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="processing-workflows"><span class="header-section-number">10.5</span> Processing workflows</h2>
+<section id="example-cloud-based-workflow" class="level3" data-number="10.5.1">
+<h3 data-number="10.5.1" class="anchored" data-anchor-id="example-cloud-based-workflow"><span class="header-section-number">10.5.1</span> Example cloud-based workflow</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> process_sentinel2(aoi, start_date, end_date):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Process Sentinel-2 imagery on Google Earth Engine</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Parameters:</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">    -----------</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">    aoi : ee.Geometry</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">        Area of interest</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">    start_date : str</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co">        Start date (YYYY-MM-DD)</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">    end_date : str</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co">        End date (YYYY-MM-DD)</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co">        </span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co">    --------</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co">    ee.Image</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="co">        Processed composite image</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    s2 <span class="op">=</span> ee.ImageCollection(<span class="st">'COPERNICUS/S2_SR'</span>) <span class="op">\</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>        .filterBounds(aoi) <span class="op">\</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>        .filterDate(start_date, end_date)</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Cloud masking</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> mask_clouds(img):</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>        clouds <span class="op">=</span> img.select(<span class="st">'QA60'</span>).bitwiseAnd(<span class="dv">1</span> <span class="op">&lt;&lt;</span> <span class="dv">10</span>)</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> img.updateMask(clouds.Not())</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Apply cloud mask</span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>    s2_masked <span class="op">=</span> s2.<span class="bu">map</span>(mask_clouds)</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create median composite</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>    composite <span class="op">=</span> s2_masked.median()</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> composite</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="example-local-workflow" class="level3" data-number="10.5.2">
+<h3 data-number="10.5.2" class="anchored" data-anchor-id="example-local-workflow"><span class="header-section-number">10.5.2</span> Example local workflow</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> process_local_images(image_dir):</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Process downloaded satellite imagery</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Parameters:</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">    -----------</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">    image_dir : str</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">        Directory containing images</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co">        </span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co">    --------</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co">    numpy.ndarray</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co">        Processed image array</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    <span class="im">import</span> rasterio</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    <span class="im">from</span> rasterio.merge <span class="im">import</span> merge</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># List images</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    images <span class="op">=</span> []</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="bu">file</span> <span class="kw">in</span> os.listdir(image_dir):</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">file</span>.endswith(<span class="st">'.tif'</span>):</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>            <span class="cf">with</span> rasterio.<span class="bu">open</span>(os.path.join(image_dir, <span class="bu">file</span>)) <span class="im">as</span> src:</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>                images.append(src)</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Merge images</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>    mosaic, transform <span class="op">=</span> merge(images)</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> mosaic</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="best-practices" class="level2" data-number="10.6">
+<h2 data-number="10.6" class="anchored" data-anchor-id="best-practices"><span class="header-section-number">10.6</span> Best practices</h2>
+<ol type="1">
+<li><strong>Document everything</strong>
+<ul>
+<li>Processing steps</li>
+<li>Parameter choices</li>
+<li>Quality control decisions</li>
+<li>Software versions</li>
+</ul></li>
+<li><strong>Validate outputs</strong>
+<ul>
+<li>Visual inspection</li>
+<li>Statistical checks</li>
+<li>Ground truth comparison</li>
+<li>Cross-platform verification</li>
+</ul></li>
+<li><strong>Optimize resources</strong>
+<ul>
+<li>Batch processing</li>
+<li>Parallel computing</li>
+<li>Memory management</li>
+<li>Storage efficiency</li>
+</ul></li>
+<li><strong>Version control</strong>
+<ul>
+<li>Track code changes</li>
+<li>Archive key datasets</li>
+<li>Document dependencies</li>
+<li>Maintain reproducibility</li>
+</ul></li>
+</ol>
+</section>
+<section id="common-challenges" class="level2" data-number="10.7">
+<h2 data-number="10.7" class="anchored" data-anchor-id="common-challenges"><span class="header-section-number">10.7</span> Common challenges</h2>
+<section id="storage-requirements" class="level3" data-number="10.7.1">
+<h3 data-number="10.7.1" class="anchored" data-anchor-id="storage-requirements"><span class="header-section-number">10.7.1</span> Storage requirements</h3>
+<ul>
+<li>Raw imagery can be massive</li>
+<li>Multiple processing steps multiply storage needs</li>
+<li>Intermediate products management</li>
+<li>Backup considerations</li>
+</ul>
+</section>
+<section id="computing-resources" class="level3" data-number="10.7.2">
+<h3 data-number="10.7.2" class="anchored" data-anchor-id="computing-resources"><span class="header-section-number">10.7.2</span> Computing resources</h3>
+<ul>
+<li>Processing can be CPU/GPU intensive</li>
+<li>Memory limitations</li>
+<li>I/O bottlenecks</li>
+<li>Network bandwidth</li>
+</ul>
+</section>
+<section id="quality-issues" class="level3" data-number="10.7.3">
+<h3 data-number="10.7.3" class="anchored" data-anchor-id="quality-issues"><span class="header-section-number">10.7.3</span> Quality issues</h3>
+<ul>
+<li>Cloud contamination</li>
+<li>Atmospheric effects</li>
+<li>Sensor artifacts</li>
+<li>Geometric distortions</li>
+</ul>
+</section>
+<section id="time-management" class="level3" data-number="10.7.4">
+<h3 data-number="10.7.4" class="anchored" data-anchor-id="time-management"><span class="header-section-number">10.7.4</span> Time management</h3>
+<ul>
+<li>Processing can be slow</li>
+<li>Download times</li>
+<li>Quality checking</li>
+<li>Iteration cycles</li>
+</ul>
+</section>
+</section>
+<section id="future-considerations" class="level2" data-number="10.8">
+<h2 data-number="10.8" class="anchored" data-anchor-id="future-considerations"><span class="header-section-number">10.8</span> Future considerations</h2>
+<p>As you develop your processing pipeline, consider:</p>
+<ul>
+<li>Scalability needs</li>
+<li>Automation opportunities</li>
+<li>Quality control requirements</li>
+<li>Resource constraints</li>
+<li>Time limitations</li>
+</ul>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Looking forward
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In the next section, we will explore how to extract MOSAIKS features from processed imagery.</p>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -922,8 +1297,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./satellite-imagery.html" class="pagination-link" aria-label="Choosing Imagery">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Choosing Imagery</span></span>
+      <a href="./satellite-imagery.html" class="pagination-link" aria-label="Choosing imagery">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Choosing imagery</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
@@ -940,7 +1315,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/edit/main/satellite-processing.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/edit/main/satellite-processing.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
