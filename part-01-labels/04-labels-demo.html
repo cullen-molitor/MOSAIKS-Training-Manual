@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Cullen Molitor">
-<meta name="author" content="Tamma Carleton">
-<meta name="author" content="Esther Rolf">
 
-<title>MOSAIKS Training Manual</title>
+<title>8&nbsp; Label data demo – MOSAIKS Training Manual</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -26,25 +23,26 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./part-00-intro/00-intro.html" rel="next">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e8fb9d25728d58bfeac61b497e4a6629.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-57a92833092fd6dc0d7710b6bdfff9c5.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-10775452845d0b2d775c56ccc6d3dcb3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-88c8bd76248a6f67832b73db95f06e0b.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../part-02-satellite/00-satellite.html" rel="next">
+<link href="../part-01-labels/03-labels-data-prep.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e8fb9d25728d58bfeac61b497e4a6629.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-57a92833092fd6dc0d7710b6bdfff9c5.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-10775452845d0b2d775c56ccc6d3dcb3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-88c8bd76248a6f67832b73db95f06e0b.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -74,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="style.scss">
+<link rel="stylesheet" href="../style.scss">
 </head>
 
 <body class="nav-sidebar floating">
@@ -86,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Welcome</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../part-01-labels/00-labels.html">Label data</a></li><li class="breadcrumb-item"><a href="../part-01-labels/04-labels-demo.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Label data demo</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -101,7 +99,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">MOSAIKS Training Manual</a> 
+      <a href="../">MOSAIKS Training Manual</a> 
         <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
@@ -122,13 +120,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Welcome</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./part-00-intro/00-intro.html" class="sidebar-item-text sidebar-link">
+            <a href="../part-00-intro/00-intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -137,25 +135,25 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./part-00-intro/01-intro-compute.html" class="sidebar-item-text sidebar-link">
+  <a href="../part-00-intro/01-intro-compute.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Compute setup</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./part-00-intro/02-intro-mosaiks.html" class="sidebar-item-text sidebar-link">
+  <a href="../part-00-intro/02-intro-mosaiks.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What is MOSAIKS?</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./part-00-intro/03-intro-api.html" class="sidebar-item-text sidebar-link">
+  <a href="../part-00-intro/03-intro-api.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Access MOSAIKS</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./part-00-intro/04-intro-demo.html" class="sidebar-item-text sidebar-link">
+  <a href="../part-00-intro/04-intro-demo.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Try MOSAIKS</span></span></a>
   </div>
 </li>
@@ -163,7 +161,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./part-01-labels/00-labels.html" class="sidebar-item-text sidebar-link">
+            <a href="../part-01-labels/00-labels.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Label data</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -172,25 +170,25 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./part-01-labels/01-labels-100-maps.html" class="sidebar-item-text sidebar-link">
+  <a href="../part-01-labels/01-labels-100-maps.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">What labels work?</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./part-01-labels/02-labels-survey.html" class="sidebar-item-text sidebar-link">
+  <a href="../part-01-labels/02-labels-survey.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Survey data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./part-01-labels/03-labels-data-prep.html" class="sidebar-item-text sidebar-link">
+  <a href="../part-01-labels/03-labels-data-prep.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Preparing labels</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./part-01-labels/04-labels-demo.html" class="sidebar-item-text sidebar-link">
+  <a href="../part-01-labels/04-labels-demo.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Label data demo</span></span></a>
   </div>
 </li>
@@ -198,7 +196,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./part-02-satellite/00-satellite.html" class="sidebar-item-text sidebar-link">
+            <a href="../part-02-satellite/00-satellite.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Satellite imagery</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -207,13 +205,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./part-02-satellite/01-satellite-imagery.html" class="sidebar-item-text sidebar-link">
+  <a href="../part-02-satellite/01-satellite-imagery.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Choosing imagery</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./part-02-satellite/02-satellite-processing.html" class="sidebar-item-text sidebar-link">
+  <a href="../part-02-satellite/02-satellite-processing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Processing imagery</span></span></a>
   </div>
 </li>
@@ -221,7 +219,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./part-03-features/00-features.html" class="sidebar-item-text sidebar-link">
+            <a href="../part-03-features/00-features.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Satellite features</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -230,19 +228,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./part-03-features/01-features-rcf.html" class="sidebar-item-text sidebar-link">
+  <a href="../part-03-features/01-features-rcf.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Understanding features</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./part-03-features/02-features-api.html" class="sidebar-item-text sidebar-link">
+  <a href="../part-03-features/02-features-api.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">API features</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./part-03-features/03-features-computing.html" class="sidebar-item-text sidebar-link">
+  <a href="../part-03-features/03-features-computing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Computing features</span></span></a>
   </div>
 </li>
@@ -250,7 +248,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./part-04-models/00-model.html" class="sidebar-item-text sidebar-link">
+            <a href="../part-04-models/00-model.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Task modeling</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -259,19 +257,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./part-04-models/01-model-choice.html" class="sidebar-item-text sidebar-link">
+  <a href="../part-04-models/01-model-choice.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Model choice</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./part-04-models/02-model-spatial.html" class="sidebar-item-text sidebar-link">
+  <a href="../part-04-models/02-model-spatial.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Modeling over space</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./part-04-models/03-model-temporal.html" class="sidebar-item-text sidebar-link">
+  <a href="../part-04-models/03-model-temporal.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Modeling over time</span></span></a>
   </div>
 </li>
@@ -279,7 +277,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./part-05-uncertainty/00-uncertainty.html" class="sidebar-item-text sidebar-link">
+            <a href="../part-05-uncertainty/00-uncertainty.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Model uncertainty</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -288,13 +286,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./part-05-uncertainty/01-uncertainty-intro.html" class="sidebar-item-text sidebar-link">
+  <a href="../part-05-uncertainty/01-uncertainty-intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Overview of uncertainty</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./part-05-uncertainty/02-uncertainty-ethics.html" class="sidebar-item-text sidebar-link">
+  <a href="../part-05-uncertainty/02-uncertainty-ethics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Ethical implications</span></span></a>
   </div>
 </li>
@@ -302,7 +300,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -311,60 +309,22 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a>
-  <ul class="collapse">
-  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
-  </ul></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../part-01-labels/00-labels.html">Label data</a></li><li class="breadcrumb-item"><a href="../part-01-labels/04-labels-demo.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Label data demo</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">MOSAIKS Training Manual</h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Label data demo</span></h1>
 </div>
 
 
-<div class="quarto-title-meta-author">
-  <div class="quarto-title-meta-heading">Authors</div>
-  <div class="quarto-title-meta-heading">Affiliations</div>
-  
-    <div class="quarto-title-meta-contents">
-    <p class="author"><a href="https://emlab.ucsb.edu/about/our-team/cullen-molitor">Cullen Molitor</a> </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            Center for Effective Global Action (CEGA)
-          </p>
-      </div>
-    <div class="quarto-title-meta-contents">
-    <p class="author"><a href="https://are.berkeley.edu/users/tamma-carleton">Tamma Carleton</a> </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            UC Berkeley Department of Agricultural and Resource Economics
-          </p>
-      </div>
-    <div class="quarto-title-meta-contents">
-    <p class="author"><a href="https://www.colorado.edu/cs/esther-rolf">Esther Rolf</a> </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            UC Boulder College of Engineering and Applied Science
-          </p>
-      </div>
-  </div>
 
 <div class="quarto-title-meta">
 
-      
+    
   
     
   </div>
@@ -374,8 +334,6 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="welcome" class="level1 unnumbered">
-<h1 class="unnumbered">Welcome</h1>
 <div class="status">
 <div class="callout callout-style-simple callout-warning">
 <div class="callout-body d-flex">
@@ -388,63 +346,24 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>This is the first iteration of the MOSAIKS Training Manual! The manual serves as a comprehensive reference for understanding MOSAIKS, its capabilities, and practical implementation guidance.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/mosaiks-in-landsat.png" class="img-fluid figure-img"></p>
-<figcaption>Made with: <a href="https://landsat.gsfc.nasa.gov/apps/YourNameInLandsat-main/" target="_blank">Your Name in Landsat</a></figcaption>
-</figure>
+<ul>
+<li>IDK yet</li>
+</ul>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<p>MOSAIKS stands for <strong><ins>M</ins>ulti-task <ins>O</ins>bservation using <ins>SA</ins>tellite <ins>I</ins>magery &amp; <ins>K</ins>itchen <ins>S</ins>inks</strong>. It is a framework designed to simplify the use of satellite imagery and machine learning for analyzing socioeconomic and environmental outcomes across different geographic contexts and time periods.</p>
-<p>This comprehensive two-week program is designed for academics, professionals, and policymakers interested in leveraging MOSAIKS to better understand socioeconomic and environmental challenges. The course is particularly valuable for those working in:</p>
-<ul>
-<li>Remote sensing and satellite imagery analysis</li>
-<li>Machine learning applications with geospatial data</li>
-<li>Agricultural monitoring and assessment</li>
-<li>Development research and policy making</li>
-</ul>
-<p>Throughout this course, you’ll learn practical applications through a combination of:</p>
-<ul>
-<li>Theoretical foundations and conceptual understanding</li>
-<li>Hands-on exercises with real-world data</li>
-<li>Best practices for implementation</li>
-<li>Strategies for analyzing and interpreting results</li>
-</ul>
-<p>The curriculum covers the complete MOSAIKS workflow:</p>
-<ul>
-<li>Accessing and processing satellite imagery</li>
-<li>Understanding MOSAIKS feature extraction</li>
-<li>Working with the MOSAIKS API</li>
-<li>Implementing machine learning models</li>
-<li>Quantifying and communicating uncertainty</li>
-<li>Applying models to various contexts</li>
-<li>Working with survey data</li>
-</ul>
-<p>Whether you’re new to MOSAIKS or looking to deepen your expertise, this course provides the tools and knowledge needed to effectively utilize this powerful framework.</p>
-<section id="acknowledgements" class="level2">
-<h2 class="anchored" data-anchor-id="acknowledgements">Acknowledgements</h2>
-<p>MOSAIKS was developed and is supported by researchers across multiple partner organizations:</p>
-<p><strong>Core Team:</strong></p>
-<p>Benjamin Recht, Esther Rolf, Tamma Carleton, Eugenio Noda, Hikari Murayama, Hannah Druckenmiller, Ian Bolliger, Jeanette Tseng, Jessica Katz, Jonathan Proctor, Luke Sherman, Miyabi Ishihara, Simon Greenhill, Solomon Hsiang, Taryn Fransen, Trinetta Chong, Vaishaal Shankar, Graeme Blair, Darin Christensen, Shopnavo Biswas, Karena Yan, Cullen Molitor, Grace Lewin, Steven Cognac, Juliet Cohen</p>
-<p><strong>Partner Organizations:</strong></p>
-<ul>
-<li>Center for Effective Global Action (<a href="https://cega.berkeley.edu/" target="_blank">CEGA</a>; UCB)</li>
-<li>Environmental Markets Lab (<a href="https://emlab.ucsb.edu/" target="_blank">emLab</a>; UCSB)</li>
-<li>Global Policy Lab (<a href="https://www.globalpolicy.science/" target="_blank">GPL</a>; Stanford University)</li>
-<li>Harvard Data Science Initiative (<a href="https://datascience.harvard.edu/" target="_blank">HDSI</a>; Harvard University)</li>
-<li>Project on Resources and Governance (<a href="https://projectrg.org/" target="_blank">PRG</a>; UCLA)</li>
-<li>Master of Environmental Data Science Program (<a href="https://bren.ucsb.edu/masters-programs/master-environmental-data-science" target="_blank">MEDS</a>; UCSB)</li>
-</ul>
-<p><strong>Funding Support:</strong></p>
-<ul>
-<li><a href="https://www.mcgovern.org/" target="_blank">The Patrick J. McGovern Foundation</a></li>
-<li><a href="https://www.usaid.gov/" target="_blank">The United States Agency for International Development (USAID)</a></li>
-<li><a href="https://www.undp.org/" target="_blank">United Nations Development Programme (UNDP)</a></li>
-</ul>
+<div class="callout-title-container flex-fill">
+Looking forward
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In the next part, we will take a look at considerations for choosing and processing satellite imagery.</p>
+</div>
+</div>
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1010,10 +929,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../part-01-labels/03-labels-data-prep.html" class="pagination-link" aria-label="Preparing labels">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Preparing labels</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./part-00-intro/00-intro.html" class="pagination-link" aria-label="Introduction">
-        <span class="nav-page-text">Introduction</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../part-02-satellite/00-satellite.html" class="pagination-link" aria-label="Satellite imagery">
+        <span class="nav-page-text">Satellite imagery</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1025,7 +947,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/edit/main/part-01-labels/04-labels-demo.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
