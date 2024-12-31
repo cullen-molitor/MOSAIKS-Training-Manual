@@ -331,16 +331,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#api-overview" id="toc-api-overview" class="nav-link active" data-scroll-target="#api-overview"><span class="header-section-number">3.1</span> API Overview</a></li>
-  <li><a href="#register-for-an-account" id="toc-register-for-an-account" class="nav-link" data-scroll-target="#register-for-an-account"><span class="header-section-number">3.2</span> Register for an account</a></li>
+<li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">3.1</span> Introduction</a></li>
   <li>
-<a href="#downloading-features" id="toc-downloading-features" class="nav-link" data-scroll-target="#downloading-features"><span class="header-section-number">3.3</span> Downloading features</a>
+<a href="#api-overview" id="toc-api-overview" class="nav-link" data-scroll-target="#api-overview"><span class="header-section-number">3.2</span> API Overview</a>
   <ul class="collapse">
-<li><a href="#ways-to-query-features" id="toc-ways-to-query-features" class="nav-link" data-scroll-target="#ways-to-query-features"><span class="header-section-number">3.3.1</span> Ways to query features</a></li>
+<li><a href="#register-for-an-account" id="toc-register-for-an-account" class="nav-link" data-scroll-target="#register-for-an-account"><span class="header-section-number">3.2.1</span> Register for an account</a></li>
+  <li><a href="#downloading-features" id="toc-downloading-features" class="nav-link" data-scroll-target="#downloading-features"><span class="header-section-number">3.2.2</span> Downloading features</a></li>
   </ul>
 </li>
-  <li><a href="#using-mosaiks-features-for-prediction" id="toc-using-mosaiks-features-for-prediction" class="nav-link" data-scroll-target="#using-mosaiks-features-for-prediction"><span class="header-section-number">3.4</span> Using MOSAIKS features for prediction</a></li>
-  <li><a href="#citation-requirements" id="toc-citation-requirements" class="nav-link" data-scroll-target="#citation-requirements"><span class="header-section-number">3.5</span> Citation requirements</a></li>
+  <li><a href="#using-mosaiks-features-for-prediction" id="toc-using-mosaiks-features-for-prediction" class="nav-link" data-scroll-target="#using-mosaiks-features-for-prediction"><span class="header-section-number">3.3</span> Using MOSAIKS features for prediction</a></li>
+  <li><a href="#citation-requirements" id="toc-citation-requirements" class="nav-link" data-scroll-target="#citation-requirements"><span class="header-section-number">3.4</span> Citation requirements</a></li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/edit/main/part-00-intro/03-intro-api.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
@@ -371,8 +371,59 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<section id="api-overview" class="level2" data-number="3.1"><h2 data-number="3.1" class="anchored" data-anchor-id="api-overview">
-<span class="header-section-number">3.1</span> API Overview</h2>
+<section id="introduction" class="level2" data-number="3.1"><h2 data-number="3.1" class="anchored" data-anchor-id="introduction">
+<span class="header-section-number">3.1</span> Introduction</h2>
+<p>At its core, MOSAIKS requires two main inputs: satellite features and ground truth data. Our aim is to make these features as accessible as possible so that the majority of users do not have to worry about the technical details of satellite imagery processing.</p>
+<p>To this end, we have worked to develop multiple ways to access MOSAIKS features:</p>
+<table class="table">
+<thead><tr class="header">
+<th><strong>Option</strong></th>
+<th><strong>Imagery Source</strong></th>
+<th><strong>Spatial Coverage</strong></th>
+<th><strong>Spatial Resolution</strong></th>
+<th><strong>Temporal Resolution</strong></th>
+<th><strong>Link</strong></th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>MOSAIKS API</td>
+<td>Planet imagery</td>
+<td>Global land areas</td>
+<td>0.01°, 0.1°, 1°, ADM2, ADM1, ADM0</td>
+<td>2019 Q3 (static layer)</td>
+<td><a href="https://api.mosaiks.org/" target="_blank">MOSAIKS API</a></td>
+</tr>
+<tr class="even">
+<td>Rolf et al 2021</td>
+<td>Google Earth basemap</td>
+<td>Continental United States (~100k locations)</td>
+<td>0.01°</td>
+<td>2019 (static layer)</td>
+<td><a href="https://codeocean.com/capsule/6456296/tree/v2" target="_blank">Code Ocean Capsule</a></td>
+</tr>
+<tr class="odd">
+<td>Compute features</td>
+<td>Any imagery source</td>
+<td>User-defined</td>
+<td>User-defined</td>
+<td>User-defined</td>
+<td><a href="../part-03-features/03-features-computing.html" class="quarto-xref"><span>Chapter 13</span></a></td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>The first part of this book focuses on the MOSAIKS API and publicly available features. The second part will cover how to compute features from your own imagery.</p>
+</div>
+</div>
+</div>
+<p>The MOSAIKS API should be considered the primary way to access features. It is a user-friendly interface that allows you to download features for any location on Earth. The API is designed to be accessible to users with a range of technical backgrounds, from beginners to experts.</p>
+</section><section id="api-overview" class="level2" data-number="3.2"><h2 data-number="3.2" class="anchored" data-anchor-id="api-overview">
+<span class="header-section-number">3.2</span> API Overview</h2>
 <div class="callout callout-style-simple callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -386,47 +437,11 @@ MOSAIKS API Link
 <p><a href="https://api.mosaiks.org/" target="_blank">api.mosaiks.org</a></p>
 </div>
 </div>
-<p>We have worked to develop multiple ways to access MOSAIKS features:</p>
-<ul>
-<li><p><strong>Global Administrative Units (Planet imagery)</strong> You can download features aggregated to country, province, or municipality (ADM0/ADM1/ADM2 boundaries), as described in <a href="https://www.mosaiks.org/hdi" target="_blank">Sherman et al.&nbsp;(2023)</a>. These features are based on Planet imagery. These files are relatively small in size and can be used at these resolutions or to downscale administrative data. To download them, register at <a href="https://api.mosaiks.org/" target="_blank">api.mosaiks.org</a> and access them via the “<a href="https://api.mosaiks.org/portal/precomputed/" target="_blank">Precomputed Files</a>” tab.</p></li>
-<li><p><strong>USA grid from Rolf et al (Google basemap imagery)</strong> You can download features for a set of locations across the United States, as described in <a href="https://www.nature.com/articles/s41467-021-24638-z" target="_blank">Rolf et al.&nbsp;(Nature Communications, 2021)</a>. These features are based on imagery from the Google Earth base map. You can download the features from the <a href="https://codeocean.com/capsule/6456296/tree/v2" target="_blank">Code Ocean Capsule</a> associated with that manuscript (the capsule will also allow you to replicate the analysis of that paper on a remote machine). The Github repository for that analysis is <a href="https://github.com/Global-Policy-Lab/mosaiks-paper" target="_blank">here</a>.</p></li>
-<li><p><strong>Global 0.01 x 0.01 degree grid (Planet imagery)</strong> You can download features for a complete and dense grid of global land areas via our <a href="https://api.mosaiks.org/" target="_blank">API</a>. These features are based on on quarterly mosaics from Planet’s Surface Reflectance Basemaps produce from 2019 Q3. Because the complete data set is large (multiple TB), you will need to request custom subsamples of the imagery. To download them, register at <a href="https://api.mosaiks.org/" target="_blank">api.mosaiks.org</a> and access them via the “<a href="https://api.mosaiks.org/portal/map_query/" target="_blank">Map Query</a>” tool or by uploading a list of locations via the “<a href="https://api.mosaiks.org/portal/file_query/" target="_blank">File Query</a>” tool.</p></li>
-<li><p><strong>Recompute MOSAIKS features (Landsat &amp; Sentinel imagery)</strong> You can recompute MOSAIKS features yourself using Microsoft’s Planetary Computer (<a href="https://github.com/microsoft/PlanetaryComputerExamples/blob/main/tutorials/mosaiks.ipynb" target="_blank">Github repo</a> which currently supports Gaussian random convolutional features). This approach will not provide the benefit of pre-computed features, since you will recompute features on-the-fly every time, but the massive compute power of the Planetary Computer makes this relatively fast and cheap for users.</p></li>
-<li><p><strong>Recompute MOSAIKS features (general instruction)</strong> You can recompute MOSAIKS features yourself using instructions provided in <a href="../part-03-features/03-features-computing.html" class="quarto-xref"><span>Chapter 13</span></a>. By following along with this chapter, you will gain in depth knowledge of how to compute customized features from any input imagery source. The process of dealing with satellite imagery and image featurization are the most challenging aspects of MOSAIKS. This section is only recommended for users with baseline knowledge of remote sensing methodologies, and ideally at least some understanding of convolutional neural network models.</p></li>
-</ul>
-<table class="table">
-<thead><tr class="header">
-<th>Access Method</th>
-<th>Description</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td><strong>Global Administrative Units (Planet imagery)</strong></td>
-<td>You can download features aggregated to country, province, or municipality (ADM0/ADM1/ADM2 boundaries), as described in <a href="https://www.mosaiks.org/hdi" target="_blank">Sherman et al.&nbsp;(2023)</a>. These features are based on Planet imagery. These files are relatively small in size and can be used at these resolutions or to downscale administrative data. To download them, register at <a href="https://api.mosaiks.org/" target="_blank">api.mosaiks.org</a> and access them via the “<a href="https://api.mosaiks.org/portal/precomputed/" target="_blank">Precomputed Files</a>” tab.</td>
-</tr>
-<tr class="even">
-<td><strong>USA grid from Rolf et al (Google basemap imagery)</strong></td>
-<td>You can download features for a set of locations across the United States, as described in <a href="https://www.nature.com/articles/s41467-021-24638-z" target="_blank">Rolf et al.&nbsp;(Nature Communications, 2021)</a>. These features are based on imagery from the Google Earth base map. You can download the features from the <a href="https://codeocean.com/capsule/6456296/tree/v2" target="_blank">Code Ocean Capsule</a> associated with that manuscript (the capsule will also allow you to replicate the analysis of that paper on a remote machine). The Github repository for that analysis is <a href="https://github.com/Global-Policy-Lab/mosaiks-paper" target="_blank">here</a>.</td>
-</tr>
-<tr class="odd">
-<td><strong>Global 0.01 x 0.01 degree grid (Planet imagery)</strong></td>
-<td>You can download features for a complete and dense grid of global land areas via our <a href="https://api.mosaiks.org/" target="_blank">API</a>. These features are based on on quarterly mosaics from Planet’s Surface Reflectance Basemaps produce from 2019 Q3. Because the complete data set is large (multiple TB), you will need to request custom subsamples of the imagery. To download them, register at <a href="https://api.mosaiks.org/" target="_blank">api.mosaiks.org</a> and access them via the “<a href="https://api.mosaiks.org/portal/map_query/" target="_blank">Map Query</a>” tool or by uploading a list of locations via the “<a href="https://api.mosaiks.org/portal/file_query/" target="_blank">File Query</a>” tool.</td>
-</tr>
-<tr class="even">
-<td><strong>Recompute MOSAIKS features (Landsat &amp; Sentinel imagery)</strong></td>
-<td>You can recompute MOSAIKS features yourself using Microsoft’s Planetary Computer (<a href="https://github.com/microsoft/PlanetaryComputerExamples/blob/main/tutorials/mosaiks.ipynb" target="_blank">Github repo</a> which currently supports Gaussian random convolutional features). This approach will not provide the benefit of pre-computed features, since you will recompute features on-the-fly every time, but the massive compute power of the Planetary Computer makes this relatively fast and cheap for users.</td>
-</tr>
-<tr class="odd">
-<td><strong>Recompute MOSAIKS features (general instruction)</strong></td>
-<td>You can recompute MOSAIKS features yourself using instructions provided in <a href="../part-03-features/03-features-computing.html" class="quarto-xref"><span>Chapter 13</span></a>. By following along with this chapter, you will gain in depth knowledge of how to compute customized features from any input imagery source. The process of dealing with satellite imagery and image featurization are the most challenging aspects of MOSAIKS. This section is only recommended for users with baseline knowledge of remote sensing methodologies, and ideally at least some understanding of convolutional neural network models.</td>
-</tr>
-</tbody>
-</table>
-<p>We have put together a <strong>Resource Page</strong> for MOSAIKS users <a href="https://api.mosaiks.org/portal/resources/" target="_blank">here</a> (registration required), which includes example Python and R notebooks for using the pipeline.</p>
-<p>Don’t forget to see our <strong>Tutorial Page</strong> <a href="https://www.mosaiks.org/tutorials" target="_blank">here</a>, which has an example Python notebook that we walk through in the video.</p>
-<p>If you are looking for <strong>new data sets</strong> that we create using MOSAIKS (not features), we will be posting those <a href="https://www.mosaiks.org/data-sets" target="_blank">here</a>.</p>
-</section><section id="register-for-an-account" class="level2" data-number="3.2"><h2 data-number="3.2" class="anchored" data-anchor-id="register-for-an-account">
-<span class="header-section-number">3.2</span> Register for an account</h2>
+<p>We have put together a [Resource Page](https://api.mosaiks.org/portal/resources/ for MOSAIKS users (registration required), which includes example Python and R notebooks for using the pipeline.</p>
+<p>Don’t forget to see our <a href="https://www.mosaiks.org/tutorials" target="_blank">Tutorial Page</a>, which has an example Python notebook that we walk through in the video.</p>
+<p>If you are looking for new data sets that we create using MOSAIKS (not features), we will be posting those <a href="https://www.mosaiks.org/data-sets" target="_blank">here</a> as they become available.</p>
+<section id="register-for-an-account" class="level3" data-number="3.2.1"><h3 data-number="3.2.1" class="anchored" data-anchor-id="register-for-an-account">
+<span class="header-section-number">3.2.1</span> Register for an account</h3>
 <p>Visit <a href="https://api.mosaiks.org/" target="_blank">api.mosaiks.org</a>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="../images/api-home.png" class="img-fluid figure-img"></p>
@@ -442,8 +457,8 @@ MOSAIKS API Link
 <figure class="figure"><p><img src="../images/api-landing.png" class="img-fluid figure-img"></p>
 <figcaption>Landing page</figcaption></figure>
 </div>
-</section><section id="downloading-features" class="level2" data-number="3.3"><h2 data-number="3.3" class="anchored" data-anchor-id="downloading-features">
-<span class="header-section-number">3.3</span> Downloading features</h2>
+</section><section id="downloading-features" class="level3" data-number="3.2.2"><h3 data-number="3.2.2" class="anchored" data-anchor-id="downloading-features">
+<span class="header-section-number">3.2.2</span> Downloading features</h3>
 <p>The MOSAIKS features are organized using a 0.01 x 0.01 degree latitude-longitude global grid, centered at .005 degree intervals.</p>
 <p>When you download features, you’ll receive them in a tabular .csv format where:</p>
 <ul>
@@ -457,8 +472,8 @@ MOSAIKS API Link
 <li>After 15 days, files are automatically deleted from the system</li>
 <li>There is a limit of 100,000 records per query</li>
 </ul>
-<section id="ways-to-query-features" class="level3" data-number="3.3.1"><h3 data-number="3.3.1" class="anchored" data-anchor-id="ways-to-query-features">
-<span class="header-section-number">3.3.1</span> Ways to query features</h3>
+<section id="ways-to-query-features" class="level4" data-number="3.2.2.1"><h4 data-number="3.2.2.1" class="anchored" data-anchor-id="ways-to-query-features">
+<span class="header-section-number">3.2.2.1</span> Ways to query features</h4>
 <p>There are two main methods to obtain features through the API:</p>
 <ol type="1">
 <li><strong>Map Query</strong></li>
@@ -483,15 +498,15 @@ MOSAIKS API Link
 <figure class="figure"><p><img src="../images/api-map-n-file.png" class="img-fluid figure-img"></p>
 <figcaption>API Map Query (left) and File Query (right)</figcaption></figure>
 </div>
-</section></section><section id="using-mosaiks-features-for-prediction" class="level2" data-number="3.4"><h2 data-number="3.4" class="anchored" data-anchor-id="using-mosaiks-features-for-prediction">
-<span class="header-section-number">3.4</span> Using MOSAIKS features for prediction</h2>
+</section></section></section><section id="using-mosaiks-features-for-prediction" class="level2" data-number="3.3"><h2 data-number="3.3" class="anchored" data-anchor-id="using-mosaiks-features-for-prediction">
+<span class="header-section-number">3.3</span> Using MOSAIKS features for prediction</h2>
 <div class="callout callout-style-simple callout-tip">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>This is a brief overview. Detailed instructions appear later in the manual.</p>
+<p>This is a brief overview. Detailed instructions appear later in the manual (#sec-model-choice).</p>
 </div>
 </div>
 </div>
@@ -502,14 +517,14 @@ MOSAIKS API Link
 <li>Spatially merge labels and features</li>
 <li>Use regression to model relationship</li>
 </ol>
+<p>You can experiment with various machine learning approaches in the regression step. For beginners, we recommend starting with our example Jupyter notebook (<a href="04-intro-demo.html" class="quarto-xref"><span>Chapter 4</span></a>) that demonstrates a simple ridge regression approach (suitable for both R and Python users).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="../images/mosaiks-overview.png" class="img-fluid figure-img"></p>
 <figcaption>Using MOSAIKS, a simplified workflow design.</figcaption></figure>
 </div>
-<p>You can experiment with various machine learning approaches in the regression step. For beginners, we recommend starting with our example Jupyter notebook (<a href="04-intro-demo.html" class="quarto-xref"><span>Chapter 4</span></a>) that demonstrates a simple ridge regression approach (suitable for both R and Python users).</p>
 <p>This topic will be covered in greater depth in later chapters. In the next chapter, you will see a simple MOSAIKS workflow which starts from the point of having both features from the API and ground truth labels.</p>
-</section><section id="citation-requirements" class="level2" data-number="3.5"><h2 data-number="3.5" class="anchored" data-anchor-id="citation-requirements">
-<span class="header-section-number">3.5</span> Citation requirements</h2>
+</section><section id="citation-requirements" class="level2" data-number="3.4"><h2 data-number="3.4" class="anchored" data-anchor-id="citation-requirements">
+<span class="header-section-number">3.4</span> Citation requirements</h2>
 <p>When referring to the MOSAIKS methodology or when generating MOSAIKS features, please reference <a href="https://www.nature.com/articles/s41467-021-24638-z" target="_blank">Rolf et al.&nbsp;“A generalizable and accessible approach to machine learning with global satellite imagery.” Nature Communications (2021).</a></p>
 <p>You can use the following Bibtex:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">@article</span>{<span class="ot">article</span>,</span>

@@ -380,8 +380,9 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
+<p><strong>LINK: https://eds-223-geospatial.github.io/course-materials/week6.html</strong></p>
 <p>When selecting satellite imagery for use with MOSAIKS, several key factors need to be considered. The choice of imagery should be guided by your specific research needs, label characteristics, and practical constraints like cost and processing requirements.</p>
-<p>Based on your label resolution, a user needs to decide on:</p>
+<p><strong>Based on your label resolution, a user needs to decide on:</strong></p>
 <ul>
 <li>Available time range</li>
 <li>Sensor resolution</li>
@@ -395,7 +396,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="header-section-number">9.1</span> Time range</h2>
 <p>The operational lifespan of satellites is a crucial consideration when choosing imagery sources. Different satellite programs have varying launch dates and operational periods, which affects the historical depth of available data.</p>
 <p>For instance, the Landsat program offers the longest continuous space-based record of Earth’s land surface, with missions dating back to 1972. In contrast, more recent satellite programs like Sentinel (launched in 2014) offer higher resolution imagery but have a shorter historical record.</p>
-<p>Key considerations for time range include:</p>
+<p><strong>Key considerations for time range include:</strong></p>
 <ul>
 <li>Historical depth needed for your analysis</li>
 <li>Consistency of sensor technology over time</li>
@@ -410,12 +411,23 @@ ul.task-list li input[type="checkbox"] {
 <span class="header-section-number">9.2</span> Sensor resolution (pixel size)</h2>
 <p>Spatial resolution refers to the size of each pixel in the satellite imagery, which determines the smallest object that can be detected. The choice of spatial resolution should be guided by:</p>
 <ul>
-<li>The physical size of features relevant to your labels</li>
-<li>The spatial scale of your analysis</li>
-<li>Storage and processing constraints</li>
-<li>Cost considerations (higher resolution typically means higher cost)</li>
+<li>The <strong>physical size</strong> of features relevant to your labels</li>
+<li>The <strong>spatial scale</strong> of your analysis</li>
+<li><strong>Storage and processing constraints</strong></li>
+<li>
+<strong>Cost considerations</strong> (higher resolution typically means higher cost)</li>
 </ul>
-<p>Common spatial resolutions: - Very high (&lt; 1m): Individual trees, buildings, vehicles - High (1-10m): Small agricultural fields, urban infrastructure - Medium (10-30m): Large agricultural fields, forest stands - Low (&gt; 30m): Regional land cover, climate patterns</p>
+<p>Common spatial resolutions:</p>
+<ul>
+<li>
+<strong>Very high (&lt; 1m)</strong>: Individual trees, buildings, vehicle</li>
+<li>
+<strong>High (1-10m)</strong>: Small agricultural fields, urban infrastructure</li>
+<li>
+<strong>Medium (10-30m)</strong>: Large agricultural fields, forest stands</li>
+<li>
+<strong>Low (&gt; 30m)</strong>: Regional land cover, climate patterns</li>
+</ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="../images/radiant_earth_spatial_res.jpeg" class="img-fluid figure-img"></p>
 <figcaption>Source: <a href="https://medium.com/radiant-earth-insights/observing-the-earth-fueling-global-development-solutions-1c69fd5632bc" target="_blank">Radiant Earth</a></figcaption></figure>
@@ -423,8 +435,46 @@ ul.task-list li input[type="checkbox"] {
 </section><section id="spectral-resolution-em-range" class="level2" data-number="9.3"><h2 data-number="9.3" class="anchored" data-anchor-id="spectral-resolution-em-range">
 <span class="header-section-number">9.3</span> Spectral resolution (EM range)</h2>
 <p>Spectral resolution describes the number and width of electromagnetic wavelength bands that a sensor can detect. Different features on Earth’s surface reflect or absorb radiation differently across these bands.</p>
-<p>Key spectral regions include: - Visible light (RGB): 0.4-0.7 μm - Near-infrared (NIR): 0.7-1.1 μm - Short-wave infrared (SWIR): 1.1-3.0 μm - Thermal infrared: 3.0-14 μm - Microwave: &gt; 1 mm</p>
-<p>Applications by spectral band: - RGB: Natural color imagery, built environment - NIR: Vegetation health, biomass - SWIR: Mineral mapping, moisture content - Thermal: Temperature, urban heat islands - Microwave: Cloud penetration, soil moisture</p>
+<p><strong>Key Spectral Bands and Applications</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 32%">
+<col style="width: 34%">
+<col style="width: 34%">
+</colgroup>
+<thead><tr class="header">
+<th>Spectral Region</th>
+<th>Wavelength Range</th>
+<th>Key Applications</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Visible light (RGB)</td>
+<td>0.4-0.7 μm</td>
+<td>Natural color imagery, built environment</td>
+</tr>
+<tr class="even">
+<td>Near-infrared (NIR)</td>
+<td>0.7-1.1 μm</td>
+<td>Vegetation health, biomass</td>
+</tr>
+<tr class="odd">
+<td>Short-wave infrared (SWIR)</td>
+<td>1.1-3.0 μm</td>
+<td>Mineral mapping, moisture content</td>
+</tr>
+<tr class="even">
+<td>Thermal infrared</td>
+<td>3.0-14 μm</td>
+<td>Temperature, urban heat islands</td>
+</tr>
+<tr class="odd">
+<td>Microwave</td>
+<td>&gt; 1 mm</td>
+<td>Cloud penetration, soil moisture</td>
+</tr>
+</tbody>
+</table>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="../images/radiant_earth_spectral_res.jpeg" class="img-fluid figure-img"></p>
 <figcaption>Source: <a href="https://medium.com/radiant-earth-insights/observing-the-earth-fueling-global-development-solutions-1c69fd5632bc" target="_blank">Radiant Earth</a></figcaption></figure>
@@ -432,24 +482,35 @@ ul.task-list li input[type="checkbox"] {
 </section><section id="temporal-resolution-revisit-rate" class="level2" data-number="9.4"><h2 data-number="9.4" class="anchored" data-anchor-id="temporal-resolution-revisit-rate">
 <span class="header-section-number">9.4</span> Temporal resolution (revisit rate)</h2>
 <p>Temporal resolution refers to how frequently a satellite revisits the same location. This can range from multiple times per day to several weeks between observations.</p>
-<p>Factors affecting temporal resolution: - Single satellite vs constellation systems - Orbital parameters - Sensor swath width - Cloud cover frequency - Latitude of study area</p>
-<p>Trade-offs to consider: - Higher temporal resolution often means lower spatial resolution - Cost increases with temporal frequency - Data storage and processing requirements grow with frequency</p>
+<p>Factors affecting temporal resolution include:</p>
+<ul>
+<li>Single satellite vs constellation systems</li>
+<li>Orbital parameters</li>
+<li>Sensor swath width</li>
+<li>Cloud cover frequency</li>
+<li>Latitude of study area</li>
+</ul>
+<p>Some trade-offs to consider:</p>
+<ul>
+<li>Higher temporal resolution often means lower spatial resolution</li>
+<li>Cost increases with temporal frequency</li>
+<li>Data storage and processing requirements grow with frequency</li>
+</ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="../images/radiant_earth_temporal_res.jpeg" class="img-fluid figure-img"></p>
 <figcaption>Source: <a href="https://medium.com/radiant-earth-insights/observing-the-earth-fueling-global-development-solutions-1c69fd5632bc" target="_blank">Radiant Earth</a></figcaption></figure>
 </div>
 </section><section id="cloud-cover" class="level2" data-number="9.5"><h2 data-number="9.5" class="anchored" data-anchor-id="cloud-cover">
 <span class="header-section-number">9.5</span> Cloud cover</h2>
-<p>Cloud cover presents a significant challenge in optical satellite imagery. Several strategies exist for handling cloud contamination:</p>
+<p>Cloud cover presents a significant challenge in optical satellite imagery. Cloud cover can introduce several issues, including reduced data availability, temporal inconsistency, and the need for quality control and processing overhead.</p>
+<p>Several strategies exist for handling cloud contamination include:</p>
 <ul>
 <li>Cloud masking algorithms</li>
 <li>Composite images over time periods</li>
 <li>Use of radar satellites (which penetrate clouds)</li>
 <li>Strategic timing of image acquisition</li>
 <li>Gap-filling techniques</li>
-</ul>
-<p>Impact on analysis: - Reduced data availability - Temporal inconsistency - Need for quality control - Processing overhead</p>
-</section><section id="sensor-type" class="level2" data-number="9.6"><h2 data-number="9.6" class="anchored" data-anchor-id="sensor-type">
+</ul></section><section id="sensor-type" class="level2" data-number="9.6"><h2 data-number="9.6" class="anchored" data-anchor-id="sensor-type">
 <span class="header-section-number">9.6</span> Sensor type</h2>
 <p>Satellite sensors broadly fall into two categories:</p>
 <section id="passive-sensors" class="level3" data-number="9.6.1"><h3 data-number="9.6.1" class="anchored" data-anchor-id="passive-sensors">
@@ -457,15 +518,15 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>Detect natural radiation (reflected sunlight or emitted heat)</li>
 <li>Include optical and thermal sensors</li>
-<li>Limited by atmospheric conditions</li>
-<li>Typically easier to interpret</li>
+<li>Pros: Typically easier to interpret</li>
+<li>Cons: Limited by atmospheric conditions</li>
 </ul></section><section id="active-sensors" class="level3" data-number="9.6.2"><h3 data-number="9.6.2" class="anchored" data-anchor-id="active-sensors">
 <span class="header-section-number">9.6.2</span> Active sensors</h3>
 <ul>
 <li>Emit their own energy and measure the return signal</li>
-<li>Include radar (SAR) and lidar</li>
-<li>Can penetrate clouds and operate at night</li>
-<li>Often require more complex processing</li>
+<li>Include RADAR (SAR) and LiDAR</li>
+<li>Pros: Can penetrate clouds and operate at night</li>
+<li>Cons: Often require more complex processing</li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="../images/radiant_earth_active_passive.jpeg" class="img-fluid figure-img"></p>
@@ -473,6 +534,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </section></section><section id="sec-satellite-public" class="level2" data-number="9.7"><h2 data-number="9.7" class="anchored" data-anchor-id="sec-satellite-public">
 <span class="header-section-number">9.7</span> Public satellites</h2>
+<p>Public satellite programs offer free or low-cost imagery with global coverage. These programs are often funded by government agencies and provide a wealth of data for scientific research and environmental monitoring.</p>
 <section id="optical-sensors" class="level3" data-number="9.7.1"><h3 data-number="9.7.1" class="anchored" data-anchor-id="optical-sensors">
 <span class="header-section-number">9.7.1</span> Optical sensors</h3>
 <ul>
@@ -498,6 +560,7 @@ ul.task-list li input[type="checkbox"] {
 <strong>ASTER</strong>: 15-90m resolution, 16-day revisit, 14 spectral bands</li>
 </ul></section></section><section id="sec-satellite-private" class="level2" data-number="9.8"><h2 data-number="9.8" class="anchored" data-anchor-id="sec-satellite-private">
 <span class="header-section-number">9.8</span> Private satellites</h2>
+<p>Private satellites often provide higher resolution imagery, greater specialization, and more frequent revisits than public programs, but at a higher cost.</p>
 <section id="very-high-resolution" class="level3" data-number="9.8.1"><h3 data-number="9.8.1" class="anchored" data-anchor-id="very-high-resolution">
 <span class="header-section-number">9.8.1</span> Very high resolution</h3>
 <ul>
@@ -565,42 +628,11 @@ ul.task-list li input[type="checkbox"] {
 <li>Gap-filled products</li>
 </ul></section></section><section id="key-processing-considerations" class="level3" data-number="9.9.2"><h3 data-number="9.9.2" class="anchored" data-anchor-id="key-processing-considerations">
 <span class="header-section-number">9.9.2</span> Key processing considerations</h3>
-<section id="orthorectification" class="level4" data-number="9.9.2.1"><h4 data-number="9.9.2.1" class="anchored" data-anchor-id="orthorectification">
-<span class="header-section-number">9.9.2.1</span> Orthorectification</h4>
-<ul>
-<li>Corrects geometric distortions</li>
-<li>Accounts for:
-<ul>
-<li>Terrain effects</li>
-<li>Satellite position</li>
-<li>Earth curvature</li>
-</ul>
-</li>
-<li>Critical for accurate spatial analysis</li>
-</ul></section><section id="atmospheric-correction" class="level4" data-number="9.9.2.2"><h4 data-number="9.9.2.2" class="anchored" data-anchor-id="atmospheric-correction">
-<span class="header-section-number">9.9.2.2</span> Atmospheric correction</h4>
-<ul>
-<li>Removes atmospheric effects</li>
-<li>Accounts for:
-<ul>
-<li>Aerosols</li>
-<li>Water vapor</li>
-<li>Atmospheric scattering</li>
-</ul>
-</li>
-<li>Important for multi-temporal analysis</li>
-</ul></section><section id="radiometric-calibration" class="level4" data-number="9.9.2.3"><h4 data-number="9.9.2.3" class="anchored" data-anchor-id="radiometric-calibration">
-<span class="header-section-number">9.9.2.3</span> Radiometric calibration</h4>
-<ul>
-<li>Converts raw sensor values to physical units</li>
-<li>Ensures consistency across:
-<ul>
-<li>Time</li>
-<li>Different sensors</li>
-<li>Various atmospheric conditions</li>
-</ul>
-</li>
-</ul></section></section></section><section id="choosing-the-right-combination" class="level2" data-number="9.10"><h2 data-number="9.10" class="anchored" data-anchor-id="choosing-the-right-combination">
+<ol type="1">
+<li><p><strong>Orthorectification</strong> is the process of removing geometric distortions from satellite imagery. This correction accounts for terrain effects, satellite position, and Earth curvature, ensuring accurate spatial analysis.</p></li>
+<li><p><strong>Atmospheric correction</strong> is essential for multi-temporal analysis of satellite imagery. This process removes atmospheric effects like aerosols, water vapor, and scattering, ensuring consistency across images.</p></li>
+<li><p><strong>Radiometric calibration</strong> is the process of converting raw sensor values to physical units. This step ensures that imagery from different sensors and time periods can be compared accurately.</p></li>
+</ol></section></section><section id="choosing-the-right-combination" class="level2" data-number="9.10"><h2 data-number="9.10" class="anchored" data-anchor-id="choosing-the-right-combination">
 <span class="header-section-number">9.10</span> Choosing the right combination</h2>
 <p>When selecting imagery for your application, consider these practical guidelines:</p>
 <section id="for-agricultural-applications" class="level3" data-number="9.10.1"><h3 data-number="9.10.1" class="anchored" data-anchor-id="for-agricultural-applications">
@@ -633,13 +665,13 @@ ul.task-list li input[type="checkbox"] {
 <li>Recommended sensors: Sentinel-2, Landsat 8/9</li>
 </ul></section></section><section id="cost-considerations" class="level2" data-number="9.11"><h2 data-number="9.11" class="anchored" data-anchor-id="cost-considerations">
 <span class="header-section-number">9.11</span> Cost considerations</h2>
-<div class="callout callout-style-simple callout-note">
+<div class="callout callout-style-simple callout-warning">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>Remember that the most expensive or highest resolution imagery isn’t always the best choice. The optimal choice balances your scientific needs with practical constraints.</p>
+<p>Remember that the <strong>most expensive or highest resolution imagery isn’t always the best choice</strong>. The optimal choice balances your scientific needs with practical constraints.</p>
 </div>
 </div>
 </div>
@@ -659,6 +691,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Subscription services: Variable pricing</li>
 </ul></section><section id="hidden-costs" class="level3" data-number="9.11.3"><h3 data-number="9.11.3" class="anchored" data-anchor-id="hidden-costs">
 <span class="header-section-number">9.11.3</span> Hidden costs</h3>
+<p>There are several hidden costs associated with satellite imagery that should be considered:</p>
 <ul>
 <li>Storage requirements</li>
 <li>Processing time</li>
