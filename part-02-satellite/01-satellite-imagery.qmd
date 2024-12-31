@@ -8,9 +8,11 @@ source("../_common.R")
 status("draft")
 ```
 
+**LINK: https://eds-223-geospatial.github.io/course-materials/week6.html**
+
 When selecting satellite imagery for use with MOSAIKS, several key factors need to be considered. The choice of imagery should be guided by your specific research needs, label characteristics, and practical constraints like cost and processing requirements.
 
-Based on your label resolution, a user needs to decide on:
+**Based on your label resolution, a user needs to decide on:**
 
 - Available time range
 - Sensor resolution
@@ -26,7 +28,7 @@ The operational lifespan of satellites is a crucial consideration when choosing 
 
 For instance, the Landsat program offers the longest continuous space-based record of Earth's land surface, with missions dating back to 1972. In contrast, more recent satellite programs like Sentinel (launched in 2014) offer higher resolution imagery but have a shorter historical record.
 
-Key considerations for time range include:
+**Key considerations for time range include:**
 
 - Historical depth needed for your analysis
 - Consistency of sensor technology over time
@@ -39,16 +41,17 @@ Key considerations for time range include:
 
 Spatial resolution refers to the size of each pixel in the satellite imagery, which determines the smallest object that can be detected. The choice of spatial resolution should be guided by:
 
-- The physical size of features relevant to your labels
-- The spatial scale of your analysis
-- Storage and processing constraints
-- Cost considerations (higher resolution typically means higher cost)
+- The **physical size** of features relevant to your labels
+- The **spatial scale** of your analysis
+- **Storage and processing constraints**
+- **Cost considerations** (higher resolution typically means higher cost)
 
 Common spatial resolutions:
-- Very high (< 1m): Individual trees, buildings, vehicles
-- High (1-10m): Small agricultural fields, urban infrastructure
-- Medium (10-30m): Large agricultural fields, forest stands
-- Low (> 30m): Regional land cover, climate patterns
+
+- **Very high (< 1m)**: Individual trees, buildings, vehicle
+- **High (1-10m)**: Small agricultural fields, urban infrastructure
+- **Medium (10-30m)**: Large agricultural fields, forest stands
+- **Low (> 30m)**: Regional land cover, climate patterns
 
 ![Source: [Radiant Earth](https://medium.com/radiant-earth-insights/observing-the-earth-fueling-global-development-solutions-1c69fd5632bc)](../images/radiant_earth_spatial_res.jpeg)
 
@@ -56,19 +59,15 @@ Common spatial resolutions:
 
 Spectral resolution describes the number and width of electromagnetic wavelength bands that a sensor can detect. Different features on Earth's surface reflect or absorb radiation differently across these bands.
 
-Key spectral regions include:
-- Visible light (RGB): 0.4-0.7 μm
-- Near-infrared (NIR): 0.7-1.1 μm
-- Short-wave infrared (SWIR): 1.1-3.0 μm
-- Thermal infrared: 3.0-14 μm
-- Microwave: > 1 mm
+**Key Spectral Bands and Applications**
 
-Applications by spectral band:
-- RGB: Natural color imagery, built environment
-- NIR: Vegetation health, biomass
-- SWIR: Mineral mapping, moisture content
-- Thermal: Temperature, urban heat islands
-- Microwave: Cloud penetration, soil moisture
+| Spectral Region | Wavelength Range | Key Applications |
+|----------------|-----------------|-----------------|
+| Visible light (RGB) | 0.4-0.7 μm | Natural color imagery, built environment |
+| Near-infrared (NIR) | 0.7-1.1 μm | Vegetation health, biomass |
+| Short-wave infrared (SWIR) | 1.1-3.0 μm | Mineral mapping, moisture content |
+| Thermal infrared | 3.0-14 μm | Temperature, urban heat islands |
+| Microwave | > 1 mm | Cloud penetration, soil moisture |
 
 ![Source: [Radiant Earth](https://medium.com/radiant-earth-insights/observing-the-earth-fueling-global-development-solutions-1c69fd5632bc)](../images/radiant_earth_spectral_res.jpeg)
 
@@ -76,14 +75,16 @@ Applications by spectral band:
 
 Temporal resolution refers to how frequently a satellite revisits the same location. This can range from multiple times per day to several weeks between observations.
 
-Factors affecting temporal resolution:
+Factors affecting temporal resolution include:
+
 - Single satellite vs constellation systems
 - Orbital parameters
 - Sensor swath width
 - Cloud cover frequency
 - Latitude of study area
 
-Trade-offs to consider:
+Some trade-offs to consider:
+
 - Higher temporal resolution often means lower spatial resolution
 - Cost increases with temporal frequency
 - Data storage and processing requirements grow with frequency
@@ -92,19 +93,15 @@ Trade-offs to consider:
 
 ## Cloud cover
 
-Cloud cover presents a significant challenge in optical satellite imagery. Several strategies exist for handling cloud contamination:
+Cloud cover presents a significant challenge in optical satellite imagery. Cloud cover can introduce several issues, including reduced data availability, temporal inconsistency, and the need for quality control and processing overhead. 
+
+Several strategies exist for handling cloud contamination include:
 
 - Cloud masking algorithms
 - Composite images over time periods
 - Use of radar satellites (which penetrate clouds)
 - Strategic timing of image acquisition
 - Gap-filling techniques
-
-Impact on analysis:
-- Reduced data availability
-- Temporal inconsistency
-- Need for quality control
-- Processing overhead
 
 ## Sensor type
 
@@ -113,18 +110,20 @@ Satellite sensors broadly fall into two categories:
 ### Passive sensors
 - Detect natural radiation (reflected sunlight or emitted heat)
 - Include optical and thermal sensors
-- Limited by atmospheric conditions
-- Typically easier to interpret
+- Pros: Typically easier to interpret
+- Cons: Limited by atmospheric conditions
 
 ### Active sensors
 - Emit their own energy and measure the return signal
-- Include radar (SAR) and lidar
-- Can penetrate clouds and operate at night
-- Often require more complex processing
+- Include RADAR (SAR) and LiDAR
+- Pros: Can penetrate clouds and operate at night
+- Cons: Often require more complex processing
 
 ![Source: [Radiant Earth](https://medium.com/radiant-earth-insights/observing-the-earth-fueling-global-development-solutions-1c69fd5632bc)](../images/radiant_earth_active_passive.jpeg)
 
 ## Public satellites {#sec-satellite-public}
+
+Public satellite programs offer free or low-cost imagery with global coverage. These programs are often funded by government agencies and provide a wealth of data for scientific research and environmental monitoring.
 
 ### Optical sensors
 - **Sentinel-2**: 10-60m resolution, 5-day revisit, 13 spectral bands
@@ -140,6 +139,8 @@ Satellite sensors broadly fall into two categories:
 - **ASTER**: 15-90m resolution, 16-day revisit, 14 spectral bands
 
 ## Private satellites {#sec-satellite-private}
+
+Private satellites often provide higher resolution imagery, greater specialization, and more frequent revisits than public programs, but at a higher cost. 
 
 ### Very high resolution
 - **Maxar WorldView**: 31cm panchromatic, 1.24m multispectral
@@ -190,28 +191,11 @@ Satellite imagery is typically available at different processing levels. Underst
 
 ### Key processing considerations
 
-#### Orthorectification
-- Corrects geometric distortions
-- Accounts for:
-  - Terrain effects
-  - Satellite position
-  - Earth curvature
-- Critical for accurate spatial analysis
+1. **Orthorectification** is the process of removing geometric distortions from satellite imagery. This correction accounts for terrain effects, satellite position, and Earth curvature, ensuring accurate spatial analysis.
 
-#### Atmospheric correction
-- Removes atmospheric effects
-- Accounts for:
-  - Aerosols
-  - Water vapor
-  - Atmospheric scattering
-- Important for multi-temporal analysis
+2. **Atmospheric correction** is essential for multi-temporal analysis of satellite imagery. This process removes atmospheric effects like aerosols, water vapor, and scattering, ensuring consistency across images.
 
-#### Radiometric calibration
-- Converts raw sensor values to physical units
-- Ensures consistency across:
-  - Time
-  - Different sensors
-  - Various atmospheric conditions
+3. **Radiometric calibration** is the process of converting raw sensor values to physical units. This step ensures that imagery from different sensors and time periods can be compared accurately.
 
 ## Choosing the right combination
 
@@ -243,8 +227,8 @@ When selecting imagery for your application, consider these practical guidelines
 
 ## Cost considerations
 
-::: {.callout-note}
-Remember that the most expensive or highest resolution imagery isn't always the best choice. The optimal choice balances your scientific needs with practical constraints.
+::: {.callout-warning}
+Remember that the **most expensive or highest resolution imagery isn't always the best choice**. The optimal choice balances your scientific needs with practical constraints.
 :::
 
 ### Free options
@@ -260,6 +244,9 @@ Remember that the most expensive or highest resolution imagery isn't always the 
 - Subscription services: Variable pricing
 
 ### Hidden costs
+
+There are several hidden costs associated with satellite imagery that should be considered:
+
 - Storage requirements
 - Processing time
 - Technical expertise needed
