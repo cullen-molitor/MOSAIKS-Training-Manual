@@ -48,7 +48,11 @@ The basic idea of MOSAIKS is to seperate users from the costly and difficult pro
 
 All users use the same MOSAIKS features and just match them to their labels based on location. Users can run their analysis on any statistical software they are comfortable with. For most applications, the computing demands will not require users to work with specialized machines, since desktops and laptops work.
 
+![[Rolf et al. 2021 Figure 1](https://www.nature.com/articles/s41467-021-24638-z/figures/1)](../images/rolf_et_al_2021-Fig_1.jpg)
+
 MOSAIKS works because MOSAIKS features capture a huge amount of information about the colors, patterns and textures that show up in satellite imagery. We don’t know what patterns/colors/textures will be important for the application that users have (since we don’t know what applications users will try), so we just try to capture all of them. The purpose of the regression step is to teach the model which patterns/colors/textures predict the labels, and then to use that understanding to make predictions in locations where users don’t have labels. In addition, MOSAIKS encodes image information in a way that allows for nonlinear relationships between labels and images, even though the regression that users implement is a linear regression.
+
+![Example of 4 (of 4,000) MOSAIKS feature maps (right) computed from satellite imagery (left). These features were chosen at random from what is available on the MOSAIKS API.](../images/US_features_high_res.png){#fig-us-api-features}
 
 ### Five steps to using MOSAIKS
 
@@ -63,8 +67,6 @@ For users, the procedure for using MOSAIKS has five steps (corresponding figure 
 1. Evaluate performance.
 
 1. Use the results of the regression model (**β**) to make predictions (**Xβ**) in a new region of interest where you do not have labels, using only the MOSAIKS features that correspond with those new locations.
-
-![[Rolf et al. 2021 Figure 1](https://www.nature.com/articles/s41467-021-24638-z/figures/1)](../images/rolf_et_al_2021-Fig_1.jpg)
 
 ## What can MOSAIKS predict?
 

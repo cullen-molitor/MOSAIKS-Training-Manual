@@ -11,7 +11,7 @@ status("draft")
 
 ## Overview
 
-This demo replicates key results from the original MOSAIKS publication (Rolf et al. 2021), using a subset of the data to work within Google Colab's free tier memory constraints. While MOSAIKS was developed to improve access to satellite-based prediction in data-sparse environments, particularly in developing countries, the original paper focused on demonstrating performance in the United States where high-quality training data was readily available.
+This demo replicates key results from the original MOSAIKS publication (Rolf et al. 2021). While MOSAIKS has great potential to improve access to satellite-based prediction in data-sparse environments, the original paper focused on demonstrating performance in the United States where high-quality training data was readily available.
 
 The US served as an ideal testing ground for several reasons:
 
@@ -21,33 +21,38 @@ The US served as an ideal testing ground for several reasons:
 - Ability to benchmark against existing methods
 - Systematic validation of predictions
 
-This validation in a data-rich environment was crucial for establishing MOSAIKS as a reliable tool before deploying it in contexts where ground truth data is scarce or unreliable. The demo showcases MOSAIKS predicting several variables:
+This validation in a data-rich environment was crucial for establishing MOSAIKS as a reliable tool before deploying it in contexts where ground truth data is scarce or unreliable. 
 
-> Forest cover, elevation, population density, nighttime lights, income, & road length
+## Demonstration code
 
-## Demo 
-
-The notebook demonstrates:
+Below is a link to a Jupyter notebook intented to demonstrate practical use of MOSAIKS with real data. In fact, this notebook uses the original input data and features from Rolf et al. 2021. The code demonstrates:
 
 1. Loading pre-computed MOSAIKS features and labels
 2. Merging the features and labels
 3. Training a ridge regression model
 4. Evaluating predictions
 5. Visualizing results
+The demo showcases MOSAIKS predicting several variables:
 
-The data used is a 50% random sample of both features (K=4,000 instead of 8,192) and observations (N=50,000 instead of 100,000) compared to the original paper. Despite using this reduced dataset, the demo still achieves strong predictive performance, highlighting MOSAIKS's efficiency.
+> Forest cover, elevation, population density, nighttime lights, income, & road length
 
-:::{.callout-note}
-# Click the badge to run the demo in Google Colab!
+A user simply needs to select which variable they would like to predict, and no other changes need to be made to the code. 
+
+To stay within the Colab free tier limits of memory usage, we subset the data. We take a 50% random sample of both features (*K*=4,000 instead of 8,192) and observations (*N*=50,000 instead of 100,000) compared to the original paper. Despite using this reduced dataset, the demo still achieves strong predictive performance, highlighting MOSAIKS's efficiency.
+
+::: {.callout-note}
+# Click the badge to run the demonstration! 
 
 &darr;&darr;&darr;&darr;&darr;&darr;&darr;&darr;&darr;&darr;&darr;&darr;&darr;&darr;&darr;&darr;   
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/cullen-molitor/MOSAIKS-Training-Manual/blob/main/notebooks/demo/01-Rolf_et_al_2021_demo.ipynb)  
-&uarr;&uarr;&uarr;&uarr;&uarr;&uarr;&uarr;&uarr;&uarr;&uarr;&uarr;&uarr;&uarr;&uarr;&uarr;&uarr;    
-
-Remember to click `File -> Save a copy in Drive` to save any changes you make.
+<!-- &uarr;&uarr;&uarr;&uarr;&uarr;&uarr;&uarr;&uarr;&uarr;&uarr;&uarr;&uarr;&uarr;&uarr;&uarr;&uarr;     -->
+Remember to click `File` -> `Save a copy in Drive` to save any changes you make.  
+---
+Or to view a static version of the code on GitHub, click the badge below.  
+[![](https://img.shields.io/badge/View%20on%20GitHub-181717?logo=github&logoColor=white&labelColor=grey&color=black&link=--)](https://github.com/cullen-molitor/MOSAIKS-Training-Manual/blob/main/notebooks/demo/01-Rolf_et_al_2021_demo.ipynb)
 :::
 
-For instruction on how to use Google Colab, please refer to @sec-intro-compute
+For instructions and tips on using Google Colab, please refer to @sec-intro-compute. 
 
 ## Don't want to run code?
 

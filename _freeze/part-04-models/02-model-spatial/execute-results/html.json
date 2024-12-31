@@ -1,8 +1,8 @@
 {
-  "hash": "cd16c1edc33969069fc701700afd2fd8",
+  "hash": "31a5193426274525de5bfccf72bf7b9e",
   "result": {
     "engine": "knitr",
-    "markdown": "# Modeling over space {#sec-model-space}\n\n\n\n\n\n:::: status\n::: callout-warning \nThis chapter is in early draft form and may be incomplete.\n:::\n::::\n\n\n\n\n\n\n::: {.callout-note}\n# Looking forward\n\nIn the next chapter, \n:::",
+    "markdown": "# Modeling over space {#sec-model-space}\n\n\n\n\n\n\n:::: status\n::: callout-warning \nThis chapter is in early draft form and may be incomplete.\n:::\n::::\n\n\n\n\n\n\n\n::: {.callout-note}\n# Looking forward\n\nIn the next chapter, \n:::\n\n",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"
