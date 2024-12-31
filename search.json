@@ -4,7 +4,87 @@
     "href": "index.html",
     "title": "MOSAIKS Training Manual",
     "section": "",
-    "text": "Welcome\nThis is the first iteration of the MOSAIKS Training Manual! The manual serves as a comprehensive reference for understanding MOSAIKS, its capabilities, and practical implementation guidance.\nMOSAIKS stands for Multi-task Observation using SAtellite Imagery & Kitchen Sinks. It is a framework designed to simplify the use of satellite imagery and machine learning for analyzing socioeconomic and environmental outcomes across different geographic contexts and time periods.\nThis comprehensive two-week program is designed for academics, professionals, and policymakers interested in leveraging MOSAIKS to better understand socioeconomic and environmental challenges. The course is particularly valuable for those working in:\nThroughout this course, you’ll learn practical applications through a combination of:\nThe curriculum covers the complete MOSAIKS workflow:\nWhether you’re new to MOSAIKS or looking to deepen your expertise, this course provides the tools and knowledge needed to effectively utilize this powerful framework.",
+    "text": "Welcome",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#where-am-i",
+    "href": "index.html#where-am-i",
+    "title": "MOSAIKS Training Manual",
+    "section": "Where am I?",
+    "text": "Where am I?\nThis is the first iteration of the MOSAIKS Training Manual! The manual serves as a comprehensive reference for understanding MOSAIKS, its capabilities, and practical implementation guidance.\n\n\nMade with: Your Name in Landsat",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#what-is-mosaiks",
+    "href": "index.html#what-is-mosaiks",
+    "title": "MOSAIKS Training Manual",
+    "section": "What is MOSAIKS?",
+    "text": "What is MOSAIKS?\nMOSAIKS stands for Multi-task Observation using SAtellite Imagery & Kitchen Sinks. It is a framework designed to simplify the use of satellite imagery and machine learning for analyzing socioeconomic and environmental outcomes across different geographic contexts and time periods.",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#who-is-this-for",
+    "href": "index.html#who-is-this-for",
+    "title": "MOSAIKS Training Manual",
+    "section": "Who is this for?",
+    "text": "Who is this for?\nThis comprehensive two-week program is designed for academics, professionals, and policymakers interested in leveraging MOSAIKS to better understand socioeconomic and environmental challenges. The course is particularly valuable for those working in:\n\nRemote sensing and satellite imagery analysis\nMachine learning applications with geospatial data\nAgricultural monitoring and assessment\nDevelopment research and policy making",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#what-will-i-learn",
+    "href": "index.html#what-will-i-learn",
+    "title": "MOSAIKS Training Manual",
+    "section": "What will I learn?",
+    "text": "What will I learn?\nThroughout this course, you’ll learn practical applications through a combination of:\n\nTheoretical foundations and conceptual understanding\nHands-on exercises with real-world data\nBest practices for implementation\nStrategies for analyzing and interpreting results\n\nThe curriculum covers the complete MOSAIKS workflow:\n\nAccessing and processing satellite imagery\nUnderstanding MOSAIKS feature extraction\nWorking with the MOSAIKS API\nImplementing machine learning models\nQuantifying and communicating uncertainty\nApplying models to various contexts\nWorking with survey data\n\nWhether you’re new to MOSAIKS or looking to deepen your expertise, this course provides the tools and knowledge needed to effectively utilize this powerful framework.",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#course-structure",
+    "href": "index.html#course-structure",
+    "title": "MOSAIKS Training Manual",
+    "section": "Course structure",
+    "text": "Course structure\nThis course is designed as an intensive two-week program that combines lectures, demonstrations, and hands-on sessions. Each day is structured as follows:\n\n\n\n\nTime\nActivity\n\n\n\n9:00 - 10:30\nMorning Session 1\n\n\n10:30 - 11:00\nBreak\n\n\n11:00 - 12:30\nMorning Session 2\n\n\n12:30 - 1:30\nLunch\n\n\n1:30 - 3:00\nAfternoon Session 1\n\n\n3:00 - 3:30\nBreak\n\n\n3:30 - 4:30\nAfternoon Session 2\n\n\n4:30 - 5:00\nFeedback and Development\n\n\n\n\n\nTable 1: Daily time divisions showing 2 morning sessions, 2 afternoon sessions, and a final time slot alloted for developing the course further.\n\n\nEach day concludes with a Q&A and feedback session from 4:30-5:00, providing opportunities to clarify concepts and share ideas. It is expected that this first course will spur many new ideas and concepts which should be included in the future trainings. Please remember to take notes throughout each day with particular emphasis in areas you think could be explained better or that need additional topics covered. These can be areas that you struggled with or that you would anticipate could be difficult for others.",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#course-schedule",
+    "href": "index.html#course-schedule",
+    "title": "MOSAIKS Training Manual",
+    "section": "Course schedule",
+    "text": "Course schedule\nWeek 1\n\n\nDay 1: MOSAIKS framework, accessing features, basic workflow\n\nDay 2: Understanding ground truth data, data cleaning, spatial resolution\n\nDay 3: Agricultural yield prediction, downloading features via API\n\nDay 4: Types of satellite imagery, processing considerations, quality control\n\nDay 5: Feature computation, theory behind RCFs, hands-on implementation\nWeek 2\n\n\nDay 1: Martin Luther King Jr. Day - No Class\n\n\nDay 2: Model selection, hyperparameter tuning, cross-validation\n\nDay 3: Error analysis, confidence intervals, reporting uncertainty\n\nDay 4: Survey design principles, geolocation methods, sampling strategies\n\nDay 5: Advanced topics, emerging applications, future development",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#training-expectations",
+    "href": "index.html#training-expectations",
+    "title": "MOSAIKS Training Manual",
+    "section": "Training expectations",
+    "text": "Training expectations\nWhat you will learn\n\nUnderstanding of MOSAIKS framework and capabilities\nPractical skills in satellite imagery processing\n\nExperience with machine learning applications\nHands-on practice with real-world datasets\nKnowledge of survey data integration\nBest practices for model implementation\nPrerequisites\nThere are no explicit prerequisites, though this course does cover some advanced topics in:\n\nThe Python programming language\nMachine learning\nGeospatial data\nParticipant expectations\n\nActive participation in discussions and hands-on sessions\nCompletion of assigned homework (particularly the Week 1 Friday assignment)\n\nEngagement in Q&A sessions\nContribution to feedback sessions for course improvement\nComputing requirements\nThe course includes hands-on computing sessions. You will need:\n\nA computer with access to the internet\nA Google account\nAccess to Google Colaboratory\nAccess to necessary data (details to be provided)\nHomework and presentations\nThere will be a homework assignment at the end of Week 1, which participants will present on Tuesday of Week 2. This assignment is designed to reinforce learning and provide practical experience with MOSAIKS tools.",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#book-structure-and-content",
+    "href": "index.html#book-structure-and-content",
+    "title": "MOSAIKS Training Manual",
+    "section": "Book structure and content",
+    "text": "Book structure and content\nThis manual is organized into six main parts, each focusing on a critical aspect of working with MOSAIKS. We begin with foundational concepts and gradually progress to more advanced topics in modeling and uncertainty quantification.\n\n\n\n\n\n\n\n\nPart\nDescription\n\n\n\nIntroduction\nComputing setup, MOSAIKS overview, API access, initial demonstration\n\n\nLabel data\nUnderstanding suitable labels, survey integration, data preparation\n\n\nSatellite imagery\nSelecting appropriate imagery, processing considerations\n\n\nFeatures\nRandom convolutional features, API access, feature computation\n\n\nTask modeling\nModel selection, spatial analysis, temporal considerations\n\n\nModel uncertainty\nUncertainty quantification, ethical considerations\n\n\n\n\n\nTable 2: Overview of the MOSAIKS Training Manual contents\n\n\nThe content is designed to be both comprehensive and practical, with each part building upon previous concepts while remaining relatively self-contained. This structure allows readers to either progress through the manual sequentially or focus on specific topics of interest. Throughout each section, we provide practical examples, code demonstrations, and best practices drawn from real-world applications.",
     "crumbs": [
       "Welcome"
     ]
@@ -14,7 +94,7 @@
     "href": "index.html#acknowledgements",
     "title": "MOSAIKS Training Manual",
     "section": "Acknowledgements",
-    "text": "Acknowledgements\nMOSAIKS was developed and is supported by researchers across multiple partner organizations:\nCore Team:\nBenjamin Recht, Esther Rolf, Tamma Carleton, Eugenio Noda, Hikari Murayama, Hannah Druckenmiller, Ian Bolliger, Jeanette Tseng, Jessica Katz, Jonathan Proctor, Luke Sherman, Miyabi Ishihara, Simon Greenhill, Solomon Hsiang, Taryn Fransen, Trinetta Chong, Vaishaal Shankar, Graeme Blair, Darin Christensen, Shopnavo Biswas, Karena Yan, Cullen Molitor, Grace Lewin, Steven Cognac, Juliet Cohen\nPartner Organizations:\n\nCenter for Effective Global Action (CEGA; UCB)\nEnvironmental Markets Lab (emLab; UCSB)\nGlobal Policy Lab (GPL; Stanford University)\nHarvard Data Science Initiative (HDSI; Harvard University)\nProject on Resources and Governance (PRG; UCLA)\nMaster of Environmental Data Science Program (MEDS; UCSB)\n\nFunding Support:\n\nThe Patrick J. McGovern Foundation\nThe United States Agency for International Development (USAID)\nUnited Nations Development Programme (UNDP)",
+    "text": "Acknowledgements\nMOSAIKS was developed and is supported by a large team of researchers across multiple partner organizations:\nDevelopment Team:\nBenjamin Recht, Esther Rolf, Tamma Carleton, Eugenio Noda, Hikari Murayama, Hannah Druckenmiller, Ian Bolliger, Jeanette Tseng, Jessica Katz, Jonathan Proctor, Luke Sherman, Miyabi Ishihara, Simon Greenhill, Solomon Hsiang, Taryn Fransen, Trinetta Chong, Vaishaal Shankar, Graeme Blair, Darin Christensen, Shopnavo Biswas, Karena Yan, Cullen Molitor, Grace Lewin, Steven Cognac, Juliet Cohen\nPartner Organizations:\n\nCenter for Effective Global Action (CEGA; UCB)\nEnvironmental Markets Lab (emLab; UCSB)\nGlobal Policy Lab (GPL; Stanford University)\nHarvard Data Science Initiative (HDSI; Harvard University)\nProject on Resources and Governance (PRG; UCLA)\nMaster of Environmental Data Science Program (MEDS; UCSB)\n\nFunding Support:\n\nThe Patrick J. McGovern Foundation\nThe United States Agency for International Development (USAID)\nUnited Nations Development Programme (UNDP)\n\nWe are grateful for the support and contributions of all team members and partner organizations in making MOSAIKS a reality. We hope to continue expanding the framework and its applications to address pressing global challenges.\n\n\n\n\n\n\nLooking forward\n\n\n\nIn the first part of this book, we will cover the basics of MOSAIKS, including its framework, capabilities, and practical applications. This section is focused on exploring the original MOSAIKS publication (Rolf et al. 2021) and understanding the core concepts behind the framework.",
     "crumbs": [
       "Welcome"
     ]
@@ -24,37 +104,37 @@
     "href": "part-00-intro/00-intro.html",
     "title": "Introduction",
     "section": "",
-    "text": "Course structure\nThis course is designed as an intensive two-week program that combines lectures, demonstrations, and hands-on sessions. Each day is structured as follows:\nEach day concludes with a Q&A and feedback session from 4:30-5:00, providing opportunities to clarify concepts and share ideas. It is expected that this first course will spur many new ideas and concepts which should be included in the future trainings. Please remember to take notes throughout each day with particular emphasis in areas you think could be explained better or that need additional topics covered. These can be areas that you struggled with or that you would anticipate could be difficult for others.",
+    "text": "Overview\nThis section introduces the fundamental concepts of MOSAIKS (Multi-task Observation using Satellite Imagery & Kitchen Sinks) and provides practical guidance for getting started with the system. Whether you’re new to satellite imagery analysis or an experienced practitioner, understanding these foundations is crucial for effectively utilizing MOSAIKS in your work.\nMOSAIKS bridges the gap between the vast potential of satellite imagery and practical applications by providing:",
     "crumbs": [
       "Introduction"
     ]
   },
   {
-    "objectID": "part-00-intro/00-intro.html#course-structure",
-    "href": "part-00-intro/00-intro.html#course-structure",
+    "objectID": "part-00-intro/00-intro.html#overview",
+    "href": "part-00-intro/00-intro.html#overview",
     "title": "Introduction",
     "section": "",
-    "text": "Time\nActivity\n\n\n\n9:00 - 10:30\nMorning Session 1\n\n\n10:30 - 11:00\nBreak\n\n\n11:00 - 12:30\nMorning Session 2\n\n\n12:30 - 1:30\nLunch\n\n\n1:30 - 3:00\nAfternoon Session 1\n\n\n3:00 - 3:30\nBreak\n\n\n3:30 - 4:30\nAfternoon Session 2\n\n\n4:30 - 5:00\nFeedback and Development",
+    "text": "Accessible machine learning tools for non-experts\nComputationally efficient predictions\nFlexible applications across diverse tasks\nScalable solutions for global challenges",
     "crumbs": [
       "Introduction"
     ]
   },
   {
-    "objectID": "part-00-intro/00-intro.html#schedule-overview",
-    "href": "part-00-intro/00-intro.html#schedule-overview",
+    "objectID": "part-00-intro/00-intro.html#when-to-use-mosaiks",
+    "href": "part-00-intro/00-intro.html#when-to-use-mosaiks",
     "title": "Introduction",
-    "section": "Schedule overview",
-    "text": "Schedule overview\n\nCourse schedule by week\n\n\n\n\n\n\nDay\nWeek 1\nWeek 2\n\n\n\nMonday\nOrientation and introduction to MOSAIKS\nHoliday - No Class\n\n\nTuesday\nGround labels and data processing fundamentals\nTask modeling and machine learning applications\n\n\nWednesday\nAgriculture applications and MOSAIKS API\nUnderstanding uncertainty in MOSAIKS\n\n\nThursday\nSatellite imagery fundamentals and processing\nSurvey data processing and design\n\n\nFriday\nDeep dive into random convolutional features (RCFs)\nFuture directions and advanced applications\n\n\n\nMain topics covered each day:\nWeek 1\n\n\nDay 1: MOSAIKS framework, accessing features, basic workflow\n\nDay 2: Understanding ground truth data, data cleaning, spatial resolution\n\nDay 3: Agricultural yield prediction, downloading features via API\n\nDay 4: Types of satellite imagery, processing considerations, quality control\n\nDay 5: Feature computation, theory behind RCFs, hands-on implementation\nWeek 2\n\n\nDay 1: Martin Luther King Jr. Day - No Class\n\n\nDay 2: Model selection, hyperparameter tuning, cross-validation\n\nDay 3: Error analysis, confidence intervals, reporting uncertainty\n\nDay 4: Survey design principles, geolocation methods, sampling strategies\n\nDay 5: Advanced topics, emerging applications, future development",
+    "section": "When to use MOSAIKS",
+    "text": "When to use MOSAIKS\nMOSAIKS is particularly valuable when you need to:\n\nGenerate predictions across large geographic areas\nWork with limited computational resources\nAnalyze multiple outcomes using the same imagery\nCreate predictions without deep learning expertise\nScale analysis from local to global applications\n\nHowever, MOSAIKS may not be the best choice when:\n\nYou need predictions at sub-kilometer resolution\nYour outcome requires specific spectral bands\nReal-time predictions are essential\nYour application requires interpretable features",
     "crumbs": [
       "Introduction"
     ]
   },
   {
-    "objectID": "part-00-intro/00-intro.html#training-expectations",
-    "href": "part-00-intro/00-intro.html#training-expectations",
+    "objectID": "part-00-intro/00-intro.html#section-outline",
+    "href": "part-00-intro/00-intro.html#section-outline",
     "title": "Introduction",
-    "section": "Training expectations",
-    "text": "Training expectations\nWhat you will learn\n\nUnderstanding of MOSAIKS framework and capabilities\nPractical skills in satellite imagery processing\n\nExperience with machine learning applications\nHands-on practice with real-world datasets\nKnowledge of survey data integration\nBest practices for model implementation\nPrerequisites\nThere are no explicit prerequisites, though this course does cover some advanced topics in:\n\nThe Python programming language\nMachine learning\nGeospatial data\nParticipant expectations\n\nActive participation in discussions and hands-on sessions\nCompletion of assigned homework (particularly the Week 1 Friday assignment)\n\nEngagement in Q&A sessions\nContribution to feedback sessions for course improvement\nComputing requirements\nThe course includes hands-on computing sessions. You will need:\n\nA computer with access to the internet\nA Google account\nAccess to Google Colaboratory\nAccess to necessary data (details to be provided)\nHomework and presentations\nThere will be a homework assignment at the end of Week 1, which participants will present on Tuesday of Week 2. This assignment is designed to reinforce learning and provide practical experience with MOSAIKS tools.",
+    "section": "Section outline",
+    "text": "Section outline\nThe following chapters will guide you through getting started with MOSAIKS:\n\n\n\n\n\n\n\n\nChapter\nKey Topics\n\n\n\n1  Compute setup\nGoogle Colab, data management, implementation practices\n\n\n2  What is MOSAIKS?\nCore concepts, system architecture, capabilities\n\n\n3  Access MOSAIKS\nAPI access, data products, authentication\n\n\n4  Try MOSAIKS\nBasic workflow, example analysis, common pitfalls\n\n\n\n\n\nTable 1: Outline of the introduction section\n\n\nThese chapters provide both theoretical understanding and practical skills needed to begin working with MOSAIKS. The focus is on making satellite-based prediction accessible while maintaining scientific rigor and computational efficiency.\n\n\n\n\n\n\nLooking forward\n\n\n\nIn the next chapter, we’ll set up our computing environment using Google Colab.",
     "crumbs": [
       "Introduction"
     ]
@@ -128,7 +208,7 @@
   {
     "objectID": "part-00-intro/02-intro-mosaiks.html",
     "href": "part-00-intro/02-intro-mosaiks.html",
-    "title": "\n2  What is MOSAIKS?\n",
+    "title": "2  What is MOSAIKS?",
     "section": "",
     "text": "2.1 The challenge\nRight now, numerous public satellite systems collect huge amounts of data about the world every day. But there is so much imagery (terabytes per day) that it’s overwhelming to sort through by hand; and it’s too complex and unstructured to be usable in its raw form for most applications.\nThat is why linking satellite imaging to machine learning (SIML) is incredibly powerful. It enables vast amounts of unstructured image data to be transformed into structured information that can immediately be used for planning, research, and decision-making.\nWe believe that people all over the world should be able to access SIML technologies, but we also recognize that most people who would benefit the most from these tools don’t have the time or resources to manage enormous satellite imagery data sets and learn how to apply machine learning to them.\nINSERT IMAGE HERE",
     "crumbs": [
@@ -139,7 +219,7 @@
   {
     "objectID": "part-00-intro/02-intro-mosaiks.html#the-solution",
     "href": "part-00-intro/02-intro-mosaiks.html#the-solution",
-    "title": "\n2  What is MOSAIKS?\n",
+    "title": "2  What is MOSAIKS?",
     "section": "\n2.2 The solution",
     "text": "2.2 The solution\nThat’s why we developed MOSAIKS.\nMOSAIKS is designed to work “out of the box” for a wide array of SIML applications, for people with no SIML expertise who work on normal desktop computers. MOSAIKS users never actually have to touch satellite imagery themselves and only need to have basic statistical training.\n\n\n\n\n\n\nIf you can run a regression, you can use MOSAIKS.\n\n\n\nMOSAIKS empowers users to create their own new data sets from satellite imagery. We don’t control what variables users look at, and we never need to know. MOSAIKS is a system that allows users to quickly transform vast amounts of imagery into maps of new variables, using their own training data.\nIf you’ve ever been curious about trying machine learning with satellite imagery, but don’t know anything about machine learning or satellite imagery, MOSAIKS is for you.\nAnd if you know a lot about machine learning and satellite imagery, MOSAIKS might still be for you, since it performs competitively with deep learning methods but is much simpler and cheaper to use.\nINSERT IMAGE HERE",
     "crumbs": [
@@ -150,7 +230,7 @@
   {
     "objectID": "part-00-intro/02-intro-mosaiks.html#how-mosaiks-works",
     "href": "part-00-intro/02-intro-mosaiks.html#how-mosaiks-works",
-    "title": "\n2  What is MOSAIKS?\n",
+    "title": "2  What is MOSAIKS?",
     "section": "\n2.3 How MOSAIKS works",
     "text": "2.3 How MOSAIKS works\nThe basic idea of MOSAIKS is to seperate users from the costly and difficult process of transforming imagery into inputs (called “features”) for a machine learning algorithm (images → X). We do that part, so users never have to download or manage imagery. Users then download a table of MOSAIKS features (X), link them to their own geocoded data on the outcome (Y) they are interested in (called “labels”) and run a linear regression to predict their labels using MOSAIKS features (Y = Xβ).\nAll users use the same MOSAIKS features and just match them to their labels based on location. Users can run their analysis on any statistical software they are comfortable with. For most applications, the computing demands will not require users to work with specialized machines, since desktops and laptops work.\n\n\nRolf et al. 2021 Figure 1\n\nMOSAIKS works because MOSAIKS features capture a huge amount of information about the colors, patterns and textures that show up in satellite imagery. We don’t know what patterns/colors/textures will be important for the application that users have (since we don’t know what applications users will try), so we just try to capture all of them. The purpose of the regression step is to teach the model which patterns/colors/textures predict the labels, and then to use that understanding to make predictions in locations where users don’t have labels. In addition, MOSAIKS encodes image information in a way that allows for nonlinear relationships between labels and images, even though the regression that users implement is a linear regression.\n\n\n\n\n\nFigure 2.1: Example of 4 (of 4,000) MOSAIKS feature maps (right) computed from satellite imagery (left). These features were chosen at random from what is available on the MOSAIKS API.\n\n\n\n2.3.1 Five steps to using MOSAIKS\nFor users, the procedure for using MOSAIKS has five steps (corresponding figure from Rolf et al. is below):\n\nDownload MOSAIKS features (X) in the areas where you have labels.\nMerge the features with your labels (Y) based on location (so features at position P are linked to labels at position P).\nRun a ridge regression of your labels on the MOSAIKS features (Y = Xβ).\nEvaluate performance.\nUse the results of the regression model (β) to make predictions (Xβ) in a new region of interest where you do not have labels, using only the MOSAIKS features that correspond with those new locations.",
     "crumbs": [
@@ -161,7 +241,7 @@
   {
     "objectID": "part-00-intro/02-intro-mosaiks.html#what-can-mosaiks-predict",
     "href": "part-00-intro/02-intro-mosaiks.html#what-can-mosaiks-predict",
-    "title": "\n2  What is MOSAIKS?\n",
+    "title": "2  What is MOSAIKS?",
     "section": "\n2.4 What can MOSAIKS predict?",
     "text": "2.4 What can MOSAIKS predict?\n\n\n\n\n\n\nThis question is answered in greater detail in Chapter 5\n\n\n\nMOSAIKS has been successfully used to predict a wide range of outcomes including:\n\nEnvironmental conditions (forest cover, elevation)\nPopulation patterns (density, nighttime lights)\nEconomic indicators (income, house prices)\nInfrastructure (road networks)\n\nThe figure below is from the original MOSAIKS publication (Rolf et al. 2021). The left maps show the input labels. The right map shows the modeled predictions. The scatter plot shows the modeled predictions against the true labels and reports the coefficient of determination (R²) as a measure of performance.\n\n\nRolf et al. 2021 Figure 2\n\nImportantly, all these predictions use the same set of satellite features - there’s no need to reprocess the imagery for different tasks. MOSAIKS achieves accuracy comparable to more complex deep learning methods, but at a fraction of the computational cost. This is the power of MOSAIKS, it removes the need for repreocessing the imagery after the initial encoding.\n\n2.4.1 Building understanding\nIf you are interested in using MOSAIKS, you can also see our tutorial and slide deck. And if you have a little bit of time, we recommend reading the paper we wrote when we introduced the system. We wrote it with users in mind, so we tried to make it as clear and accessible as possible.\nIf you use MOSAIKS, please reference: Rolf et al. “A generalizable and accessible approach to machine learning with global satellite imagery.” Nature Communications (2021).\n\n\n\n\n\n\nLooking forward\n\n\n\nIn the next chapter we will demonstrate MOSAIKS with real data.",
     "crumbs": [
@@ -304,7 +384,7 @@
     "href": "part-01-labels/00-labels.html#section-outline",
     "title": "Label data",
     "section": "Section outline",
-    "text": "Section outline\nThe following chapters will guide you through key considerations for working with label data in MOSAIKS:\n5  What labels work?\n\nExamples of successful applications\nUnderstanding performance patterns\nLimits of predictability\n\n6  Survey data\n\nWorking with survey data\nSampling considerations\nPrivacy and ethical concerns\nIntegration challenges\n\n7  Preparing labels\n\nData cleaning procedures\nSpatial aggregation methods\nQuality control steps\nJoining with features\n\n8  Label data demo\n\nHands-on examples\nCommon pitfalls\nBest practices\nPerformance evaluation\n\nThese chapters provide both practical guidance for preparing your own label data and deeper understanding of what types of outcomes MOSAIKS can effectively predict.\n\n\n\n\n\n\nLooking forward\n\n\n\nIn the next chapter, we’ll explore over 100 different outcomes that have been tested with MOSAIKS, examining what works well and what doesn’t.",
+    "text": "Section outline\nThe following chapters will guide you through key considerations for working with label data in MOSAIKS:\n\n\n\n\n\n\n\n\nChapter\nKey Topics\n\n\n\n5  What labels work?\nExample applications, performance analysis, validation\n\n\n6  Survey data\nSurvey integration, sampling design, geographic referencing\n\n\n7  Preparing labels\nData cleaning, spatial joining, quality control\n\n\n8  Label data demo\nHands-on example, practical workflow, troubleshooting\n\n\n\n\n\nTable 1: Outline of the label data section\n\n\nThese chapters provide both practical guidance for preparing your own label data and deeper understanding of what types of outcomes MOSAIKS can effectively predict.\n\n\n\n\n\n\nLooking forward\n\n\n\nIn the next chapter, we’ll explore over 100 different outcomes that have been tested with MOSAIKS, examining what works well and what doesn’t.",
     "crumbs": [
       "Label data"
     ]
@@ -563,7 +643,7 @@
     "href": "part-02-satellite/00-satellite.html#section-outline",
     "title": "Satellite imagery",
     "section": "Section outline",
-    "text": "Section outline\nThe following chapters will guide you through key considerations when working with satellite imagery:\n9  Choosing imagery\n\nSpatial, spectral, and temporal resolution\nPublic vs commercial options\nCost considerations\nData quality and availability\n\n10  Processing imagery\n\nAccessing imagery\nPre-processing steps\nQuality control\nComputing requirements\n\nThese chapters provide practical guidance for incorporating satellite imagery into your MOSAIKS workflow while highlighting important technical and logistical considerations.\n\n\n\n\n\n\nLooking forward\n\n\n\nIn the next chapter, we will take a look at how to choose the right satellite imagery for your application.",
+    "text": "Section outline\nThe following chapters will guide you through key considerations when working with satellite imagery:\n\n\n\n\n\n\n\n\nChapter\nKey Topics\n\n\n\n9  Choosing imagery\nResolution types, data sources, selection criteria\n\n\n10  Processing imagery\nPre-processing steps, quality control, computing needs\n\n\n\n\n\nTable 1: Outline of the satellite imagery section\n\n\nThese chapters provide practical guidance for incorporating satellite imagery into your MOSAIKS workflow while highlighting important technical and logistical considerations.\n\n\n\n\n\n\nLooking forward\n\n\n\nIn the next chapter, we will take a look at how to choose the right satellite imagery for your application.",
     "crumbs": [
       "Satellite imagery"
     ]
@@ -573,7 +653,7 @@
     "href": "part-02-satellite/01-satellite-imagery.html",
     "title": "9  Choosing imagery",
     "section": "",
-    "text": "9.1 Time range\nLINK: https://eds-223-geospatial.github.io/course-materials/week6.html\nWhen selecting satellite imagery for use with MOSAIKS, several key factors need to be considered. The choice of imagery should be guided by your specific research needs, label characteristics, and practical constraints like cost and processing requirements.\nBased on your label resolution, a user needs to decide on:\nThe operational lifespan of satellites is a crucial consideration when choosing imagery sources. Different satellite programs have varying launch dates and operational periods, which affects the historical depth of available data.\nFor instance, the Landsat program offers the longest continuous space-based record of Earth’s land surface, with missions dating back to 1972. In contrast, more recent satellite programs like Sentinel (launched in 2014) offer higher resolution imagery but have a shorter historical record.\nKey considerations for time range include:",
+    "text": "9.1 Time range\nMEDS EDS 223 Geospatial analysis class\nWhen selecting satellite imagery for use with MOSAIKS, several key factors need to be considered. The choice of imagery should be guided by your specific research needs, label characteristics, and practical constraints like cost and processing requirements.\nBased on your label resolution, a user needs to decide on:\nThe operational lifespan of satellites is a crucial consideration when choosing imagery sources. Different satellite programs have varying launch dates and operational periods, which affects the historical depth of available data.\nFor instance, the Landsat program offers the longest continuous space-based record of Earth’s land surface, with missions dating back to 1972. In contrast, more recent satellite programs like Sentinel (launched in 2014) offer higher resolution imagery but have a shorter historical record.\nKey considerations for time range include:",
     "crumbs": [
       "Satellite imagery",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Choosing imagery</span>"
@@ -844,7 +924,7 @@
     "href": "part-03-features/00-features.html#section-outline",
     "title": "Satellite features",
     "section": "Section outline",
-    "text": "Section outline\nThe following chapters will guide you through key aspects of MOSAIKS features:\n11  Understanding features\n\nTechnical foundation\nImplementation details\n\nParameter choices\nPerformance characteristics\n\n12  API features\n\nAccessing pre-computed features\nFeature specifications\nData formats and structure\nUsage guidelines\n\n13  Computing features\n\nProcessing requirements\nComputational workflows\nStorage considerations\nQuality control\n\nThese chapters provide both practical guidance for working with MOSAIKS features and deeper technical understanding of how the feature extraction process works.\n\n\n\n\n\n\nLooking forward\n\n\n\nThe next chapter will attemppt to provide some context and intuition for the random convolutional features (RCFs) that are at the core of MOSAIKS.",
+    "text": "Section outline\nThe following chapters will guide you through key aspects of MOSAIKS features:\n\n\n\n\n\n\n\n\nChapter\nKey Topics\n\n\n\n11  Understanding features\nRandom convolutional features, implementation details\n\n\n12  API features\nPre-computed features, specifications, usage\n\n\n13  Computing features\nProcessing requirements, workflows, storage\n\n\n\n\n\nTable 1: Outline of the features section\n\n\nThese chapters provide both practical guidance for working with MOSAIKS features and deeper technical understanding of how the feature extraction process works.\n\n\n\n\n\n\nLooking forward\n\n\n\nThe next chapter will attempt to provide some context and intuition for the random convolutional features (RCFs) that are at the core of MOSAIKS.",
     "crumbs": [
       "Satellite features"
     ]
@@ -909,7 +989,7 @@
     "href": "part-03-features/02-features-api.html#feature-data",
     "title": "12  API features",
     "section": "",
-    "text": "Creating satellite image features is covered in later chapters.\n\n\n\n\n12.1.1 RCF brief overview\nMOSAIKS relies on random convolutional features (RCFs) computed from satellite imagery. The random nature of the features means that they are task-agnostic. These features can be reused multiple times to model various tasks. Features are generally created over a standard grid of 0.01 by 0.01 degree cells (~1 km², depending on latitude). The output is a feature vector of length K for every grid location.\n\n\n\n\n\n\nFeatures can be computed at higher or lower resolutions than 1 km². This is discussed in Chapter 13.\n\n\n\n\n12.1.2 Feature aggrgegation\nThe default 1 km² resolution of MOSAIKS is generally the maximum resolution the label data should be in. If the labels are in lower resolution, the satellite features can be aggregated up to larger areas to match. Typical aggregation might be to larger grid cell, census tract, county/district, or state/province levels. The exact aggregation level is contingent on the spatial resolution of the label data.\n\n\n\n\n\nFigure 12.1: Example showing of 3 representative random convolutional features (rows). Features are downloaded from the MOSAIKS API at 0.01° resolution (the native resolution) and aggregated to 3 levels, including (A) larger grid cells (0.1°), (B) counties, and (C) states.\n\n\n\n12.1.3 API Features\nCurrently the MOSAIKS API has a single set of global features ready to download. The features are publicly available for download; this is the fastest and easiest way to begin using MOSAIKS. They come from Planet Labs, Inc. Basemaps product Global Quarterly 2019 (qaurter 3) which has a native resolution of 4.77 m in the red, green, and blue bands of the visual spectrum. Given this, the easiest way to get started with MOSAIKS is to have label data for a recent time period (ideally from 2019 for fast changing labels, or a close year for more steady labels). To use MOSAIKS for time series data is possible, just not currently with precomputed and publicly available features. To access API features see Chapter 3\n\n\n\n\n\n\n\n\n\n\n\nResolution\nTime Period\nPopulation Weighted\nArea Weighted\nDownload\n\n\n\n0.01°\n2019 Q3\n\n\nQuery\n\n\n0.1°\n2019 Q3\n✓\n✓\nChunked files\n\n\n1°\n2019 Q3\n✓\n✓\nSingle file\n\n\nADM2\n2019 Q3\n✓\n✓\nSingle file\n\n\nADM1\n2019 Q3\n✓\n✓\nSingle file\n\n\nADM0\n2019 Q3\n✓\n✓\nSingle file\n\n\n\n\n\nTable 12.1: The MOSAIKS API offers features at 0.01°, 0.1°, and 1° resolution for the entire globe. Additionally, we provide features aggregated to the ADM0 (country), ADM1 (state/province), and ADM2 (county/municipality) levels. All features share the same 4,000 feature columns, and are all created from the same Planet Labs imagery, the only difference is the resolution/aggregation level. At each level of aggregation, we offer area weighted features and population weighted features. Population weighted features use weights from the Gridded Population of the World (GPWv4) population density dataset.",
+    "text": "Creating satellite image features is covered in later chapters.\n\n\n\n\n12.1.1 RCF brief overview\nMOSAIKS relies on random convolutional features (RCFs) computed from satellite imagery. The random nature of the features means that they are task-agnostic. These features can be reused multiple times to model various tasks. Features are generally created over a standard grid of 0.01 by 0.01 degree cells (~1 km², depending on latitude). The output is a feature vector of length K for every grid location.\n\n\n\n\n\n\nFeatures can be computed at higher or lower resolutions than 1 km². This is discussed in Chapter 13.\n\n\n\n\n12.1.2 Feature aggrgegation\nThe default 1 km² resolution of MOSAIKS is generally the maximum resolution the label data should be in. If the labels are in lower resolution, the satellite features can be aggregated up to larger areas to match. Typical aggregation might be to larger grid cell, census tract, county/district, or state/province levels. The exact aggregation level is contingent on the spatial resolution of the label data.\n\n\n\n\n\nFigure 12.1: Example showing of 3 representative random convolutional features (rows). Features are downloaded from the MOSAIKS API at 0.01° resolution (the native resolution) and aggregated to 3 levels, including (A) larger grid cells (0.1°), (B) counties, and (C) states.\n\n\n\n12.1.3 API Features\nCurrently the MOSAIKS API has a single set of global features ready to download. The features are publicly available for download; this is the fastest and easiest way to begin using MOSAIKS. They come from Planet Labs, Inc. Basemaps product Global Quarterly 2019 (qaurter 3) which has a native resolution of 4.77 m in the red, green, and blue bands of the visual spectrum. Given this, the easiest way to get started with MOSAIKS is to have label data for a recent time period (ideally from 2019 for fast changing labels, or a close year for more steady labels). To use MOSAIKS for time series data is possible, just not currently with precomputed and publicly available features. To access API features see ?sec-api\n\n\n\n\n\n\n\n\n\n\n\nResolution\nTime Period\nPopulation Weighted\nArea Weighted\nDownload\n\n\n\n0.01°\n2019 Q3\n\n\nQuery\n\n\n0.1°\n2019 Q3\n✓\n✓\nChunked files\n\n\n1°\n2019 Q3\n✓\n✓\nSingle file\n\n\nADM2\n2019 Q3\n✓\n✓\nSingle file\n\n\nADM1\n2019 Q3\n✓\n✓\nSingle file\n\n\nADM0\n2019 Q3\n✓\n✓\nSingle file\n\n\n\n\n\nTable 12.1: The MOSAIKS API offers features at 0.01°, 0.1°, and 1° resolution for the entire globe. Additionally, we provide features aggregated to the ADM0 (country), ADM1 (state/province), and ADM2 (county/municipality) levels. All features share the same 4,000 feature columns, and are all created from the same Planet Labs imagery, the only difference is the resolution/aggregation level. At each level of aggregation, we offer area weighted features and population weighted features. Population weighted features use weights from the Gridded Population of the World (GPWv4) population density dataset.",
     "crumbs": [
       "Satellite features",
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>API features</span>"
@@ -931,7 +1011,17 @@
     "href": "part-04-models/00-model.html",
     "title": "Task modeling",
     "section": "",
-    "text": "This chapter is in early draft form and may be incomplete.",
+    "text": "Section outline\nThe following chapters will guide you through key aspects of modeling tasks within the MOSAIKS framework:\nThese chapters provide",
+    "crumbs": [
+      "Task modeling"
+    ]
+  },
+  {
+    "objectID": "part-04-models/00-model.html#section-outline",
+    "href": "part-04-models/00-model.html#section-outline",
+    "title": "Task modeling",
+    "section": "",
+    "text": "Outline of the modeling section\n\n\n\n\n\nChapter\nKey Topics\n\n\n\n14  Model choice\nAlgorithm selection, hyperparameter tuning\n\n\n15  Modeling over space\nSpatial cross-validation, geographic generalization\n\n\n16  Modeling over time\nTime series analysis, temporal alignment\n\n\n\n\n\n\n\n\n\n\nLooking forward\n\n\n\nThe next chapter will",
     "crumbs": [
       "Task modeling"
     ]
@@ -1029,7 +1119,17 @@
     "href": "part-05-uncertainty/00-uncertainty.html",
     "title": "Model uncertainty",
     "section": "",
-    "text": "This chapter is in early draft form and may be incomplete.",
+    "text": "Section outline\nThe following chapters will discuss important aspects of model uncertainty and bias, as well as the ethical considerations in the context of MOSAIKS:\nThese chapters provide",
+    "crumbs": [
+      "Model uncertainty"
+    ]
+  },
+  {
+    "objectID": "part-05-uncertainty/00-uncertainty.html#section-outline",
+    "href": "part-05-uncertainty/00-uncertainty.html#section-outline",
+    "title": "Model uncertainty",
+    "section": "",
+    "text": "Outline of the uncertainty section\n\n\n\n\n\nChapter\nKey Topics\n\n\n\n?sec-uncertainty-intro\nError sources, confidence intervals, validation\n\n\n?sec-uncertainty-ethics\nResponsible use, communication, limitations\n\n\n\n\n\n\n\n\n\n\nLooking forward\n\n\n\nThe next chapter will",
     "crumbs": [
       "Model uncertainty"
     ]
