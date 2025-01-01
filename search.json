@@ -592,7 +592,29 @@
     "href": "part-01-labels/04-labels-demo.html",
     "title": "9  Label data demo",
     "section": "",
-    "text": "This chapter is in early draft form and may be incomplete.\n\n\n\n\n\nIDK yet\n\n\n\n\n\n\n\nLooking forward\n\n\n\nIn the next part, we will take a look at considerations for choosing and processing satellite imagery.",
+    "text": "9.1 Overview\nThis demonstration will show you a few key concepts about label data in MOSAIKS.",
+    "crumbs": [
+      "Label data",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Label data demo</span>"
+    ]
+  },
+  {
+    "objectID": "part-01-labels/04-labels-demo.html#demonstration-code",
+    "href": "part-01-labels/04-labels-demo.html#demonstration-code",
+    "title": "9  Label data demo",
+    "section": "\n9.2 Demonstration code",
+    "text": "9.2 Demonstration code\nBelow is a link to a Jupyter notebook intented to demonstrate practical preparation of label data for use in MOSAIKS. The notebook will guide you through the process of preparing a dataset for use in MOSAIKS, including:\n\nBuilding and use a MOSAIKS standardised grid\nPreparing geographic point labels (latitude and longitude coordinates)\nPreparing geographic polygon labels (e.g. shapefiles)\nPreparing raster labels (e.g. GeoTIFFs)\n\n\n\n\n\n\n\nClick the badge to run the demonstration!\n\n\n\n↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Remember to click File -&gt; Save a copy in Drive to save any changes you make.\n\nOr to view a static version of the code on GitHub, click the badge below.\n\n\nFor instructions and tips on using Google Colab, please refer to Chapter 2.",
+    "crumbs": [
+      "Label data",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Label data demo</span>"
+    ]
+  },
+  {
+    "objectID": "part-01-labels/04-labels-demo.html#whats-next",
+    "href": "part-01-labels/04-labels-demo.html#whats-next",
+    "title": "9  Label data demo",
+    "section": "\n9.3 What’s next?",
+    "text": "9.3 What’s next?\nNow that we have covered the basics of label data, we will move on to the next section, where we will discuss considerations for choosing and processing satellite imagery. This section is not neccessary for users who are either a) okay with using the MOSAIKS API to access features, or b) already have experience working with satellite imagery.\n\n\n\n\n\n\nLooking forward\n\n\n\nIn the next part, we will take a look at considerations for choosing and processing satellite imagery.",
     "crumbs": [
       "Label data",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Label data demo</span>"

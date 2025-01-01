@@ -293,8 +293,14 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+<li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">9.1</span> Overview</a></li>
+  <li><a href="#demonstration-code" id="toc-demonstration-code" class="nav-link" data-scroll-target="#demonstration-code"><span class="header-section-number">9.2</span> Demonstration code</a></li>
+  <li><a href="#whats-next" id="toc-whats-next" class="nav-link" data-scroll-target="#whats-next"><span class="header-section-number">9.3</span> What’s next?</a></li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/edit/main/part-01-labels/04-labels-demo.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../part-01-labels/00-labels.html">Label data</a></li><li class="breadcrumb-item"><a href="../part-01-labels/04-labels-demo.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Label data demo</span></a></li></ol></nav><div class="quarto-title">
@@ -324,9 +330,37 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<ul>
-<li>IDK yet</li>
-</ul>
+<section id="overview" class="level2" data-number="9.1"><h2 data-number="9.1" class="anchored" data-anchor-id="overview">
+<span class="header-section-number">9.1</span> Overview</h2>
+<p>This demonstration will show you a few key concepts about label data in MOSAIKS.</p>
+</section><section id="demonstration-code" class="level2" data-number="9.2"><h2 data-number="9.2" class="anchored" data-anchor-id="demonstration-code">
+<span class="header-section-number">9.2</span> Demonstration code</h2>
+<p>Below is a link to a Jupyter notebook intented to demonstrate practical preparation of label data for use in MOSAIKS. The notebook will guide you through the process of preparing a dataset for use in MOSAIKS, including:</p>
+<ol type="1">
+<li><p>Building and use a MOSAIKS standardised grid</p></li>
+<li><p>Preparing geographic point labels (latitude and longitude coordinates)</p></li>
+<li><p>Preparing geographic polygon labels (e.g.&nbsp;shapefiles)</p></li>
+<li><p>Preparing raster labels (e.g.&nbsp;GeoTIFFs)</p></li>
+</ol>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Click the badge to run the demonstration!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓<br><a href="https://colab.research.google.com/github/cullen-molitor/MOSAIKS-Training-Manual/blob/main/notebooks/demo/01-02-label-data_demo.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open In Colab"></a><br><!-- &uarr;&uarr;&uarr;&uarr;&uarr;&uarr;&uarr;&uarr;&uarr;&uarr;&uarr;&uarr;&uarr;&uarr;&uarr;&uarr;     --> Remember to click <code>File</code> -&gt; <code>Save a copy in Drive</code> to save any changes you make.</p>
+<hr>
+<p>Or to view a static version of the code on GitHub, click the badge below.<br><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/blob/main/notebooks/demo/01-02-label-data_demo.ipynb" target="_blank"><img src="https://img.shields.io/badge/View%20on%20GitHub-181717?logo=github&amp;logoColor=white&amp;labelColor=grey&amp;color=black&amp;link=--.png" class="img-fluid"></a></p>
+</div>
+</div>
+<p>For instructions and tips on using Google Colab, please refer to <a href="../part-00-intro/01-intro-compute.html" class="quarto-xref"><span>Chapter 2</span></a>.</p>
+</section><section id="whats-next" class="level2" data-number="9.3"><h2 data-number="9.3" class="anchored" data-anchor-id="whats-next">
+<span class="header-section-number">9.3</span> What’s next?</h2>
+<p>Now that we have covered the basics of label data, we will move on to the next section, where we will discuss considerations for choosing and processing satellite imagery. This section is not neccessary for users who are either a) okay with using the MOSAIKS API to access features, or b) already have experience working with satellite imagery.</p>
 <div class="callout callout-style-simple callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -342,8 +376,7 @@ Looking forward
 </div>
 
 
-
-</main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -921,7 +954,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/edit/main/part-01-labels/04-labels-demo.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/edit/main/part-01-labels/04-labels-demo.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
