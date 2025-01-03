@@ -421,7 +421,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>The MOSAIKS API should be considered the primary way to access features. It is a user-friendly interface that allows you to download features for any location on Earth. The API is designed to be accessible to users with a range of technical backgrounds, from beginners to experts.</p>
+<p>The MOSAIKS API should be considered the primary way to access features. It is a user-friendly interface that allows you to download features for any location on Earth. The API is designed to be accessible to users with a range of technical backgrounds, from beginners to experts. However, there are many settings where users will want or need to compute their own customized features. <a href="../part-03-features/03-features-computing.html" class="quarto-xref"><span>Chapter 14</span></a> guides readers through this process.</p>
 </section><section id="api-overview" class="level2" data-number="4.2"><h2 data-number="4.2" class="anchored" data-anchor-id="api-overview">
 <span class="header-section-number">4.2</span> API Overview</h2>
 <div class="callout callout-style-simple callout-tip callout-titled">
@@ -437,7 +437,7 @@ MOSAIKS API Link
 <p><a href="https://api.mosaiks.org/" target="_blank">api.mosaiks.org</a></p>
 </div>
 </div>
-<p>We have put together a [Resource Page](https://api.mosaiks.org/portal/resources/ for MOSAIKS users (registration required), which includes example Python and R notebooks for using the pipeline.</p>
+<p>We have put together a <a href="https://api.mosaiks.org/portal/resources/" target="_blank">Resource Page</a> for MOSAIKS users (registration required), which includes example Python and R notebooks for using the pipeline.</p>
 <p>Don’t forget to see our <a href="https://www.mosaiks.org/tutorials" target="_blank">Tutorial Page</a>, which has an example Python notebook that we walk through in the video.</p>
 <p>If you are looking for new data sets that we create using MOSAIKS (not features), we will be posting those <a href="https://www.mosaiks.org/data-sets" target="_blank">here</a> as they become available.</p>
 <section id="register-for-an-account" class="level3" data-number="4.2.1"><h3 data-number="4.2.1" class="anchored" data-anchor-id="register-for-an-account">
@@ -513,9 +513,10 @@ MOSAIKS API Link
 <p>Basic workflow:</p>
 <ol type="1">
 <li>Obtain ground truth measurements (“labels”)</li>
-<li>Download matching features via Map/File Query</li>
+<li>Download matching features via Map/File Query (or the pre-computed global-scale features at administrative boundary scale)</li>
 <li>Spatially merge labels and features</li>
-<li>Use regression to model relationship</li>
+<li>Use regression to model relationship between imagery and outcome</li>
+<li>Use regression results to predict outcome in new locations</li>
 </ol>
 <p>You can experiment with various machine learning approaches in the regression step. For beginners, we recommend starting with our example Jupyter notebook (<a href="04-intro-demo.html" class="quarto-xref"><span>Chapter 5</span></a>) that demonstrates a simple ridge regression approach (suitable for both R and Python users).</p>
 <div class="quarto-figure quarto-figure-center">
