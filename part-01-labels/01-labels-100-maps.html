@@ -337,6 +337,15 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#failures" id="toc-failures" class="nav-link" data-scroll-target="#failures"><span class="header-section-number">5.3.3</span> Failures</a></li>
   </ul>
 </li>
+  <li>
+<a href="#types-of-variables" id="toc-types-of-variables" class="nav-link" data-scroll-target="#types-of-variables"><span class="header-section-number">5.4</span> Types of variables</a>
+  <ul class="collapse">
+<li><a href="#continuous-variables" id="toc-continuous-variables" class="nav-link" data-scroll-target="#continuous-variables"><span class="header-section-number">5.4.1</span> Continuous variables</a></li>
+  <li><a href="#categorical-variables" id="toc-categorical-variables" class="nav-link" data-scroll-target="#categorical-variables"><span class="header-section-number">5.4.2</span> Categorical variables</a></li>
+  <li><a href="#choosing-appropriate-metrics" id="toc-choosing-appropriate-metrics" class="nav-link" data-scroll-target="#choosing-appropriate-metrics"><span class="header-section-number">5.4.3</span> Choosing appropriate metrics</a></li>
+  </ul>
+</li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">5.5</span> Summary</a></li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/edit/main/part-01-labels/01-labels-100-maps.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
@@ -396,7 +405,7 @@ Figure&nbsp;5.1: MOSAIKS versatility makes it the perfect tool for a wide range 
 Figure&nbsp;5.2: Planet Labs visual basemap imagery from quarter 3 of 2019 (left) and 4 of 4,000 MOSAIKS features downloaded from the API (right).
 </figcaption></figure>
 </div>
-<p><strong>2.</strong> Collecting and currating a large set of outcomes with diversity in spatial structures and categories</p>
+<p><strong>2.</strong> Collecting and curating a large set of outcomes with diversity in spatial structures and categories</p>
 <div id="tbl-labels" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure"><div aria-describedby="tbl-labels-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
@@ -506,6 +515,11 @@ Figure&nbsp;5.4: The results of the 100 maps experiment.
 <span class="header-section-number">5.3.2</span> Successes</h3>
 <section id="maize-yield" class="level4" data-number="5.3.2.1"><h4 data-number="5.3.2.1" class="anchored" data-anchor-id="maize-yield">
 <span class="header-section-number">5.3.2.1</span> Maize yield</h4>
+<section id="maize-data" class="level5" data-number="5.3.2.1.1"><h5 data-number="5.3.2.1.1" class="anchored" data-anchor-id="maize-data">
+<span class="header-section-number">5.3.2.1.1</span> Maize data</h5>
+<p>The maize yield data comes from crop yield data collected at the second administrative level (e.g., counties in the US) from the United States, China, Brazil and the European Union. Yields are calculated as harvested grain divided by the planted area, though in some cases harvested area is used instead of planted area. The data covers years from 1983-2009, with the most recent available year used for each location.</p>
+</section><section id="maize-yield-results" class="level5" data-number="5.3.2.1.2"><h5 data-number="5.3.2.1.2" class="anchored" data-anchor-id="maize-yield-results">
+<span class="header-section-number">5.3.2.1.2</span> Maize yield results</h5>
 <p>A standout example of a high-performing label is Maize yield (<a href="#fig-100-maps-maize-plot" class="quarto-xref">Figure&nbsp;<span>5.5</span></a>). This outcome is naturally suited to detection by satellite imagery:</p>
 <ul>
 <li>
@@ -521,9 +535,11 @@ Figure&nbsp;5.4: The results of the 100 maps experiment.
 <img src="../images/proctor_et_al_100_maize_plot.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-100-maps-maize-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.5: Perfoprmance of MOSAIKS on Maize yield, showing the observed values plotted against the model predictions (left). Observed label data is shown in the upper right, while the corresponding predictions are shown bottom right.
+Figure&nbsp;5.5: Performance of MOSAIKS on Maize yield, showing the observed values plotted against the model predictions (left). Observed label data is shown in the upper right, while the corresponding predictions are shown bottom right.
 </figcaption></figure>
 </div>
+</section><section id="why-it-works" class="level5" data-number="5.3.2.1.3"><h5 data-number="5.3.2.1.3" class="anchored" data-anchor-id="why-it-works">
+<span class="header-section-number">5.3.2.1.3</span> Why it works</h5>
 <p>Crop yields are a classic use case for remote sensing because farmland is often large, geographically dispersed, and subject to rapid changes from weather and management practices—conditions that satellite imagery can routinely monitor at scale. By measuring vegetation indices (e.g., NDVI, EVI), researchers gain insight into plant health, canopy density, and photosynthetic activity, all of which correlate strongly with agricultural productivity. This non-invasive, timely, and spatially comprehensive approach makes it invaluable for crop forecasting, detecting stress, and guiding resource allocation. Consequently, remote sensing has become a cornerstone in modern yield estimation methods for staple crops around the world. MOSAIKS is a natural extension of this trend, leveraging the latest in machine learning to extract actionable insights from satellite imagery.</p>
 <div id="fig-100-maps-maize-img" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-100-maps-maize-img-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -533,8 +549,13 @@ Figure&nbsp;5.5: Perfoprmance of MOSAIKS on Maize yield, showing the observed va
 Figure&nbsp;5.6: Agricultural fields in the United States Midwest region. This examples shows the clear delineation of fields with varying color intensities, making for easily detectable features in the satellite imagery. Source: NASA
 </figcaption></figure>
 </div>
-</section><section id="international-wealth-index-iwi" class="level4" data-number="5.3.2.2"><h4 data-number="5.3.2.2" class="anchored" data-anchor-id="international-wealth-index-iwi">
+</section></section><section id="international-wealth-index-iwi" class="level4" data-number="5.3.2.2"><h4 data-number="5.3.2.2" class="anchored" data-anchor-id="international-wealth-index-iwi">
 <span class="header-section-number">5.3.2.2</span> International wealth index (IWI)</h4>
+<section id="iwi-data" class="level5" data-number="5.3.2.2.1"><h5 data-number="5.3.2.2.1" class="anchored" data-anchor-id="iwi-data">
+<span class="header-section-number">5.3.2.2.1</span> IWI data</h5>
+<p>The International Wealth Index data comes from the Demographic and Health Surveys (DHS) program. The index is expressed as a value between 0 and 100, with higher values indicating greater wealth. It is computed from household data on ownership of consumer durables, housing characteristics, and access to basic services like water and electricity. The data is processed and provided by the Global Data Lab with permission from DHS, with values averaged across households within each survey cluster. Survey clusters are displaced by up to 2km for urban areas and up to 5km for rural areas to protect privacy, while remaining within the same administrative boundaries.</p>
+</section><section id="iwi-results" class="level5" data-number="5.3.2.2.2"><h5 data-number="5.3.2.2.2" class="anchored" data-anchor-id="iwi-results">
+<span class="header-section-number">5.3.2.2.2</span> IWI results</h5>
 <p>Another notable success is the International Wealth Index (IWI; <a href="#fig-100-maps-iwi-plot" class="quarto-xref">Figure&nbsp;<span>5.7</span></a>). This composite measure of household wealth is derived from a variety of indicators, such as housing quality, access to services, and ownership of durable goods. While wealth itself is not directly visible from space, the underlying factors that contribute to it often are. For example, wealthier areas tend to have more developed infrastructure, larger homes, and more vehicles—all of which leave distinct signatures in satellite imagery.</p>
 <div id="fig-100-maps-iwi-plot" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-100-maps-iwi-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -544,6 +565,8 @@ Figure&nbsp;5.6: Agricultural fields in the United States Midwest region. This e
 Figure&nbsp;5.7: Performance of MOSAIKS on the International Wealth Index (IWI), showing the observed values plotted against the model predictions (left). Observed label data is shown in the upper right, while the corresponding predictions are shown bottom right.
 </figcaption></figure>
 </div>
+</section><section id="why-it-works-1" class="level5" data-number="5.3.2.2.3"><h5 data-number="5.3.2.2.3" class="anchored" data-anchor-id="why-it-works-1">
+<span class="header-section-number">5.3.2.2.3</span> Why it works</h5>
 <p>Despite being a composite measure of socioeconomic status, the IWI’s underlying indicators—housing conditions, access to utilities, and asset ownership—often manifest in the built environment as features that satellites capture well. For instance, wealthier neighborhoods typically exhibit a higher density of substantial buildings, paved roads, formal layouts, and visible amenities (e.g., swimming pools, parked vehicles). These cues translate into distinctive patterns in the spectral and spatial data extracted by MOSAIKS’ features. Furthermore, infrastructure development and housing materials (like metal roofs versus thatch) can produce detectable differences in reflectance, making it easier for the algorithm to discern socioeconomic gradients.</p>
 <div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
@@ -555,15 +578,16 @@ Figure&nbsp;5.7: Performance of MOSAIKS on the International Wealth Index (IWI),
 </div>
 </div>
 </div>
-</section></section><section id="failures" class="level3" data-number="5.3.3"><h3 data-number="5.3.3" class="anchored" data-anchor-id="failures">
+</section></section></section><section id="failures" class="level3" data-number="5.3.3"><h3 data-number="5.3.3" class="anchored" data-anchor-id="failures">
 <span class="header-section-number">5.3.3</span> Failures</h3>
-<p>In contrast, certain labels show extremely low R² values, effectively indicating no predictive power under this approach. One notable example is the presence of underground pipelines <a href="#fig-100-maps-pipelines-plot" class="quarto-xref">Figure&nbsp;<span>5.8</span></a>. Unlike forests or agricultural fields, pipeline infrastructure is typically hidden from direct visual inspection—often located entirely underground or obscured in ways that do not provide surface indicators distinguishable in imagery (<a href="#fig-100-maps-pipelines-img" class="quarto-xref">Figure&nbsp;<span>5.9</span></a>).</p>
-<ul>
-<li><p><strong>Lack of visible features:</strong> There is no spectral or structural cue (e.g., coloration, texture, shape) that reliably indicates the presence of a pipeline.</p></li>
-<li><p><strong>Indirect clues Are unreliable:</strong> One might speculate that pipelines could follow roads or distinct corridors, but these correlations vary widely by region and do not consistently appear in the imagery.</p></li>
-<li><p><strong>Signal-to-noise ratio:</strong> In many areas, the pipeline corridor may appear visually indistinguishable from farmland or other vegetation, leaving little to no unique satellite signature.</p></li>
-</ul>
-<p>As a result, MOSAIKS has little chance to identify and learn features predictive of such hidden infrastructure. This stands in stark contrast to more visually prominent targets like maize fields or tree cover.</p>
+<section id="pipeline-infrastructure" class="level4" data-number="5.3.3.1"><h4 data-number="5.3.3.1" class="anchored" data-anchor-id="pipeline-infrastructure">
+<span class="header-section-number">5.3.3.1</span> Pipeline infrastructure</h4>
+<section id="pipeline-data" class="level5" data-number="5.3.3.1.1"><h5 data-number="5.3.3.1.1" class="anchored" data-anchor-id="pipeline-data">
+<span class="header-section-number">5.3.3.1.1</span> Pipeline data</h5>
+<p>The pipeline data comes from the Energy Information Association (EIA) and includes interstate trunk lines and selected intrastate lines across three types: crude oil pipelines, hydrocarbon gas liquids (HGL) pipelines, and petroleum product pipelines. The data represents pipeline infrastructure as of January 2020 and covers the lower 48 United States. The variable measures the length in kilometers of each pipeline type within each grid cell.</p>
+</section><section id="pipeline-results" class="level5" data-number="5.3.3.1.2"><h5 data-number="5.3.3.1.2" class="anchored" data-anchor-id="pipeline-results">
+<span class="header-section-number">5.3.3.1.2</span> Pipeline results</h5>
+<p>Certain labels show extremely low R² values, effectively indicating no predictive power under this approach. One notable example is the presence of underground pipelines <a href="#fig-100-maps-pipelines-plot" class="quarto-xref">Figure&nbsp;<span>5.8</span></a>.</p>
 <div id="fig-100-maps-pipelines-plot" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-100-maps-pipelines-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../images/proctor_et_al_100_pipelines_plot.png" class="img-fluid figure-img">
@@ -572,6 +596,15 @@ Figure&nbsp;5.7: Performance of MOSAIKS on the International Wealth Index (IWI),
 Figure&nbsp;5.8: Where it fails
 </figcaption></figure>
 </div>
+</section><section id="why-it-fails" class="level5" data-number="5.3.3.1.3"><h5 data-number="5.3.3.1.3" class="anchored" data-anchor-id="why-it-fails">
+<span class="header-section-number">5.3.3.1.3</span> Why it fails</h5>
+<p>Unlike forests or agricultural fields, pipeline infrastructure is typically hidden from direct visual inspection—often located entirely underground or obscured in ways that do not provide surface indicators distinguishable in imagery (<a href="#fig-100-maps-pipelines-img" class="quarto-xref">Figure&nbsp;<span>5.9</span></a>).</p>
+<ul>
+<li><p><strong>Lack of visible features:</strong> There is no spectral or structural cue (e.g., coloration, texture, shape) that reliably indicates the presence of a pipeline.</p></li>
+<li><p><strong>Indirect clues Are unreliable:</strong> One might speculate that pipelines could follow roads or distinct corridors, but these correlations vary widely by region and do not consistently appear in the imagery.</p></li>
+<li><p><strong>Signal-to-noise ratio:</strong> In many areas, the pipeline corridor may appear visually indistinguishable from farmland or other vegetation, leaving little to no unique satellite signature.</p></li>
+</ul>
+<p>As a result, MOSAIKS has little chance to identify and learn features predictive of such hidden infrastructure. This stands in stark contrast to more visually prominent targets like maize fields or tree cover.</p>
 <div id="fig-100-maps-pipelines-img" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-100-maps-pipelines-img-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../images/proctor_et_al_100_pipelines_img.png" class="img-fluid figure-img">
@@ -580,6 +613,113 @@ Figure&nbsp;5.8: Where it fails
 Figure&nbsp;5.9: Why it fails - buried
 </figcaption></figure>
 </div>
+</section></section><section id="bee-diversity" class="level4" data-number="5.3.3.2"><h4 data-number="5.3.3.2" class="anchored" data-anchor-id="bee-diversity">
+<span class="header-section-number">5.3.3.2</span> Bee diversity</h4>
+<section id="bee-data" class="level5" data-number="5.3.3.2.1"><h5 data-number="5.3.3.2.1" class="anchored" data-anchor-id="bee-data">
+<span class="header-section-number">5.3.3.2.1</span> Bee data</h5>
+<p>The bee diversity data comes from the US Geological Survey Eastern Ecological Science Center Native Bee Laboratory, which provides species occurrence records for native and non-native bees, wasps, and other insects collected through various trapping methods. Each record includes taxonomic identification and geographic coordinates. Using point data from 2009-2019, bee diversity is computed as a count of unique species documented within each 0.01° × 0.01° grid cell in North America (including U.S. territories and Minor Outlying islands). For cells with multiple sampling events, species are counted only once. Importantly, the database only includes records of species presence - absences are not recorded - which can lead to sampling bias in the diversity measures.</p>
+</section><section id="bee-results" class="level5" data-number="5.3.3.2.2"><h5 data-number="5.3.3.2.2" class="anchored" data-anchor-id="bee-results">
+<span class="header-section-number">5.3.3.2.2</span> Bee results</h5>
+<p>Another notable failure case is bee diversity. While bees play a crucial role in ecosystems and agriculture, their presence and diversity cannot be directly observed from satellite imagery. Several factors contribute to this limitation:</p>
+<ul>
+<li>
+<strong>Scale mismatch:</strong> Bees operate at a much finer spatial scale than the resolution of typical satellite imagery</li>
+<li>
+<strong>Indirect relationships:</strong> While bees rely on vegetation, the link between plant cover visible from space and bee populations is complex and varies by context</li>
+<li>
+<strong>Temporal dynamics:</strong> Bee populations fluctuate seasonally and can change rapidly, while imagery captures only static snapshots</li>
+<li>
+<strong>Hidden factors:</strong> Critical habitat features like nesting sites are often concealed under canopy or in small spaces invisible from above</li>
+</ul>
+<p>This case illustrates an important principle: MOSAIKS works best when predicting outcomes that have consistent, visible relationships with surface features captured in satellite imagery. When those relationships become too indirect or complex, performance typically suffers.</p>
+</section></section></section></section><section id="types-of-variables" class="level2" data-number="5.4"><h2 data-number="5.4" class="anchored" data-anchor-id="types-of-variables">
+<span class="header-section-number">5.4</span> Types of variables</h2>
+<p>MOSAIKS can work with both continuous and categorical outcome variables, though the approach and evaluation metrics differ between these types.</p>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>This section provides a brief overview of the two types of variables and some of the metrics used to evaluate them. This will be covered in greater detail in <a href="../part-04-models/01-model-choice.html" class="quarto-xref"><span>Chapter 16</span></a>.</p>
+</div>
+</div>
+</div>
+<section id="continuous-variables" class="level3" data-number="5.4.1"><h3 data-number="5.4.1" class="anchored" data-anchor-id="continuous-variables">
+<span class="header-section-number">5.4.1</span> Continuous variables</h3>
+<p>Continuous variables take numeric values along a spectrum, such as:</p>
+<ul>
+<li>Crop yields (e.g., tons per hectare)</li>
+<li>Population density (people per square kilometer)</li>
+<li>Forest cover percentage (0-100%)</li>
+<li>Income levels (dollars)</li>
+<li>Building height (meters)</li>
+</ul>
+<p>For continuous variables, MOSAIKS typically uses regression approaches and evaluates performance using metrics like R² (coefficient of determination) or RMSE (root mean square error). The R² values reported throughout this chapter indicate the proportion of variance in the outcome that is explained by the MOSAIKS predictions.</p>
+</section><section id="categorical-variables" class="level3" data-number="5.4.2"><h3 data-number="5.4.2" class="anchored" data-anchor-id="categorical-variables">
+<span class="header-section-number">5.4.2</span> Categorical variables</h3>
+<p>Categorical variables group observations into distinct classes or categories, such as:</p>
+<ul>
+<li>Land use types (urban/agriculture/forest)</li>
+<li>Building types (residential/commercial/industrial)</li>
+<li>Crop types (maize/wheat/rice)</li>
+<li>Presence/absence of features (roads, buildings)</li>
+<li>Development categories (low/medium/high)</li>
+</ul>
+<p>For categorical variables, MOSAIKS can be used in two ways:</p>
+<ol type="1">
+<li><p><strong>Binary classification</strong>: For variables with two categories (e.g., presence/absence), MOSAIKS can output probability predictions between 0 and 1. Performance is typically evaluated using metrics like accuracy, precision, recall, or area under the receiver operating characteristic curve (AUC-ROC).</p></li>
+<li>
+<p><strong>Multi-class classification</strong>: For variables with multiple categories, MOSAIKS can either:</p>
+<ul>
+<li>Use a one-vs-all approach, treating each category as a separate binary classification problem</li>
+<li>Output probabilities for each possible category that sum to 1</li>
+<li>Convert categories to numeric values if they have a natural ordering</li>
+</ul>
+</li>
+</ol></section><section id="choosing-appropriate-metrics" class="level3" data-number="5.4.3"><h3 data-number="5.4.3" class="anchored" data-anchor-id="choosing-appropriate-metrics">
+<span class="header-section-number">5.4.3</span> Choosing appropriate metrics</h3>
+<p>The choice of evaluation metric should match the type of variable:</p>
+<table class="table">
+<thead><tr class="header">
+<th>Variable Type</th>
+<th>Common Metrics</th>
+<th>Interpretation</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Continuous</td>
+<td>R², RMSE, MAE</td>
+<td>R² ranges 0-1, higher is better</td>
+</tr>
+<tr class="even">
+<td>Binary</td>
+<td>Accuracy, AUC-ROC</td>
+<td>Range 0-1, higher is better</td>
+</tr>
+<tr class="odd">
+<td>Multi-class</td>
+<td>Accuracy, F1-score</td>
+<td>Range 0-1, higher is better</td>
+</tr>
+</tbody>
+</table></section></section><section id="summary" class="level2" data-number="5.5"><h2 data-number="5.5" class="anchored" data-anchor-id="summary">
+<span class="header-section-number">5.5</span> Summary</h2>
+<p>This exploration of over 100 different outcomes reveals several key insights about MOSAIKS:</p>
+<ol type="1">
+<li><p><strong>Performance varies significantly:</strong> Predictive power ranges from very strong (R² &gt; 0.8) to essentially random guessing, depending on the outcome</p></li>
+<li><p><strong>Direct visibility matters:</strong> Outcomes that are directly observable in imagery (like forest cover) or have strong visible proxies (like wealth indices) tend to perform better</p></li>
+<li><p><strong>Category patterns:</strong> Some categories like Natural Systems and Agriculture show consistently stronger performance than others like Health or Demographics</p></li>
+<li>
+<p><strong>Practical implications:</strong> Understanding these patterns helps users:</p>
+<ul>
+<li>Set realistic expectations for new applications</li>
+<li>Identify which types of outcomes are most suitable</li>
+<li>Recognize when alternative approaches might be needed</li>
+</ul>
+</li>
+</ol>
+<p>These results demonstrate both the power and limitations of MOSAIKS. While it excels at predicting many important outcomes globally, it is not a universal solution. Success depends largely on whether the outcome of interest has a meaningful relationship with features visible in satellite imagery.</p>
 <div class="callout callout-style-simple callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -595,7 +735,7 @@ Looking forward
 </div>
 
 
-</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
