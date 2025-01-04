@@ -393,6 +393,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="#direct-downloads" id="toc-direct-downloads" class="nav-link" data-scroll-target="#direct-downloads"><span class="header-section-number">1.5.1</span> Direct downloads</a></li>
   <li><a href="#google-drive-integration" id="toc-google-drive-integration" class="nav-link" data-scroll-target="#google-drive-integration"><span class="header-section-number">1.5.2</span> Google Drive integration</a></li>
   <li><a href="#why-copy-data-to-the-vm" id="toc-why-copy-data-to-the-vm" class="nav-link" data-scroll-target="#why-copy-data-to-the-vm"><span class="header-section-number">1.5.3</span> Why copy data to the VM?</a></li>
+  <li><a href="#save-outputs-to-google-drive" id="toc-save-outputs-to-google-drive" class="nav-link" data-scroll-target="#save-outputs-to-google-drive"><span class="header-section-number">1.5.4</span> Save outputs to Google Drive</a></li>
   </ul>
 </li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/edit/main/part-00-intro/01-intro-compute.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -899,6 +900,16 @@ Gemini icon
 <li><p><strong>Better for Iterative Processing</strong>: If your code needs to read the same data multiple times (like in machine learning training loops), local access is much more efficient.</p></li>
 </ol>
 <p>For example, reading a 1GB dataset from Drive might take 30 seconds, while reading from local VM storage could take just a few seconds. The time spent copying data once at the start of your session can save significant time during analysis. This can be especially true in a notebook environment when a user is developing code and may need to access and reaccess the data multiple times.</p>
+</section><section id="save-outputs-to-google-drive" class="level3" data-number="1.5.4"><h3 data-number="1.5.4" class="anchored" data-anchor-id="save-outputs-to-google-drive">
+<span class="header-section-number">1.5.4</span> Save outputs to Google Drive</h3>
+<p>To save outputs or models to Google Drive:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the output directory</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>output_dir <span class="op">=</span> <span class="st">"/content/drive/MyDrive/project_folder/output"</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Save outputs</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>shutil.copytree(local_output, output_dir, dirs_exist_ok<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This will ensure that any work done in the notebook is saved to your Google Drive for future reference. If output files are not copied and they are stored in the VM, they will be lost when the runtime disconnects.</p>
+<hr>
 <div class="callout callout-style-simple callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
