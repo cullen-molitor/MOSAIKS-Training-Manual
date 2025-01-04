@@ -369,7 +369,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="overview" class="level2" data-number="5.1"><h2 data-number="5.1" class="anchored" data-anchor-id="overview">
 <span class="header-section-number">5.1</span> Overview</h2>
-<p>MOSAIKS is a designed to be useful for predicting anything one might see in satellite imagery. Some things are easier to predict than others, but the system is designed to be flexible. For instance, some variables can be seen directly in the imagery itself, such as forest cover. Other outcomes can only be seen through proxy variables like income and housing price which are not directly visible in the imagery but can be estimated by looking at objects in imagery that are correlated with them, such as roads, houses, and cars.</p>
+<p>MOSAIKS is a designed to be useful for predicting anything that may be visible in satellite imagery. Some things are easier to predict than others, but the system is designed to be flexible. For instance, some variables can be seen directly in the imagery itself, such as forest cover, which clearly emits a visible green signal. Other outcomes can only be predicted through indirect relationships between imagery data and labels. For example, income and housing price are not themselves directly visible in raw imagery, but their values can be reliably estimated from objects (e.g., cars), textures (e.g., roofing material), and colors (e.g., grey road infrastructure) contained within the imagery.</p>
 <div id="fig-army-knife" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-army-knife-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../images/army_knife.png" class="img-fluid figure-img" width="300">
@@ -378,7 +378,7 @@ ul.task-list li input[type="checkbox"] {
 Figure&nbsp;5.1: MOSAIKS versatility makes it the perfect tool for a wide range of applications.
 </figcaption></figure>
 </div>
-<p>In this chapter we will explore over 100 different outcomes that have been tested with MOSAIKS. We will discuss the results of a selection of these outcomes in detail, and provide a brief overview of the rest.</p>
+<p>In this chapter we will discuss a new working paper (Proctor et al., <em>in prep.</em>) that explores the question of what can and cannot be reliably predicted from satellite imagery using MOSAIKS. This paper investigates over 100 different outcomes, reporting predictive performance for each using MOSAIKS. We will discuss the results of a selection of these outcomes in detail, and provide a brief overview of the rest. Of course, this list of outcomes is not exhaustive and reported performance can differ substantially across contexts and in particular with varying quality of ground truth data. We show these results as an initial investigation of what might be possible with SIML using MOSAIKS, but encourage users to conduct their own experiments as resulst are likely to differ in new settings. The pre-print of Proctor et al.&nbsp;will be posted here when publicly available.</p>
 </section><section id="one-hundred-maps" class="level2" data-number="5.2"><h2 data-number="5.2" class="anchored" data-anchor-id="one-hundred-maps">
 <span class="header-section-number">5.2</span> One hundred maps</h2>
 <section id="original-publication" class="level3" data-number="5.2.1"><h3 data-number="5.2.1" class="anchored" data-anchor-id="original-publication">
@@ -468,7 +468,7 @@ Figure&nbsp;5.2: Planet Labs visual basemap imagery from quarter 3 of 2019 (left
 Table&nbsp;5.1: The authors selected 115 variables across 10 categories and set to work testing each in the MOSAIKS system.
 </figcaption></figure>
 </div>
-<p>With this data in hand, we were able to devise a few simple questions to test:</p>
+<p>With this data in hand, they were able to devise a few simple questions to test:</p>
 <ul>
 <li>Which variables can be effectively measured?</li>
 <li>What are the most compelling applications?</li>
