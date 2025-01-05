@@ -468,7 +468,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-features-options-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;3.1: Summary of MOSAIKS feature sources
+Table&nbsp;3.1: Summary of MOSAIKS feature sources. The weighting column indicates that the features were generated at 0.01 degree resolution and are weighted when they are aggregated up to lower resolutions. The available weighting schemes are based on area of the aggregation polygon, or by the population of the the aggregation polygon.
 </figcaption></figure>
 </div>
 <p>The MOSAIKS API should be considered the primary way to access features. It is a user-friendly interface that allows you to download features for any location on Earth. The API is designed to be accessible to users with a range of technical backgrounds, from beginners to experts. For more details on what features are available on the API, see <a href="../part-03-features/02-features-api.html" class="quarto-xref"><span>Chapter 13</span></a>.</p>
@@ -640,6 +640,7 @@ Figure&nbsp;3.5: API Map Query (left) and File Query (right)
 </section><section id="aggregated-feature-files" class="level4" data-number="3.2.4.2"><h4 data-number="3.2.4.2" class="anchored" data-anchor-id="aggregated-feature-files">
 <span class="header-section-number">3.2.4.2</span> Aggregated feature files</h4>
 <p>Many users may find it easier to work with features aggregated to some level. The MOSAIKS API offers pre-aggregated features to accommodate these users need. Features come at several levels, including larger grid cells (0.1 and 1 degree) or summarized to administrative boundaries (ADM0, ADM1, and ADM2). These files are available for download as either single or chunked files depending on the resolution.</p>
+<p>At each level of aggregation, we offer area weighted features and population weighted features. Population weighted features use weights from the Gridded Population of the World (<a href="https://earthdata.nasa.gov/data/projects/gpw" target="_blank">GPWv4</a>) population density dataset. The area weighting scheme is based on the area of the aggregation polygon.</p>
 <p>These pre-aggregated features are particularly useful for users in a few scenarios:</p>
 <ol type="1">
 <li><p>You have data at a scale larger than the 0.01 degree grid cells. Many datasets come at the country, state, or county level.</p></li>
@@ -652,7 +653,7 @@ Figure&nbsp;3.5: API Map Query (left) and File Query (right)
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>If you want to make high resolution predictions, with low resolution label data, you can build your model with aggregated features and use the high resolution features to make predictions.</p>
+<p>If you want to make high resolution predictions, with low resolution label data, you can build your model with aggregated features and use the high resolution features to make predictions. This will be covered in <a href="../part-04-models/02-model-spatial.html" class="quarto-xref"><span>Chapter 17</span></a>.</p>
 </div>
 </div>
 </div>
