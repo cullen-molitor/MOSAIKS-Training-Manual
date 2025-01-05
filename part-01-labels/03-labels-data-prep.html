@@ -496,6 +496,8 @@ Figure&nbsp;7.1: Examples of label data formats that can be easily integrated in
 <strong><em>K</em> feature columns</strong> - column for every random satellite feature (typically <em>k</em> = 4,000)</li>
 </ol>
 <p>For example, a dataset with crop yield data could look like:</p>
+<div id="tbl-crop-yield" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><div aria-describedby="tbl-crop-yield-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
 <thead><tr class="header">
 <th>Observation</th>
@@ -530,7 +532,14 @@ Figure&nbsp;7.1: Examples of label data formats that can be easily integrated in
 </tr>
 </tbody>
 </table>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-crop-yield-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;7.1: Fictional crop yield data for three districts in Zambia. Each observation includes the district name, year, and crop yield in metric tons per hectare (mt/ha).
+</figcaption></figure>
+</div>
 <p>And a dataset with district level aggregate features could look like:</p>
+<div id="tbl-features" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><div aria-describedby="tbl-features-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
 <colgroup>
 <col style="width: 18%">
@@ -590,7 +599,14 @@ Figure&nbsp;7.1: Examples of label data formats that can be easily integrated in
 </tr>
 </tbody>
 </table>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-features-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;7.2: Fictional feature data for three districts in Zambia. Each observation includes the district name, year, and <em>K</em> features.
+</figcaption></figure>
+</div>
 <p>Finally, the joined dataset would look like:</p>
+<div id="tbl-joined-data" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><div aria-describedby="tbl-joined-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
 <colgroup>
 <col style="width: 15%">
@@ -656,6 +672,11 @@ Figure&nbsp;7.1: Examples of label data formats that can be easily integrated in
 </tr>
 </tbody>
 </table>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-joined-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;7.3: Joined dataset with crop yield and feature data for three districts in Zambia. Each observation includes the district name, year, crop yield, and <em>K</em> features.
+</figcaption></figure>
+</div>
 <p>In the above example, our geographic location is the district and our label is the crop yield (mt/ha). We then have <em>K</em> columns containing the features and <em>N</em> observations.</p>
 <p>In this example, our features started at 1 km² resolution and were aggregated to the district level to match the crop yield data. To join this data, we first found all of the feature locations that fall within the district boundaries using a spatial join. Then we averaged the features within each district. This allowed us to have a single feature vector for each district. The resulting tabular data is ready for modeling.</p>
 </section><section id="data-cleaning-considerations" class="level2" data-number="7.4"><h2 data-number="7.4" class="anchored" data-anchor-id="data-cleaning-considerations">

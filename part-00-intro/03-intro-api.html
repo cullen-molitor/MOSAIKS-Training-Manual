@@ -357,12 +357,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
 <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">3.1</span> Introduction</a></li>
   <li>
-<a href="#api-overview" id="toc-api-overview" class="nav-link" data-scroll-target="#api-overview"><span class="header-section-number">3.2</span> API Overview</a>
+<a href="#mosaiks-api" id="toc-mosaiks-api" class="nav-link" data-scroll-target="#mosaiks-api"><span class="header-section-number">3.2</span> MOSAIKS API</a>
   <ul class="collapse">
 <li><a href="#register-for-an-account" id="toc-register-for-an-account" class="nav-link" data-scroll-target="#register-for-an-account"><span class="header-section-number">3.2.1</span> Register for an account</a></li>
   <li><a href="#api-resources" id="toc-api-resources" class="nav-link" data-scroll-target="#api-resources"><span class="header-section-number">3.2.2</span> API resources</a></li>
-  <li><a href="#api-features" id="toc-api-features" class="nav-link" data-scroll-target="#api-features"><span class="header-section-number">3.2.3</span> API Features</a></li>
-  <li><a href="#downloading-features" id="toc-downloading-features" class="nav-link" data-scroll-target="#downloading-features"><span class="header-section-number">3.2.4</span> Downloading features</a></li>
+  <li><a href="#api-features" id="toc-api-features" class="nav-link" data-scroll-target="#api-features"><span class="header-section-number">3.2.3</span> API features</a></li>
+  <li><a href="#high-resolution-features" id="toc-high-resolution-features" class="nav-link" data-scroll-target="#high-resolution-features"><span class="header-section-number">3.2.4</span> High resolution features</a></li>
+  <li><a href="#aggregated-features" id="toc-aggregated-features" class="nav-link" data-scroll-target="#aggregated-features"><span class="header-section-number">3.2.5</span> Aggregated features</a></li>
   </ul>
 </li>
   <li><a href="#using-mosaiks-features-for-prediction" id="toc-using-mosaiks-features-for-prediction" class="nav-link" data-scroll-target="#using-mosaiks-features-for-prediction"><span class="header-section-number">3.3</span> Using MOSAIKS features for prediction</a></li>
@@ -399,16 +400,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="introduction" class="level2" data-number="3.1"><h2 data-number="3.1" class="anchored" data-anchor-id="introduction">
 <span class="header-section-number">3.1</span> Introduction</h2>
-<div class="callout callout-style-simple callout-tip">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>Chapters <a href="01-intro-compute.html" class="quarto-xref"><span>Chapter 1</span></a> through <a href="../part-01-labels/04-labels-demo.html" class="quarto-xref"><span>Chapter 8</span></a> will focus on publicly available features and label data. Chapters <a href="../part-02-satellite/01-satellite-imagery.html" class="quarto-xref"><span>Chapter 9</span></a> through <a href="../part-03-features/04-features-demo.html" class="quarto-xref"><span>Chapter 15</span></a> will cover how to compute features from imagery.</p>
-</div>
-</div>
-</div>
 <p>At its core, MOSAIKS requires two main inputs: satellite features and ground truth data. Our aim is to make these features as accessible as possible so that the majority of users do not have to worry about the technical details of satellite imagery processing.</p>
 <p>To this end, we have worked to develop multiple ways to access MOSAIKS features:</p>
 <div id="tbl-features-options" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -471,10 +462,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 Table&nbsp;3.1: Summary of MOSAIKS feature sources. The weighting column indicates that the features were generated at 0.01 degree resolution and are weighted when they are aggregated up to lower resolutions. The available weighting schemes are based on area of the aggregation polygon, or by the population of the the aggregation polygon.
 </figcaption></figure>
 </div>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<ul>
+<li>Chapters <a href="01-intro-compute.html" class="quarto-xref"><span>1</span></a> through <a href="../part-01-labels/04-labels-demo.html" class="quarto-xref"><span>8</span></a> focus on publicly available features</li>
+<li>Chapters <a href="../part-02-satellite/01-satellite-imagery.html" class="quarto-xref"><span>9</span></a> through <a href="../part-03-features/04-features-demo.html" class="quarto-xref"><span>15</span></a> cover computing custom features from imagery</li>
+</ul>
+</div>
+</div>
+</div>
 <p>The MOSAIKS API should be considered the primary way to access features. It is a user-friendly interface that allows you to download features for any location on Earth. The API is designed to be accessible to users with a range of technical backgrounds, from beginners to experts. For more details on what features are available on the API, see <a href="../part-03-features/02-features-api.html" class="quarto-xref"><span>Chapter 13</span></a>.</p>
 <p>However, there are many settings where users will want or need to compute their own customized features. <a href="../part-03-features/03-features-computing.html" class="quarto-xref"><span>Chapter 14</span></a> guides readers through this process.</p>
-</section><section id="api-overview" class="level2" data-number="3.2"><h2 data-number="3.2" class="anchored" data-anchor-id="api-overview">
-<span class="header-section-number">3.2</span> API Overview</h2>
+</section><section id="mosaiks-api" class="level2" data-number="3.2"><h2 data-number="3.2" class="anchored" data-anchor-id="mosaiks-api">
+<span class="header-section-number">3.2</span> MOSAIKS API</h2>
 <div class="callout callout-style-simple callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -500,16 +504,16 @@ MOSAIKS API Link
 Figure&nbsp;3.1: Login page for the MOSAIKS API.
 </figcaption></figure>
 </div>
-<p>Select <code>Register</code> to create an account. You’ll need to provide:</p>
+<p>Select <code>Register</code> to create an account. You will need to provide a username, an email, and a password.</p>
 <div id="fig-api-register" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-api-register-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../images/api-register.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-api-register-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.2: Registration page for the MOSAIKS API. Users will need to provide a username, an email, and a password.
+Figure&nbsp;3.2: Registration page for the MOSAIKS API.
 </figcaption></figure>
 </div>
-<p>Once registered, you can log in to access the MOSAIKS features and begin downloading data.</p>
+<p>Once registered, you can log in to begin downloading MOSAIKS features.</p>
 <div id="fig-api-landing" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-api-landing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../images/api-landing.png" class="img-fluid figure-img">
@@ -580,10 +584,10 @@ Table&nbsp;3.2: MOSAIKS API pages and descriptions.
 </figcaption></figure>
 </div>
 </section><section id="api-features" class="level3" data-number="3.2.3"><h3 data-number="3.2.3" class="anchored" data-anchor-id="api-features">
-<span class="header-section-number">3.2.3</span> API Features</h3>
+<span class="header-section-number">3.2.3</span> API features</h3>
 <p>Currently the MOSAIKS API has a single set of global features (with several aggregation levels). The features are freely available to the public for download; this is the fastest and easiest way to begin using MOSAIKS.</p>
 <p>The API features use input imagery from Planet Labs, Inc.&nbsp;<a href="https://developers.planet.com/docs/basemaps/" target="_blank">Visual Basemap</a> Global Quarterly 2019 (quarter 3) product. Image quality, and therefore feature quality, may be affected by local conditions. For example, an area undergoing a rainy season in the third quarter (July to September), is likely to contain image artifacts from cloud cover. This will in turn effect the feature calculations. For more details on the input imagery <a href="../part-02-satellite/01-satellite-imagery.html" class="quarto-xref"><span>Chapter 9</span></a>.</p>
-<p>Given the static nature of the API, the easiest way to get started with MOSAIKS is to have label data for a recent time period (ideally from 2019 for fast changing labels, or a close year for more steady labels). To use MOSAIKS for time series data is possible, just not currently with precomputed and publicly available features. For more information on the API features see <a href="../part-03-features/02-features-api.html" class="quarto-xref"><span>Chapter 13</span></a></p>
+<p>Given the static nature of the API, the easiest way to get started with MOSAIKS is to have label data for a recent time period (ideally from 2019 for fast changing labels, or a close year for more steady labels).</p>
 <div id="fig-api-features" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-api-features-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../images/api-features.png" class="img-fluid figure-img">
@@ -592,36 +596,58 @@ Table&nbsp;3.2: MOSAIKS API pages and descriptions.
 Figure&nbsp;3.4: Planet Labs basemap imagery (left) and 4 of 4,000 MOSAIKS features downloaded from the API (right).
 </figcaption></figure>
 </div>
-</section><section id="downloading-features" class="level3" data-number="3.2.4"><h3 data-number="3.2.4" class="anchored" data-anchor-id="downloading-features">
-<span class="header-section-number">3.2.4</span> Downloading features</h3>
-<p>The MOSAIKS features are organized using a 0.01 x 0.01 degree latitude-longitude global grid. For simplicity, we store these features in a tabular format with latitude and longitude coordinates. These coordinates are the center of each grid cell.</p>
-<p>When you download features, you’ll receive them in a tabular .csv format where:</p>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Using MOSAIKS for time series data is possible and can work well, however this currently requires computing your own custom features. See <a href="../part-03-features/03-features-computing.html" class="quarto-xref"><span>Chapter 14</span></a> and <a href="../part-04-models/03-model-temporal.html" class="quarto-xref"><span>Chapter 18</span></a> for more information.</p>
+</div>
+</div>
+</div>
+<p>The MOSAIKS features are created using a 0.01 x 0.01 degree latitude-longitude global land grid. These are the native features available for download from the API, but it also offers pre-aggregated features at 0.1 and 1 degree resolution, as well as administrative boundaries (ADM0, ADM1, and ADM2).</p>
+<!-- ### Downloading API features  -->
+</section><section id="high-resolution-features" class="level3" data-number="3.2.4"><h3 data-number="3.2.4" class="anchored" data-anchor-id="high-resolution-features">
+<span class="header-section-number">3.2.4</span> High resolution features</h3>
+<p>The file query and map query are the two methods to obtain the high resolution (0.01 degree) features through the API. For simplicity, we store these features in a tabular format with latitude and longitude coordinates. These coordinates are the center of each grid cell.</p>
+<p>When you download the high resolution features (0.01 degree), you will receive them in a tabular .csv format where:</p>
 <ul>
-<li>Each row represents a unique grid cell</li>
-<li>The first two columns contain latitude and longitude coordinates</li>
+<li>Each row (<em>N</em>) represents a unique grid cell</li>
+<li>The first two columns contain latitude and longitude coordinates (grid centroids)</li>
 <li>The remaining columns represent <em>K</em> features (currently <em>K</em> = 4000 features)</li>
 </ul>
-<p>Important notes about downloads:</p>
-<ul>
-<li>Files remain available for download for 15 days</li>
-<li>After 15 days, files are automatically deleted from the system</li>
-<li>There is a limit of <em>N</em> = 100,000 records per query</li>
-</ul>
-<section id="feature-query" class="level4" data-number="3.2.4.1"><h4 data-number="3.2.4.1" class="anchored" data-anchor-id="feature-query">
-<span class="header-section-number">3.2.4.1</span> Feature query</h4>
-<p>The file query and map query are the two methods to obtain the high resolution (0.01 degree) features through the API.</p>
-<ol type="1">
-<li><strong>Map Query</strong></li>
-</ol>
+<blockquote class="blockquote">
+<p><strong>Note:</strong> There is a limit of <em>N</em> = 100,000 records per query</p>
+</blockquote>
+<section id="map-query" class="level4" data-number="3.2.4.1"><h4 data-number="3.2.4.1" class="anchored" data-anchor-id="map-query">
+<span class="header-section-number">3.2.4.1</span> Map query</h4>
 <ul>
 <li>Create rectangular boxes by specifying latitude and longitude coordinates</li>
 <li>Multiple boxes can be created</li>
 <li>The system displays an estimated number of records for each box</li>
 <li>Note that estimates are based on box area and may not reflect actual record numbers, especially for areas containing seas and oceans</li>
 </ul>
-<ol start="2" type="1">
-<li><strong>File Query</strong></li>
-</ol>
+<div id="fig-api-map" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-api-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/api-map-query.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-api-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.5: MOSAIKS API Map Query page.
+</figcaption></figure>
+</div>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Use <a href="https://geojson.io/#new&amp;map=2/0/20" target="_blank">geojson.io</a> to find the bounding box coordinates for your area of interest.</p>
+</div>
+</div>
+</div>
+</section><section id="file-query" class="level4" data-number="3.2.4.2"><h4 data-number="3.2.4.2" class="anchored" data-anchor-id="file-query">
+<span class="header-section-number">3.2.4.2</span> File query</h4>
 <ul>
 <li>Submit a file with custom latitude and longitude coordinates</li>
 <li>The API returns features for grid cells closest to your input coordinates</li>
@@ -631,22 +657,38 @@ Figure&nbsp;3.4: Planet Labs basemap imagery (left) and 4 of 4,000 MOSAIKS featu
 </ul>
 <div id="fig-api-queries" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-api-queries-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../images/api-map-n-file.png" class="img-fluid figure-img">
+<img src="../images/api-file-query.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-api-queries-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.5: API Map Query (left) and File Query (right)
+Figure&nbsp;3.6: API File Query
 </figcaption></figure>
 </div>
-</section><section id="aggregated-feature-files" class="level4" data-number="3.2.4.2"><h4 data-number="3.2.4.2" class="anchored" data-anchor-id="aggregated-feature-files">
-<span class="header-section-number">3.2.4.2</span> Aggregated feature files</h4>
-<p>Many users may find it easier to work with features aggregated to some level. The MOSAIKS API offers pre-aggregated features to accommodate these users need. Features come at several levels, including larger grid cells (0.1 and 1 degree) or summarized to administrative boundaries (ADM0, ADM1, and ADM2). These files are available for download as either single or chunked files depending on the resolution.</p>
-<p>At each level of aggregation, we offer area weighted features and population weighted features. Population weighted features use weights from the Gridded Population of the World (<a href="https://earthdata.nasa.gov/data/projects/gpw" target="_blank">GPWv4</a>) population density dataset. The area weighting scheme is based on the area of the aggregation polygon.</p>
-<p>These pre-aggregated features are particularly useful for users in a few scenarios:</p>
+</section></section><section id="aggregated-features" class="level3" data-number="3.2.5"><h3 data-number="3.2.5" class="anchored" data-anchor-id="aggregated-features">
+<span class="header-section-number">3.2.5</span> Aggregated features</h3>
+<p>Many users may find it easier to work with features aggregated to some level. The MOSAIKS API offers pre-aggregated features to accommodate these needs. The API offers several levels, including larger grid cells (0.1 and 1 degree) or summarized to administrative boundaries (ADM0, ADM1, and ADM2). These files are available for download as either single or chunked files depending on the resolution.</p>
+<div id="fig-api-aggregated" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-api-aggregated-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/US_feature_summaries.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-api-aggregated-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.7: Example showing of 3 representative random convolutional features (rows). Features are downloaded from the MOSAIKS API at 0.01° resolution (the native resolution) and aggregated to 3 levels, including (A) larger grid cells (0.1°), (B) counties, and (C) states.
+</figcaption></figure>
+</div>
+<section id="weighting-schemes" class="level4" data-number="3.2.5.1"><h4 data-number="3.2.5.1" class="anchored" data-anchor-id="weighting-schemes">
+<span class="header-section-number">3.2.5.1</span> Weighting schemes</h4>
+<p>At each level of aggregation, we offer area weighted features and population weighted features. Population weights are from the Gridded Population of the World (<a href="https://earthdata.nasa.gov/data/projects/gpw" target="_blank">GPWv4</a>) population density dataset. The area weighting scheme is based on the area of the high resolution grid cells.</p>
+</section><section id="when-to-use-aggregated-features" class="level4" data-number="3.2.5.2"><h4 data-number="3.2.5.2" class="anchored" data-anchor-id="when-to-use-aggregated-features">
+<span class="header-section-number">3.2.5.2</span> When to use aggregated features</h4>
+<p>The aggregated features are particularly useful in a few scenarios:</p>
 <ol type="1">
 <li><p>You have data at a scale larger than the 0.01 degree grid cells. Many datasets come at the country, state, or county level.</p></li>
 <li><p>Your data has a lot of noise that can be smoothed out by aggregating to a larger scale. A common example of this might be household survey data that is noisy at the individual level but smooths out when aggregated to the village or district level.</p></li>
 <li><p>You want to do global analysis and don’t have the computational resources to work with the full 0.01 degree grid cells.</p></li>
 </ol>
+<p>In all cases using the pre-aggregated features can save you time and computational resources.</p>
+<blockquote class="blockquote">
+<p><strong>Scenario:</strong> You are working with a Living Standards Measurement Study - Integrated Surveys on Agriculture (<a href="https://www.worldbank.org/en/programs/lsms/initiatives/lsms-ISA" target="_blank">LSMS-ISA</a>). This dataset has survey data with geographic coordinates at the household level. To protect, the privacy of the respondents, the data is jittered within a 5 km radius but it always remains within local administrative boundaries. You can therefore summarize your labels to the administrative units and build a model with the aggregated features.</p>
+</blockquote>
 <div class="callout callout-style-simple callout-tip">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -656,18 +698,6 @@ Figure&nbsp;3.5: API Map Query (left) and File Query (right)
 <p>If you want to make high resolution predictions, with low resolution label data, you can build your model with aggregated features and use the high resolution features to make predictions. This will be covered in <a href="../part-04-models/02-model-spatial.html" class="quarto-xref"><span>Chapter 17</span></a>.</p>
 </div>
 </div>
-</div>
-<p>In all cases using the pre-aggregated features can save you time and computational resources.</p>
-<blockquote class="blockquote">
-<p><strong>Scenario:</strong> You are working with a Living Standards Measurement Study - Integrated Surveys on Agriculture (<a href="https://www.worldbank.org/en/programs/lsms/initiatives/lsms-ISA" target="_blank">LSMS-ISA</a>). This dataset has survey data with geographic coordinates at the household level. To protect, the privacy of the respondents, the data is jittered within a 5 km radius but it always remains within local administrative boundaries. You can therefore summarize your labels to the administrative units and build a model with the aggregated features.</p>
-</blockquote>
-<div id="fig-api-aggregated" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-api-aggregated-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../images/US_feature_summaries.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-api-aggregated-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.6: Example showing of 3 representative random convolutional features (rows). Features are downloaded from the MOSAIKS API at 0.01° resolution (the native resolution) and aggregated to 3 levels, including (A) larger grid cells (0.1°), (B) counties, and (C) states.
-</figcaption></figure>
 </div>
 </section></section></section><section id="using-mosaiks-features-for-prediction" class="level2" data-number="3.3"><h2 data-number="3.3" class="anchored" data-anchor-id="using-mosaiks-features-for-prediction">
 <span class="header-section-number">3.3</span> Using MOSAIKS features for prediction</h2>
@@ -684,7 +714,7 @@ Figure&nbsp;3.6: Example showing of 3 representative random convolutional featur
 <p>Basic workflow:</p>
 <ol type="1">
 <li>Obtain ground truth measurements (“labels”; see <a href="../part-01-labels/01-labels-100-maps.html" class="quarto-xref"><span>Chapter 5</span></a>)</li>
-<li>Download matching features via Map Query, File Query, or one the pre-aggregated layers administrative boundary scale (see <a href="../part-03-features/02-features-api.html" class="quarto-xref"><span>Chapter 13</span></a> for more details).</li>
+<li>Download matching features (see <a href="../part-03-features/02-features-api.html" class="quarto-xref"><span>Chapter 13</span></a> for more details).</li>
 <li>Spatially merge labels and features (see <a href="../part-01-labels/03-labels-data-prep.html" class="quarto-xref"><span>Chapter 7</span></a>)</li>
 <li>Use regression to model relationship between imagery and outcome (see <a href="../part-04-models/01-model-choice.html" class="quarto-xref"><span>Chapter 16</span></a>)</li>
 <li>Use regression results to predict outcome in new locations (see <a href="../part-04-models/01-model-choice.html" class="quarto-xref"><span>Chapter 16</span></a>)</li>
@@ -695,13 +725,13 @@ Figure&nbsp;3.6: Example showing of 3 representative random convolutional featur
 <img src="../images/mosaiks-overview.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mosaiks-flow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.7: Using MOSAIKS, a simplified workflow design.
+Figure&nbsp;3.8: Using MOSAIKS, a simplified workflow design.
 </figcaption></figure>
 </div>
-<p>This topic will be covered in greater depth in later chapters. In the next chapter, you will see a simple MOSAIKS workflow which starts from the point of having both features from the API and ground truth labels.</p>
+<p>This topic will be covered in greater depth in later chapters (see <a href="../part-04-models/01-model-choice.html" class="quarto-xref"><span>Chapter 16</span></a>). In the next chapter, you will see a simple MOSAIKS workflow which replicates the results of Rolf et al.&nbsp;2021.</p>
 </section><section id="citation-requirements" class="level2" data-number="3.4"><h2 data-number="3.4" class="anchored" data-anchor-id="citation-requirements">
 <span class="header-section-number">3.4</span> Citation requirements</h2>
-<p>When referring to the MOSAIKS methodology or when generating MOSAIKS features, please reference <a href="https://www.nature.com/articles/s41467-021-24638-z" target="_blank">Rolf et al.&nbsp;“A generalizable and accessible approach to machine learning with global satellite imagery.” Nature Communications (2021).</a></p>
+<p>When referring to the MOSAIKS methodology or when generating MOSAIKS features, please reference: <a href="https://www.nature.com/articles/s41467-021-24638-z" target="_blank">Rolf et al.&nbsp;“A generalizable and accessible approach to machine learning with global satellite imagery.” Nature Communications (2021).</a></p>
 <p>You can use the following Bibtex:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">@article</span>{<span class="ot">article</span>,</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">author</span> = {Rolf, Esther and Proctor, Jonathan and Carleton, Tamma and Bolliger, Ian and Shankar, Vaishaal and Ishihara, Miyabi and Recht, Benjamin and Hsiang, Solomon},</span>
@@ -713,7 +743,7 @@ Figure&nbsp;3.7: Using MOSAIKS, a simplified workflow design.
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">journal</span> = {Nature Communications},</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">doi</span> = {10.1038/s41467-021-24638-z}</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>If using features downloaded from this website, please reference, in addition to the publication above, the MOSAIKS API.</p>
+<p>If using features downloaded from the API, please reference, in addition to the publication above, the MOSAIKS API.</p>
 <p>You can cite the API using the following Bibtex:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"> </span><span class="va">@misc</span>{<span class="ot">MOSAIKS</span> <span class="ot">API</span>,</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">author</span> = {{Carleton, Tamma and Chong, Trinetta and Druckenmiller, Hannah and Noda, Eugenio and Proctor, Jonathan and Rolf, Esther and Hsiang, Solomon}},</span>
