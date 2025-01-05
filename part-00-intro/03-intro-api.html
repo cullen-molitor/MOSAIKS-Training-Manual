@@ -527,7 +527,7 @@ Figure&nbsp;3.3: MOSAIKS API landing page.
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>This book is developed to proivide you with all the information you need to use MOSAIKS.</p>
+<p>This book is developed to provide you with all the information you need to use MOSAIKS.</p>
 </div>
 </div>
 </div>
@@ -582,7 +582,7 @@ Table&nbsp;3.2: MOSAIKS API pages and descriptions.
 </section><section id="api-features" class="level3" data-number="3.2.3"><h3 data-number="3.2.3" class="anchored" data-anchor-id="api-features">
 <span class="header-section-number">3.2.3</span> API Features</h3>
 <p>Currently the MOSAIKS API has a single set of global features (with several aggregation levels). The features are freely available to the public for download; this is the fastest and easiest way to begin using MOSAIKS.</p>
-<p>The API features use input imagery from Planet Labs, Inc.&nbsp;<a href="https://developers.planet.com/docs/basemaps/" target="_blank">Visual Basemaps</a> Global Quarterly 2019 (qaurter 3) product. Image quality, and therfore feature quality, may be affected by local conditions. For example, an area undergoing a rainy season in the third quarter (July to September), is liklely to contain image artifacts from cloud cover. This will in turn effect the feature calculations. For more details on the input imagery <a href="../part-02-satellite/01-satellite-imagery.html" class="quarto-xref"><span>Chapter 9</span></a>.</p>
+<p>The API features use input imagery from Planet Labs, Inc.&nbsp;<a href="https://developers.planet.com/docs/basemaps/" target="_blank">Visual Basemap</a> Global Quarterly 2019 (quarter 3) product. Image quality, and therefore feature quality, may be affected by local conditions. For example, an area undergoing a rainy season in the third quarter (July to September), is likely to contain image artifacts from cloud cover. This will in turn effect the feature calculations. For more details on the input imagery <a href="../part-02-satellite/01-satellite-imagery.html" class="quarto-xref"><span>Chapter 9</span></a>.</p>
 <p>Given the static nature of the API, the easiest way to get started with MOSAIKS is to have label data for a recent time period (ideally from 2019 for fast changing labels, or a close year for more steady labels). To use MOSAIKS for time series data is possible, just not currently with precomputed and publicly available features. For more information on the API features see <a href="../part-03-features/02-features-api.html" class="quarto-xref"><span>Chapter 13</span></a></p>
 <div id="fig-api-features" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-api-features-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -637,10 +637,10 @@ Figure&nbsp;3.4: Planet Labs basemap imagery (left) and 4 of 4,000 MOSAIKS featu
 Figure&nbsp;3.5: API Map Query (left) and File Query (right)
 </figcaption></figure>
 </div>
-</section><section id="agreggated-feature-files" class="level4" data-number="3.2.4.2"><h4 data-number="3.2.4.2" class="anchored" data-anchor-id="agreggated-feature-files">
-<span class="header-section-number">3.2.4.2</span> Agreggated feature files</h4>
-<p>Many users may find it easier to work with features aggregated to some level. The MOSAIKS API offers pre-aggregated features to accomodate these users need. Features come at several levels, including larger grid cells (0.1 and 1 degree) or summarized to administrative boundaries (ADM0, ADM1, andd ADM2). These files are available for download as either single or chunked files depending on the resolution.</p>
-<p>These pre-aggregated features are particulalry useful for users in a few scenarios:</p>
+</section><section id="aggregated-feature-files" class="level4" data-number="3.2.4.2"><h4 data-number="3.2.4.2" class="anchored" data-anchor-id="aggregated-feature-files">
+<span class="header-section-number">3.2.4.2</span> Aggregated feature files</h4>
+<p>Many users may find it easier to work with features aggregated to some level. The MOSAIKS API offers pre-aggregated features to accommodate these users need. Features come at several levels, including larger grid cells (0.1 and 1 degree) or summarized to administrative boundaries (ADM0, ADM1, and ADM2). These files are available for download as either single or chunked files depending on the resolution.</p>
+<p>These pre-aggregated features are particularly useful for users in a few scenarios:</p>
 <ol type="1">
 <li><p>You have data at a scale larger than the 0.01 degree grid cells. Many datasets come at the country, state, or county level.</p></li>
 <li><p>Your data has a lot of noise that can be smoothed out by aggregating to a larger scale. A common example of this might be household survey data that is noisy at the individual level but smooths out when aggregated to the village or district level.</p></li>

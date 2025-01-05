@@ -327,7 +327,7 @@ ul.task-list li input[type="checkbox"] {
 <a href="#how-mosaiks-works" id="toc-how-mosaiks-works" class="nav-link" data-scroll-target="#how-mosaiks-works"><span class="header-section-number">2.3</span> How MOSAIKS works</a>
   <ul class="collapse">
 <li><a href="#separating-users-from-imagery" id="toc-separating-users-from-imagery" class="nav-link" data-scroll-target="#separating-users-from-imagery"><span class="header-section-number">2.3.1</span> Separating users from imagery</a></li>
-  <li><a href="#generalizablity-of-mosaiks" id="toc-generalizablity-of-mosaiks" class="nav-link" data-scroll-target="#generalizablity-of-mosaiks"><span class="header-section-number">2.3.2</span> Generalizablity of MOSAIKS</a></li>
+  <li><a href="#generalizability-of-mosaiks" id="toc-generalizability-of-mosaiks" class="nav-link" data-scroll-target="#generalizability-of-mosaiks"><span class="header-section-number">2.3.2</span> Generalizability of MOSAIKS</a></li>
   <li><a href="#why-it-works" id="toc-why-it-works" class="nav-link" data-scroll-target="#why-it-works"><span class="header-section-number">2.3.3</span> Why it works</a></li>
   <li><a href="#five-steps-to-using-mosaiks" id="toc-five-steps-to-using-mosaiks" class="nav-link" data-scroll-target="#five-steps-to-using-mosaiks"><span class="header-section-number">2.3.4</span> Five steps to using MOSAIKS</a></li>
   </ul>
@@ -416,7 +416,7 @@ Figure&nbsp;2.2: Traditional framework of deep learning models for satellite ima
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Recomended reading
+Recommended reading
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -425,9 +425,9 @@ Recomended reading
 </div>
 <section id="separating-users-from-imagery" class="level3" data-number="2.3.1"><h3 data-number="2.3.1" class="anchored" data-anchor-id="separating-users-from-imagery">
 <span class="header-section-number">2.3.1</span> Separating users from imagery</h3>
-<p>The basic idea of MOSAIKS is to seperate users from the costly and difficult process of transforming imagery into inputs (called <strong>“features”</strong>) to a downstream machine learning algorithm (<strong>images → X</strong>). The MOSAIKS team has computed these features globally, so in many use cases users never have to download or manage imagery themselves. Instead, users download a table of MOSAIKS features (<strong>X</strong>), link them to their own geocoded data on the outcome (<strong>Y</strong>) they are interested in predicting from satellite imagery (we call these data “labels”), and then run a linear regression (or something fancier if desired!) to predict their labels using MOSAIKS features (<strong>Y = Xβ</strong>). Importantly, this prediction can be performed in locations, time periods, and at spatial resolutions for which labels are not available.</p>
-</section><section id="generalizablity-of-mosaiks" class="level3" data-number="2.3.2"><h3 data-number="2.3.2" class="anchored" data-anchor-id="generalizablity-of-mosaiks">
-<span class="header-section-number">2.3.2</span> Generalizablity of MOSAIKS</h3>
+<p>The basic idea of MOSAIKS is to separate users from the costly and difficult process of transforming imagery into inputs (called <strong>“features”</strong>) to a downstream machine learning algorithm (<strong>images → X</strong>). The MOSAIKS team has computed these features globally, so in many use cases users never have to download or manage imagery themselves. Instead, users download a table of MOSAIKS features (<strong>X</strong>), link them to their own geocoded data on the outcome (<strong>Y</strong>) they are interested in predicting from satellite imagery (we call these data “labels”), and then run a linear regression (or something fancier if desired!) to predict their labels using MOSAIKS features (<strong>Y = Xβ</strong>). Importantly, this prediction can be performed in locations, time periods, and at spatial resolutions for which labels are not available.</p>
+</section><section id="generalizability-of-mosaiks" class="level3" data-number="2.3.2"><h3 data-number="2.3.2" class="anchored" data-anchor-id="generalizability-of-mosaiks">
+<span class="header-section-number">2.3.2</span> Generalizability of MOSAIKS</h3>
 <p>Because MOSAIKS features synthesize information contained in raw imagery that is not tailored for any specific outcome (e.g., biodiversity, household income, land use), many users can use the same MOSAIKS features and simply match them to their own labels based on location. Users can run their analysis on any statistical software they are comfortable with. For most applications, the computing demands will not require users to work with specialized machines, since desktops and laptops work.</p>
 <div id="fig-mosaiks-overview" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-mosaiks-overview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -496,7 +496,7 @@ Figure&nbsp;2.4: Example of 4 (of 4,000) MOSAIKS feature maps (right) computed f
 Figure&nbsp;2.5: (100,000 daytime images were each converted to 8,192 features and stored. Seven tasks were then selected based on coverage and diversity. Predictions were generated for each task using the same procedure. <strong>Left maps:</strong> 80,000 observations used for training and validation, aggregated up to 20 km × 20 km cells for display. <strong>Right maps:</strong> concatenated validation set estimates from 5-fold cross-validation for the same 80,000 grid cells (observations are never used to generate their own prediction), identically aggregated for display. <strong>Scatters:</strong> Validation set estimates (vertical axis) vs.&nbsp;ground truth (horizontal axis); each point is a ~1 km × 1 km grid cell. Black line is at 45∘. Test-set and validation set performance are essentially identical; validation set values are shown for display purposes only, as there are more observations. The tasks in the top three rows are uniformly sampled across space, the tasks in the bottom four rows are sampled using population weights; grey areas were not sampled in the experiment. Source: <a href="https://www.nature.com/articles/s41467-021-24638-z/figures/2" target="_blank">Rolf et al.&nbsp;2021 Figure 2</a>)
 </figcaption></figure>
 </div>
-<p>Importantly, all these predictions use the same set of satellite features - there’s no need to reprocess the imagery for different tasks. MOSAIKS achieves accuracy comparable to more complex deep learning methods, but at a fraction of the computational cost. This is the power of MOSAIKS, it removes the need for repreocessing the imagery after the initial encoding.</p>
+<p>Importantly, all these predictions use the same set of satellite features - there’s no need to reprocess the imagery for different tasks. MOSAIKS achieves accuracy comparable to more complex deep learning methods, but at a fraction of the computational cost. This is the power of MOSAIKS, it removes the need for reprocessing the imagery after the initial encoding.</p>
 </section><section id="summary" class="level2" data-number="2.5"><h2 data-number="2.5" class="anchored" data-anchor-id="summary">
 <span class="header-section-number">2.5</span> Summary</h2>
 <p>MOSAIKS is a powerful tool that allows users to predict a wide range of outcomes from satellite imagery using pre-computed features. The system is designed to be accessible to users with no prior experience in machine learning or satellite imagery. The MOSAIKS framework involves five simple steps</p>
