@@ -17,40 +17,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -365,32 +331,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#checklist" id="toc-checklist" class="nav-link" data-scroll-target="#checklist"><span class="header-section-number">7.2.4</span> Checklist</a></li>
   </ul>
 </li>
-  <li><a href="#joining-data" id="toc-joining-data" class="nav-link" data-scroll-target="#joining-data"><span class="header-section-number">7.3</span> Joining data</a></li>
+  <li><a href="#how-do-i-obtain-label-data" id="toc-how-do-i-obtain-label-data" class="nav-link" data-scroll-target="#how-do-i-obtain-label-data"><span class="header-section-number">7.3</span> How do I obtain label data?</a></li>
   <li>
-<a href="#data-cleaning-considerations" id="toc-data-cleaning-considerations" class="nav-link" data-scroll-target="#data-cleaning-considerations"><span class="header-section-number">7.4</span> Data cleaning considerations</a>
+<a href="#joining-data" id="toc-joining-data" class="nav-link" data-scroll-target="#joining-data"><span class="header-section-number">7.4</span> Joining data</a>
   <ul class="collapse">
-<li><a href="#geographic-information" id="toc-geographic-information" class="nav-link" data-scroll-target="#geographic-information"><span class="header-section-number">7.4.1</span> Geographic information</a></li>
-  <li><a href="#label-quality" id="toc-label-quality" class="nav-link" data-scroll-target="#label-quality"><span class="header-section-number">7.4.2</span> Label quality</a></li>
-  <li><a href="#temporal-alignment" id="toc-temporal-alignment" class="nav-link" data-scroll-target="#temporal-alignment"><span class="header-section-number">7.4.3</span> Temporal alignment</a></li>
+<li><a href="#how-do-i-merge-my-label-data-with-mosaiks-features" id="toc-how-do-i-merge-my-label-data-with-mosaiks-features" class="nav-link" data-scroll-target="#how-do-i-merge-my-label-data-with-mosaiks-features"><span class="header-section-number">7.4.1</span> How do I merge my label data with MOSAIKS features?</a></li>
+  <li><a href="#what-labels-should-look-like" id="toc-what-labels-should-look-like" class="nav-link" data-scroll-target="#what-labels-should-look-like"><span class="header-section-number">7.4.2</span> What labels should look like</a></li>
+  <li><a href="#what-will-the-features-look-like" id="toc-what-will-the-features-look-like" class="nav-link" data-scroll-target="#what-will-the-features-look-like"><span class="header-section-number">7.4.3</span> What will the features look like?</a></li>
+  <li><a href="#how-to-join-data" id="toc-how-to-join-data" class="nav-link" data-scroll-target="#how-to-join-data"><span class="header-section-number">7.4.4</span> How to join data</a></li>
   </ul>
 </li>
   <li>
-<a href="#data-formats" id="toc-data-formats" class="nav-link" data-scroll-target="#data-formats"><span class="header-section-number">7.5</span> Data formats</a>
+<a href="#data-cleaning-considerations" id="toc-data-cleaning-considerations" class="nav-link" data-scroll-target="#data-cleaning-considerations"><span class="header-section-number">7.5</span> Data cleaning considerations</a>
   <ul class="collapse">
-<li><a href="#point-data" id="toc-point-data" class="nav-link" data-scroll-target="#point-data"><span class="header-section-number">7.5.1</span> Point data</a></li>
-  <li><a href="#polygon-data" id="toc-polygon-data" class="nav-link" data-scroll-target="#polygon-data"><span class="header-section-number">7.5.2</span> Polygon data</a></li>
-  <li><a href="#raster-data" id="toc-raster-data" class="nav-link" data-scroll-target="#raster-data"><span class="header-section-number">7.5.3</span> Raster data</a></li>
+<li><a href="#geographic-information" id="toc-geographic-information" class="nav-link" data-scroll-target="#geographic-information"><span class="header-section-number">7.5.1</span> Geographic information</a></li>
+  <li><a href="#coordinate-reference-systems-crs" id="toc-coordinate-reference-systems-crs" class="nav-link" data-scroll-target="#coordinate-reference-systems-crs"><span class="header-section-number">7.5.2</span> Coordinate Reference Systems (CRS)</a></li>
+  <li><a href="#label-quality" id="toc-label-quality" class="nav-link" data-scroll-target="#label-quality"><span class="header-section-number">7.5.3</span> Label quality</a></li>
+  <li><a href="#temporal-alignment" id="toc-temporal-alignment" class="nav-link" data-scroll-target="#temporal-alignment"><span class="header-section-number">7.5.4</span> Temporal alignment</a></li>
   </ul>
 </li>
-  <li>
-<a href="#joining-procedures" id="toc-joining-procedures" class="nav-link" data-scroll-target="#joining-procedures"><span class="header-section-number">7.6</span> Joining procedures</a>
-  <ul class="collapse">
-<li><a href="#point-to-grid-matching" id="toc-point-to-grid-matching" class="nav-link" data-scroll-target="#point-to-grid-matching"><span class="header-section-number">7.6.1</span> Point to grid matching</a></li>
-  <li><a href="#polygon-aggregation" id="toc-polygon-aggregation" class="nav-link" data-scroll-target="#polygon-aggregation"><span class="header-section-number">7.6.2</span> Polygon aggregation</a></li>
-  <li><a href="#raster-alignment" id="toc-raster-alignment" class="nav-link" data-scroll-target="#raster-alignment"><span class="header-section-number">7.6.3</span> Raster alignment</a></li>
-  </ul>
-</li>
-  <li><a href="#final-data-format" id="toc-final-data-format" class="nav-link" data-scroll-target="#final-data-format"><span class="header-section-number">7.7</span> Final data format</a></li>
+  <li><a href="#data-formats" id="toc-data-formats" class="nav-link" data-scroll-target="#data-formats"><span class="header-section-number">7.6</span> Data formats</a></li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/edit/main/part-01-labels/03-labels-data-prep.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
@@ -479,8 +439,21 @@ Figure&nbsp;7.1: Examples of label data formats that can be easily integrated in
 <li><label><input type="checkbox"><strong>Observable</strong> in daytime satellite imagery (directly or indirectly)</label></li>
 <li><label><input type="checkbox"><strong>Recent or slow-changing</strong> if using current API features</label></li>
 <li><label><input type="checkbox"><strong>Sample size N≥300</strong> (larger samples generally perform better)</label></li>
-</ul></section></section><section id="joining-data" class="level2" data-number="7.3"><h2 data-number="7.3" class="anchored" data-anchor-id="joining-data">
-<span class="header-section-number">7.3</span> Joining data</h2>
+</ul></section></section><section id="how-do-i-obtain-label-data" class="level2" data-number="7.3"><h2 data-number="7.3" class="anchored" data-anchor-id="how-do-i-obtain-label-data">
+<span class="header-section-number">7.3</span> How do I obtain label data?</h2>
+<p>Label data can be obtained from a variety of sources, but MOSAIKS works best for variables with features that would be directly visible in or derived from satellite images (i.e.&nbsp;road length or population density from nighttime lights). What format should I use for my label data to download features?</p>
+<p>To use the File Query to request features, data must be formatted as point data uploaded in CSV format with at least three columns. The first two columns should contain latitude and longitude coordinates, and the third column may contain the label value. Where input latitude and longitude coordinates do not fall exactly on the MOSAIKS global grid, they are allocated to the nearest point. As a result, the output file you receive may not share the same number of rows as your input. The ordering of points may also change.</p>
+<p>The MOSAIKS feature resolution is on a 0.01 x 0.01 grid, centered at .005 degree intervals. For the labels and the features to merge, they must be at the same spatial resolution. This can be done through 2 ways: Approximating your label to match each centroid point on the dense grid. For example, if your label data point is located at 13.4568, -16.5911, you may choose to round the point to 2 decimal places and add or subtract 0.005 to match the nearest centroid (i.e.&nbsp;13.455, -16.595) (Recommended) If your label is at a finer spatial resolution than the grid, you may wish to aggregate data points in your label to each grid cell. For example, you may wish to take an average of all label values that overlap with a grid cell, and assign that aggregate value to the cell.</p>
+</section><section id="joining-data" class="level2" data-number="7.4"><h2 data-number="7.4" class="anchored" data-anchor-id="joining-data">
+<span class="header-section-number">7.4</span> Joining data</h2>
+<section id="how-do-i-merge-my-label-data-with-mosaiks-features" class="level3" data-number="7.4.1"><h3 data-number="7.4.1" class="anchored" data-anchor-id="how-do-i-merge-my-label-data-with-mosaiks-features">
+<span class="header-section-number">7.4.1</span> How do I merge my label data with MOSAIKS features?</h3>
+<p>Merging label data with MOSAIKS features requires that you first transform your data to a format that matches the features format. The MOSAIKS features are organized as rows of specific longitude and latitude coordinates and their associated features. Label data must also be cleaned and transformed to at least three columns. One column should contain longitude, another latitude, and the third the value for the variable of interest. You may also have more columns, but the three mentioned are the minimum requirement. Below are short descriptions of how label data of different types can be prepared to merge with MOSAIKS features. From polygon data</p>
+<p>To create a tabular dataframe from a shape file of polygons, it must be converted to a grid of points that corresponds to the mosaiks grid. Essentially, this reasterizes the shape file to discrete longitude/latitude coordinates that can then be merged with the Mosaiks features. An example of how this can be done is provided in the example resources. From raster or points data</p>
+<p>Point and raster label data is ready to merge with MOSAIKS features, as long as data is in a tabular formatted with separate longitude, latitude and label value columns. Coordinate precision should also be rounded to the precision of the MOSAIKS grid at. 005 degree intervals. From vector data</p>
+<p>For vector data, the idea is to use the MOSAIKS grid cells to sum the length of the vector data in each grid cell. Then, the centroid of each grid cell can be used to query the API for features and allow for easy merging of label and features.</p>
+</section><section id="what-labels-should-look-like" class="level3" data-number="7.4.2"><h3 data-number="7.4.2" class="anchored" data-anchor-id="what-labels-should-look-like">
+<span class="header-section-number">7.4.2</span> What labels should look like</h3>
 <p>Before model training, label data must be joined to imagery features. The joined data should be tabular with each row containing:</p>
 <ol type="1">
 <li>
@@ -537,6 +510,9 @@ Figure&nbsp;7.1: Examples of label data formats that can be easily integrated in
 Table&nbsp;7.1: Fictional crop yield data for three districts in Zambia. Each observation includes the district name, year, and crop yield in metric tons per hectare (mt/ha).
 </figcaption></figure>
 </div>
+</section><section id="what-will-the-features-look-like" class="level3" data-number="7.4.3"><h3 data-number="7.4.3" class="anchored" data-anchor-id="what-will-the-features-look-like">
+<span class="header-section-number">7.4.3</span> What will the features look like?</h3>
+<p>Next, users will need to obtain features from the API that will spatially match with these labels. For instructions on how to download features, see <a href="../part-00-intro/03-intro-api.html" class="quarto-xref"><span>Chapter 3</span></a> and <a href="../part-03-features/02-features-api.html" class="quarto-xref"><span>Chapter 13</span></a>.</p>
 <p>And a dataset with district level aggregate features could look like:</p>
 <div id="tbl-features" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure"><div aria-describedby="tbl-features-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -604,6 +580,9 @@ Table&nbsp;7.1: Fictional crop yield data for three districts in Zambia. Each ob
 Table&nbsp;7.2: Fictional feature data for three districts in Zambia. Each observation includes the district name, year, and <em>K</em> features.
 </figcaption></figure>
 </div>
+</section><section id="how-to-join-data" class="level3" data-number="7.4.4"><h3 data-number="7.4.4" class="anchored" data-anchor-id="how-to-join-data">
+<span class="header-section-number">7.4.4</span> How to join data</h3>
+<p>After downloading features from the API, users can then perform a spatial merge with their labels. A regression step on the merged dataset estimates the relationship between imagery features and the outcome variable of interest. Users can experiment with a variety of machine learning approaches in this last regression step.</p>
 <p>Finally, the joined dataset would look like:</p>
 <div id="tbl-joined-data" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure"><div aria-describedby="tbl-joined-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -679,11 +658,22 @@ Table&nbsp;7.3: Joined dataset with crop yield and feature data for three distri
 </div>
 <p>In the above example, our geographic location is the district and our label is the crop yield (mt/ha). We then have <em>K</em> columns containing the features and <em>N</em> observations.</p>
 <p>In this example, our features started at 1 km² resolution and were aggregated to the district level to match the crop yield data. To join this data, we first found all of the feature locations that fall within the district boundaries using a spatial join. Then we averaged the features within each district. This allowed us to have a single feature vector for each district. The resulting tabular data is ready for modeling.</p>
-</section><section id="data-cleaning-considerations" class="level2" data-number="7.4"><h2 data-number="7.4" class="anchored" data-anchor-id="data-cleaning-considerations">
-<span class="header-section-number">7.4</span> Data cleaning considerations</h2>
+</section></section><section id="data-cleaning-considerations" class="level2" data-number="7.5"><h2 data-number="7.5" class="anchored" data-anchor-id="data-cleaning-considerations">
+<span class="header-section-number">7.5</span> Data cleaning considerations</h2>
 <p>Before joining label data with MOSAIKS features, several key preparation steps should be considered:</p>
-<section id="geographic-information" class="level3" data-number="7.4.1"><h3 data-number="7.4.1" class="anchored" data-anchor-id="geographic-information">
-<span class="header-section-number">7.4.1</span> Geographic information</h3>
+<section id="geographic-information" class="level3" data-number="7.5.1"><h3 data-number="7.5.1" class="anchored" data-anchor-id="geographic-information">
+<span class="header-section-number">7.5.1</span> Geographic information</h3>
+</section><section id="coordinate-reference-systems-crs" class="level3" data-number="7.5.2"><h3 data-number="7.5.2" class="anchored" data-anchor-id="coordinate-reference-systems-crs">
+<span class="header-section-number">7.5.2</span> Coordinate Reference Systems (CRS)</h3>
+<p>The default coordinate reference system used by MOSAIKS is World Geodetic System 84 (WGS 84). The standardized code that defines WGS 84 is <a href="https://epsg.io/4326" target="_blank">“EPSG:4326”</a>. EPSG stands for the <a href="https://en.wikipedia.org/wiki/EPSG_Geodetic_Parameter_Dataset" target="_blank">European Petroleum Survey Group</a>, which maintains a database of coordinate systems and projections. The WGS 84 coordinate system is the most commonly used coordinate system for GPS data. If your data is not in WGS 84, you will need to reproject it to this coordinate system before joining it with MOSAIKS features.</p>
+<div id="fig-map-projections" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-map-projections-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://www.researchgate.net/profile/Bojan-Savric/publication/273517879/figure/fig1/AS:347863067447297@1459948426262/The-nine-small-scale-map-projections-used-in-the-paired-comparison-test-arranged-by.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-map-projections-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.2: <a href="https://www.researchgate.net/publication/273517879_User_preferences_for_world_map_projections" target="_blank">Nine small-scale map projections.</a>
+</figcaption></figure>
+</div>
 <ul>
 <li>
 <strong>Coordinate systems</strong>: Ensure coordinates are in a projection consistent with the features (API uses decimal degrees - WGS84) (<a href="#fig-map-projections" class="quarto-xref">Figure&nbsp;<span>7.2</span></a>)</li>
@@ -695,17 +685,8 @@ Table&nbsp;7.3: Joined dataset with crop yield and feature data for three distri
 <strong>Duplicate checking</strong>: Remove duplicate locations within same time period</li>
 <li>
 <strong>Missing coordinates</strong>: Handle missing or invalid geographic information</li>
-</ul>
-<div id="fig-map-projections" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-map-projections-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://www.researchgate.net/profile/Bojan-Savric/publication/273517879/figure/fig1/AS:347863067447297@1459948426262/The-nine-small-scale-map-projections-used-in-the-paired-comparison-test-arranged-by.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-map-projections-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7.2: <a href="https://www.researchgate.net/publication/273517879_User_preferences_for_world_map_projections" target="_blank">Nine small-scale map projections</a>
-</figcaption></figure>
-</div>
-</section><section id="label-quality" class="level3" data-number="7.4.2"><h3 data-number="7.4.2" class="anchored" data-anchor-id="label-quality">
-<span class="header-section-number">7.4.2</span> Label quality</h3>
+</ul></section><section id="label-quality" class="level3" data-number="7.5.3"><h3 data-number="7.5.3" class="anchored" data-anchor-id="label-quality">
+<span class="header-section-number">7.5.3</span> Label quality</h3>
 <ul>
 <li>
 <strong>Outliers</strong>: Identify and handle extreme values</li>
@@ -717,8 +698,8 @@ Figure&nbsp;7.2: <a href="https://www.researchgate.net/publication/273517879_Use
 <strong>Data types</strong>: Ensure numeric fields are properly formatted</li>
 <li>
 <strong>Range checks</strong>: Verify values fall within expected bounds</li>
-</ul></section><section id="temporal-alignment" class="level3" data-number="7.4.3"><h3 data-number="7.4.3" class="anchored" data-anchor-id="temporal-alignment">
-<span class="header-section-number">7.4.3</span> Temporal alignment</h3>
+</ul></section><section id="temporal-alignment" class="level3" data-number="7.5.4"><h3 data-number="7.5.4" class="anchored" data-anchor-id="temporal-alignment">
+<span class="header-section-number">7.5.4</span> Temporal alignment</h3>
 <ul>
 <li>
 <strong>Time periods</strong>: Match observation dates with feature timestamps</li>
@@ -728,8 +709,8 @@ Figure&nbsp;7.2: <a href="https://www.researchgate.net/publication/273517879_Use
 <strong>Aggregation</strong>: Consider temporal aggregation needs (e.g., annual averages)</li>
 <li>
 <strong>Gaps</strong>: Handle missing time periods appropriately</li>
-</ul></section></section><section id="data-formats" class="level2" data-number="7.5"><h2 data-number="7.5" class="anchored" data-anchor-id="data-formats">
-<span class="header-section-number">7.5</span> Data formats</h2>
+</ul></section></section><section id="data-formats" class="level2" data-number="7.6"><h2 data-number="7.6" class="anchored" data-anchor-id="data-formats">
+<span class="header-section-number">7.6</span> Data formats</h2>
 <div class="callout callout-style-simple callout-tip">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -741,143 +722,53 @@ Figure&nbsp;7.2: <a href="https://www.researchgate.net/publication/273517879_Use
 </div>
 </div>
 <p>MOSAIKS can work with several common spatial data formats:</p>
-<section id="point-data" class="level3" data-number="7.5.1"><h3 data-number="7.5.1" class="anchored" data-anchor-id="point-data">
-<span class="header-section-number">7.5.1</span> Point data</h3>
-<p>Common for survey locations or specific measurement sites:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example point data format</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>point_data <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'longitude'</span>: [<span class="op">-</span><span class="fl">15.416667</span>, <span class="op">-</span><span class="fl">15.308333</span>, <span class="op">-</span><span class="fl">15.200000</span>],</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'latitude'</span>: [<span class="fl">28.316667</span>, <span class="fl">28.441667</span>, <span class="fl">28.550000</span>],</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'year'</span>: [<span class="dv">2019</span>, <span class="dv">2019</span>, <span class="dv">2019</span>],</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'yield'</span>: [<span class="fl">1.52</span>, <span class="fl">1.88</span>, <span class="fl">2.38</span>]</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Point data is typically joined to the nearest grid cell centroid or aggregated to larger polygons like administrative units (districts, provinces, etc.).</p>
-</section><section id="polygon-data" class="level3" data-number="7.5.2"><h3 data-number="7.5.2" class="anchored" data-anchor-id="polygon-data">
-<span class="header-section-number">7.5.2</span> Polygon data</h3>
-<p>Used for administrative boundaries or management units:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example polygon data format (GeoJSON-like)</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>polygon_data <span class="op">=</span> {</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'type'</span>: <span class="st">'Feature'</span>,</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'properties'</span>: {</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">'district'</span>: <span class="st">'Chibombo'</span>,</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">'year'</span>: <span class="dv">2019</span>,</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">'yield'</span>: <span class="fl">1.52</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    },</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'geometry'</span>: {</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">'type'</span>: <span class="st">'Polygon'</span>,</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">'coordinates'</span>: [[[...coordinates...]]]</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section><section id="raster-data" class="level3" data-number="7.5.3"><h3 data-number="7.5.3" class="anchored" data-anchor-id="raster-data">
-<span class="header-section-number">7.5.3</span> Raster data</h3>
-<p>Common for gridded observations or model outputs:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example raster metadata</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>raster_meta <span class="op">=</span> {</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'driver'</span>: <span class="st">'GTiff'</span>,</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'dtype'</span>: <span class="st">'float32'</span>,</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'nodata'</span>: <span class="op">-</span><span class="dv">9999</span>,</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'width'</span>: <span class="dv">1000</span>,</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'height'</span>: <span class="dv">1000</span>,</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'crs'</span>: <span class="st">'EPSG:4326'</span>,</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'transform'</span>: [<span class="fl">0.01</span>, <span class="dv">0</span>, <span class="op">-</span><span class="fl">15.5</span>, <span class="dv">0</span>, <span class="op">-</span><span class="fl">0.01</span>, <span class="fl">28.6</span>]</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section></section><section id="joining-procedures" class="level2" data-number="7.6"><h2 data-number="7.6" class="anchored" data-anchor-id="joining-procedures">
-<span class="header-section-number">7.6</span> Joining procedures</h2>
-<p>The process of joining labels to features depends on your data format:</p>
-<section id="point-to-grid-matching" class="level3" data-number="7.6.1"><h3 data-number="7.6.1" class="anchored" data-anchor-id="point-to-grid-matching">
-<span class="header-section-number">7.6.1</span> Point to grid matching</h3>
-<p>For point observations that don’t align perfectly with the MOSAIKS grid:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> match_points_to_grid(points_df, grid_size<span class="op">=</span><span class="fl">0.01</span>):</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Match point observations to MOSAIKS grid cells</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Parameters:</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">    -----------</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">    points_df : pandas DataFrame</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">        Contains 'longitude' and 'latitude' columns</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">    grid_size : float</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co">        Size of grid cells in degrees (default 0.01 for ~1km)</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co">        </span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns:</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co">    --------</span></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co">    DataFrame with points matched to grid cell centroids</span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Round coordinates to nearest grid cell center</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    points_df[<span class="st">'grid_lon'</span>] <span class="op">=</span> (np.floor(points_df[<span class="st">'longitude'</span>] <span class="op">/</span> grid_size) <span class="op">*</span> </span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>                            grid_size <span class="op">+</span> grid_size<span class="op">/</span><span class="dv">2</span>)</span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    points_df[<span class="st">'grid_lat'</span>] <span class="op">=</span> (np.floor(points_df[<span class="st">'latitude'</span>] <span class="op">/</span> grid_size) <span class="op">*</span> </span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>                            grid_size <span class="op">+</span> grid_size<span class="op">/</span><span class="dv">2</span>)</span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> points_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section><section id="polygon-aggregation" class="level3" data-number="7.6.2"><h3 data-number="7.6.2" class="anchored" data-anchor-id="polygon-aggregation">
-<span class="header-section-number">7.6.2</span> Polygon aggregation</h3>
-<p>For labels defined over administrative regions or other polygons:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> aggregate_features_to_polygons(features_df, polygons_gdf):</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Aggregate grid cell features to polygon level</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Parameters:</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">    -----------</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">    features_df : pandas DataFrame</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">        Grid cell features with 'longitude' and 'latitude'</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">    polygons_gdf : geopandas GeoDataFrame</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co">        Polygon boundaries</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">        </span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns:</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co">    --------</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co">    DataFrame with features averaged within each polygon</span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Convert features to GeoDataFrame</span></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    features_gdf <span class="op">=</span> gpd.GeoDataFrame(</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>        features_df, </span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>        geometry<span class="op">=</span>gpd.points_from_xy(features_df.longitude, </span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>                                  features_df.latitude)</span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Spatial join</span></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    joined <span class="op">=</span> gpd.sjoin(features_gdf, polygons_gdf)</span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Average features within polygons</span></span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> joined.groupby(<span class="st">'index_right'</span>).mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section><section id="raster-alignment" class="level3" data-number="7.6.3"><h3 data-number="7.6.3" class="anchored" data-anchor-id="raster-alignment">
-<span class="header-section-number">7.6.3</span> Raster alignment</h3>
-<p>For gridded data that needs to be aligned with MOSAIKS grid:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> align_raster_to_mosaiks(raster_array, raster_transform, </span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>                           target_transform):</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">    Align raster data to MOSAIKS grid</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">    Parameters:</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">    -----------</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">    raster_array : numpy array</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co">        Source raster data</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co">    raster_transform : affine.Affine</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co">        Source raster geotransform</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co">    target_transform : affine.Affine</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co">        MOSAIKS grid geotransform</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="co">        </span></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns:</span></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="co">    --------</span></span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="co">    Numpy array aligned to MOSAIKS grid</span></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Implement resampling logic here</span></span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Could use rasterio.warp.reproject or similar</span></span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section></section><section id="final-data-format" class="level2" data-number="7.7"><h2 data-number="7.7" class="anchored" data-anchor-id="final-data-format">
-<span class="header-section-number">7.7</span> Final data format</h2>
-<p>After joining, your data should be in a tabular format ready for modeling:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example final format</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>model_data <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'id'</span>: <span class="bu">range</span>(n_obs),</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'longitude'</span>: [...],  <span class="co"># Grid cell or polygon centroid</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'latitude'</span>: [...],   <span class="co"># Grid cell or polygon centroid</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'year'</span>: [...],       <span class="co"># Time period if relevant</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'label'</span>: [...],      <span class="co"># Target variable</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'feature_0'</span>: [...],  <span class="co"># First MOSAIKS feature</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'feature_1'</span>: [...],  <span class="co"># Second MOSAIKS feature</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ... additional features ...</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">'feature_3999'</span>: [...] <span class="co"># Last MOSAIKS feature</span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Note:</strong> Add example notebook focusing on joining data with different data type examples</p>
+<div id="tbl-spatial-data-formats" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><div aria-describedby="tbl-spatial-data-formats-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 23%">
+<col style="width: 34%">
+<col style="width: 13%">
+</colgroup>
+<thead><tr class="header">
+<th>Data type</th>
+<th>Common file formats</th>
+<th>Description</th>
+<th>Example</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Point data</td>
+<td>CSV, GeoJSON, Shapefile</td>
+<td>Geographic coordinates</td>
+<td>places of interest</td>
+</tr>
+<tr class="even">
+<td>Line data</td>
+<td>GeoJSON, Shapefile</td>
+<td>Geographic lines</td>
+<td>Roads, rivers</td>
+</tr>
+<tr class="odd">
+<td>Polygon data</td>
+<td>GeoJSON, Shapefile</td>
+<td>Geographic polygons</td>
+<td>Buildings, mines, fields</td>
+</tr>
+<tr class="even">
+<td>Raster data</td>
+<td>GeoTIFF, NetCDF, Zarr</td>
+<td>Gridded data</td>
+<td>Forest cover, elevation, land use</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-spatial-data-formats-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;7.4: Common spatial data formats and their descriptions.
+</figcaption></figure>
+</div>
 <div class="callout callout-style-simple callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -891,6 +782,145 @@ Looking forward
 <p>In the next chapter we’ll look at working specifically with survey data, which presents unique challenges for spatial joining and aggregation.</p>
 </div>
 </div>
+<!-- ## Overview
+
+In this chapter, we discuss the process of preparing labels for use with MOSAIKS features. Labels are the observed values we aim to predict with our model—such as crop yields, forest cover, or any other variable of interest. They can come in many spatial formats (e.g., points, polygons, or gridded rasters), but they must include a spatial component. We use this spatial information to join the labels with MOSAIKS features, which are also spatially explicit.
+
+Although MOSAIKS offers many optional steps, two components are essential:
+
+1. Ground observations (labels)  
+2. Satellite features  
+
+Both datasets must align in spatial resolution and contain appropriate geographic data for merging.
+
+## Ground Observations
+
+### Resolution
+
+::: {.callout-note}
+The MOSAIKS API is designed to predict outcomes at scales of 1 km² or larger. Custom solutions are possible for higher-resolution applications.  
+:::
+
+Preparing label data for MOSAIKS depends on location, extent, time, and resolution. When observations have a resolution finer than 1 km², you must select or aggregate them to match MOSAIKS’s 1 km² scale at the minimum. MOSAIKS can incorporate labels from raster, point, polygon, or vector data, provided each record is associated with a spatial location that can be joined to satellite imagery features.
+
+![Examples of label data formats that can be easily integrated into the MOSAIKS pipeline. Label data of any spatial format that can be aggregated to at least the scale of 1km² (or larger) can be used directly in combination with MOSAIKS imagery features for downstream prediction tasks. Examples shown here are from Rolf et al. (2021) and include: forest cover, elevation, population, and nighttime lights datasets (all raster format); income data (polygon format); road length (vector format); and housing price data (point format).](../images/rolf_et_al_2021-Fig_S4.png){#fig-label-agg}
+
+In some cases, you will find labels for administrative regions (states, districts, etc.). In this case, it might not come with geographic information at all, though it can usually be found online fairly easily. A good resource for this is the [Global Administrative Areas (GADM)](https://gadm.org/) database, which provides shapefiles for administrative boundaries at various levels of detail for most countries. It is important to remember that data can be messy and the names in your dataset might not match perfectly with the names in the GADM database or in the MOSAIKS API. Finding a way to comprehensively match these can be time consuming and difficult. Another challenge is that administrative boundaries are not always static and some regions undergo frequent changes. 
+
+### Sample Size
+
+Increasing sample size often yields higher model performance. MOSAIKS has demonstrated effectiveness across a wide range of sample sizes (*N*). The sample size depends on the spatial (and potentially temporal) resolution of your label data. For instance, if each record is aggregated at the county level, then *N* equals the number of counties. Incorporating multiple time periods can increase *N* but also requires more imagery to be featurized (see @sec-features-computing).
+
+The original MOSAIKS publication (Rolf et al., 2021) evaluated models with sample sizes from 60,000 to 100,000, noting only modest performance declines with a few hundred observations. In recent crop yield experiments, high performance (R² = 0.80) was achieved with around 400 observations, provided the data were cleaned and aggregated to a district level. It is important to note that the original crop yield dataset included interview records from thousands of farmers across the study country. While this data has a large sample size, it is messy. In this case, a clean dataset with a low number of observations was preferred to a large but noisy dataset. 
+
+::: {.callout-note}
+As a general rule, a minimum of 300 observations for model training is recommended, though every application is unique and may require more or fewer observations.  
+:::
+
+### Data Types
+
+MOSAIKS can accommodate both continuous labels (e.g., fraction of area forested) and discrete labels (e.g., water presence/absence). Data type informs model development, performance evaluation, and choice of metric (see @sec-model-choice). Continuous variables often use R², while discrete variables often use ROC AUC.
+
+The data type may also effect how the data is cleaned and prepared. For example you may have a dataset of mining locations across a country. If you are interested in predicting the presence of mining, you may need to convert this to a binary variable where a 0 indicates no mining and a 1 indicates mining. Alternatively, you may be interested in predicting the area of mining in each location, in which case you might need to calculate the area of the mining polygons at each location and the variable would be continuous.
+
+### Preparing Labels for MOSAIKS
+
+::: {.callout-tip}
+**Checklist for Label Data**  
+Labels should be consistently geolocated (points, polygons, or rasters), aggregated to at least 1 km², observable by daytime satellite imagery (directly or indirectly), relatively current or slowly changing, and ideally have *N* ≥ 300.  
+:::
+
+## How Do I Obtain Label Data?
+
+Labels can be obtained from many sources. MOSAIKS excels with targets that are directly visible in or derivable from satellite images (e.g., road length, population density from nighttime lights). If you plan to use the File Query to request MOSAIKS features, data must be point-based in CSV format with at least three columns: latitude, longitude, and an optional label column.
+
+Because MOSAIKS’s global grid is defined at 0.01 × 0.01 degrees (centered at 0.005° intervals), any label coordinate will be snapped to the nearest grid centroid. Consequently, the number of returned rows or their ordering may differ from your input.
+
+If your label resolution is finer than 1 km², you can aggregate multiple points to each MOSAIKS grid cell (e.g., compute an average). If your labels are coarser, you can disaggregate or approximate them to the MOSAIKS grid points, rounding coordinates to two decimal places and adjusting by 0.005 to match centroids.
+
+## Joining Data
+
+### Merging Labels with MOSAIKS Features
+
+To merge labels with MOSAIKS features, align your label data with the grid used in the features. MOSAIKS feature files have rows with longitude, latitude, and feature columns. Your label dataset must also have columns for longitude, latitude, and label values (at minimum). Below are short guidelines for different spatial formats:
+
+- **Polygon Data:** Convert polygons to a point-based representation that matches the MOSAIKS grid. This process “rasterizes” polygons into discrete longitude/latitude pairs.  
+- **Raster or Point Data:** Ensure the table has separate columns for longitude, latitude, and label values, rounded to 0.01° increments.  
+- **Vector Data:** Sum or aggregate line attributes within each grid cell to produce one value per cell, then associate each centroid with the aggregated value.
+
+### Example Data Structure
+
+A simple example: district-level crop yield labels might look like:
+
+| Observation | District  | Year | Crop Yield |
+|-------------|-----------|------|------------|
+| 1           | Chibombo  | 2019 | 1.520      |
+| 2           | Kabwe     | 2019 | 1.878      |
+| ...         | ...       | ...  | ...        |
+| *N*         | Kitwe     | 2019 | 2.383      |
+
+: Fictional crop yield data for districts in Zambia. {#tbl-crop-yield}
+
+MOSAIKS features (once aggregated to the same district boundaries) might look like:
+
+| Observation | District  | Year | Feature 1 | Feature 2 | ... | Feature *K* |
+|-------------|-----------|------|-----------|-----------|-----|-------------|
+| 1           | Chibombo  | 2019 | 4.2       | 11.6      | ... | 12.7        |
+| 2           | Kabwe     | 2019 | 2.9       | 5.3       | ... | 11.2        |
+| ...         | ...       | ...  | ...       | ...       | ... | ...         |
+| *N*         | Kitwe     | 2019 | 10.6      | 1.1       | ... | 2.2         |
+
+: Fictional MOSAIKS feature data for the same districts. {#tbl-features}
+
+After a spatial join or aggregation, you end up with a merged dataset:
+
+| Observation | District  | Year | Crop Yield | Feature 1 | Feature 2 | ... | Feature *K* |
+|-------------|-----------|------|------------|-----------|-----------|-----|-------------|
+| 1           | Chibombo  | 2019 | 1.520      | 4.2       | 11.6      | ... | 12.7        |
+| 2           | Kabwe     | 2019 | 1.878      | 2.9       | 5.3       | ... | 11.2        |
+| ...         | ...       | ...  | ...        | ...       | ...       | ... | ...         |
+| *N*         | Kitwe     | 2019 | 2.383      | 10.6      | 1.1       | ... | 2.2         |
+
+: Example of joined data with both labels and features. {#tbl-joined-data}
+
+## Data Cleaning Considerations
+
+### Geographic Information
+
+MOSAIKS uses the World Geodetic System 84 (WGS 84) coordinate system (EPSG:4326). If your data uses a different CRS, you must reproject it to WGS 84 before merging.
+
+![[Nine small-scale map projections.](https://www.researchgate.net/publication/273517879_User_preferences_for_world_map_projections)](https://www.researchgate.net/profile/Bojan-Savric/publication/273517879/figure/fig1/AS:347863067447297@1459948426262/The-nine-small-scale-map-projections-used-in-the-paired-comparison-test-arranged-by.png){#fig-map-projections}
+
+Make sure to confirm coordinate formats, spatial units, and the resolution. If you have finer-scale data, aggregate it to the MOSAIKS grid. Remove duplicated locations and handle missing coordinates or geometry.
+
+### Label Quality
+
+Confirm that label values are within expected ranges, deal with any outliers or missing data, and ensure units are consistent and numeric fields are properly formatted.  
+
+### Temporal Alignment
+
+If labels vary over time, align label timestamps with the MOSAIKS feature timestamps. Consider seasonal effects and how to handle missing time periods.
+
+## Data Formats
+
+::: {.callout-tip}
+When working with large datasets, efficient data formats such as Parquet, Feather, GeoTIFF, or Zarr can reduce memory usage and improve processing speed.
+:::
+
+| Data Type  | Common File Formats           | Description            | Example                    |
+|------------|-------------------------------|------------------------|----------------------------|
+| Point Data | CSV, GeoJSON, Shapefile      | Coordinate pairs       | Places of interest         |
+| Line Data  | GeoJSON, Shapefile           | Geographic lines       | Roads, rivers              |
+| Polygon    | GeoJSON, Shapefile           | Geographic areas       | Buildings, fields          |
+| Raster     | GeoTIFF, NetCDF, Zarr        | Gridded data          | Forest cover, elevation    |
+
+: Common spatial data formats and descriptions. {#tbl-spatial-data-formats}
+
+::: {.callout-note}
+# Looking Forward
+
+In the next chapter, we will explore survey data in detail, addressing the unique challenges of spatial joining and aggregation for questionnaires and interview-based datasets.
+::: -->
 
 
 </section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
