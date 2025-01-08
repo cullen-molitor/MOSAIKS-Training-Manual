@@ -28,6 +28,7 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="../">
 <link href="../part-01-labels/04-labels-demo.html" rel="next">
 <link href="../part-01-labels/02-labels-survey.html" rel="prev">
+<link href="../images/sat_earth.svg" rel="icon" type="image/svg+xml">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -323,34 +324,46 @@ ul.task-list li input[type="checkbox"] {
   <ul>
 <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">7.1</span> Overview</a></li>
   <li>
-<a href="#ground-observations" id="toc-ground-observations" class="nav-link" data-scroll-target="#ground-observations"><span class="header-section-number">7.2</span> Ground observations</a>
+<a href="#mosaiks-grid" id="toc-mosaiks-grid" class="nav-link" data-scroll-target="#mosaiks-grid"><span class="header-section-number">7.2</span> MOSAIKS Grid</a>
   <ul class="collapse">
 <li><a href="#resolution" id="toc-resolution" class="nav-link" data-scroll-target="#resolution"><span class="header-section-number">7.2.1</span> Resolution</a></li>
-  <li><a href="#sample-size" id="toc-sample-size" class="nav-link" data-scroll-target="#sample-size"><span class="header-section-number">7.2.2</span> Sample size</a></li>
-  <li><a href="#data-types" id="toc-data-types" class="nav-link" data-scroll-target="#data-types"><span class="header-section-number">7.2.3</span> Data types</a></li>
-  <li><a href="#checklist" id="toc-checklist" class="nav-link" data-scroll-target="#checklist"><span class="header-section-number">7.2.4</span> Checklist</a></li>
-  </ul>
-</li>
-  <li><a href="#how-do-i-obtain-label-data" id="toc-how-do-i-obtain-label-data" class="nav-link" data-scroll-target="#how-do-i-obtain-label-data"><span class="header-section-number">7.3</span> How do I obtain label data?</a></li>
-  <li>
-<a href="#joining-data" id="toc-joining-data" class="nav-link" data-scroll-target="#joining-data"><span class="header-section-number">7.4</span> Joining data</a>
-  <ul class="collapse">
-<li><a href="#how-do-i-merge-my-label-data-with-mosaiks-features" id="toc-how-do-i-merge-my-label-data-with-mosaiks-features" class="nav-link" data-scroll-target="#how-do-i-merge-my-label-data-with-mosaiks-features"><span class="header-section-number">7.4.1</span> How do I merge my label data with MOSAIKS features?</a></li>
-  <li><a href="#what-labels-should-look-like" id="toc-what-labels-should-look-like" class="nav-link" data-scroll-target="#what-labels-should-look-like"><span class="header-section-number">7.4.2</span> What labels should look like</a></li>
-  <li><a href="#what-will-the-features-look-like" id="toc-what-will-the-features-look-like" class="nav-link" data-scroll-target="#what-will-the-features-look-like"><span class="header-section-number">7.4.3</span> What will the features look like?</a></li>
-  <li><a href="#how-to-join-data" id="toc-how-to-join-data" class="nav-link" data-scroll-target="#how-to-join-data"><span class="header-section-number">7.4.4</span> How to join data</a></li>
+  <li><a href="#advantages-of-the-mosaiks-grid" id="toc-advantages-of-the-mosaiks-grid" class="nav-link" data-scroll-target="#advantages-of-the-mosaiks-grid"><span class="header-section-number">7.2.2</span> Advantages of the MOSAIKS grid</a></li>
+  <li><a href="#disadvantages-of-the-mosaiks-grid" id="toc-disadvantages-of-the-mosaiks-grid" class="nav-link" data-scroll-target="#disadvantages-of-the-mosaiks-grid"><span class="header-section-number">7.2.3</span> Disadvantages of the MOSAIKS grid</a></li>
+  <li><a href="#choosing-your-resolution" id="toc-choosing-your-resolution" class="nav-link" data-scroll-target="#choosing-your-resolution"><span class="header-section-number">7.2.4</span> Choosing your resolution</a></li>
   </ul>
 </li>
   <li>
-<a href="#data-cleaning-considerations" id="toc-data-cleaning-considerations" class="nav-link" data-scroll-target="#data-cleaning-considerations"><span class="header-section-number">7.5</span> Data cleaning considerations</a>
+<a href="#ground-observations" id="toc-ground-observations" class="nav-link" data-scroll-target="#ground-observations"><span class="header-section-number">7.3</span> Ground Observations</a>
   <ul class="collapse">
-<li><a href="#geographic-information" id="toc-geographic-information" class="nav-link" data-scroll-target="#geographic-information"><span class="header-section-number">7.5.1</span> Geographic information</a></li>
-  <li><a href="#coordinate-reference-systems-crs" id="toc-coordinate-reference-systems-crs" class="nav-link" data-scroll-target="#coordinate-reference-systems-crs"><span class="header-section-number">7.5.2</span> Coordinate Reference Systems (CRS)</a></li>
-  <li><a href="#label-quality" id="toc-label-quality" class="nav-link" data-scroll-target="#label-quality"><span class="header-section-number">7.5.3</span> Label quality</a></li>
-  <li><a href="#temporal-alignment" id="toc-temporal-alignment" class="nav-link" data-scroll-target="#temporal-alignment"><span class="header-section-number">7.5.4</span> Temporal alignment</a></li>
+<li><a href="#resolution-1" id="toc-resolution-1" class="nav-link" data-scroll-target="#resolution-1"><span class="header-section-number">7.3.1</span> Resolution</a></li>
+  <li><a href="#administrative-level-data" id="toc-administrative-level-data" class="nav-link" data-scroll-target="#administrative-level-data"><span class="header-section-number">7.3.2</span> Administrative level data</a></li>
+  <li><a href="#challenges-of-administrative-data" id="toc-challenges-of-administrative-data" class="nav-link" data-scroll-target="#challenges-of-administrative-data"><span class="header-section-number">7.3.3</span> Challenges of administrative data</a></li>
+  <li><a href="#sample-size" id="toc-sample-size" class="nav-link" data-scroll-target="#sample-size"><span class="header-section-number">7.3.4</span> Sample Size</a></li>
+  <li><a href="#data-types" id="toc-data-types" class="nav-link" data-scroll-target="#data-types"><span class="header-section-number">7.3.5</span> Data Types</a></li>
   </ul>
 </li>
-  <li><a href="#data-formats" id="toc-data-formats" class="nav-link" data-scroll-target="#data-formats"><span class="header-section-number">7.6</span> Data formats</a></li>
+  <li>
+<a href="#joining-data" id="toc-joining-data" class="nav-link" data-scroll-target="#joining-data"><span class="header-section-number">7.4</span> Joining Data</a>
+  <ul class="collapse">
+<li><a href="#merging-labels-with-mosaiks-features" id="toc-merging-labels-with-mosaiks-features" class="nav-link" data-scroll-target="#merging-labels-with-mosaiks-features"><span class="header-section-number">7.4.1</span> Merging Labels with MOSAIKS Features</a></li>
+  <li><a href="#example-data-structure" id="toc-example-data-structure" class="nav-link" data-scroll-target="#example-data-structure"><span class="header-section-number">7.4.2</span> Example Data Structure</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#data-cleaning-considerations" id="toc-data-cleaning-considerations" class="nav-link" data-scroll-target="#data-cleaning-considerations"><span class="header-section-number">7.5</span> Data Cleaning Considerations</a>
+  <ul class="collapse">
+<li><a href="#coordinate-reference-systems-crs" id="toc-coordinate-reference-systems-crs" class="nav-link" data-scroll-target="#coordinate-reference-systems-crs"><span class="header-section-number">7.5.1</span> Coordinate Reference Systems (CRS)</a></li>
+  <li><a href="#label-quality" id="toc-label-quality" class="nav-link" data-scroll-target="#label-quality"><span class="header-section-number">7.5.2</span> Label Quality</a></li>
+  <li><a href="#temporal-alignment" id="toc-temporal-alignment" class="nav-link" data-scroll-target="#temporal-alignment"><span class="header-section-number">7.5.3</span> Temporal Alignment</a></li>
+  <li><a href="#data-formats" id="toc-data-formats" class="nav-link" data-scroll-target="#data-formats"><span class="header-section-number">7.5.4</span> Data Formats</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">7.6</span> Summary</a>
+  <ul class="collapse">
+<li><a href="#labels-data-checklist" id="toc-labels-data-checklist" class="nav-link" data-scroll-target="#labels-data-checklist"><span class="header-section-number">7.6.1</span> Labels data checklist</a></li>
+  </ul>
+</li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/edit/main/part-01-labels/03-labels-data-prep.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
@@ -383,92 +396,129 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="overview" class="level2" data-number="7.1"><h2 data-number="7.1" class="anchored" data-anchor-id="overview">
 <span class="header-section-number">7.1</span> Overview</h2>
-<p>In this chapter, we’ll cover the process of preparing labels for use with MOSAIKS features. Labels are the observed values that we want to predict using our model. These could be crop yields, disease incidence, or any other variable of interest. Label data can come in many forms, including point observations, polygon aggregates, or gridded rasters, but the key is that they must have a spatial component. We take advantage of this spatial information to join the labels with the MOSAIKS features, which are also spatially explicit.</p>
-<p>While MOSAIKS can involve many optional steps, its effective utilization necessitates two core components:</p>
+<p>In this chapter, we discuss the process of preparing labels for use with MOSAIKS features. Labels are the observed values we aim to predict with our model—such as crop yields, forest cover, or any variable of interest. They can come in many spatial formats (e.g., points, polygons, or gridded rasters), but they must include a spatial component. We use this spatial information to join the labels with MOSAIKS features, which are also spatially explicit.</p>
+<p>Although MOSAIKS offers many optional steps, two components are essential:</p>
 <ol type="1">
-<li>Ground observations (labels)</li>
+<li>Ground observations (labels)<br>
+</li>
 <li>Satellite features</li>
 </ol>
-<p>Ensuring the spatial resolution is shared across both datasets and that they contain geographical data suitable for merging is crucial.</p>
-</section><section id="ground-observations" class="level2" data-number="7.2"><h2 data-number="7.2" class="anchored" data-anchor-id="ground-observations">
-<span class="header-section-number">7.2</span> Ground observations</h2>
+<p>Both datasets must align in spatial resolution and contain appropriate geographic data for merging.</p>
+</section><section id="mosaiks-grid" class="level2" data-number="7.2"><h2 data-number="7.2" class="anchored" data-anchor-id="mosaiks-grid">
+<span class="header-section-number">7.2</span> MOSAIKS Grid</h2>
+<p>Before we talk about labels, we must first understand the resolution that the MOSAIKS features are offered in. The resolution you choose will serve as the target resolution for your summarizing your labels.</p>
 <section id="resolution" class="level3" data-number="7.2.1"><h3 data-number="7.2.1" class="anchored" data-anchor-id="resolution">
 <span class="header-section-number">7.2.1</span> Resolution</h3>
+<p>The standard resolution of MOSAIKS is a global grid at 0.01° resolution. Each grid cell is approximately 1 km² at the equator. The grid is often represented as a point grid, where each point is the center of a grid cell. This means that standard MOSAIKS features come with a latitude and longitude coordinate, which is the center of the grid cell.</p>
 <div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>The MOSAIKS API is designed to predict outcomes at scales of 1 km² or larger. Customizable solutions are possible for higher resolution problems.</p>
+<p>MOSAIKS grid cell centroids are rounded to 0.005 degrees and are spaced by 0.01 degree (e.g., 10.005, 10.015, 10.025,…).</p>
 </div>
 </div>
 </div>
-<p>The preparation of label data for MOSAIKS hinges on multiple factors, particularly spatial information such as location, extent, and resolution. If the observations in a dataset have a higher resolution than 1 km², some form of selection or aggregation is required. Label data can come in any native spatial form: raster, point, polygon, or vector. As long as there is spatial information associated with each label data observation, these data can be joined to MOSAIKS imagery features for downstream prediction.</p>
+<div id="fig-grid" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-grid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/rolf_et_al_2021-Fig_3-c-grid.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-grid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.1: Visual representation of a standardized grids at varying resolutions (δ) with the highest resolution on the left, and lower resolutions moving right. Source: <a href="https://www.nature.com/articles/s41467-021-24638-z/figures/3" target="_blank">Rolf et al.&nbsp;2021 Figure 3 c</a>.
+</figcaption></figure>
+</div>
+</section><section id="advantages-of-the-mosaiks-grid" class="level3" data-number="7.2.2"><h3 data-number="7.2.2" class="anchored" data-anchor-id="advantages-of-the-mosaiks-grid">
+<span class="header-section-number">7.2.2</span> Advantages of the MOSAIKS grid</h3>
+<p>The MOSAIKS grid has several advantages. The primary advantage is that it helps avoid overlapping labels. Often label data come with coordinates which are unevenly spaced. If you are forced to align your labels to a grid and summarize within cells, you can avoid bleed over from one label to another. This is especially important when you are working with data that has a high degree of spatial autocorrelation.</p>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>The MOSAIKS API is designed to predict outcomes at scales of 1 km² or larger. Custom solutions are possible for higher-resolution applications (see <a href="../part-03-features/03-features-computing.html" class="quarto-xref"><span>Chapter 14</span></a>).</p>
+</div>
+</div>
+</div>
+</section><section id="disadvantages-of-the-mosaiks-grid" class="level3" data-number="7.2.3"><h3 data-number="7.2.3" class="anchored" data-anchor-id="disadvantages-of-the-mosaiks-grid">
+<span class="header-section-number">7.2.3</span> Disadvantages of the MOSAIKS grid</h3>
+<p>The MOSAIKS grid is defined in degrees, therefore the area of a given cell varies with latitude. Near the equator, each cell is approximately 1 km², while at higher latitudes the area decreases as the distance between meridians (longitude lines) converges.</p>
+</section><section id="choosing-your-resolution" class="level3" data-number="7.2.4"><h3 data-number="7.2.4" class="anchored" data-anchor-id="choosing-your-resolution">
+<span class="header-section-number">7.2.4</span> Choosing your resolution</h3>
+<p>We know from <a href="../part-00-intro/03-intro-api.html" class="quarto-xref"><span>Chapter 3</span></a> that the MOSAIKS API offers features at 0.01°, 0.1°, 1°, ADM2, ADM1, and ADM0 resolutions. In all cases, features are computed at 0.01° resolution and then aggregated to the desired resolution. If you plan on using the API to download features, you need to make sure your labels are at the same resolution as the features you plan to download.</p>
+</section></section><section id="ground-observations" class="level2" data-number="7.3"><h2 data-number="7.3" class="anchored" data-anchor-id="ground-observations">
+<span class="header-section-number">7.3</span> Ground Observations</h2>
+<section id="resolution-1" class="level3" data-number="7.3.1"><h3 data-number="7.3.1" class="anchored" data-anchor-id="resolution-1">
+<span class="header-section-number">7.3.1</span> Resolution</h3>
+<p>Preparing label data for MOSAIKS depends on location, extent, time, and resolution. When observations have a resolution finer than 1 km², you must select or aggregate them to match the features you plan to use. MOSAIKS can incorporate labels from raster, point, polygon, or vector data. In <a href="04-labels-demo.html" class="quarto-xref"><span>Chapter 8</span></a>, we will demonstrate how to prepare labels for each input type.</p>
 <div id="fig-label-agg" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-label-agg-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../images/rolf_et_al_2021-Fig_S4.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-label-agg-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7.1: Examples of label data formats that can be easily integrated into the MOSAIKS pipeline. Label data of any spatial format that can be aggregated to at least the scale of 1km² (or larger) can be used directly in combination with MOSAIKS imagery features for downstream prediction tasks. Examples shown here are from Rolf et al.&nbsp;(2021) and include: forest cover, elevation, population, and nighttime lights datasets (all raster format); income data (polygon format); road length (vector format); and housing price data (point format).
+Figure&nbsp;7.2: Examples of label data formats that can be easily integrated into the MOSAIKS pipeline. Label data of any spatial format that can be aggregated to at least the scale of 1km² (or larger) can be used directly in combination with MOSAIKS imagery features for downstream prediction tasks. Examples shown here are from Rolf et al.&nbsp;(2021) and include: forest cover, elevation, population, and nighttime lights datasets (all raster format); income data (polygon format); road length (vector format); and housing price data (point format). Source: <a href="https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-021-24638-z/MediaObjects/41467_2021_24638_MOESM1_ESM.pdf" target="_blank">Rolf et al.&nbsp;2021 Supplementary Figure 4</a>.
 </figcaption></figure>
 </div>
-</section><section id="sample-size" class="level3" data-number="7.2.2"><h3 data-number="7.2.2" class="anchored" data-anchor-id="sample-size">
-<span class="header-section-number">7.2.2</span> Sample size</h3>
-<p>As with many machine learning algorithms, a large sample size often results in higher performance than low. MOSAIKS has been used and shown to be effective with a wide range of sample sizes (<em>N</em>). The sample size for model training is determined by the spatial and temporal resolution of your label data. For example, when predicting maize yields in the US using ground data from one year of farmer-level surveys in the US, <em>N</em>=3,143 if farmers are geolocated based on their county (even if far more than 3,143 farmers were interviewed, as this is the number of counties in the US). Additional time periods increase sample size for training, but also require more up-front costs, as more imagery need to be featurized.</p>
-<p>The original MOSAIKS publication (Rolf et al., 2021) tested performance for forest cover, income, housing price, population density, nighttime luminosity, and elevation using sample sizes ranging from 60,000 to 100,000, but showed that performance fell only modestly when <em>N</em> shrank to just a few hundred observations. Consistent with this finding, in recent experiments with crop yield, we see high with only around 400 observations (R² = 0.80). It is important to note that the original crop yield dataset included interview data from thousands of farmers across the study country, and this messy data was cleaned and aggregated to the district level prior to modeling. In this case, a clean dataset with a low number of observations was preferred to a large but noisy dataset. Despite the low sample size of the aggregate data, performance was still comparable to more complex CNN models trained specifically on crop yield.</p>
+</section><section id="administrative-level-data" class="level3" data-number="7.3.2"><h3 data-number="7.3.2" class="anchored" data-anchor-id="administrative-level-data">
+<span class="header-section-number">7.3.2</span> Administrative level data</h3>
+<p>In some cases, you will find labels for administrative regions (states, districts, etc.). In this case, it might not come with any geographic information other than a place name. You can usually find the relevant geographic information online. A good resource for this is the <a href="https://gadm.org/" target="_blank">Global Administrative Areas (GADM)</a> database, which provides the boundaries for administrative division at various levels for completely free.</p>
+<div id="fig-hdi" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-hdi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/smits_and_permanyer_2019_HDI.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hdi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.3: Global Human Development Index (HDI) data at the first sub-national level of administrative division (ADM1). Source: <a href="https://www.nature.com/articles/sdata201938" target="_blank">Smits &amp; Permanyer 2019</a>.
+</figcaption></figure>
+</div>
+</section><section id="challenges-of-administrative-data" class="level3" data-number="7.3.3"><h3 data-number="7.3.3" class="anchored" data-anchor-id="challenges-of-administrative-data">
+<span class="header-section-number">7.3.3</span> Challenges of administrative data</h3>
+<p>Data can be messy. There are two main challenges with administrative data.</p>
+<ol type="1">
+<li><p><strong>Name matching:</strong> The names in your dataset might not match perfectly with the names in the GADM database or in the MOSAIKS API. Finding a way to comprehensively match these can be time consuming and difficult.</p></li>
+<li><p><strong>Boundary changes:</strong> Administrative boundaries are not always static. Some regions undergo frequent changes and you need to ensure your data matches the boundaries of the features you use.</p></li>
+</ol></section><section id="sample-size" class="level3" data-number="7.3.4"><h3 data-number="7.3.4" class="anchored" data-anchor-id="sample-size">
+<span class="header-section-number">7.3.4</span> Sample Size</h3>
+<p>Increasing sample size (<em>N</em>) often yields higher model performance. MOSAIKS has demonstrated effectiveness across a wide range of sample <em>N</em>. The sample size depends on the spatial (and potentially temporal) resolution of your label data. For instance, if each record is aggregated at the county level, then <em>N</em> equals the number of counties. Incorporating multiple time periods can increase <em>N</em> but also requires more imagery to be featurized (see <a href="../part-03-features/03-features-computing.html" class="quarto-xref"><span>Chapter 14</span></a>).</p>
 <div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>As a rule of thumb, we recommend a sample size of at least 300 observations for training a MOSAIKS model, though every application is unique and may require more or fewer observations.</p>
+<p>As a general rule, a minimum of 300 observations for model training is recommended, though every application is unique and may require more or fewer observations.</p>
 </div>
 </div>
 </div>
-</section><section id="data-types" class="level3" data-number="7.2.3"><h3 data-number="7.2.3" class="anchored" data-anchor-id="data-types">
-<span class="header-section-number">7.2.3</span> Data types</h3>
-<p>MOSAIKS accommodates both continuous (e.g., fraction of area forested) and discrete (e.g., presence/absence of water) labels, with data type influencing model development and testing. Performance metric selection is also determined by data type - for continuous variables, we typically use the coefficient of determination (R²), while for discrete variables, the area under the curve value from the receiver operator characteristic curve (ROC AUC score) is used.</p>
-</section><section id="checklist" class="level3" data-number="7.2.4"><h3 data-number="7.2.4" class="anchored" data-anchor-id="checklist">
-<span class="header-section-number">7.2.4</span> Checklist</h3>
-<p>For optimal use with MOSAIKS, label data should be:</p>
-<ul class="task-list">
-<li><label><input type="checkbox"><strong>Consistently geolocated</strong> as point, polygon, vector, or raster data</label></li>
-<li><label><input type="checkbox"><strong>Aggregable to ≥1km²</strong> resolution</label></li>
-<li><label><input type="checkbox"><strong>Observable</strong> in daytime satellite imagery (directly or indirectly)</label></li>
-<li><label><input type="checkbox"><strong>Recent or slow-changing</strong> if using current API features</label></li>
-<li><label><input type="checkbox"><strong>Sample size N≥300</strong> (larger samples generally perform better)</label></li>
-</ul></section></section><section id="how-do-i-obtain-label-data" class="level2" data-number="7.3"><h2 data-number="7.3" class="anchored" data-anchor-id="how-do-i-obtain-label-data">
-<span class="header-section-number">7.3</span> How do I obtain label data?</h2>
-<p>Label data can be obtained from a variety of sources, but MOSAIKS works best for variables with features that would be directly visible in or derived from satellite images (i.e.&nbsp;road length or population density from nighttime lights). What format should I use for my label data to download features?</p>
-<p>To use the File Query to request features, data must be formatted as point data uploaded in CSV format with at least three columns. The first two columns should contain latitude and longitude coordinates, and the third column may contain the label value. Where input latitude and longitude coordinates do not fall exactly on the MOSAIKS global grid, they are allocated to the nearest point. As a result, the output file you receive may not share the same number of rows as your input. The ordering of points may also change.</p>
-<p>The MOSAIKS feature resolution is on a 0.01 x 0.01 grid, centered at .005 degree intervals. For the labels and the features to merge, they must be at the same spatial resolution. This can be done through 2 ways: Approximating your label to match each centroid point on the dense grid. For example, if your label data point is located at 13.4568, -16.5911, you may choose to round the point to 2 decimal places and add or subtract 0.005 to match the nearest centroid (i.e.&nbsp;13.455, -16.595) (Recommended) If your label is at a finer spatial resolution than the grid, you may wish to aggregate data points in your label to each grid cell. For example, you may wish to take an average of all label values that overlap with a grid cell, and assign that aggregate value to the cell.</p>
-</section><section id="joining-data" class="level2" data-number="7.4"><h2 data-number="7.4" class="anchored" data-anchor-id="joining-data">
-<span class="header-section-number">7.4</span> Joining data</h2>
-<section id="how-do-i-merge-my-label-data-with-mosaiks-features" class="level3" data-number="7.4.1"><h3 data-number="7.4.1" class="anchored" data-anchor-id="how-do-i-merge-my-label-data-with-mosaiks-features">
-<span class="header-section-number">7.4.1</span> How do I merge my label data with MOSAIKS features?</h3>
-<p>Merging label data with MOSAIKS features requires that you first transform your data to a format that matches the features format. The MOSAIKS features are organized as rows of specific longitude and latitude coordinates and their associated features. Label data must also be cleaned and transformed to at least three columns. One column should contain longitude, another latitude, and the third the value for the variable of interest. You may also have more columns, but the three mentioned are the minimum requirement. Below are short descriptions of how label data of different types can be prepared to merge with MOSAIKS features. From polygon data</p>
-<p>To create a tabular dataframe from a shape file of polygons, it must be converted to a grid of points that corresponds to the mosaiks grid. Essentially, this reasterizes the shape file to discrete longitude/latitude coordinates that can then be merged with the Mosaiks features. An example of how this can be done is provided in the example resources. From raster or points data</p>
-<p>Point and raster label data is ready to merge with MOSAIKS features, as long as data is in a tabular formatted with separate longitude, latitude and label value columns. Coordinate precision should also be rounded to the precision of the MOSAIKS grid at. 005 degree intervals. From vector data</p>
-<p>For vector data, the idea is to use the MOSAIKS grid cells to sum the length of the vector data in each grid cell. Then, the centroid of each grid cell can be used to query the API for features and allow for easy merging of label and features.</p>
-</section><section id="what-labels-should-look-like" class="level3" data-number="7.4.2"><h3 data-number="7.4.2" class="anchored" data-anchor-id="what-labels-should-look-like">
-<span class="header-section-number">7.4.2</span> What labels should look like</h3>
-<p>Before model training, label data must be joined to imagery features. The joined data should be tabular with each row containing:</p>
-<ol type="1">
-<li>
-<strong>Label</strong> - the observed value<br>
-</li>
-<li>
-<strong>Geographic location</strong> - such as a MOSAIKS grid cell or larger geographic area<br>
-</li>
-<li>
-<strong>Time (optional)</strong> - useful for time series data (year, mont, or day)<br>
-</li>
-<li>
-<strong><em>K</em> feature columns</strong> - column for every random satellite feature (typically <em>k</em> = 4,000)</li>
-</ol>
-<p>For example, a dataset with crop yield data could look like:</p>
+<p>The original MOSAIKS publication (Rolf et al., 2021) evaluated models with sample sizes from 60,000 to 100,000. In most cases there were only modest performance declines with a few hundred observations (<a href="#fig-sample-size" class="quarto-xref">Figure&nbsp;<span>7.4</span></a>). In recent crop yield experiments, high performance (R² = 0.80) was achieved with around 400 observations, provided the data were cleaned and aggregated to a district level. It is important to note that the original crop yield dataset included interview records from thousands of farmers across the study country. While this data has a large sample size, it is messy. In this case, a clean dataset with a low number of observations was preferred to a large but noisy dataset.</p>
+<div id="fig-sample-size" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-sample-size-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/rolf_et_al_2021-Fig_3-b.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sample-size-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.4: Model performance for all seven tasks while varying the number of random convolutional features K and holding <em>N</em> = 64,000 (left) and while varying N and holding <em>K</em> = 8,192 (right). Shaded bands indicate the range of predictive skill across five folds. Lines indicate average accuracy across validation folds. Source: <a href="https://www.nature.com/articles/s41467-021-24638-z" target="_blank">Rolf et al.&nbsp;2021 Figure 3 b</a>.
+</figcaption></figure>
+</div>
+</section><section id="data-types" class="level3" data-number="7.3.5"><h3 data-number="7.3.5" class="anchored" data-anchor-id="data-types">
+<span class="header-section-number">7.3.5</span> Data Types</h3>
+<p>MOSAIKS can accommodate both continuous labels (e.g., fraction of area forested) and discrete labels (e.g., presence/absence of mine). Data type informs model development, performance evaluation, and choice of metric (see <a href="../part-04-models/01-model-choice.html" class="quarto-xref"><span>Chapter 16</span></a>). Continuous variables often use coefficient of determination (R²), while discrete variables often use Receiver Operating Characteristic Area Under the Curve (ROC AUC).</p>
+<div id="fig-r2-roc" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-r2-roc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/R2_ROC_side_by_side_plots.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-r2-roc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.5: <strong>A</strong> The coefficient of determination (R²) is a measure of how well the model fits the data. It ranges from 0 to 1, where 1 indicates a perfect fit. <strong>B</strong> The Receiver Operating Characteristic (ROC) curve is a graphical representation of the true positive rate (sensitivity) against the false positive rate (1-specificity). The area under the curve (AUC) ranges from 0 to 1, where 1 indicates a perfect model. Diagonal line is equivalent to random guessing.
+</figcaption></figure>
+</div>
+<p>The data type may also effect how the data is cleaned and prepared. For example you may have a dataset of mining locations across a country. If you are interested in predicting the presence of mining, you may want to convert this to a binary variable where a 0 indicates no mining and a 1 indicates mining. Alternatively, you may be interested in predicting the area of mining in each location, in which case you might need to calculate the area of the mining polygons to make the variable continuous.</p>
+</section></section><section id="joining-data" class="level2" data-number="7.4"><h2 data-number="7.4" class="anchored" data-anchor-id="joining-data">
+<span class="header-section-number">7.4</span> Joining Data</h2>
+<section id="merging-labels-with-mosaiks-features" class="level3" data-number="7.4.1"><h3 data-number="7.4.1" class="anchored" data-anchor-id="merging-labels-with-mosaiks-features">
+<span class="header-section-number">7.4.1</span> Merging Labels with MOSAIKS Features</h3>
+<p>To merge labels with features, you must align the geographic location of both datasets. The native resolution MOSAIKS feature files have rows for each location and columns with longitude, latitude, and features. Your label dataset must also have columns for longitude, latitude, and label values (at minimum). Alternatively, aggregated features will come with the name of the administrative region (e.g., district) and the features. You can join this with your label data by matching the district names.</p>
+</section><section id="example-data-structure" class="level3" data-number="7.4.2"><h3 data-number="7.4.2" class="anchored" data-anchor-id="example-data-structure">
+<span class="header-section-number">7.4.2</span> Example Data Structure</h3>
+<p>A simple example: district-level crop yield labels might look like:</p>
 <div id="tbl-crop-yield" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure"><div aria-describedby="tbl-crop-yield-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
@@ -507,13 +557,10 @@ Figure&nbsp;7.1: Examples of label data formats that can be easily integrated in
 </table>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-crop-yield-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;7.1: Fictional crop yield data for three districts in Zambia. Each observation includes the district name, year, and crop yield in metric tons per hectare (mt/ha).
+Table&nbsp;7.1: Fictional crop yield data for districts in Zambia.
 </figcaption></figure>
 </div>
-</section><section id="what-will-the-features-look-like" class="level3" data-number="7.4.3"><h3 data-number="7.4.3" class="anchored" data-anchor-id="what-will-the-features-look-like">
-<span class="header-section-number">7.4.3</span> What will the features look like?</h3>
-<p>Next, users will need to obtain features from the API that will spatially match with these labels. For instructions on how to download features, see <a href="../part-00-intro/03-intro-api.html" class="quarto-xref"><span>Chapter 3</span></a> and <a href="../part-03-features/02-features-api.html" class="quarto-xref"><span>Chapter 13</span></a>.</p>
-<p>And a dataset with district level aggregate features could look like:</p>
+<p>MOSAIKS features at this same resolution might look like:</p>
 <div id="tbl-features" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure"><div aria-describedby="tbl-features-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
@@ -577,13 +624,10 @@ Table&nbsp;7.1: Fictional crop yield data for three districts in Zambia. Each ob
 </table>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-features-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;7.2: Fictional feature data for three districts in Zambia. Each observation includes the district name, year, and <em>K</em> features.
+Table&nbsp;7.2: Fictional MOSAIKS feature data for the same districts.
 </figcaption></figure>
 </div>
-</section><section id="how-to-join-data" class="level3" data-number="7.4.4"><h3 data-number="7.4.4" class="anchored" data-anchor-id="how-to-join-data">
-<span class="header-section-number">7.4.4</span> How to join data</h3>
-<p>After downloading features from the API, users can then perform a spatial merge with their labels. A regression step on the merged dataset estimates the relationship between imagery features and the outcome variable of interest. Users can experiment with a variety of machine learning approaches in this last regression step.</p>
-<p>Finally, the joined dataset would look like:</p>
+<p>After a spatial join, you end up with a merged dataset:</p>
 <div id="tbl-joined-data" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure"><div aria-describedby="tbl-joined-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
@@ -653,122 +697,118 @@ Table&nbsp;7.2: Fictional feature data for three districts in Zambia. Each obser
 </table>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-joined-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;7.3: Joined dataset with crop yield and feature data for three districts in Zambia. Each observation includes the district name, year, crop yield, and <em>K</em> features.
+Table&nbsp;7.3: Example of joined data with both labels and features.
 </figcaption></figure>
 </div>
 <p>In the above example, our geographic location is the district and our label is the crop yield (mt/ha). We then have <em>K</em> columns containing the features and <em>N</em> observations.</p>
-<p>In this example, our features started at 1 km² resolution and were aggregated to the district level to match the crop yield data. To join this data, we first found all of the feature locations that fall within the district boundaries using a spatial join. Then we averaged the features within each district. This allowed us to have a single feature vector for each district. The resulting tabular data is ready for modeling.</p>
 </section></section><section id="data-cleaning-considerations" class="level2" data-number="7.5"><h2 data-number="7.5" class="anchored" data-anchor-id="data-cleaning-considerations">
-<span class="header-section-number">7.5</span> Data cleaning considerations</h2>
-<p>Before joining label data with MOSAIKS features, several key preparation steps should be considered:</p>
-<section id="geographic-information" class="level3" data-number="7.5.1"><h3 data-number="7.5.1" class="anchored" data-anchor-id="geographic-information">
-<span class="header-section-number">7.5.1</span> Geographic information</h3>
-</section><section id="coordinate-reference-systems-crs" class="level3" data-number="7.5.2"><h3 data-number="7.5.2" class="anchored" data-anchor-id="coordinate-reference-systems-crs">
-<span class="header-section-number">7.5.2</span> Coordinate Reference Systems (CRS)</h3>
-<p>The default coordinate reference system used by MOSAIKS is World Geodetic System 84 (WGS 84). The standardized code that defines WGS 84 is <a href="https://epsg.io/4326" target="_blank">“EPSG:4326”</a>. EPSG stands for the <a href="https://en.wikipedia.org/wiki/EPSG_Geodetic_Parameter_Dataset" target="_blank">European Petroleum Survey Group</a>, which maintains a database of coordinate systems and projections. The WGS 84 coordinate system is the most commonly used coordinate system for GPS data. If your data is not in WGS 84, you will need to reproject it to this coordinate system before joining it with MOSAIKS features.</p>
+<span class="header-section-number">7.5</span> Data Cleaning Considerations</h2>
+<section id="coordinate-reference-systems-crs" class="level3" data-number="7.5.1"><h3 data-number="7.5.1" class="anchored" data-anchor-id="coordinate-reference-systems-crs">
+<span class="header-section-number">7.5.1</span> Coordinate Reference Systems (CRS)</h3>
+<p>The default coordinate reference system used by MOSAIKS is World Geodetic System 84 (WGS 84). The standardized code that defines WGS 84 is <a href="https://epsg.io/4326" target="_blank">“EPSG:4326”</a>. EPSG stands for the <a href="https://en.wikipedia.org/wiki/EPSG_Geodetic_Parameter_Dataset" target="_blank">European Petroleum Survey Group</a>, which maintains a database of coordinate systems and projections. The WGS 84 coordinate system is the most commonly used coordinate system for GPS data.</p>
 <div id="fig-map-projections" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-map-projections-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="https://www.researchgate.net/profile/Bojan-Savric/publication/273517879/figure/fig1/AS:347863067447297@1459948426262/The-nine-small-scale-map-projections-used-in-the-paired-comparison-test-arranged-by.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-map-projections-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7.2: <a href="https://www.researchgate.net/publication/273517879_User_preferences_for_world_map_projections" target="_blank">Nine small-scale map projections.</a>
+Figure&nbsp;7.6: <a href="https://www.researchgate.net/publication/273517879_User_preferences_for_world_map_projections" target="_blank">Nine small-scale map projections.</a>
 </figcaption></figure>
 </div>
-<ul>
-<li>
-<strong>Coordinate systems</strong>: Ensure coordinates are in a projection consistent with the features (API uses decimal degrees - WGS84) (<a href="#fig-map-projections" class="quarto-xref">Figure&nbsp;<span>7.2</span></a>)</li>
-<li>
-<strong>Spatial units</strong>: Convert all geographic boundaries to same format (e.g., administrative regions)</li>
-<li>
-<strong>Resolution matching</strong>: Aggregate or disaggregate data to match MOSAIKS grid</li>
-<li>
-<strong>Duplicate checking</strong>: Remove duplicate locations within same time period</li>
-<li>
-<strong>Missing coordinates</strong>: Handle missing or invalid geographic information</li>
-</ul></section><section id="label-quality" class="level3" data-number="7.5.3"><h3 data-number="7.5.3" class="anchored" data-anchor-id="label-quality">
-<span class="header-section-number">7.5.3</span> Label quality</h3>
-<ul>
-<li>
-<strong>Outliers</strong>: Identify and handle extreme values</li>
-<li>
-<strong>Missing values</strong>: Decide on approach for handling NA/NULL values</li>
-<li>
-<strong>Units</strong>: Convert all measurements to consistent units</li>
-<li>
-<strong>Data types</strong>: Ensure numeric fields are properly formatted</li>
-<li>
-<strong>Range checks</strong>: Verify values fall within expected bounds</li>
-</ul></section><section id="temporal-alignment" class="level3" data-number="7.5.4"><h3 data-number="7.5.4" class="anchored" data-anchor-id="temporal-alignment">
-<span class="header-section-number">7.5.4</span> Temporal alignment</h3>
-<ul>
-<li>
-<strong>Time periods</strong>: Match observation dates with feature timestamps</li>
-<li>
-<strong>Seasonality</strong>: Account for seasonal patterns in data collection</li>
-<li>
-<strong>Aggregation</strong>: Consider temporal aggregation needs (e.g., annual averages)</li>
-<li>
-<strong>Gaps</strong>: Handle missing time periods appropriately</li>
-</ul></section></section><section id="data-formats" class="level2" data-number="7.6"><h2 data-number="7.6" class="anchored" data-anchor-id="data-formats">
-<span class="header-section-number">7.6</span> Data formats</h2>
+<p>If your data is not in WGS 84, you will need to reproject it to this coordinate system before joining it with MOSAIKS features.</p>
+</section><section id="label-quality" class="level3" data-number="7.5.2"><h3 data-number="7.5.2" class="anchored" data-anchor-id="label-quality">
+<span class="header-section-number">7.5.2</span> Label Quality</h3>
+<p>Confirm that label values are within expected ranges, deal with any outliers or missing data, and ensure units are consistent and numeric fields are properly formatted. This book does not go into a great deal of detail on cleaning messy data. This topic is covered in exhaustive detail in the book <a href="https://r4ds.had.co.nz/" target="_blank">R for Data Science</a>.</p>
+</section><section id="temporal-alignment" class="level3" data-number="7.5.3"><h3 data-number="7.5.3" class="anchored" data-anchor-id="temporal-alignment">
+<span class="header-section-number">7.5.3</span> Temporal Alignment</h3>
+<p>If you have time series labels, you will need to compute custom features for each time period. See <a href="../part-03-features/03-features-computing.html" class="quarto-xref"><span>Chapter 14</span></a> for more information on how to do this and <span class="quarto-unresolved-ref">?sec-model-temporal</span> for guidance on modeling time series data with MOSAIKS features.</p>
+</section><section id="data-formats" class="level3" data-number="7.5.4"><h3 data-number="7.5.4" class="anchored" data-anchor-id="data-formats">
+<span class="header-section-number">7.5.4</span> Data Formats</h3>
+<p>MOSAIKS can work with several common spatial data formats:</p>
+<div id="tbl-spatial-data-formats" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><div aria-describedby="tbl-spatial-data-formats-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 26%">
+<col style="width: 16%">
+<col style="width: 11%">
+<col style="width: 30%">
+</colgroup>
+<thead><tr class="header">
+<th style="text-align: left;">Data Type</th>
+<th style="text-align: left;">Common File Formats</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Example</th>
+<th style="text-align: left;">Geographic information</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Point Data</td>
+<td style="text-align: left;">CSV, GeoJSON, Shapefile</td>
+<td style="text-align: left;">Coordinate pairs</td>
+<td style="text-align: left;">Places of interest</td>
+<td style="text-align: left;">geometry</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Line Data</td>
+<td style="text-align: left;">GeoJSON, Shapefile</td>
+<td style="text-align: left;">Geographic lines</td>
+<td style="text-align: left;">Roads, rivers</td>
+<td style="text-align: left;">geometry</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Polygon</td>
+<td style="text-align: left;">GeoJSON, Shapefile</td>
+<td style="text-align: left;">Geographic areas</td>
+<td style="text-align: left;">Buildings, fields</td>
+<td style="text-align: left;">geometry</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Raster</td>
+<td style="text-align: left;">GeoTIFF, NetCDF</td>
+<td style="text-align: left;">Gridded data</td>
+<td style="text-align: left;">Forest cover, elevation</td>
+<td style="text-align: left;">grid</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Administrative</td>
+<td style="text-align: left;">CSV</td>
+<td style="text-align: left;">Administrative boundaries</td>
+<td style="text-align: left;">Districts, states</td>
+<td style="text-align: left;">place names</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-spatial-data-formats-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;7.4: Common spatial data formats with file types, descriptions, examples, and indication of how the spatial information is stored.
+</figcaption></figure>
+</div>
 <div class="callout callout-style-simple callout-tip">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>When working with large datasets, consider using efficient data formats like parquet, feather, GeoTIFF, or Zarr to reduce memory usage and speed up processing.</p>
+<p>When working with large datasets, converting to efficient data formats such as Parquet, Feather, GeoTIFF, or Zarr can reduce memory usage and improve processing speed.</p>
 </div>
 </div>
 </div>
-<p>MOSAIKS can work with several common spatial data formats:</p>
-<div id="tbl-spatial-data-formats" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure"><div aria-describedby="tbl-spatial-data-formats-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table">
-<colgroup>
-<col style="width: 28%">
-<col style="width: 23%">
-<col style="width: 34%">
-<col style="width: 13%">
-</colgroup>
-<thead><tr class="header">
-<th>Data type</th>
-<th>Common file formats</th>
-<th>Description</th>
-<th>Example</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>Point data</td>
-<td>CSV, GeoJSON, Shapefile</td>
-<td>Geographic coordinates</td>
-<td>places of interest</td>
-</tr>
-<tr class="even">
-<td>Line data</td>
-<td>GeoJSON, Shapefile</td>
-<td>Geographic lines</td>
-<td>Roads, rivers</td>
-</tr>
-<tr class="odd">
-<td>Polygon data</td>
-<td>GeoJSON, Shapefile</td>
-<td>Geographic polygons</td>
-<td>Buildings, mines, fields</td>
-</tr>
-<tr class="even">
-<td>Raster data</td>
-<td>GeoTIFF, NetCDF, Zarr</td>
-<td>Gridded data</td>
-<td>Forest cover, elevation, land use</td>
-</tr>
-</tbody>
-</table>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-spatial-data-formats-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;7.4: Common spatial data formats and their descriptions.
-</figcaption></figure>
-</div>
+</section></section><section id="summary" class="level2" data-number="7.6"><h2 data-number="7.6" class="anchored" data-anchor-id="summary">
+<span class="header-section-number">7.6</span> Summary</h2>
+<p>The most important considerations when preparing labels for MOSAIKS are spatial resolution, sample size, data type, and data quality. Once you have prepared your labels, you can join them with MOSAIKS features to create a dataset ready for modeling.</p>
+<p>A demonstration of how to process data for the data types in <a href="#tbl-spatial-data-formats" class="quarto-xref">Table&nbsp;<span>7.4</span></a> is provided in the next chapter. This notebook will cover the process of creating a MOSAIKS grid, downloading data, and creating a label dataset at the grid level (0.01 degree) and at the second level of administrative division (ADM2).</p>
+<section id="labels-data-checklist" class="level3" data-number="7.6.1"><h3 data-number="7.6.1" class="anchored" data-anchor-id="labels-data-checklist">
+<span class="header-section-number">7.6.1</span> Labels data checklist</h3>
+<p>For optimal use with MOSAIKS, label data should be:</p>
+<ul class="task-list">
+<li><label><input type="checkbox"><strong>Consistently geolocated</strong> as point, polygon, vector, or raster data</label></li>
+<li><label><input type="checkbox"><strong>Aggregable to ≥ 1km²</strong> resolution</label></li>
+<li><label><input type="checkbox"><strong>Observable</strong> in daytime satellite imagery (directly or indirectly)</label></li>
+<li><label><input type="checkbox"><strong>Recent or slow-changing</strong> if using current API features</label></li>
+<li><label><input type="checkbox"><strong>Sample size N≥300</strong> (larger samples generally perform better)</label></li>
+<li><label><input type="checkbox"><strong>Cleaned and formatted</strong> for modeling</label></li>
+</ul>
 <div class="callout callout-style-simple callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -779,151 +819,12 @@ Looking forward
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>In the next chapter we’ll look at working specifically with survey data, which presents unique challenges for spatial joining and aggregation.</p>
+<p>In the next chapter, we’ll look at practical guidance for preparing label data for use with MOSAIKS including data cleaning and aggregation.</p>
 </div>
 </div>
-<!-- ## Overview
-
-In this chapter, we discuss the process of preparing labels for use with MOSAIKS features. Labels are the observed values we aim to predict with our model—such as crop yields, forest cover, or any other variable of interest. They can come in many spatial formats (e.g., points, polygons, or gridded rasters), but they must include a spatial component. We use this spatial information to join the labels with MOSAIKS features, which are also spatially explicit.
-
-Although MOSAIKS offers many optional steps, two components are essential:
-
-1. Ground observations (labels)  
-2. Satellite features  
-
-Both datasets must align in spatial resolution and contain appropriate geographic data for merging.
-
-## Ground Observations
-
-### Resolution
-
-::: {.callout-note}
-The MOSAIKS API is designed to predict outcomes at scales of 1 km² or larger. Custom solutions are possible for higher-resolution applications.  
-:::
-
-Preparing label data for MOSAIKS depends on location, extent, time, and resolution. When observations have a resolution finer than 1 km², you must select or aggregate them to match MOSAIKS’s 1 km² scale at the minimum. MOSAIKS can incorporate labels from raster, point, polygon, or vector data, provided each record is associated with a spatial location that can be joined to satellite imagery features.
-
-![Examples of label data formats that can be easily integrated into the MOSAIKS pipeline. Label data of any spatial format that can be aggregated to at least the scale of 1km² (or larger) can be used directly in combination with MOSAIKS imagery features for downstream prediction tasks. Examples shown here are from Rolf et al. (2021) and include: forest cover, elevation, population, and nighttime lights datasets (all raster format); income data (polygon format); road length (vector format); and housing price data (point format).](../images/rolf_et_al_2021-Fig_S4.png){#fig-label-agg}
-
-In some cases, you will find labels for administrative regions (states, districts, etc.). In this case, it might not come with geographic information at all, though it can usually be found online fairly easily. A good resource for this is the [Global Administrative Areas (GADM)](https://gadm.org/) database, which provides shapefiles for administrative boundaries at various levels of detail for most countries. It is important to remember that data can be messy and the names in your dataset might not match perfectly with the names in the GADM database or in the MOSAIKS API. Finding a way to comprehensively match these can be time consuming and difficult. Another challenge is that administrative boundaries are not always static and some regions undergo frequent changes. 
-
-### Sample Size
-
-Increasing sample size often yields higher model performance. MOSAIKS has demonstrated effectiveness across a wide range of sample sizes (*N*). The sample size depends on the spatial (and potentially temporal) resolution of your label data. For instance, if each record is aggregated at the county level, then *N* equals the number of counties. Incorporating multiple time periods can increase *N* but also requires more imagery to be featurized (see @sec-features-computing).
-
-The original MOSAIKS publication (Rolf et al., 2021) evaluated models with sample sizes from 60,000 to 100,000, noting only modest performance declines with a few hundred observations. In recent crop yield experiments, high performance (R² = 0.80) was achieved with around 400 observations, provided the data were cleaned and aggregated to a district level. It is important to note that the original crop yield dataset included interview records from thousands of farmers across the study country. While this data has a large sample size, it is messy. In this case, a clean dataset with a low number of observations was preferred to a large but noisy dataset. 
-
-::: {.callout-note}
-As a general rule, a minimum of 300 observations for model training is recommended, though every application is unique and may require more or fewer observations.  
-:::
-
-### Data Types
-
-MOSAIKS can accommodate both continuous labels (e.g., fraction of area forested) and discrete labels (e.g., water presence/absence). Data type informs model development, performance evaluation, and choice of metric (see @sec-model-choice). Continuous variables often use R², while discrete variables often use ROC AUC.
-
-The data type may also effect how the data is cleaned and prepared. For example you may have a dataset of mining locations across a country. If you are interested in predicting the presence of mining, you may need to convert this to a binary variable where a 0 indicates no mining and a 1 indicates mining. Alternatively, you may be interested in predicting the area of mining in each location, in which case you might need to calculate the area of the mining polygons at each location and the variable would be continuous.
-
-### Preparing Labels for MOSAIKS
-
-::: {.callout-tip}
-**Checklist for Label Data**  
-Labels should be consistently geolocated (points, polygons, or rasters), aggregated to at least 1 km², observable by daytime satellite imagery (directly or indirectly), relatively current or slowly changing, and ideally have *N* ≥ 300.  
-:::
-
-## How Do I Obtain Label Data?
-
-Labels can be obtained from many sources. MOSAIKS excels with targets that are directly visible in or derivable from satellite images (e.g., road length, population density from nighttime lights). If you plan to use the File Query to request MOSAIKS features, data must be point-based in CSV format with at least three columns: latitude, longitude, and an optional label column.
-
-Because MOSAIKS’s global grid is defined at 0.01 × 0.01 degrees (centered at 0.005° intervals), any label coordinate will be snapped to the nearest grid centroid. Consequently, the number of returned rows or their ordering may differ from your input.
-
-If your label resolution is finer than 1 km², you can aggregate multiple points to each MOSAIKS grid cell (e.g., compute an average). If your labels are coarser, you can disaggregate or approximate them to the MOSAIKS grid points, rounding coordinates to two decimal places and adjusting by 0.005 to match centroids.
-
-## Joining Data
-
-### Merging Labels with MOSAIKS Features
-
-To merge labels with MOSAIKS features, align your label data with the grid used in the features. MOSAIKS feature files have rows with longitude, latitude, and feature columns. Your label dataset must also have columns for longitude, latitude, and label values (at minimum). Below are short guidelines for different spatial formats:
-
-- **Polygon Data:** Convert polygons to a point-based representation that matches the MOSAIKS grid. This process “rasterizes” polygons into discrete longitude/latitude pairs.  
-- **Raster or Point Data:** Ensure the table has separate columns for longitude, latitude, and label values, rounded to 0.01° increments.  
-- **Vector Data:** Sum or aggregate line attributes within each grid cell to produce one value per cell, then associate each centroid with the aggregated value.
-
-### Example Data Structure
-
-A simple example: district-level crop yield labels might look like:
-
-| Observation | District  | Year | Crop Yield |
-|-------------|-----------|------|------------|
-| 1           | Chibombo  | 2019 | 1.520      |
-| 2           | Kabwe     | 2019 | 1.878      |
-| ...         | ...       | ...  | ...        |
-| *N*         | Kitwe     | 2019 | 2.383      |
-
-: Fictional crop yield data for districts in Zambia. {#tbl-crop-yield}
-
-MOSAIKS features (once aggregated to the same district boundaries) might look like:
-
-| Observation | District  | Year | Feature 1 | Feature 2 | ... | Feature *K* |
-|-------------|-----------|------|-----------|-----------|-----|-------------|
-| 1           | Chibombo  | 2019 | 4.2       | 11.6      | ... | 12.7        |
-| 2           | Kabwe     | 2019 | 2.9       | 5.3       | ... | 11.2        |
-| ...         | ...       | ...  | ...       | ...       | ... | ...         |
-| *N*         | Kitwe     | 2019 | 10.6      | 1.1       | ... | 2.2         |
-
-: Fictional MOSAIKS feature data for the same districts. {#tbl-features}
-
-After a spatial join or aggregation, you end up with a merged dataset:
-
-| Observation | District  | Year | Crop Yield | Feature 1 | Feature 2 | ... | Feature *K* |
-|-------------|-----------|------|------------|-----------|-----------|-----|-------------|
-| 1           | Chibombo  | 2019 | 1.520      | 4.2       | 11.6      | ... | 12.7        |
-| 2           | Kabwe     | 2019 | 1.878      | 2.9       | 5.3       | ... | 11.2        |
-| ...         | ...       | ...  | ...        | ...       | ...       | ... | ...         |
-| *N*         | Kitwe     | 2019 | 2.383      | 10.6      | 1.1       | ... | 2.2         |
-
-: Example of joined data with both labels and features. {#tbl-joined-data}
-
-## Data Cleaning Considerations
-
-### Geographic Information
-
-MOSAIKS uses the World Geodetic System 84 (WGS 84) coordinate system (EPSG:4326). If your data uses a different CRS, you must reproject it to WGS 84 before merging.
-
-![[Nine small-scale map projections.](https://www.researchgate.net/publication/273517879_User_preferences_for_world_map_projections)](https://www.researchgate.net/profile/Bojan-Savric/publication/273517879/figure/fig1/AS:347863067447297@1459948426262/The-nine-small-scale-map-projections-used-in-the-paired-comparison-test-arranged-by.png){#fig-map-projections}
-
-Make sure to confirm coordinate formats, spatial units, and the resolution. If you have finer-scale data, aggregate it to the MOSAIKS grid. Remove duplicated locations and handle missing coordinates or geometry.
-
-### Label Quality
-
-Confirm that label values are within expected ranges, deal with any outliers or missing data, and ensure units are consistent and numeric fields are properly formatted.  
-
-### Temporal Alignment
-
-If labels vary over time, align label timestamps with the MOSAIKS feature timestamps. Consider seasonal effects and how to handle missing time periods.
-
-## Data Formats
-
-::: {.callout-tip}
-When working with large datasets, efficient data formats such as Parquet, Feather, GeoTIFF, or Zarr can reduce memory usage and improve processing speed.
-:::
-
-| Data Type  | Common File Formats           | Description            | Example                    |
-|------------|-------------------------------|------------------------|----------------------------|
-| Point Data | CSV, GeoJSON, Shapefile      | Coordinate pairs       | Places of interest         |
-| Line Data  | GeoJSON, Shapefile           | Geographic lines       | Roads, rivers              |
-| Polygon    | GeoJSON, Shapefile           | Geographic areas       | Buildings, fields          |
-| Raster     | GeoTIFF, NetCDF, Zarr        | Gridded data          | Forest cover, elevation    |
-
-: Common spatial data formats and descriptions. {#tbl-spatial-data-formats}
-
-::: {.callout-note}
-# Looking Forward
-
-In the next chapter, we will explore survey data in detail, addressing the unique challenges of spatial joining and aggregation for questionnaires and interview-based datasets.
-::: -->
 
 
-</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
