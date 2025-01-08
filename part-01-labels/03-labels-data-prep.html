@@ -444,6 +444,14 @@ Figure&nbsp;7.1: Visual representation of a standardized grids at varying resolu
 </section><section id="disadvantages-of-the-mosaiks-grid" class="level3" data-number="7.2.3"><h3 data-number="7.2.3" class="anchored" data-anchor-id="disadvantages-of-the-mosaiks-grid">
 <span class="header-section-number">7.2.3</span> Disadvantages of the MOSAIKS grid</h3>
 <p>The MOSAIKS grid is defined in degrees, therefore the area of a given cell varies with latitude. Near the equator, each cell is approximately 1 km², while at higher latitudes the area decreases as the distance between meridians (longitude lines) converges.</p>
+<div id="fig-grid-area" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-grid-area-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/global_1_degree_grid_wgs84_area.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-grid-area-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.2: The area of a grid cell at different latitudes.
+</figcaption></figure>
+</div>
 </section><section id="choosing-your-resolution" class="level3" data-number="7.2.4"><h3 data-number="7.2.4" class="anchored" data-anchor-id="choosing-your-resolution">
 <span class="header-section-number">7.2.4</span> Choosing your resolution</h3>
 <p>We know from <a href="../part-00-intro/03-intro-api.html" class="quarto-xref"><span>Chapter 3</span></a> that the MOSAIKS API offers features at 0.01°, 0.1°, 1°, ADM2, ADM1, and ADM0 resolutions. In all cases, features are computed at 0.01° resolution and then aggregated to the desired resolution. If you plan on using the API to download features, you need to make sure your labels are at the same resolution as the features you plan to download.</p>
@@ -457,7 +465,7 @@ Figure&nbsp;7.1: Visual representation of a standardized grids at varying resolu
 <img src="../images/rolf_et_al_2021-Fig_S4.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-label-agg-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7.2: Examples of label data formats that can be easily integrated into the MOSAIKS pipeline. Label data of any spatial format that can be aggregated to at least the scale of 1km² (or larger) can be used directly in combination with MOSAIKS imagery features for downstream prediction tasks. Examples shown here are from Rolf et al.&nbsp;(2021) and include: forest cover, elevation, population, and nighttime lights datasets (all raster format); income data (polygon format); road length (vector format); and housing price data (point format). Source: <a href="https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-021-24638-z/MediaObjects/41467_2021_24638_MOESM1_ESM.pdf" target="_blank">Rolf et al.&nbsp;2021 Supplementary Figure 4</a>.
+Figure&nbsp;7.3: Examples of label data formats that can be easily integrated into the MOSAIKS pipeline. Label data of any spatial format that can be aggregated to at least the scale of 1km² (or larger) can be used directly in combination with MOSAIKS imagery features for downstream prediction tasks. Examples shown here are from Rolf et al.&nbsp;(2021) and include: forest cover, elevation, population, and nighttime lights datasets (all raster format); income data (polygon format); road length (vector format); and housing price data (point format). Source: <a href="https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-021-24638-z/MediaObjects/41467_2021_24638_MOESM1_ESM.pdf" target="_blank">Rolf et al.&nbsp;2021 Supplementary Figure 4</a>.
 </figcaption></figure>
 </div>
 </section><section id="administrative-level-data" class="level3" data-number="7.3.2"><h3 data-number="7.3.2" class="anchored" data-anchor-id="administrative-level-data">
@@ -468,7 +476,7 @@ Figure&nbsp;7.2: Examples of label data formats that can be easily integrated in
 <img src="../images/smits_and_permanyer_2019_HDI.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hdi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7.3: Global Human Development Index (HDI) data at the first sub-national level of administrative division (ADM1). Source: <a href="https://www.nature.com/articles/sdata201938" target="_blank">Smits &amp; Permanyer 2019</a>.
+Figure&nbsp;7.4: Global Human Development Index (HDI) data at the first sub-national level of administrative division (ADM1). Source: <a href="https://www.nature.com/articles/sdata201938" target="_blank">Smits &amp; Permanyer 2019</a>.
 </figcaption></figure>
 </div>
 </section><section id="challenges-of-administrative-data" class="level3" data-number="7.3.3"><h3 data-number="7.3.3" class="anchored" data-anchor-id="challenges-of-administrative-data">
@@ -490,13 +498,13 @@ Figure&nbsp;7.3: Global Human Development Index (HDI) data at the first sub-nati
 </div>
 </div>
 </div>
-<p>The original MOSAIKS publication (Rolf et al., 2021) evaluated models with sample sizes from 60,000 to 100,000. In most cases there were only modest performance declines with a few hundred observations (<a href="#fig-sample-size" class="quarto-xref">Figure&nbsp;<span>7.4</span></a>). In recent crop yield experiments, high performance (R² = 0.80) was achieved with around 400 observations, provided the data were cleaned and aggregated to a district level. It is important to note that the original crop yield dataset included interview records from thousands of farmers across the study country. While this data has a large sample size, it is messy. In this case, a clean dataset with a low number of observations was preferred to a large but noisy dataset.</p>
+<p>The original MOSAIKS publication (Rolf et al., 2021) evaluated models with sample sizes from 60,000 to 100,000. In most cases there were only modest performance declines with a few hundred observations (<a href="#fig-sample-size" class="quarto-xref">Figure&nbsp;<span>7.5</span></a>). In recent crop yield experiments, high performance (R² = 0.80) was achieved with around 400 observations, provided the data were cleaned and aggregated to a district level. It is important to note that the original crop yield dataset included interview records from thousands of farmers across the study country. While this data has a large sample size, it is messy. In this case, a clean dataset with a low number of observations was preferred to a large but noisy dataset.</p>
 <div id="fig-sample-size" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-sample-size-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../images/rolf_et_al_2021-Fig_3-b.svg" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sample-size-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7.4: Model performance for all seven tasks while varying the number of random convolutional features K and holding <em>N</em> = 64,000 (left) and while varying N and holding <em>K</em> = 8,192 (right). Shaded bands indicate the range of predictive skill across five folds. Lines indicate average accuracy across validation folds. Source: <a href="https://www.nature.com/articles/s41467-021-24638-z" target="_blank">Rolf et al.&nbsp;2021 Figure 3 b</a>.
+Figure&nbsp;7.5: Model performance for all seven tasks while varying the number of random convolutional features K and holding <em>N</em> = 64,000 (left) and while varying N and holding <em>K</em> = 8,192 (right). Shaded bands indicate the range of predictive skill across five folds. Lines indicate average accuracy across validation folds. Source: <a href="https://www.nature.com/articles/s41467-021-24638-z" target="_blank">Rolf et al.&nbsp;2021 Figure 3 b</a>.
 </figcaption></figure>
 </div>
 </section><section id="data-types" class="level3" data-number="7.3.5"><h3 data-number="7.3.5" class="anchored" data-anchor-id="data-types">
@@ -507,7 +515,7 @@ Figure&nbsp;7.4: Model performance for all seven tasks while varying the number 
 <img src="../images/R2_ROC_side_by_side_plots.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-r2-roc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7.5: <strong>A</strong> The coefficient of determination (R²) is a measure of how well the model fits the data. It ranges from 0 to 1, where 1 indicates a perfect fit. <strong>B</strong> The Receiver Operating Characteristic (ROC) curve is a graphical representation of the true positive rate (sensitivity) against the false positive rate (1-specificity). The area under the curve (AUC) ranges from 0 to 1, where 1 indicates a perfect model. Diagonal line is equivalent to random guessing.
+Figure&nbsp;7.6: <strong>A</strong> The coefficient of determination (R²) is a measure of how well the model fits the data. It ranges from 0 to 1, where 1 indicates a perfect fit. <strong>B</strong> The Receiver Operating Characteristic (ROC) curve is a graphical representation of the true positive rate (sensitivity) against the false positive rate (1-specificity). The area under the curve (AUC) ranges from 0 to 1, where 1 indicates a perfect model. Diagonal line is equivalent to random guessing.
 </figcaption></figure>
 </div>
 <p>The data type may also effect how the data is cleaned and prepared. For example you may have a dataset of mining locations across a country. If you are interested in predicting the presence of mining, you may want to convert this to a binary variable where a 0 indicates no mining and a 1 indicates mining. Alternatively, you may be interested in predicting the area of mining in each location, in which case you might need to calculate the area of the mining polygons to make the variable continuous.</p>
@@ -711,7 +719,7 @@ Table&nbsp;7.3: Example of joined data with both labels and features.
 <img src="https://www.researchgate.net/profile/Bojan-Savric/publication/273517879/figure/fig1/AS:347863067447297@1459948426262/The-nine-small-scale-map-projections-used-in-the-paired-comparison-test-arranged-by.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-map-projections-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7.6: <a href="https://www.researchgate.net/publication/273517879_User_preferences_for_world_map_projections" target="_blank">Nine small-scale map projections.</a>
+Figure&nbsp;7.7: <a href="https://www.researchgate.net/publication/273517879_User_preferences_for_world_map_projections" target="_blank">Nine small-scale map projections.</a>
 </figcaption></figure>
 </div>
 <p>If your data is not in WGS 84, you will need to reproject it to this coordinate system before joining it with MOSAIKS features.</p>
