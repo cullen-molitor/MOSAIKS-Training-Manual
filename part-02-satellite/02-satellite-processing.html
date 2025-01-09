@@ -432,6 +432,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="overview" class="level2" data-number="10.1"><h2 data-number="10.1" class="anchored" data-anchor-id="overview">
 <span class="header-section-number">10.1</span> Overview</h2>
 <p>After selecting appropriate satellite imagery (as discussed in <a href="01-satellite-imagery.html" class="quarto-xref"><span>Chapter 9</span></a>), the next step is accessing and processing that imagery for use with MOSAIKS. This chapter covers key considerations and practical approaches for working with satellite data.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="../images/mpc_gallery.jpg" class="img-fluid figure-img"></p>
+<figcaption>Source: <a href="https://planetarycomputer.microsoft.com/" target="_blank">Microsoft Planetary Computer</a></figcaption></figure>
+</div>
 </section><section id="cloud-vs-local-processing" class="level2" data-number="10.2"><h2 data-number="10.2" class="anchored" data-anchor-id="cloud-vs-local-processing">
 <span class="header-section-number">10.2</span> Cloud vs local processing</h2>
 <p>There are two main approaches to accessing and processing satellite imagery:</p>
@@ -484,6 +488,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  .filterBounds(region)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section><section id="microsoft-planetary-computer" class="level4" data-number="10.3.1.2"><h4 data-number="10.3.1.2" class="anchored" data-anchor-id="microsoft-planetary-computer">
 <span class="header-section-number">10.3.1.2</span> Microsoft Planetary Computer</h4>
+<p><a href="https://meds-eds-220.github.io/MEDS-eds-220-course/book/chapters/lesson-16-STAC.html" target="_blank">Link to EDS 220</a></p>
+<p>Microsoft Planetary Computer provides a multi-petabyte catalog of global environmental data that can easily be accessed through APIs. The MPC API is based on the <a href="https://stacspec.org/en" target="_blank">STAC (SpatioTemporal Asset Catalog)</a> specification, which is an emerging open standard for geospatial data that aims to increase the interoperability of geospatial data, particularly satellite imagery.</p>
+<p>Use the <code>Client</code> function from the <code>pystac_client</code> package to access the catalog:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> planetary_computer <span class="im">as</span> pc</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pystac_client</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -491,7 +498,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>catalog <span class="op">=</span> pystac_client.Client.<span class="bu">open</span>(</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://planetarycomputer.microsoft.com/api/stac/v1"</span>,</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    modifier<span class="op">=</span>pc.sign_inplace,</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Define area of interest (downtown Santa Barbara, CA)</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>area_of_interest <span class="op">=</span> {</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"type"</span>: <span class="st">"Polygon"</span>,</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"coordinates"</span>:[</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>        [</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>            [<span class="op">-</span><span class="fl">119.70608227128903</span>, <span class="fl">34.426300194372274</span>],</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>            [<span class="op">-</span><span class="fl">119.70608227128903</span>, <span class="fl">34.42041139020533</span>],</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>            [<span class="op">-</span><span class="fl">119.6967885126002</span>, <span class="fl">34.42041139020533</span>],</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>            [<span class="op">-</span><span class="fl">119.6967885126002</span>, <span class="fl">34.426300194372274</span>],</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>            [<span class="op">-</span><span class="fl">119.70608227128903</span>, <span class="fl">34.426300194372274</span>]</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>        ]</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>bbox <span class="op">=</span> rasterio.features.bounds(area_of_interest)</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Search for Sentinel-2 imagery</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>search <span class="op">=</span> stac.search(</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    bbox<span class="op">=</span>bbox,</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    datetime<span class="op">=</span><span class="st">"2016-01-01/2020-12-31"</span>,</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    collections<span class="op">=</span>[<span class="st">"sentinel-2-l2a"</span>],</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    query<span class="op">=</span>{<span class="st">"eo:cloud_cover"</span>: {<span class="st">"lt"</span>: <span class="dv">25</span>}},</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For more information on using the Microsoft Planetary Computer API, see <a href="https://planetarycomputer.microsoft.com/docs/quickstarts/reading-stac/" target="_blank">Reading Data from the STAC API</a>.</p>
 </section></section><section id="local-downloads" class="level3" data-number="10.3.2"><h3 data-number="10.3.2" class="anchored" data-anchor-id="local-downloads">
 <span class="header-section-number">10.3.2</span> Local downloads</h3>
 <section id="sentinel-2" class="level4" data-number="10.3.2.1"><h4 data-number="10.3.2.1" class="anchored" data-anchor-id="sentinel-2">
