@@ -906,7 +906,7 @@
     "href": "part-02-satellite/02-satellite-processing.html#accessing-imagery",
     "title": "10  Processing imagery",
     "section": "\n10.3 Accessing imagery",
-    "text": "10.3 Accessing imagery\n\n10.3.1 Cloud platforms\n\n10.3.1.1 Google Earth Engine\nimport ee\nee.Initialize()\n\n# Get Sentinel-2 imagery\ns2 = ee.ImageCollection('COPERNICUS/S2_SR')\n  .filterDate('2019-01-01', '2019-12-31')\n  .filterBounds(region)\n\n10.3.1.2 Microsoft Planetary Computer\nLink to EDS 220\nMicrosoft Planetary Computer provides a multi-petabyte catalog of global environmental data that can easily be accessed through APIs. The MPC API is based on the STAC (SpatioTemporal Asset Catalog) specification, which is an emerging open standard for geospatial data that aims to increase the interoperability of geospatial data, particularly satellite imagery.\nUse the Client function from the pystac_client package to access the catalog:\nimport planetary_computer as pc\nimport pystac_client\n\n# Access STAC API\ncatalog = pystac_client.Client.open(\n    \"https://planetarycomputer.microsoft.com/api/stac/v1\",\n    modifier=pc.sign_inplace,\n)\n\n# Define area of interest (downtown Santa Barbara, CA)\narea_of_interest = {\n    \"type\": \"Polygon\",\n    \"coordinates\":[\n        [\n            [-119.70608227128903, 34.426300194372274],\n            [-119.70608227128903, 34.42041139020533],\n            [-119.6967885126002, 34.42041139020533],\n            [-119.6967885126002, 34.426300194372274],\n            [-119.70608227128903, 34.426300194372274]\n        ]\n    ],\n}\nbbox = rasterio.features.bounds(area_of_interest)\n\n# Search for Sentinel-2 imagery\nsearch = stac.search(\n    bbox=bbox,\n    datetime=\"2016-01-01/2020-12-31\",\n    collections=[\"sentinel-2-l2a\"],\n    query={\"eo:cloud_cover\": {\"lt\": 25}},\n)\nFor more information on using the Microsoft Planetary Computer API, see Reading Data from the STAC API.\n\n10.3.2 Local downloads\n\n10.3.2.1 Sentinel-2\nfrom sentinelsat import SentinelAPI\n\n# Connect to Copernicus Open Access Hub\napi = SentinelAPI('user', 'password')\n\n# Search and download\nproducts = api.query(\n    area,\n    date=('20190101', '20191231'),\n    platformname='Sentinel-2'\n)\n\n10.3.2.2 Landsat\nimport landsatxplore.api\n\n# Initialize API\napi = landsatxplore.api.API('user', 'password')\n\n# Search scenes\nscenes = api.search(\n    dataset='landsat_ot_c2_l2',\n    bbox=bbox,\n    start_date='2019-01-01',\n    end_date='2019-12-31'\n)",
+    "text": "10.3 Accessing imagery\n\n10.3.1 Cloud platforms\nNASA Earthdata Cloud Cookbook\n\n10.3.1.1 Google Earth Engine\nGoogle Earth Engine provides a vast catalog of satellite imagery and geospatial datasets that can be accessed through a Python API. The GEE API is based on the Earth Engine Python API, which allows you to interact with the Earth Engine servers and run geospatial analyses in the cloud.\n\n10.3.1.2 Microsoft Planetary Computer\nMicrosoft Planetary Computer provides a multi-petabyte catalog of global environmental data that can easily be accessed through APIs. The MPC API is based on the STAC (SpatioTemporal Asset Catalog) specification, which is an emerging open standard for geospatial data that aims to increase the interoperability of geospatial data, particularly satellite imagery.\nFor more information on using the Microsoft Planetary Computer API, see Reading Data from the STAC API.\n\n\n\n\n\n\nFor practical guidance on accessing the Microsoft Planetary Computer Data Catalog through their API,see the Master of Environmental Data Science (MEDS) course EDS 220 section on the STAC specification\n\n\n\n\n10.3.2 Local downloads\n\n10.3.2.1 Sentinelsat python API\n\n10.3.2.2 Landsat\nimport landsatxplore.api\n\n# Initialize API\napi = landsatxplore.api.API('user', 'password')\n\n# Search scenes\nscenes = api.search(\n    dataset='landsat_ot_c2_l2',\n    bbox=bbox,\n    start_date='2019-01-01',\n    end_date='2019-12-31'\n)",
     "crumbs": [
       "Satellite imagery",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Processing imagery</span>"
@@ -972,7 +972,29 @@
     "href": "part-02-satellite/03-satellite-demo.html",
     "title": "11  Imagery demo",
     "section": "",
-    "text": "This chapter is in early draft form and may be incomplete.\n\n\n\n\n\n\n\n\n\n\nLooking forward\n\n\n\nIn the next chapter",
+    "text": "11.1 Overview\nThis demonstration will show you a few key concepts about satellite data and how it can be prepared for featurization (featurization covered in Chapter 14).",
+    "crumbs": [
+      "Satellite imagery",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Imagery demo</span>"
+    ]
+  },
+  {
+    "objectID": "part-02-satellite/03-satellite-demo.html#demonstration-code",
+    "href": "part-02-satellite/03-satellite-demo.html#demonstration-code",
+    "title": "11  Imagery demo",
+    "section": "\n11.2 Demonstration code",
+    "text": "11.2 Demonstration code\nBelow is a link to a Jupyter notebook intended to demonstrate practical preparation of satellite data for use in MOSAIKS. The notebook will guide you through the process of preparing imagery, including:\n\nLoading satellite imagery\nInspecting image properties\nImage normalization\nImage visualization\n\n\n\n\n\n\n\nClick the badge to run the demonstration!\n\n\n\n↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Remember to click File -&gt; Save a copy in Drive to save any changes you make.\n\nOr to view a static version of the code on GitHub, click the badge below.\n\n\nFor instructions and tips on using Google Colab, please refer to Chapter 1.",
+    "crumbs": [
+      "Satellite imagery",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Imagery demo</span>"
+    ]
+  },
+  {
+    "objectID": "part-02-satellite/03-satellite-demo.html#whats-next",
+    "href": "part-02-satellite/03-satellite-demo.html#whats-next",
+    "title": "11  Imagery demo",
+    "section": "\n11.3 What’s next?",
+    "text": "11.3 What’s next?\nNow that we have covered the basics of working with satellite data, we will move on to the next section, where we will discuss image featurization.\n\n\n\n\n\n\nLooking forward\n\n\n\nThis is the end of the satellite data section. Next, we will move on to the featurization of satellite data.",
     "crumbs": [
       "Satellite imagery",
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>Imagery demo</span>"
@@ -1033,7 +1055,7 @@
     "href": "part-03-features/01-features-rcf.html",
     "title": "12  Understanding features",
     "section": "",
-    "text": "12.1 Kitchen sinks?\nMOSAIKS stands for Multi-task Observation using SAtellite Imagery & Kitchen Sinks. Whenever we present this system, people always ask us, “where does kitchen sinks come from?” The answer stems from the phrase “everything but the kitchen sink,” which means “almost everything imaginable.” If you were to hear someone describe making a sandwich with “everything but the kitchen sink,” you would know that they used every ingredient at their disposal. You might also hear the phrase “everything and the kitchen sink,” which means “everything imaginable.” For MOSAIKS, I think “everything but the kitchen sink” is more appropriate as we are not extracting every last drop of information from the imagery. However we are getting a lot out of the imagery. Additionally, if it helps, you can think of the imagery as something we are not taking along with us, rather just the useful bits we extracted.\nThis idea of leaving behind the imagery is one of the reasons MOSAIKS is so powerful. It means that for most users, they never have to suffer through the issues that arise from dealing with large amounts of satellite imagery. We (the MOSAIKS team) take the imagery, extract a bunch of random convolutional features, and then we leave the imagery behind. We don’t need to know what the imagery looks like, we don’t need to interpret what any feature is, we just need to know that we have a bunch of features that we can use to predict different outcomes. Then users can download these features and use them to predict their outcomes.\nIn this section of the book, we leave this simplistic aspect of MOSAIKS behind. We go back to the root of the problem and focus on how we extract features from imagery. We also attempt to provide some intuition for what these features are.",
+    "text": "12.1 Kitchen sinks?\nMOSAIKS stands for Multi-task Observation using SAtellite Imagery & Kitchen Sinks. Whenever we present MOSAIKS, we get the question, “Where does ‘kitchen sinks’ come from?” The answer stems from the phrase “everything but the kitchen sink,” which means “almost everything imaginable.” In the context of MOSAIKS, everything but the kitchen sink emphasizes that we take a huge amount of information out of the raw imagery—though, of course, we’re not capturing every last pixel or every possible relationship. It’s as if we’re taking the most useful “ingredients” (i.e., features) from the imagery and leaving the rest behind.\nThis idea of leaving behind the raw imagery is key to MOSAIKS’s power. It means that most users never have to handle the massive amounts of satellite imagery directly. Instead, the MOSAIKS team takes on that burden—extracting a large set of random convolutional features—and then discards the imagery. End users do not need to see the raw imagery or interpret what each individual feature means; they can just use the numerical representation. As a result, users can simply download these features and apply them to their own predictive tasks.\nIn this section, however, we lift the hood to see what’s going on. We focus on how we extract the features from satellite imagery and attempt to provide some intuition for what these features represent.",
     "crumbs": [
       "Satellite features",
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>Understanding features</span>"
@@ -1044,18 +1066,7 @@
     "href": "part-03-features/01-features-rcf.html#kitchen-sinks",
     "title": "12  Understanding features",
     "section": "",
-    "text": "Figure 12.1: Maddy (Madagascar; center) takes raw satellite images (left) and uses the kitchen sink method to produce random convolutional features (right). Art by Grace Lewin.\n\n\n\n\n\n\n\n\n\n\nIn this book, we refer to the random convolutional features as RCFs, features, satellite features, MOSAIKS features, and possibly other terms. You should consider these terms interchangeable in this context.",
-    "crumbs": [
-      "Satellite features",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Understanding features</span>"
-    ]
-  },
-  {
-    "objectID": "part-03-features/01-features-rcf.html#why-use-rcfs",
-    "href": "part-03-features/01-features-rcf.html#why-use-rcfs",
-    "title": "12  Understanding features",
-    "section": "\n12.2 Why use RCFs?",
-    "text": "12.2 Why use RCFs?\n\n12.2.1 Traditional convolutional neural networks (CNNs)\nTo learn why we use random convolutional features (RCFs), we need to understand how traditional convolutional neural networks (CNNs) work. CNNs are a type of neural network that are designed to work with images. They are made up of layers of neurons that are connected in a way that allows them to learn features from the images. In the case of CNNs, these features are learned through a process called backpropagation. Backpropagation is a method for training neural networks that uses the chain rule of calculus to calculate the gradient of the loss function with respect to the weights of the network. This gradient is then used to update the weights of the network in a way that minimizes the loss function. This means that the network is learning to recognize features in the images that are important for the task it is trying to solve. It is therefore using minimization to learn the features that are important for the task.\n\n\n\n\n\nFigure 12.2: A simplified diagram showing a typical convolutional neural network model architecture used for\n\n\n\n12.2.2 Replacing minimization with randomization in learning\nMOSAIKS takes a different approach to learning features from images. Instead of using backpropagation to learn the features, we use random convolutional filters to extract features from the images. The resultant features are therefore as random as the filters applied to the images. This means that the features are not optimized for any particular task, but are instead a random sample of the information in the images. This is a key difference between RCFs and traditional CNNs. Traditional CNNs learn features that are optimized for the task they are trying to solve, while RCFs extract features that are random samples of the information in the images. This means that RCFs are much faster to compute and can be used to extract features from large amounts of imagery in a short amount of time.\n\n\n\n\n\nFigure 12.3: Rolf et al. 2021 Figure 1: MOSAIKS is designed to solve an unlimited number of tasks at planet-scale quickly. After a one-time unsupervised image featurization using random convolutional features, MOSAIKS centrally stores and distributes task-agnostic features to users, each of whom generates predictions in a new context.",
+    "text": "Figure 12.1: Maddy (Madagascar; center) takes raw satellite images (left) and uses the kitchen sink method to produce random convolutional features (right). Art by Grace Lewin.\n\n\n\n\n\n\n\n\n\n\nIn this book, the terms random convolutional features, RCFs, features, satellite features, and MOSAIKS features are used interchangeably.",
     "crumbs": [
       "Satellite features",
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>Understanding features</span>"
@@ -1065,8 +1076,30 @@
     "objectID": "part-03-features/01-features-rcf.html#random-convolutional-features-rcfs",
     "href": "part-03-features/01-features-rcf.html#random-convolutional-features-rcfs",
     "title": "12  Understanding features",
-    "section": "\n12.3 Random convolutional features (RCFs)",
-    "text": "12.3 Random convolutional features (RCFs)\n\n12.3.1 Turning an image into a feature vector\nMOSAIKS involves computing a fixed length feature representation for a given patch of satellite imagery, then using those features in a ridge regression model. The features are computed by a CNN that contains a single convolutional layer with a ReLU activation followed by a global average pooling layer. The filters in the convolutional layer can be instantiated with patches sampled from the same imagery source, or randomly from the normal distribution.\nThe core of MOSAIKS is the random convolutional features (RCFs) that we extract from satellite imagery. The extraction process is simple: we take a bunch of random convolutional filters and apply them to the imagery. Each convolutional filter can be a tensor of randomly generated values (gaussian patches), or they can be sampled from the imagery itself (empirical patches; Figure 12.4).\n\n\n\n\n\nFigure 12.4: Rolf et al. 2021 Figure 1 C: A closer look at the RCF processing. Illustration of the one-time unsupervised computation of random convolutional features. K patches are randomly sampled from across the N images. Each patch is convolved over each image, generating a nonlinear activation map for each patch. Activation maps are averaged over pixels to generate a single K-dimensional feature vector for each image.\n\n\nIf we take a convolutional filter and apply it to the imagery, we get a new image. This new image is the result of the convolutional filter “looking” at the imagery and “seeing” something. The filter might be looking for edges, colors, textures, patterns, or anything else. The filter might be looking for something that we can’t even see with our eyes. After the convolution is applied, a non-linear activation function transforms the result. In this case, we use the rectified linear unit (ReLU) activation function. ReLU is a simple function that takes the maximum of the input and zero. This means that if the input is negative, the output is zero, and if the input is positive, the output is the input. After this, we use an adaptive average pooling layer to reduce the size of the activation map to a single number. This summary value is the feature for this filter.\n\n\n\n\n\n\nAfter repeating this process for all the filters, we end up with a feature vector for the image. This feature vector is a representation of the image that.\n\n\n\n\n12.3.2 Intuition for RCFs\nHere we will take a look at a cartoon representation of what a RCF vector might be looking for in the imagery. We will use a few simple 3 pixel by 3 pixel filters in the convolution step. The filters can have a few common names including weights, kernels, or patches. In the cartoon, we will use the term patch because these filters are drawn from the imagery (i.e. they are a small “patch” of the imagery).\n\n\n\n\n\nFigure 12.5: A single image with 3 random convolutional patches, highlighting 3 different feature activations of the imagery.\n\n\nIn the cartoon above (Figure 12.5), our first patch is drawn from the forest canopy and so we see a 3x3 set of green pixels. Patch 2 is a 3x3 patch of grey pixels from a road. Patch 3 is a 3x3 patch of blue pixels from a river. When we apply these patches to the imagery, we get a new image that highlights the features that the patch is looking for. For example, when we apply the forest patch to the imagery, we get a new image that highlights the forest canopy. When we apply the road patch to the imagery, we get a new image that highlights the road. When we apply the river patch to the imagery, we get a new image that highlights the river.\n\n\nVideo\n\n\nFigure 12.6: Two cartoon images with the same patches used in the convolution step. We see that we have several labels for each image and that we can model each outcome with the same set of features.\n\n\nHaving more trees in the image will increase the value of the feature that represents the forest patch. In Figure 12.6, image 1 has more trees than image 2, so we see the feature in the first place in the vector has a higher value. Having more roads in the image will increase the value of the feature that represents the road patch, which is seen with image 2 having a higher second value. This is how we can use the features to predict different outcomes from the imagery. We can use the same set of features to predict the presence or levels of different outcomes in the imagery.\n\n\nVideo\n\n\nFigure 12.7: A cartoon image projected into random feature space. If we look at just 2 dimensions, how grey on the x-axis and how green on the y-axis, we can find the vector through this feature space which represents our outcome.\n\n\n\n\n\n\n\n\nLooking forward\n\n\n\nIn the next section, we will look at what is publicly available in the MOSAIKS API.",
+    "section": "\n12.2 Random convolutional features (RCFs)",
+    "text": "12.2 Random convolutional features (RCFs)\n\n12.2.1 Understanding convolutions\nIn simple terms, applying a convolution to an image can highlight certain patterns, like edges, textures, or colors. Convolutional filters “scan” across the image, computing element-wise products with small patches of the image. Many computer vision models stack multiple convolutional and other layers into a convolutional neural network (CNN). Deep neural networks can have many layers, which is why the approach is often called deep learning.\n\n\n\n\n\nFigure 12.2: A gif showing a convolutional layer with no padding and no strides. Source: A guide to convolution arithmetic for deep learning.\n\n\nMOSAIKS, on the other hand, uses a single convolutional layer. These layer weights are randomly initialized and remain fixed; they aren’t updated during training. This is why the features we get are essentially “random samples” of the spatial and spectral information in the images.\n\n\n\n\n\n\nThere are many great resources for visualizing convolutions, including Convolutional Neural Networks (CNNs) explained.\n\n\n\n\n12.2.2 Turning an image into a feature vector\n\n12.2.2.1 Overview\nThe MOSAIKS featurization process produces a fixed-length feature representation for each patch of satellite imagery. Practically, this means we end up with a numerical vector for each image. The process has three main steps:\n\n\nConvolution\n\n\nActivation\n\nAverage pooling\n\nLet’s illustrate these steps with a simple example. Imagine we have 10,000 satellite images, each in the visual spectrum (red, green, and blue channels). Each image is a 3-dimensional tensor of shape (3, 256, 256)—representing the color channels (3) by height (256) by width (256).\n\n\n\n\n\nFigure 12.3: A collection of satellite images. Source: Microsoft Planetary Computer\n\n\n\n12.2.2.2 Convolution\n\nInitialize convolutional weights.\nWe can draw these weights from a normal (Gaussian) distribution or from random patches of our image dataset. Either way, each filter has the same number of color channels as the original images and a specified kernel size (e.g., 3×3). So if our kernel size is 3, each filter might have shape (3, 3, 3).\nPerform the convolution.\nWe compute the dot product of each filter with every portion of the image as the filter slides across it. The result is a new image (a “feature map”) that highlights regions similar to that filter’s pattern.\n\n\n\n\n\n\n\nWe use pytorch’s torch.nn.functional.conv2d function to perform this operation.\n\n\n\n\n12.2.2.3 Activation\nNext, we apply a non-linear activation function—ReLU (Rectified Linear Unit)—to the feature map. ReLU outputs max(0, x), meaning it zeroes out negative values. This step helps capture non-linearities in the data.\n\n\n\n\n\nFigure 12.4: Three randomly generated feature activation maps plotted from the Microsoft Planetary Computer Landsat Collection thumbnail image.\n\n\n\n12.2.2.4 Average pooling\nWe then apply an adaptive average pooling layer to each activation map, collapsing the 2D spatial grid into a single number per filter. Essentially, this “global average” is a single summary value for how strongly that filter responded to the image.\n\n\n\n\n\n\nWe use pytorch’s torch.nn.functional.adaptive_avg_pool2d function to perform this operation.\n\n\n\n\n12.2.2.5 Putting it all together\nWe repeat this for all filters. If we have K filters, we end up with a K-dimensional feature vector.\n\n\n\n\n\nFigure 12.5: A closer look at the RCF processing. Illustration of the one-time unsupervised computation of random convolutional features. K patches are randomly sampled from across the N images. Each patch is convolved over each image, generating a nonlinear activation map for each patch. Activation maps are averaged over pixels to generate a single K-dimensional feature vector for each image. Source: Rolf et al. 2021 Figure 1 C\n\n\n\n12.2.2.6 The 2-for-1 feature special\nWhen we define our model, one of the parameters that needs to be specified is the number of features. This number needs to be positive because we actually generate 2 features for each filter.\nFor each filter, we create two features:\n\n\nFeature A – ReLU activation on the convolution output.\n\n\nFeature B – ReLU activation on the inverted convolution output (i.e., multiplication by –1, or “negative” of the same filter output).\n\nWe then average-pool both maps, producing two features per filter. So if you specify 200 filters, you are actually drawing 100 weights and getting 200 features. This improves computational efficiency and ensures that each filter captures both positive and negative cues.\n\n12.2.3 Intuition for RCFs\nBelow is a cartoon that illustrates what a random convolutional feature vector might be looking for. Suppose we randomly draw three 3×3 patches from different parts of an image: a forest patch, a road patch, and a river patch.\n\n\n\n\n\nFigure 12.6: A single image with 3 random convolutional patches, highlighting 3 different feature activations of the imagery.\n\n\nWhen we convolve the forest patch across the entire image, the resulting map “lights up” places that look like forest. Likewise, the road patch lights up roads, and the river patch lights up the river. After the ReLU and average-pooling steps, we get a set of summary values—one for each filter.\n\n\nVideo\n\n\nFigure 12.7: Two cartoon images with the same patches used in the convolution step. We see that we have several labels for each image and that we can model each outcome with the same set of features.\n\n\nIf Image 1 has more trees than Image 2, the “forest” feature’s value is higher in Image 1. If Image 2 has more roads, its “road” feature will be higher. Because these features each capture a different (random) spatial pattern, we can then combine them for many downstream prediction tasks—whether it’s predicting tree cover, paved roads, or even something else that correlates with these visual patterns.\n\n\nVideo\n\n\nFigure 12.8: A cartoon image projected into random feature space. If we look at just 2 dimensions, how grey on the x-axis and how green on the y-axis, we can find the vector through this feature space which represents our outcome.",
+    "crumbs": [
+      "Satellite features",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Understanding features</span>"
+    ]
+  },
+  {
+    "objectID": "part-03-features/01-features-rcf.html#why-use-rcfs",
+    "href": "part-03-features/01-features-rcf.html#why-use-rcfs",
+    "title": "12  Understanding features",
+    "section": "\n12.3 Why use RCFs?",
+    "text": "12.3 Why use RCFs?\n\n12.3.1 Traditional convolutional neural networks (CNNs)\nTo appreciate RCFs, let’s contrast them with traditional CNNs. In a standard CNN, filters are learned via backpropagation. The network sees many examples, calculates errors, and updates the filter weights so that over time they become good at extracting task-specific features. This makes CNNs powerful, but only for what they have been trained to do.\n\n\n\n\n\nFigure 12.9: A simplified diagram showing a typical convolutional neural network model architecture.\n\n\n\n12.3.2 Replacing minimization with randomization in learning\nMOSAIKS takes a radically simpler approach: random filters are used to sample the imagery’s information. Because they are random, they are not “tailored” to any one task. This sounds counterintuitive at first—surely you’d want to learn your filters! But the virtue of randomization is speed and broad applicability. Since no training is required to set these filters, we can produce features at planet-scale very quickly. These features can then be shared with many users, each of whom can apply them to their own predictive tasks (e.g., estimating forest cover, housing density, crop yields, etc.).\n\n\n\n\n\nFigure 12.10: Rolf et al. 2021 Figure 1: MOSAIKS is designed to solve an unlimited number of tasks at planet-scale quickly. After a one-time unsupervised image featurization using random convolutional features, MOSAIKS centrally stores and distributes task-agnostic features to users, each of whom generates predictions in a new context.",
+    "crumbs": [
+      "Satellite features",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Understanding features</span>"
+    ]
+  },
+  {
+    "objectID": "part-03-features/01-features-rcf.html#summary",
+    "href": "part-03-features/01-features-rcf.html#summary",
+    "title": "12  Understanding features",
+    "section": "\n12.4 Summary",
+    "text": "12.4 Summary\nRandom Convolutional Features (RCFs) form the backbone of MOSAIKS’s ability to handle massive amounts of satellite imagery at scale. Instead of learning tailored filters via backpropagation (like a traditional convolutional neural network), MOSAIKS uses randomly initialized filters that remain fixed. This single-layer approach may seem counterintuitive, but it has several advantages:\n\n\nLightweight and Task-Agnostic\n\nBecause the filters are not tied to any particular outcome, the same feature set can be applied to countless downstream tasks. This drastically reduces the need to reprocess raw imagery for every new prediction goal.\n\n\n\nPlanet-Scale Featurization\n\nMassive amounts of imagery can be processed quickly because no iterative training is needed to refine filters. After a one-time generation of RCFs, they can be stored, shared, and reused—removing the bottleneck of handling petabytes of raw data.\n\n\n\nBroad Feature Capture\n\nRandom filters effectively “sample” a wide variety of spatial and spectral patterns, capturing edges, textures, colors, and more. The “2-for-1” feature approach ensures that each filter captures both positive and negative cues, doubling the dimensionality (and potential information) without doubling compute time.\n\n\n\nEasily Distributed\n\nThe resulting feature vectors (rather than raw images) are small enough to download and manipulate on standard hardware. Researchers and practitioners can thus apply these features to varied applications, from ecological monitoring to socioeconomic modeling.\n\n\n\nBy converting raw imagery into a rich but compact numerical representation, RCFs offer a robust, flexible, and scalable gateway to satellite-based insights—without the headache of storing or manually interpreting vast image archives.\n\n\n\n\n\n\n\nLooking forward\n\n\n\nIn the next section, we’ll look at what is publicly available in the MOSAIKS API and how you can access these features without featurizing data yourself.",
     "crumbs": [
       "Satellite features",
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>Understanding features</span>"
@@ -1077,18 +1110,73 @@
     "href": "part-03-features/02-features-api.html",
     "title": "13  API features",
     "section": "",
-    "text": "13.1 Feature data",
+    "text": "13.1 Overview\nIn this chapter, we focus on the publicly available MOSAIKS features that can be accessed via the MOSAIKS API. These features offer a quick and straightforward way to incorporate satellite-based predictors into your analyses without having to manually process satellite imagery.",
     "crumbs": [
       "Satellite features",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>API features</span>"
     ]
   },
   {
-    "objectID": "part-03-features/02-features-api.html#feature-data",
-    "href": "part-03-features/02-features-api.html#feature-data",
+    "objectID": "part-03-features/02-features-api.html#overview",
+    "href": "part-03-features/02-features-api.html#overview",
     "title": "13  API features",
     "section": "",
-    "text": "Creating satellite image features is covered in later chapters.\n\n\n\n\n13.1.1 RCF brief overview\nMOSAIKS relies on random convolutional features (RCFs) computed from satellite imagery. The random nature of the features means that they are task-agnostic. These features can be reused multiple times to model various tasks. Features are generally created over a standard grid of 0.01 by 0.01 degree cells (~1 km², depending on latitude). The output is a feature vector of length K for every grid location.\n\n\n\n\n\n\nFeatures can be computed at higher or lower resolutions than 1 km². This is discussed in Chapter 14.\n\n\n\n\n13.1.2 Feature aggregation\nThe default 1 km² resolution of MOSAIKS is generally the maximum resolution the label data should be in. If the labels are in lower resolution, the satellite features can be aggregated up to larger areas to match. Typical aggregation might be to larger grid cell, census tract, county/district, or state/province levels. The exact aggregation level is contingent on the spatial resolution of the label data.\n\n\n\n\n\nFigure 13.1: Example showing of 3 representative random convolutional features (rows). Features are downloaded from the MOSAIKS API at 0.01° resolution (the native resolution) and aggregated to 3 levels, including (A) larger grid cells (0.1°), (B) counties, and (C) states.\n\n\n\n13.1.3 API Features\nCurrently the MOSAIKS API has a single set of global features ready to download. The features are publicly available for download; this is the fastest and easiest way to begin using MOSAIKS. They come from Planet Labs, Inc. Visual Basemap product Global Quarterly 2019 (quarter 3) which has a native resolution of 4.77 m in the red, green, and blue bands of the visual spectrum. Given this, the easiest way to get started with MOSAIKS is to have label data for a recent time period (ideally from 2019 for fast changing labels, or a close year for more steady labels). To use MOSAIKS for time series data is possible, just not currently with precomputed and publicly available features. To access API features see ?sec-api\n\n\n\n\nResolution\nTime Period\nWeighting\nDownload\n\n\n\n0.01°\n2019 Q3\nUnweighted\nQuery\n\n\n0.1°\n2019 Q3\nArea & population\nChunked files\n\n\n1°\n2019 Q3\nArea & population\nSingle file\n\n\nADM2\n2019 Q3\nArea & population\nSingle file\n\n\nADM1\n2019 Q3\nArea & population\nSingle file\n\n\nADM0\n2019 Q3\nArea & population\nSingle file\n\n\n\n\n\nTable 13.1: The MOSAIKS API offers features at 0.01°, 0.1°, and 1° resolution for the entire globe. Additionally, we provide features aggregated to the ADM0 (country), ADM1 (state/province), and ADM2 (county/municipality) levels. All features share the same 4,000 feature columns, and are all created from the same Planet Labs imagery, the only difference is the resolution/aggregation level. At each level of aggregation, we offer area weighted features and population weighted features. Population weighted features use weights from the Gridded Population of the World (GPWv4) population density dataset.\n\n\n\n\n\n\n\n\nLooking forward\n\n\n\nIn the next section, we will",
+    "text": "Accessing features on the API is covered in Chapter 3. This chapter provides additional details on the features and how they were generated. To generate your own features, see Chapter 14.",
+    "crumbs": [
+      "Satellite features",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>API features</span>"
+    ]
+  },
+  {
+    "objectID": "part-03-features/02-features-api.html#input-imagery",
+    "href": "part-03-features/02-features-api.html#input-imagery",
+    "title": "13  API features",
+    "section": "\n13.2 Input imagery",
+    "text": "13.2 Input imagery\n\n\nSourcePlanet Labs Visual Basemap (Global Quarterly 2019, Q3).\n\nTemporal Coverage\nPredominantly images captured between July and September 2019 (Q3), though exact capture dates vary by region.\n\nSpatial Coverage\nGlobal land areas, excluding most large water bodies.\n\nPotential Artifacts\nCloud cover, haze, or shadows may affect the quality of imagery in regions with significant cloud coverage during Q3 2019.\n\n\n\n\n\n\nFigure 13.1: Planet Labs Basemap imagery thumbnail image.",
+    "crumbs": [
+      "Satellite features",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>API features</span>"
+    ]
+  },
+  {
+    "objectID": "part-03-features/02-features-api.html#deeper-look-how-the-api-features-were-generated",
+    "href": "part-03-features/02-features-api.html#deeper-look-how-the-api-features-were-generated",
+    "title": "13  API features",
+    "section": "\n13.3 Deeper Look: How the API Features Were Generated",
+    "text": "13.3 Deeper Look: How the API Features Were Generated\nThe MOSAIKS team performed a single featurization pass over the Planet Labs 2019 Q3 Visual Basemap images. The process is similar to the Random Convolutional Features (RCFs) method described earlier, but here are the specific parameters:\n\n\nPatch Collection\n\nRandom patches (filters) were drawn from real satellite images (Planet Labs 2019 Q3).\n\nEach patch was whitened: the raw pixel values were mean-centered and decorrelated so that each filter highlights distinct visual patterns.\n\n\n\nKernel Sizes\n\n\n2,000 features from a 4×4 patch shape\n\n\n2,000 features from a 6×6 patch shape\n\nAll patches maintain 3 color channels (R, G, B).\n\n\n\nBias & Activation\n\nA bias of –1 is added to each filter’s convolution output, allowing more nuanced activation levels.\n\nA ReLU activation (max(0, x)) is then applied to keep the model non-linear and remove negative values.\n\n\n\nPooling\n\nAfter convolution + ReLU, the response is average-pooled over each 0.01° patch (i.e., the local 256×256 pixel area, if we approximate each degree of latitude or longitude as ~100 km—though the exact pixel count can vary by latitude).\n\nThis results in a single numeric value per filter.\n\n\n\nFinal Feature Vector\n\nCombining all filters yields a 4,000-dimensional vector at each 0.01° grid cell.\n\nThis entire process was run once, creating a global 0.01° “feature layer.”\n\n\n\n\n\n\n\n\nFigure 13.2: Three randomly generated feature activation maps plotted from the Planet Labs Basemap thumbnail image.",
+    "crumbs": [
+      "Satellite features",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>API features</span>"
+    ]
+  },
+  {
+    "objectID": "part-03-features/02-features-api.html#derived-aggregations",
+    "href": "part-03-features/02-features-api.html#derived-aggregations",
+    "title": "13  API features",
+    "section": "\n13.4 Derived Aggregations",
+    "text": "13.4 Derived Aggregations\nAlthough the API stores and provides these features at 0.01° resolution, it also offers pre-aggregated versions:\n\n\n0.1° and 1° Grids: Summing or averaging the 0.01° cells.\n\n\nAdministrative Boundaries: ADM0 (country), ADM1 (state/province), and ADM2 (county/district) levels.\n\n\n\n\n\n\nFigure 13.3: Example showing of 3 representative random convolutional features (rows). Features are downloaded from the MOSAIKS API at 0.01° resolution (the native resolution) and aggregated to 3 levels, including (A) larger grid cells (0.1°), (B) counties, and (C) states.\n\n\n\n13.4.1 Area vs. Population Weighting\nEach aggregated level comes in two weighting flavors: - Area Weighting: Larger grid cells or polygons with more land area receive more weight in the aggregation.\n- Population Weighting: Uses population density (GPWv4) to weight cells more heavily where more people live.\nnote maybe a population map here",
+    "crumbs": [
+      "Satellite features",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>API features</span>"
+    ]
+  },
+  {
+    "objectID": "part-03-features/02-features-api.html#when-to-use-these-features",
+    "href": "part-03-features/02-features-api.html#when-to-use-these-features",
+    "title": "13  API features",
+    "section": "\n13.5 When to Use These Features",
+    "text": "13.5 When to Use These Features\n\nReadily Available: If your labels are from ~2019 or a period that hasn’t changed drastically since 2019, start with these API features—they’re the fastest and easiest to incorporate into your analyses.\nCoarse-Resolution or Aggregated Labels: If your data is aggregated (e.g., a country-level statistic), consider downloading the aggregated features to match your label resolution.\nResource Constraints: If you’re storage- or compute-limited, using the API’s pre-aggregated files can save time and processing overhead.\nHigh-Resolution or Household Data: For fine-grained tasks (e.g., household surveys), you may still benefit from the 0.01° resolution features—especially if you want to capture local variation. Or you can aggregate to match your label geometry and then use high-resolution features for prediction later (see Chapter 17).\n\n\n\n\n\n\nFigure 13.4: Global Human Development Index (HDI) data at the first sub-national level of administrative division (ADM1). Source: Smits & Permanyer 2019.",
+    "crumbs": [
+      "Satellite features",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>API features</span>"
+    ]
+  },
+  {
+    "objectID": "part-03-features/02-features-api.html#key-takeaways",
+    "href": "part-03-features/02-features-api.html#key-takeaways",
+    "title": "13  API features",
+    "section": "\n13.6 Key Takeaways",
+    "text": "13.6 Key Takeaways\n\n\nSingle Source Imagery\n\n\nPlanet Labs Visual Basemap (2019 Q3)\n\nGlobal coverage of land areas at approximately 0.01° (~1 km) resolution\n\nThree color channels (Red, Green, Blue)\n\n\n\nSingle Featurization Pass\n\nAll features are computed once at the native 0.01° resolution.\n\nAny aggregated features (e.g., 0.1°, 1°, administrative boundaries) are derivative and use exactly the same underlying 0.01° features.\n\n\n\nRandom Convolutional Features (RCFs)\n\n\n4,000 total features\n\n\nKernel sizes: 2,000 features from a 4×4 kernel, and 2,000 features from a 6×6 kernel\n\n\nEmpirical patch whitening: random patches are drawn from the image set and then whitened (mean-centered, decorrelated)\n\n\nBias: –1 (applied to each filter output before activation)\n\n\nActivation: ReLU (Rectified Linear Unit)\n\n\n3 color channels from the original RGB imagery\n\n\n\nFlexible Resolutions\n\n\nHigh resolution (0.01°): Download via File Query or Map Query\n\n\nAggregations: 0.1°, 1°, and ADM0/ADM1/ADM2 boundaries, available as precomputed downloads\n\n\n\nUse Cases\n\nIdeal for tasks with label data from the same (or close) time period (2019 or neighboring years)\n\nQuick, straightforward integration into machine learning models\n\nGlobal scale analysis or smaller local/regional analysis\n\n\n\n\n\n\n\n\n\nLooking forward\n\n\n\nIn the next section, we will",
     "crumbs": [
       "Satellite features",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>API features</span>"
@@ -1099,7 +1187,73 @@
     "href": "part-03-features/03-features-computing.html",
     "title": "14  Computing features",
     "section": "",
-    "text": "This chapter is in early draft form and may be incomplete.\n\n\n\n\nDepending on the spatial scale and resolution of the label data, subsampling the MOSAIKS grid may be appropriate to reduce computation time and cost.",
+    "text": "14.1 Overview\nWhile the MOSAIKS API provides pre-computed features for many applications, some use cases require computing custom features. This chapter covers the technical details of generating MOSAIKS features from satellite imagery.",
+    "crumbs": [
+      "Satellite features",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Computing features</span>"
+    ]
+  },
+  {
+    "objectID": "part-03-features/03-features-computing.html#requirements",
+    "href": "part-03-features/03-features-computing.html#requirements",
+    "title": "14  Computing features",
+    "section": "\n14.2 Requirements",
+    "text": "14.2 Requirements\nTo compute MOSAIKS features, you’ll need:\n\nSatellite imagery (see Chapter 10)\nGPU-enabled computing environment (recommended)\nPython with deep learning libraries (pytorch recommended)\nSufficient storage for features",
+    "crumbs": [
+      "Satellite features",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Computing features</span>"
+    ]
+  },
+  {
+    "objectID": "part-03-features/03-features-computing.html#implementation-options",
+    "href": "part-03-features/03-features-computing.html#implementation-options",
+    "title": "14  Computing features",
+    "section": "\n14.3 Implementation options",
+    "text": "14.3 Implementation options\nThere are several ways to implement MOSAIKS feature extraction:\n\n14.3.1 PyTorch implementation\nThe torchgeo library provides a PyTorch implementation of random convolutional features:\nimport torch\nimport torch.nn as nn\nfrom torchgeo.models import RCF\n\n# Define model parameters\npatch_size = 3  # Size of random patches\nnum_filters = 4000  # Number of features to generate\nin_channels = 3  # Number of input image channels (RGB=3)\n\n# Initialize RCF model\nmodel = RCF(\n    in_channels=in_channels,\n    num_filters=num_filters,\n    patch_size=patch_size,\n    bias=True,\n    padding=\"same\"\n)\n\n# Move model to GPU if available\ndevice = torch.device(\"cuda\" if torch.cuda.is_available() else \"cpu\")\nmodel = model.to(device)\n\n# Generate features for a batch of images\ndef extract_features(images):\n    \"\"\"\n    Extract RCF features from a batch of images\n    \n    Parameters\n    ----------\n    images : torch.Tensor\n        Batch of images with shape (B, C, H, W)\n        \n    Returns\n    -------\n    torch.Tensor\n        Features with shape (B, num_filters)\n    \"\"\"\n    with torch.no_grad():\n        features = model(images)\n    return features\n\n14.3.2 TensorFlow implementation\nFor users preferring TensorFlow, here’s an equivalent implementation:\nimport tensorflow as tf\n\nclass RCF(tf.keras.Model):\n    def __init__(self, num_filters=4000, patch_size=3):\n        super(RCF, self).__init__()\n        self.conv = tf.keras.layers.Conv2D(\n            filters=num_filters,\n            kernel_size=patch_size,\n            padding='same',\n            use_bias=True\n        )\n        self.relu = tf.keras.layers.ReLU()\n        self.pool = tf.keras.layers.GlobalAveragePooling2D()\n        \n    def call(self, x):\n        x = self.conv(x)\n        x = self.relu(x)\n        x = self.pool(x)\n        return x",
+    "crumbs": [
+      "Satellite features",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Computing features</span>"
+    ]
+  },
+  {
+    "objectID": "part-03-features/03-features-computing.html#feature-parameters",
+    "href": "part-03-features/03-features-computing.html#feature-parameters",
+    "title": "14  Computing features",
+    "section": "\n14.4 Feature parameters",
+    "text": "14.4 Feature parameters\nSeveral key parameters influence feature extraction:\n\n14.4.1 Number of features (K)\n\nControls feature vector dimensionality\nMore features capture more information\nIncreases computation and storage needs\nTypical range: 1,000-8,192\nDiminishing returns above ~4,000\n\n14.4.2 Patch size\n\nDetermines spatial context captured\nLarger patches see more context\nBut increase computation\nTypical size: 3x3 or 5x5 pixels\nMatch to imagery resolution\n\n14.4.3 Input channels\n\nDepends on available spectral bands\nRGB = 3 channels\nCan use additional bands\nMore bands = richer spectral info\nBut increases computation",
+    "crumbs": [
+      "Satellite features",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Computing features</span>"
+    ]
+  },
+  {
+    "objectID": "part-03-features/03-features-computing.html#practical-considerations",
+    "href": "part-03-features/03-features-computing.html#practical-considerations",
+    "title": "14  Computing features",
+    "section": "\n14.5 Practical considerations",
+    "text": "14.5 Practical considerations\n\n14.5.1 Memory management\nWhen processing large imagery datasets:\ndef batch_process(image_paths, batch_size=32):\n    \"\"\"\n    Process images in batches to manage memory\n    \n    Parameters\n    ----------\n    image_paths : list\n        Paths to image files\n    batch_size : int\n        Number of images to process at once\n        \n    Returns\n    -------\n    np.ndarray\n        Features for all images\n    \"\"\"\n    features = []\n    \n    for i in range(0, len(image_paths), batch_size):\n        batch_paths = image_paths[i:i + batch_size]\n        batch = load_images(batch_paths)\n        batch_features = extract_features(batch)\n        features.append(batch_features)\n        \n    return np.concatenate(features)\n\n14.5.2 Storage formats\nEfficient formats for large feature matrices:\nimport h5py\nimport zarr\n\n# HDF5 storage\ndef save_features_hdf5(features, filename):\n    with h5py.File(filename, 'w') as f:\n        f.create_dataset('features', data=features)\n        \n# Zarr storage\ndef save_features_zarr(features, filename):\n    store = zarr.DirectoryStore(filename)\n    z = zarr.creation.array(\n        store, \n        features, \n        chunks=(1000, None)\n    )\n\n14.5.3 Parallel processing\nFor large-scale feature extraction:\nfrom concurrent.futures import ProcessPoolExecutor\n\ndef parallel_extract(image_paths, num_workers=4):\n    \"\"\"\n    Extract features using multiple processes\n    \n    Parameters\n    ----------\n    image_paths : list\n        Paths to image files\n    num_workers : int\n        Number of parallel processes\n        \n    Returns\n    -------\n    np.ndarray\n        Features for all images\n    \"\"\"\n    with ProcessPoolExecutor(max_workers=num_workers) as executor:\n        features = list(executor.map(extract_features, image_paths))\n    return np.concatenate(features)",
+    "crumbs": [
+      "Satellite features",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Computing features</span>"
+    ]
+  },
+  {
+    "objectID": "part-03-features/03-features-computing.html#quality-control",
+    "href": "part-03-features/03-features-computing.html#quality-control",
+    "title": "14  Computing features",
+    "section": "\n14.6 Quality control",
+    "text": "14.6 Quality control\nImportant checks during feature extraction:\n\n\nInput validation\n\nImage dimensions\nValue ranges\nMissing data\nBand ordering\n\n\n\nFeature statistics\n\nDistribution checks\nZero/missing values\nCorrelation analysis\nFeature importance\n\n\n\nPerformance monitoring\n\nMemory usage\nProcessing speed\nGPU utilization\nStorage efficiency",
+    "crumbs": [
+      "Satellite features",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Computing features</span>"
+    ]
+  },
+  {
+    "objectID": "part-03-features/03-features-computing.html#best-practices",
+    "href": "part-03-features/03-features-computing.html#best-practices",
+    "title": "14  Computing features",
+    "section": "\n14.7 Best practices",
+    "text": "14.7 Best practices\n\n\nDocumentation\n\nRecord all parameters\nTrack data sources\nDocument processing steps\nNote any issues\n\n\n\nTesting\n\nUnit tests for functions\nIntegration tests\nPerformance benchmarks\nValidation checks\n\n\n\nVersion control\n\nCode versioning\nFeature versioning\nParameter tracking\nResult logging\n\n\n\n\n\n\n\n\n\nLooking forward\n\n\n\nIn the next chapter, we’ll work through a complete example of computing custom MOSAIKS features.",
     "crumbs": [
       "Satellite features",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Computing features</span>"
@@ -1110,7 +1264,29 @@
     "href": "part-03-features/04-features-demo.html",
     "title": "15  Featurization demo",
     "section": "",
-    "text": "This chapter is in early draft form and may be incomplete.\n\n\n\n\n\n\n\n\n\n\nLooking forward\n\n\n\nIn the next section, we will",
+    "text": "15.1 Overview\nThis demonstration will show you a few key concepts",
+    "crumbs": [
+      "Satellite features",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Featurization demo</span>"
+    ]
+  },
+  {
+    "objectID": "part-03-features/04-features-demo.html#demonstration-code",
+    "href": "part-03-features/04-features-demo.html#demonstration-code",
+    "title": "15  Featurization demo",
+    "section": "\n15.2 Demonstration code",
+    "text": "15.2 Demonstration code\nBelow is a link to a Jupyter notebook intended to demonstrate practical featurization of satellite data for use in MOSAIKS. The notebook will guide you through the process of preparing imagery, including:\n\nBuilding a pytorch model from scratch\nUsing an out of the box solution with torchgeo\nBuilding a torch dataset and dataloader\nFeaturizing satellite imagery\nSaving features to disk\nVisualizing features\n\n\n\n\n\n\n\nClick the badge to run the demonstration!\n\n\n\n↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Remember to click File -&gt; Save a copy in Drive to save any changes you make.\n\nOr to view a static version of the code on GitHub, click the badge below.\n\n\nFor instructions and tips on using Google Colab, please refer to Chapter 1.",
+    "crumbs": [
+      "Satellite features",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Featurization demo</span>"
+    ]
+  },
+  {
+    "objectID": "part-03-features/04-features-demo.html#whats-next",
+    "href": "part-03-features/04-features-demo.html#whats-next",
+    "title": "15  Featurization demo",
+    "section": "\n15.3 What’s next?",
+    "text": "15.3 What’s next?\nNow that we have covered the basics of featurizing satellite data, we will move on to the next section, where we will discuss modeling.\n\n\n\n\n\n\nLooking forward\n\n\n\nThis is the end of the feature section. Next, we will move on to the modeling labels with satellite features.",
     "crumbs": [
       "Satellite features",
       "<span class='chapter-number'>15</span>  <span class='chapter-title'>Featurization demo</span>"

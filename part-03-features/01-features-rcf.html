@@ -324,19 +324,21 @@ ul.task-list li input[type="checkbox"] {
   <ul>
 <li><a href="#kitchen-sinks" id="toc-kitchen-sinks" class="nav-link active" data-scroll-target="#kitchen-sinks"><span class="header-section-number">12.1</span> Kitchen sinks?</a></li>
   <li>
-<a href="#why-use-rcfs" id="toc-why-use-rcfs" class="nav-link" data-scroll-target="#why-use-rcfs"><span class="header-section-number">12.2</span> Why use RCFs?</a>
+<a href="#random-convolutional-features-rcfs" id="toc-random-convolutional-features-rcfs" class="nav-link" data-scroll-target="#random-convolutional-features-rcfs"><span class="header-section-number">12.2</span> Random convolutional features (RCFs)</a>
   <ul class="collapse">
-<li><a href="#traditional-convolutional-neural-networks-cnns" id="toc-traditional-convolutional-neural-networks-cnns" class="nav-link" data-scroll-target="#traditional-convolutional-neural-networks-cnns"><span class="header-section-number">12.2.1</span> Traditional convolutional neural networks (CNNs)</a></li>
-  <li><a href="#replacing-minimization-with-randomization-in-learning" id="toc-replacing-minimization-with-randomization-in-learning" class="nav-link" data-scroll-target="#replacing-minimization-with-randomization-in-learning"><span class="header-section-number">12.2.2</span> Replacing minimization with randomization in learning</a></li>
+<li><a href="#understanding-convolutions" id="toc-understanding-convolutions" class="nav-link" data-scroll-target="#understanding-convolutions"><span class="header-section-number">12.2.1</span> Understanding convolutions</a></li>
+  <li><a href="#turning-an-image-into-a-feature-vector" id="toc-turning-an-image-into-a-feature-vector" class="nav-link" data-scroll-target="#turning-an-image-into-a-feature-vector"><span class="header-section-number">12.2.2</span> Turning an image into a feature vector</a></li>
+  <li><a href="#intuition-for-rcfs" id="toc-intuition-for-rcfs" class="nav-link" data-scroll-target="#intuition-for-rcfs"><span class="header-section-number">12.2.3</span> Intuition for RCFs</a></li>
   </ul>
 </li>
   <li>
-<a href="#random-convolutional-features-rcfs" id="toc-random-convolutional-features-rcfs" class="nav-link" data-scroll-target="#random-convolutional-features-rcfs"><span class="header-section-number">12.3</span> Random convolutional features (RCFs)</a>
+<a href="#why-use-rcfs" id="toc-why-use-rcfs" class="nav-link" data-scroll-target="#why-use-rcfs"><span class="header-section-number">12.3</span> Why use RCFs?</a>
   <ul class="collapse">
-<li><a href="#turning-an-image-into-a-feature-vector" id="toc-turning-an-image-into-a-feature-vector" class="nav-link" data-scroll-target="#turning-an-image-into-a-feature-vector"><span class="header-section-number">12.3.1</span> Turning an image into a feature vector</a></li>
-  <li><a href="#intuition-for-rcfs" id="toc-intuition-for-rcfs" class="nav-link" data-scroll-target="#intuition-for-rcfs"><span class="header-section-number">12.3.2</span> Intuition for RCFs</a></li>
+<li><a href="#traditional-convolutional-neural-networks-cnns" id="toc-traditional-convolutional-neural-networks-cnns" class="nav-link" data-scroll-target="#traditional-convolutional-neural-networks-cnns"><span class="header-section-number">12.3.1</span> Traditional convolutional neural networks (CNNs)</a></li>
+  <li><a href="#replacing-minimization-with-randomization-in-learning" id="toc-replacing-minimization-with-randomization-in-learning" class="nav-link" data-scroll-target="#replacing-minimization-with-randomization-in-learning"><span class="header-section-number">12.3.2</span> Replacing minimization with randomization in learning</a></li>
   </ul>
 </li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">12.4</span> Summary</a></li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/edit/main/part-03-features/01-features-rcf.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
@@ -356,30 +358,33 @@ ul.task-list li input[type="checkbox"] {
 
 
 </header><div class="status">
-<div class="callout callout-style-simple callout-warning">
+<div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>This chapter is in early draft form and may be incomplete.</p>
+<p>This chapter is under review and may need revisions.</p>
 </div>
 </div>
 </div>
 </div>
-<div class="callout callout-style-simple callout-tip">
-<div class="callout-body d-flex">
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-body-container">
-<p>This section of the book is not for everyone. If you just want to use MOSAIKS to predict outcomes, you can skip this section.</p>
+<div class="callout-title-container flex-fill">
+Who should read this chapter?
 </div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This section of the book is not for everyone. If you want to use the publicly available MOSAIKS features to predict outcomes, you can skip this section. If you plan on computing your own features, this section is for you.</p>
 </div>
 </div>
 <section id="kitchen-sinks" class="level2" data-number="12.1"><h2 data-number="12.1" class="anchored" data-anchor-id="kitchen-sinks">
 <span class="header-section-number">12.1</span> Kitchen sinks?</h2>
-<p>MOSAIKS stands for <strong><ins>M</ins>ulti-task <ins>O</ins>bservation using <ins>SA</ins>tellite <ins>I</ins>magery &amp; <ins>K</ins>itchen <ins>S</ins>inks</strong>. Whenever we present this system, people always ask us, “where does kitchen sinks come from?” The answer stems from the phrase “everything but the kitchen sink,” which means “almost everything imaginable.” If you were to hear someone describe making a sandwich with “everything but the kitchen sink,” you would know that they used every ingredient at their disposal. You might also hear the phrase “everything and the kitchen sink,” which means “everything imaginable.” For MOSAIKS, I think “everything but the kitchen sink” is more appropriate as we are not extracting every last drop of information from the imagery. However we are getting a lot out of the imagery. Additionally, if it helps, you can think of the imagery as something we are not taking along with us, rather just the useful bits we extracted.</p>
+<p>MOSAIKS stands for <strong><ins>M</ins>ulti-task <ins>O</ins>bservation using <ins>SA</ins>tellite <ins>I</ins>magery &amp; <ins>K</ins>itchen <ins>S</ins>inks</strong>. Whenever we present MOSAIKS, we get the question, “Where does ‘kitchen sinks’ come from?” The answer stems from the phrase <em>“everything but the kitchen sink,”</em> which means <em>“almost everything imaginable.”</em> In the context of MOSAIKS, <em>everything but the kitchen sink</em> emphasizes that we take a <em>huge amount</em> of information out of the raw imagery—though, of course, we’re not capturing every last pixel or every possible relationship. It’s as if we’re taking the most useful “ingredients” (i.e., features) from the imagery and leaving the rest behind.</p>
 <div id="fig-everything-but-the-kitchen-sink" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-everything-but-the-kitchen-sink-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../images/Everything but the kitchen sink.gif" class="img-fluid figure-img">
@@ -388,96 +393,214 @@ ul.task-list li input[type="checkbox"] {
 Figure&nbsp;12.1: Maddy (Madagascar; center) takes raw satellite images (left) and uses the kitchen sink method to produce random convolutional features (right). Art by <a href="https://young-lab.eemb.ucsb.edu/people/grace-lewin" target="_blank">Grace Lewin</a>.
 </figcaption></figure>
 </div>
-<p>This idea of leaving behind the imagery is one of the reasons MOSAIKS is so powerful. It means that for most users, they never have to suffer through the issues that arise from dealing with large amounts of satellite imagery. We (the MOSAIKS team) take the imagery, extract a bunch of random convolutional features, and then we leave the imagery behind. We don’t need to know what the imagery looks like, we don’t need to interpret what any feature is, we just need to know that we have a bunch of features that we can use to predict different outcomes. Then users can download these features and use them to predict <em>their</em> outcomes.</p>
-<p>In this section of the book, we leave this simplistic aspect of MOSAIKS behind. We go back to the root of the problem and focus on how we extract features from imagery. We also attempt to provide <em>some</em> intuition for what these features are.</p>
+<p>This idea of leaving behind the raw imagery is key to MOSAIKS’s power. It means that <em>most</em> users never have to handle the massive amounts of satellite imagery directly. Instead, the MOSAIKS team takes on that burden—extracting a large set of random convolutional features—and then discards the imagery. End users do not need to <em>see</em> the raw imagery or interpret <em>what</em> each individual feature means; they can just use the numerical representation. As a result, users can simply download these features and apply them to their own predictive tasks.</p>
+<p>In this section, however, we lift the hood to see what’s going on. We focus on how we extract the features from satellite imagery and attempt to provide <em>some</em> intuition for what these features represent.</p>
 <div class="callout callout-style-simple callout-tip">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>In this book, we refer to the random convolutional features as RCFs, features, satellite features, MOSAIKS features, and possibly other terms. You should consider these terms interchangeable in this context.</p>
+<p>In this book, the terms <em>random convolutional features</em>, <em>RCFs</em>, <em>features</em>, <em>satellite features</em>, and <em>MOSAIKS features</em> are used interchangeably.</p>
 </div>
 </div>
 </div>
-</section><section id="why-use-rcfs" class="level2" data-number="12.2"><h2 data-number="12.2" class="anchored" data-anchor-id="why-use-rcfs">
-<span class="header-section-number">12.2</span> Why use RCFs?</h2>
-<section id="traditional-convolutional-neural-networks-cnns" class="level3" data-number="12.2.1"><h3 data-number="12.2.1" class="anchored" data-anchor-id="traditional-convolutional-neural-networks-cnns">
-<span class="header-section-number">12.2.1</span> Traditional convolutional neural networks (CNNs)</h3>
-<p>To learn why we use random convolutional features (RCFs), we need to understand how traditional convolutional neural networks (CNNs) work. CNNs are a type of neural network that are designed to work with images. They are made up of layers of neurons that are connected in a way that allows them to learn features from the images. In the case of CNNs, these features are learned through a process called backpropagation. Backpropagation is a method for training neural networks that uses the chain rule of calculus to calculate the gradient of the loss function with respect to the weights of the network. This gradient is then used to update the weights of the network in a way that minimizes the loss function. This means that the network is learning to recognize features in the images that are important for the task it is trying to solve. It is therefore using minimization to learn the features that are important for the task.</p>
-<div id="fig-CNN" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-CNN-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../images/CNN.jpg" class="img-fluid figure-img">
+<hr></section><section id="random-convolutional-features-rcfs" class="level2" data-number="12.2"><h2 data-number="12.2" class="anchored" data-anchor-id="random-convolutional-features-rcfs">
+<span class="header-section-number">12.2</span> Random convolutional features (RCFs)</h2>
+<section id="understanding-convolutions" class="level3" data-number="12.2.1"><h3 data-number="12.2.1" class="anchored" data-anchor-id="understanding-convolutions">
+<span class="header-section-number">12.2.1</span> Understanding convolutions</h3>
+<p>In simple terms, applying a <em>convolution</em> to an image can highlight certain patterns, like edges, textures, or colors. Convolutional filters “scan” across the image, computing element-wise products with small patches of the image. Many computer vision models stack multiple convolutional and other layers into a convolutional neural network (CNN). Deep neural networks can have many layers, which is why the approach is often called deep learning.</p>
+<div id="fig-convolution-gif" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-convolution-gif-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://raw.githubusercontent.com/vdumoulin/conv_arithmetic/refs/heads/master/gif/no_padding_no_strides.gif" class="img-fluid figure-img">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-CNN-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12.2: A simplified diagram showing a typical convolutional neural network model architecture used for
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-convolution-gif-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.2: A gif showing a convolutional layer with no padding and no strides. Source: <a href="https://github.com/vdumoulin/conv_arithmetic" target="_blank">A guide to convolution arithmetic for deep learning</a>.
 </figcaption></figure>
 </div>
-</section><section id="replacing-minimization-with-randomization-in-learning" class="level3" data-number="12.2.2"><h3 data-number="12.2.2" class="anchored" data-anchor-id="replacing-minimization-with-randomization-in-learning">
-<span class="header-section-number">12.2.2</span> Replacing minimization with randomization in learning</h3>
-<p>MOSAIKS takes a different approach to learning features from images. Instead of using backpropagation to learn the features, we use random convolutional filters to extract features from the images. The resultant features are therefore as random as the filters applied to the images. This means that the features are not optimized for any particular task, but are instead a random sample of the information in the images. This is a key difference between RCFs and traditional CNNs. Traditional CNNs learn features that are optimized for the task they are trying to solve, while RCFs extract features that are random samples of the information in the images. This means that RCFs are much faster to compute and can be used to extract features from large amounts of imagery in a short amount of time.</p>
-<div id="fig-Rolf-et-al-2021-Fig-1" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-Rolf-et-al-2021-Fig-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../images/rolf_et_al_2021-Fig_1.jpg" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Rolf-et-al-2021-Fig-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12.3: <a href="https://www.nature.com/articles/s41467-021-24638-z/figures/1" target="_blank">Rolf et al.&nbsp;2021 Figure 1</a>: MOSAIKS is designed to solve an unlimited number of tasks at planet-scale quickly. After a one-time unsupervised image featurization using random convolutional features, MOSAIKS centrally stores and distributes task-agnostic features to users, each of whom generates predictions in a new context.
-</figcaption></figure>
-</div>
-</section></section><section id="random-convolutional-features-rcfs" class="level2" data-number="12.3"><h2 data-number="12.3" class="anchored" data-anchor-id="random-convolutional-features-rcfs">
-<span class="header-section-number">12.3</span> Random convolutional features (RCFs)</h2>
-<section id="turning-an-image-into-a-feature-vector" class="level3" data-number="12.3.1"><h3 data-number="12.3.1" class="anchored" data-anchor-id="turning-an-image-into-a-feature-vector">
-<span class="header-section-number">12.3.1</span> Turning an image into a feature vector</h3>
-<p>MOSAIKS involves computing a fixed length feature representation for a given patch of satellite imagery, then using those features in a ridge regression model. The features are computed by a CNN that contains a single convolutional layer with a ReLU activation followed by a global average pooling layer. The filters in the convolutional layer can be instantiated with patches sampled from the same imagery source, or randomly from the normal distribution.</p>
-<p>The core of MOSAIKS is the random convolutional features (RCFs) that we extract from satellite imagery. The extraction process is simple: we take a bunch of random convolutional filters and apply them to the imagery. Each convolutional filter can be a tensor of randomly generated values (gaussian patches), or they can be sampled from the imagery itself (empirical patches; <a href="#fig-Rolf-et-al-2021-Fig-1-C" class="quarto-xref">Figure&nbsp;<span>12.4</span></a>).</p>
-<div id="fig-Rolf-et-al-2021-Fig-1-C" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-Rolf-et-al-2021-Fig-1-C-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../images/rolf_et_al_2021-Fig_1-c.jpg" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Rolf-et-al-2021-Fig-1-C-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12.4: <a href="https://www.nature.com/articles/s41467-021-24638-z/figures/1" target="_blank">Rolf et al.&nbsp;2021 Figure 1 C</a>: A closer look at the RCF processing. Illustration of the one-time unsupervised computation of random convolutional features. <em>K</em> patches are randomly sampled from across the <em>N</em> images. Each patch is convolved over each image, generating a nonlinear activation map for each patch. Activation maps are averaged over pixels to generate a single K-dimensional feature vector for each image.
-</figcaption></figure>
-</div>
-<p>If we take a convolutional filter and apply it to the imagery, we get a new image. This new image is the result of the convolutional filter “looking” at the imagery and “seeing” something. The filter might be looking for edges, colors, textures, patterns, or anything else. The filter might be looking for something that we can’t even see with our eyes. After the convolution is applied, a non-linear activation function transforms the result. In this case, we use the rectified linear unit (ReLU) activation function. ReLU is a simple function that takes the maximum of the input and zero. This means that if the input is negative, the output is zero, and if the input is positive, the output is the input. After this, we use an adaptive average pooling layer to reduce the size of the activation map to a single number. This summary value is the feature for this filter.</p>
-<div class="callout callout-style-simple callout-note">
+<p>MOSAIKS, on the other hand, uses a <em>single</em> convolutional layer. These layer weights are randomly initialized and remain <em>fixed</em>; they aren’t updated during training. This is why the features we get are essentially “random samples” of the spatial and spectral information in the images.</p>
+<div class="callout callout-style-simple callout-tip">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>After repeating this process for all the filters, we end up with a feature vector for the image. This feature vector is a representation of the image that.</p>
+<p>There are many great resources for visualizing convolutions, including <a href="https://poloclub.github.io/cnn-explainer/" target="_blank">Convolutional Neural Networks (CNNs) explained</a>.</p>
 </div>
 </div>
 </div>
-</section><section id="intuition-for-rcfs" class="level3" data-number="12.3.2"><h3 data-number="12.3.2" class="anchored" data-anchor-id="intuition-for-rcfs">
-<span class="header-section-number">12.3.2</span> Intuition for RCFs</h3>
-<p>Here we will take a look at a cartoon representation of what a RCF vector might be looking for in the imagery. We will use a few simple 3 pixel by 3 pixel filters in the convolution step. The filters can have a few common names including weights, kernels, or patches. In the cartoon, we will use the term patch because these filters are drawn from the imagery (i.e.&nbsp;they are a small “patch” of the imagery).</p>
+</section><section id="turning-an-image-into-a-feature-vector" class="level3" data-number="12.2.2"><h3 data-number="12.2.2" class="anchored" data-anchor-id="turning-an-image-into-a-feature-vector">
+<span class="header-section-number">12.2.2</span> Turning an image into a feature vector</h3>
+<section id="overview" class="level4" data-number="12.2.2.1"><h4 data-number="12.2.2.1" class="anchored" data-anchor-id="overview">
+<span class="header-section-number">12.2.2.1</span> Overview</h4>
+<p>The MOSAIKS featurization process produces a <em>fixed-length</em> feature representation for each patch of satellite imagery. Practically, this means we end up with a numerical vector for each image. The process has three main steps:</p>
+<ol type="1">
+<li>
+<strong>Convolution</strong><br>
+</li>
+<li>
+<strong>Activation</strong><br>
+</li>
+<li><strong>Average pooling</strong></li>
+</ol>
+<p>Let’s illustrate these steps with a simple example. Imagine we have 10,000 satellite images, each in the visual spectrum (red, green, and blue channels). Each image is a 3-dimensional tensor of shape (3, 256, 256)—representing the <em>color channels</em> (3) by <em>height</em> (256) by <em>width</em> (256).</p>
+<div id="fig-mpc-gallery" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-mpc-gallery-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/mpc_gallery.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mpc-gallery-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.3: A collection of satellite images. Source: <a href="https://planetarycomputer.microsoft.com/" target="_blank">Microsoft Planetary Computer</a>
+</figcaption></figure>
+</div>
+</section><section id="convolution" class="level4" data-number="12.2.2.2"><h4 data-number="12.2.2.2" class="anchored" data-anchor-id="convolution">
+<span class="header-section-number">12.2.2.2</span> Convolution</h4>
+<ol type="1">
+<li><p><strong>Initialize convolutional weights.</strong><br>
+We can draw these weights from a normal (Gaussian) distribution or from random patches of our image dataset. Either way, each <em>filter</em> has the same number of color channels as the original images and a specified kernel size (e.g., 3×3). So if our kernel size is 3, each filter might have shape (3, 3, 3).</p></li>
+<li><p><strong>Perform the convolution.</strong><br>
+We compute the dot product of each filter with <em>every</em> portion of the image as the filter slides across it. The result is a new image (a “feature map”) that highlights regions similar to that filter’s pattern.</p></li>
+</ol>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>We use pytorch’s <a href="https://pytorch.org/docs/stable/generated/torch.nn.Conv2d.html" target="_blank">torch.nn.functional.conv2d</a> function to perform this operation.</p>
+</div>
+</div>
+</div>
+</section><section id="activation" class="level4" data-number="12.2.2.3"><h4 data-number="12.2.2.3" class="anchored" data-anchor-id="activation">
+<span class="header-section-number">12.2.2.3</span> Activation</h4>
+<p>Next, we apply a non-linear activation function—<a href="https://pytorch.org/docs/stable/generated/torch.nn.ReLU.html" target="_blank">ReLU (Rectified Linear Unit)</a>—to the feature map. ReLU outputs <code>max(0, x)</code>, meaning it zeroes out negative values. This step helps capture non-linearities in the data.</p>
+<div id="fig-RCF-patch-sampling-activation-maps" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-RCF-patch-sampling-activation-maps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/RCF_patch_sampling_activation_maps.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-RCF-patch-sampling-activation-maps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.4: Three randomly generated feature activation maps plotted from the <a href="https://planetarycomputer.microsoft.com/catalog" target="_blank">Microsoft Planetary Computer</a> Landsat Collection thumbnail image.
+</figcaption></figure>
+</div>
+</section><section id="average-pooling" class="level4" data-number="12.2.2.4"><h4 data-number="12.2.2.4" class="anchored" data-anchor-id="average-pooling">
+<span class="header-section-number">12.2.2.4</span> Average pooling</h4>
+<p>We then apply an adaptive average pooling layer to each activation map, collapsing the 2D spatial grid into a single number per filter. Essentially, this “global average” is a single summary value for how strongly that filter responded to the image.</p>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>We use pytorch’s <a href="https://pytorch.org/docs/stable/generated/torch.nn.AdaptiveAvgPool2d.html" target="_blank">torch.nn.functional.adaptive_avg_pool2d</a> function to perform this operation.</p>
+</div>
+</div>
+</div>
+</section><section id="putting-it-all-together" class="level4" data-number="12.2.2.5"><h4 data-number="12.2.2.5" class="anchored" data-anchor-id="putting-it-all-together">
+<span class="header-section-number">12.2.2.5</span> Putting it all together</h4>
+<p>We repeat this for all filters. If we have <em>K</em> filters, we end up with a <em>K</em>-dimensional feature vector.</p>
+<div id="fig-Rolf-et-al-2021-Fig-1-C" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-Rolf-et-al-2021-Fig-1-C-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/rolf_et_al_2021-Fig_1-c.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Rolf-et-al-2021-Fig-1-C-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.5: A closer look at the RCF processing. Illustration of the one-time unsupervised computation of random convolutional features. <em>K</em> patches are randomly sampled from across the <em>N</em> images. Each patch is convolved over each image, generating a nonlinear activation map for each patch. Activation maps are averaged over pixels to generate a single K-dimensional feature vector for each image. Source: <a href="https://www.nature.com/articles/s41467-021-24638-z/figures/1" target="_blank">Rolf et al.&nbsp;2021 Figure 1 C</a>
+</figcaption></figure>
+</div>
+</section><section id="the-2-for-1-feature-special" class="level4" data-number="12.2.2.6"><h4 data-number="12.2.2.6" class="anchored" data-anchor-id="the-2-for-1-feature-special">
+<span class="header-section-number">12.2.2.6</span> The 2-for-1 feature special</h4>
+<p>When we define our model, one of the parameters that needs to be specified is the number of features. This number needs to be positive because we actually generate 2 features for each filter.</p>
+<p>For each filter, we create two features:</p>
+<ol type="1">
+<li>
+<strong>Feature A</strong> – ReLU activation on the convolution output.<br>
+</li>
+<li>
+<strong>Feature B</strong> – ReLU activation on the <em>inverted</em> convolution output (i.e., multiplication by –1, or “negative” of the same filter output).</li>
+</ol>
+<p>We then average-pool both maps, producing two features per filter. So if you specify 200 filters, you are actually drawing 100 weights and getting 200 features. This improves computational efficiency and ensures that each filter captures both positive and negative cues.</p>
+<hr></section></section><section id="intuition-for-rcfs" class="level3" data-number="12.2.3"><h3 data-number="12.2.3" class="anchored" data-anchor-id="intuition-for-rcfs">
+<span class="header-section-number">12.2.3</span> Intuition for RCFs</h3>
+<p>Below is a cartoon that illustrates what a random convolutional feature vector might be looking for. Suppose we randomly draw three 3×3 patches from different parts of an image: a <em>forest</em> patch, a <em>road</em> patch, and a <em>river</em> patch.</p>
 <div id="fig-cartoon-features-1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-cartoon-features-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../images/cartoon_features-1.jpg" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cartoon-features-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12.5: A single image with 3 random convolutional patches, highlighting 3 different feature activations of the imagery.
+Figure&nbsp;12.6: A single image with 3 random convolutional patches, highlighting 3 different feature activations of the imagery.
 </figcaption></figure>
 </div>
-<p>In the cartoon above (<a href="#fig-cartoon-features-1" class="quarto-xref">Figure&nbsp;<span>12.5</span></a>), our first patch is drawn from the forest canopy and so we see a 3x3 set of green pixels. Patch 2 is a 3x3 patch of grey pixels from a road. Patch 3 is a 3x3 patch of blue pixels from a river. When we apply these patches to the imagery, we get a new image that highlights the features that the patch is looking for. For example, when we apply the forest patch to the imagery, we get a new image that highlights the forest canopy. When we apply the road patch to the imagery, we get a new image that highlights the road. When we apply the river patch to the imagery, we get a new image that highlights the river.</p>
+<p>When we convolve the forest patch across the entire image, the resulting map “lights up” places that look like forest. Likewise, the road patch lights up roads, and the river patch lights up the river. After the ReLU and average-pooling steps, we get a set of summary values—one for each filter.</p>
 <div id="fig-cartoon-label-video" class="quarto-float quarto-figure quarto-figure-center anchored" autoplay="true">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-cartoon-label-video-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <video src="../images/cartoon_features.mp4" class="img-fluid" autoplay="true" controls=""><a href="../images/cartoon_features.mp4">Video</a></video>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cartoon-label-video-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12.6: Two cartoon images with the same patches used in the convolution step. We see that we have several labels for each image and that we can model each outcome with the same set of features.
+Figure&nbsp;12.7: Two cartoon images with the same patches used in the convolution step. We see that we have several labels for each image and that we can model each outcome with the same set of features.
 </figcaption></figure>
 </div>
-<p>Having more trees in the image will increase the value of the feature that represents the forest patch. In <a href="#fig-cartoon-label-video" class="quarto-xref">Figure&nbsp;<span>12.6</span></a>, image 1 has more trees than image 2, so we see the feature in the first place in the vector has a higher value. Having more roads in the image will increase the value of the feature that represents the road patch, which is seen with image 2 having a higher second value. This is how we can use the features to predict different outcomes from the imagery. We can use the same set of features to predict the presence or levels of different outcomes in the imagery.</p>
+<p>If Image 1 has more trees than Image 2, the “forest” feature’s value is higher in Image 1. If Image 2 has more roads, its “road” feature will be higher. Because these features each capture a different (random) spatial pattern, we can then combine them for many downstream prediction tasks—whether it’s predicting tree cover, paved roads, or even something else that correlates with these visual patterns.</p>
 <div id="fig-cartoon-vect-video" class="quarto-float quarto-figure quarto-figure-center anchored" autoplay="true">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-cartoon-vect-video-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <video src="../images/cartoon_vectors.mp4" class="img-fluid" autoplay="true" controls=""><a href="../images/cartoon_vectors.mp4">Video</a></video>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cartoon-vect-video-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12.7: A cartoon image projected into random feature space. If we look at just 2 dimensions, how grey on the x-axis and how green on the y-axis, we can find the vector through this feature space which represents our outcome.
+Figure&nbsp;12.8: A cartoon image projected into random feature space. If we look at just 2 dimensions, how grey on the x-axis and how green on the y-axis, we can find the vector through this feature space which represents our outcome.
 </figcaption></figure>
 </div>
+<hr></section></section><section id="why-use-rcfs" class="level2" data-number="12.3"><h2 data-number="12.3" class="anchored" data-anchor-id="why-use-rcfs">
+<span class="header-section-number">12.3</span> Why use RCFs?</h2>
+<section id="traditional-convolutional-neural-networks-cnns" class="level3" data-number="12.3.1"><h3 data-number="12.3.1" class="anchored" data-anchor-id="traditional-convolutional-neural-networks-cnns">
+<span class="header-section-number">12.3.1</span> Traditional convolutional neural networks (CNNs)</h3>
+<p>To appreciate RCFs, let’s contrast them with traditional CNNs. In a standard CNN, filters are learned via <em>backpropagation</em>. The network sees many examples, calculates errors, and updates the filter weights so that over time they become good at extracting <em>task-specific</em> features. This makes CNNs powerful, but only for what they have been trained to do.</p>
+<div id="fig-CNN" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-CNN-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/CNN.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-CNN-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.9: A simplified diagram showing a typical convolutional neural network model architecture.
+</figcaption></figure>
+</div>
+</section><section id="replacing-minimization-with-randomization-in-learning" class="level3" data-number="12.3.2"><h3 data-number="12.3.2" class="anchored" data-anchor-id="replacing-minimization-with-randomization-in-learning">
+<span class="header-section-number">12.3.2</span> Replacing minimization with randomization in learning</h3>
+<p>MOSAIKS takes a radically simpler approach: <em>random</em> filters are used to sample the imagery’s information. Because they are random, they are not “tailored” to any one task. This sounds counterintuitive at first—surely you’d want to <em>learn</em> your filters! But the virtue of randomization is speed and <em>broad</em> applicability. Since no training is required to set these filters, we can produce features at planet-scale <em>very</em> quickly. These features can then be shared with many users, each of whom can apply them to their own predictive tasks (e.g., estimating forest cover, housing density, crop yields, etc.).</p>
+<div id="fig-Rolf-et-al-2021-Fig-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-Rolf-et-al-2021-Fig-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/rolf_et_al_2021-Fig_1.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Rolf-et-al-2021-Fig-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.10: <a href="https://www.nature.com/articles/s41467-021-24638-z/figures/1" target="_blank">Rolf et al.&nbsp;2021 Figure 1</a>: MOSAIKS is designed to solve an unlimited number of tasks at planet-scale quickly. After a one-time unsupervised image featurization using random convolutional features, MOSAIKS centrally stores and distributes task-agnostic features to users, each of whom generates predictions in a new context.
+</figcaption></figure>
+</div>
+<hr></section></section><section id="summary" class="level2" data-number="12.4"><h2 data-number="12.4" class="anchored" data-anchor-id="summary">
+<span class="header-section-number">12.4</span> Summary</h2>
+<p>Random Convolutional Features (RCFs) form the backbone of MOSAIKS’s ability to handle massive amounts of satellite imagery at scale. Instead of learning tailored filters via backpropagation (like a traditional convolutional neural network), MOSAIKS uses randomly initialized filters that remain fixed. This single-layer approach may seem counterintuitive, but it has several advantages:</p>
+<ol type="1">
+<li>
+<p><strong>Lightweight and Task-Agnostic</strong></p>
+<ul>
+<li>Because the filters are not tied to any particular outcome, the same feature set can be applied to countless downstream tasks. This drastically reduces the need to reprocess raw imagery for every new prediction goal.</li>
+</ul>
+</li>
+<li>
+<p><strong>Planet-Scale Featurization</strong></p>
+<ul>
+<li>Massive amounts of imagery can be processed quickly because no iterative training is needed to refine filters. After a one-time generation of RCFs, they can be stored, shared, and reused—removing the bottleneck of handling petabytes of raw data.</li>
+</ul>
+</li>
+<li>
+<p><strong>Broad Feature Capture</strong></p>
+<ul>
+<li>Random filters effectively “sample” a wide variety of spatial and spectral patterns, capturing edges, textures, colors, and more. The “2-for-1” feature approach ensures that each filter captures both positive and negative cues, doubling the dimensionality (and potential information) without doubling compute time.</li>
+</ul>
+</li>
+<li>
+<p><strong>Easily Distributed</strong></p>
+<ul>
+<li>The resulting feature vectors (rather than raw images) are small enough to download and manipulate on standard hardware. Researchers and practitioners can thus apply these features to varied applications, from ecological monitoring to socioeconomic modeling.</li>
+</ul>
+</li>
+</ol>
+<p>By converting raw imagery into a rich but compact numerical representation, RCFs offer a robust, flexible, and scalable gateway to satellite-based insights—without the headache of storing or manually interpreting vast image archives.</p>
+<hr>
 <div class="callout callout-style-simple callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -488,12 +611,12 @@ Looking forward
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>In the next section, we will look at what is publicly available in the MOSAIKS API.</p>
+<p>In the next section, we’ll look at what is publicly available in the MOSAIKS API and how you can access these features without featurizing data yourself.</p>
 </div>
 </div>
 
 
-</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
