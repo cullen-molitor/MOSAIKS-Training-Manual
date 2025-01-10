@@ -62,7 +62,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../">
 <link href="../part-04-models/04-model-demo.html" rel="next">
 <link href="../part-04-models/02-model-spatial.html" rel="prev">
-<link href="../images/sat-earth.jpeg" rel="icon" type="image/jpeg">
+<link href="../images/sat_earth.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -370,12 +370,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
 <li><a href="#feature-stacking" id="toc-feature-stacking" class="nav-link" data-scroll-target="#feature-stacking"><span class="header-section-number">18.2.1</span> Feature stacking</a></li>
   <li><a href="#temporal-aggregation" id="toc-temporal-aggregation" class="nav-link" data-scroll-target="#temporal-aggregation"><span class="header-section-number">18.2.2</span> Temporal aggregation</a></li>
-  <li><a href="#sequential-modeling" id="toc-sequential-modeling" class="nav-link" data-scroll-target="#sequential-modeling"><span class="header-section-number">18.2.3</span> Sequential modeling</a></li>
   </ul>
 </li>
-  <li><a href="#hands-on-with-time-series-data" id="toc-hands-on-with-time-series-data" class="nav-link" data-scroll-target="#hands-on-with-time-series-data"><span class="header-section-number">18.3</span> Hands on with time series data</a></li>
-  <li><a href="#filling-temporal-gaps" id="toc-filling-temporal-gaps" class="nav-link" data-scroll-target="#filling-temporal-gaps"><span class="header-section-number">18.4</span> Filling temporal gaps</a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">18.5</span> Summary</a></li>
+  <li>
+<a href="#demeaning" id="toc-demeaning" class="nav-link" data-scroll-target="#demeaning"><span class="header-section-number">18.3</span> Demeaning</a>
+  <ul class="collapse">
+<li><a href="#sequential-modeling" id="toc-sequential-modeling" class="nav-link" data-scroll-target="#sequential-modeling"><span class="header-section-number">18.3.1</span> Sequential modeling</a></li>
+  </ul>
+</li>
+  <li><a href="#hands-on-with-time-series-data" id="toc-hands-on-with-time-series-data" class="nav-link" data-scroll-target="#hands-on-with-time-series-data"><span class="header-section-number">18.4</span> Hands on with time series data</a></li>
+  <li><a href="#filling-temporal-gaps" id="toc-filling-temporal-gaps" class="nav-link" data-scroll-target="#filling-temporal-gaps"><span class="header-section-number">18.5</span> Filling temporal gaps</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">18.6</span> Summary</a></li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/edit/main/part-04-models/03-model-temporal.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
@@ -558,8 +563,11 @@ Recommended reading
 <li><p><strong>Model with aggregated features</strong>: The aggregated features can represent dynamic processes while controlling the dimensionality of your dataset.</p></li>
 </ol>
 <p>This method captures general trends and reduces noise from cloud cover or other transient factors. However, important temporal nuances (like specific short-lived events) might be lost in the aggregation.</p>
-</section><section id="sequential-modeling" class="level3" data-number="18.2.3"><h3 data-number="18.2.3" class="anchored" data-anchor-id="sequential-modeling">
-<span class="header-section-number">18.2.3</span> Sequential modeling</h3>
+</section></section><section id="demeaning" class="level2" data-number="18.3"><h2 data-number="18.3" class="anchored" data-anchor-id="demeaning">
+<span class="header-section-number">18.3</span> Demeaning</h2>
+<p>Evaluation over time</p>
+<section id="sequential-modeling" class="level3" data-number="18.3.1"><h3 data-number="18.3.1" class="anchored" data-anchor-id="sequential-modeling">
+<span class="header-section-number">18.3.1</span> Sequential modeling</h3>
 <p>For phenomena where temporal order is crucial and frequent observations exist, sequential modeling can be more powerful:</p>
 <ol type="1">
 <li><p><strong>Feature extraction</strong>: Maintain the time dimension in your feature matrix (e.g., one matrix per location, with time as rows and features as columns).</p></li>
@@ -577,8 +585,8 @@ Recommended reading
 </div>
 </div>
 </div>
-</section></section><section id="hands-on-with-time-series-data" class="level2" data-number="18.3"><h2 data-number="18.3" class="anchored" data-anchor-id="hands-on-with-time-series-data">
-<span class="header-section-number">18.3</span> Hands on with time series data</h2>
+</section></section><section id="hands-on-with-time-series-data" class="level2" data-number="18.4"><h2 data-number="18.4" class="anchored" data-anchor-id="hands-on-with-time-series-data">
+<span class="header-section-number">18.4</span> Hands on with time series data</h2>
 <p>In lieu of time series MOSAIKS features, we will instead demonstrate similar examples using MODIS NDVI data. This will allow us to explore the challenges and opportunities of time series analysis without the need for custom feature extraction.</p>
 <p><strong>NOTE</strong>: UPDATE ME with new notebook link.</p>
 <div class="callout callout-style-simple callout-note callout-titled">
@@ -596,11 +604,11 @@ Click the badge to run the demo in Google Colab!
 <p>Remember to click <code>File -&gt; Save a copy in Drive</code> to save any changes you make.</p>
 </div>
 </div>
-</section><section id="filling-temporal-gaps" class="level2" data-number="18.4"><h2 data-number="18.4" class="anchored" data-anchor-id="filling-temporal-gaps">
-<span class="header-section-number">18.4</span> Filling temporal gaps</h2>
+</section><section id="filling-temporal-gaps" class="level2" data-number="18.5"><h2 data-number="18.5" class="anchored" data-anchor-id="filling-temporal-gaps">
+<span class="header-section-number">18.5</span> Filling temporal gaps</h2>
 <p>When working with time series data, you may encounter missing values due to cloud cover, sensor issues, or other factors. Here are some common strategies for filling these gaps:</p>
-</section><section id="summary" class="level2" data-number="18.5"><h2 data-number="18.5" class="anchored" data-anchor-id="summary">
-<span class="header-section-number">18.5</span> Summary</h2>
+</section><section id="summary" class="level2" data-number="18.6"><h2 data-number="18.6" class="anchored" data-anchor-id="summary">
+<span class="header-section-number">18.6</span> Summary</h2>
 <p>Handling time series in satellite-based ML workflows requires balancing data volume, temporal alignment, and modeling complexity. While feature stacking can be effective for low-frequency or seasonal processes, more sophisticated techniques may be needed to capture high-frequency changes or long-range temporal dependencies. Ultimately, the “best” approach depends on the nature of your target variable, data availability, and the resources at your disposal.</p>
 <div class="callout callout-style-simple callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">

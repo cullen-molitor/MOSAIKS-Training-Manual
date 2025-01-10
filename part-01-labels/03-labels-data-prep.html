@@ -28,7 +28,7 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="../">
 <link href="../part-01-labels/04-labels-demo.html" rel="next">
 <link href="../part-01-labels/02-labels-survey.html" rel="prev">
-<link href="../images/sat-earth.jpeg" rel="icon" type="image/jpeg">
+<link href="../images/sat_earth.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -515,7 +515,7 @@ Figure&nbsp;7.5: Model performance for all seven tasks while varying the number 
 <img src="../images/R2_ROC_side_by_side_plots.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-r2-roc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7.6: <strong>A</strong> The coefficient of determination (R²) is a measure of how well the model fits the data. It ranges from 0 to 1, where 1 indicates a perfect fit. <strong>B</strong> The Receiver Operating Characteristic (ROC) curve is a graphical representation of the true positive rate (sensitivity) against the false positive rate (1-specificity). The area under the curve (AUC) ranges from 0 to 1, where 1 indicates a perfect model. Diagonal line is equivalent to random guessing.
+Figure&nbsp;7.6: <strong>A</strong> The coefficient of determination (R²) is a measure of how well the model fits the data. It ranges from 0 to 1, where 1 indicates a perfect fit. The closer each point is to the 45 degree line, the higher the better the model fit and the higher the score will be. <strong>B</strong> The Receiver Operating Characteristic (ROC) curve is a graphical representation of the true positive rate (sensitivity) against the false positive rate (1-specificity). The area under the curve (AUC) ranges from 0 to 1, where 1 indicates a perfect model. Diagonal line is equivalent to random guessing.
 </figcaption></figure>
 </div>
 <p>The data type may also effect how the data is cleaned and prepared. For example you may have a dataset of mining locations across a country. If you are interested in predicting the presence of mining, you may want to convert this to a binary variable where a 0 indicates no mining and a 1 indicates mining. Alternatively, you may be interested in predicting the area of mining in each location, in which case you might need to calculate the area of the mining polygons to make the variable continuous.</p>

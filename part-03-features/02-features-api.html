@@ -28,7 +28,7 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="../">
 <link href="../part-03-features/03-features-computing.html" rel="next">
 <link href="../part-03-features/01-features-rcf.html" rel="prev">
-<link href="../images/sat-earth.jpeg" rel="icon" type="image/jpeg">
+<link href="../images/sat_earth.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -326,13 +326,14 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#input-imagery" id="toc-input-imagery" class="nav-link" data-scroll-target="#input-imagery"><span class="header-section-number">13.2</span> Input imagery</a></li>
   <li><a href="#deeper-look-how-the-api-features-were-generated" id="toc-deeper-look-how-the-api-features-were-generated" class="nav-link" data-scroll-target="#deeper-look-how-the-api-features-were-generated"><span class="header-section-number">13.3</span> Deeper Look: How the API Features Were Generated</a></li>
   <li>
-<a href="#derived-aggregations" id="toc-derived-aggregations" class="nav-link" data-scroll-target="#derived-aggregations"><span class="header-section-number">13.4</span> Derived Aggregations</a>
+<a href="#derived-aggregations" id="toc-derived-aggregations" class="nav-link" data-scroll-target="#derived-aggregations"><span class="header-section-number">13.4</span> Derived aggregations</a>
   <ul class="collapse">
 <li><a href="#area-vs.-population-weighting" id="toc-area-vs.-population-weighting" class="nav-link" data-scroll-target="#area-vs.-population-weighting"><span class="header-section-number">13.4.1</span> Area vs.&nbsp;Population Weighting</a></li>
   </ul>
 </li>
-  <li><a href="#when-to-use-these-features" id="toc-when-to-use-these-features" class="nav-link" data-scroll-target="#when-to-use-these-features"><span class="header-section-number">13.5</span> When to Use These Features</a></li>
-  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways"><span class="header-section-number">13.6</span> Key Takeaways</a></li>
+  <li><a href="#when-to-use-these-features" id="toc-when-to-use-these-features" class="nav-link" data-scroll-target="#when-to-use-these-features"><span class="header-section-number">13.5</span> When to use these features</a></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways"><span class="header-section-number">13.6</span> Key takeaways</a></li>
+  <li><a href="#future-directions" id="toc-future-directions" class="nav-link" data-scroll-target="#future-directions"><span class="header-section-number">13.7</span> Future directions</a></li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/edit/main/part-03-features/02-features-api.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
@@ -457,15 +458,69 @@ Figure&nbsp;13.2: Three randomly generated feature activation maps plotted from 
 </figcaption></figure>
 </div>
 <hr></section><section id="derived-aggregations" class="level2" data-number="13.4"><h2 data-number="13.4" class="anchored" data-anchor-id="derived-aggregations">
-<span class="header-section-number">13.4</span> Derived Aggregations</h2>
+<span class="header-section-number">13.4</span> Derived aggregations</h2>
 <p>Although the API stores and provides these features at 0.01° resolution, it also offers <strong>pre-aggregated</strong> versions:</p>
-<ul>
-<li>
-<strong>0.1° and 1° Grids</strong>: Summing or averaging the 0.01° cells.<br>
-</li>
-<li>
-<strong>Administrative Boundaries</strong>: ADM0 (country), ADM1 (state/province), and ADM2 (county/district) levels.</li>
-</ul>
+<div id="tbl-api-options" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><div aria-describedby="tbl-api-options-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table">
+<thead><tr class="header">
+<th>Resolution</th>
+<th>Description</th>
+<th>Weighting</th>
+<th>Download</th>
+<th>Access</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>0.01°</td>
+<td>Native resolution (~1km²)</td>
+<td>Unweighted</td>
+<td>Map or File Query</td>
+<td><a href="https://api.mosaiks.org/portal/file_query/" target="_blank">API Portal</a></td>
+</tr>
+<tr class="even">
+<td>0.1°</td>
+<td>Aggregated grid (~10km²)</td>
+<td>Area or population</td>
+<td>Chunked files</td>
+<td><a href="https://api.mosaiks.org/portal/global_grids/" target="_blank">Global Grids</a></td>
+</tr>
+<tr class="odd">
+<td>1°</td>
+<td>Aggregated grid (~100km²)</td>
+<td>Area or population</td>
+<td>Single file</td>
+<td><a href="https://api.mosaiks.org/portal/global_grids/" target="_blank">Global Grids</a></td>
+</tr>
+<tr class="even">
+<td>ADM2</td>
+<td>County or district level</td>
+<td>Area or population</td>
+<td>Single file</td>
+<td><a href="https://api.mosaiks.org/portal/precomputed/" target="_blank">Precomputed Files</a></td>
+</tr>
+<tr class="odd">
+<td>ADM1</td>
+<td>State or province level</td>
+<td>Area or population</td>
+<td>Single file</td>
+<td><a href="https://api.mosaiks.org/portal/precomputed/" target="_blank">Precomputed Files</a></td>
+</tr>
+<tr class="even">
+<td>ADM0</td>
+<td>Country level</td>
+<td>Area or population</td>
+<td>Single file</td>
+<td><a href="https://api.mosaiks.org/portal/precomputed/" target="_blank">Precomputed Files</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-api-options-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;13.1: The MOSAIKS API offers features derived from Planet Labs imagery (2019 Q3) at various resolutions for the entire globe. All features share the same 4,000 feature columns, with the only difference being the resolution/aggregation level. At each aggregation level above the native resolution, we offer both area-weighted and population-weighted versions. Population weights come from the <a href="https://sedac.ciesin.columbia.edu/data/collection/gpw-v4" target="_blank">Gridded Population of the World (GPWv4)</a> population density dataset.
+</figcaption></figure>
+</div>
+<p>It is nice to have options, but sometimes it is hard to visualize what these aggregations mean. <a href="#fig-feature-aggregation" class="quarto-xref">Figure&nbsp;<span>13.3</span></a> shows how these features might look when aggregated to different levels.</p>
 <div id="fig-feature-aggregation" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-feature-aggregation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../images/US_feature_summaries.png" class="img-fluid figure-img">
@@ -480,7 +535,7 @@ Figure&nbsp;13.3: Example showing of 3 representative random convolutional featu
 - <strong>Population Weighting</strong>: Uses population density (<a href="https://earthdata.nasa.gov/data/projects/gpw" target="_blank">GPWv4</a>) to weight cells more heavily where more people live.</p>
 <p><strong>note</strong> maybe a population map here</p>
 <hr></section></section><section id="when-to-use-these-features" class="level2" data-number="13.5"><h2 data-number="13.5" class="anchored" data-anchor-id="when-to-use-these-features">
-<span class="header-section-number">13.5</span> When to Use These Features</h2>
+<span class="header-section-number">13.5</span> When to use these features</h2>
 <ol type="1">
 <li><p><strong>Readily Available</strong>: If your labels are from ~2019 or a period that hasn’t changed drastically since 2019, start with these API features—they’re the <strong>fastest and easiest</strong> to incorporate into your analyses.</p></li>
 <li><p><strong>Coarse-Resolution or Aggregated Labels</strong>: If your data is aggregated (e.g., a country-level statistic), consider <strong>downloading the aggregated features</strong> to match your label resolution.</p></li>
@@ -496,7 +551,7 @@ Figure&nbsp;13.4: Global Human Development Index (HDI) data at the first sub-nat
 </figcaption></figure>
 </div>
 <hr></section><section id="key-takeaways" class="level2" data-number="13.6"><h2 data-number="13.6" class="anchored" data-anchor-id="key-takeaways">
-<span class="header-section-number">13.6</span> Key Takeaways</h2>
+<span class="header-section-number">13.6</span> Key takeaways</h2>
 <ol type="1">
 <li>
 <strong>Single Source Imagery</strong>
@@ -560,6 +615,8 @@ Figure&nbsp;13.4: Global Human Development Index (HDI) data at the first sub-nat
 </ul>
 </li>
 </ol>
+<hr></section><section id="future-directions" class="level2" data-number="13.7"><h2 data-number="13.7" class="anchored" data-anchor-id="future-directions">
+<span class="header-section-number">13.7</span> Future directions</h2>
 <div class="callout callout-style-simple callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -606,11 +663,11 @@ Currently the MOSAIKS API has a single set of global features ready to download.
 | Resolution | Time Period | Weighting         | Download      |
 |------------|-------------|-------------------|---------------|
 | 0.01°      | 2019 Q3     | Unweighted        | Query         |
-| 0.1°       | 2019 Q3     | Area & population | Chunked files |
-| 1°         | 2019 Q3     | Area & population | Single file   |
-| ADM2       | 2019 Q3     | Area & population | Single file   |
-| ADM1       | 2019 Q3     | Area & population | Single file   |
-| ADM0       | 2019 Q3     | Area & population | Single file   |
+| 0.1°       | 2019 Q3     | Area or population | Chunked files |
+| 1°         | 2019 Q3     | Area or population | Single file   |
+| ADM2       | 2019 Q3     | Area or population | Single file   |
+| ADM1       | 2019 Q3     | Area or population | Single file   |
+| ADM0       | 2019 Q3     | Area or population | Single file   |
 
 : The MOSAIKS API offers features at 0.01°, 0.1°, and 1° resolution for the entire globe. Additionally, we provide features aggregated to the ADM0 (country), ADM1 (state/province), and ADM2 (county/municipality) levels. All features share the same 4,000 feature columns, and are all created from the same Planet Labs imagery, the only difference is the resolution/aggregation level. At each level of aggregation, we offer area weighted features and population weighted features. Population weighted features use weights from the [Gridded Population of the World (GPWv4)](https://sedac.ciesin.columbia.edu/data/collection/gpw-v4) population density dataset. {#tbl-api-options}
 -->
