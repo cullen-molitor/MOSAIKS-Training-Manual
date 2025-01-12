@@ -1351,7 +1351,73 @@
     "href": "part-04-models/01-model-choice.html",
     "title": "16  Build, evaluate, deploy",
     "section": "",
-    "text": "This chapter is in early draft form and may be incomplete.\n\n\n\n\n\n\n\n\n\n\nLooking forward\n\n\n\nIn the next chapter,",
+    "text": "16.1 Overview\nWhen using MOSAIKS (Multi-task Observation using SAtellite Imagery & Kitchen Sinks), model selection largely depends on your label data type. While more complex methods are certainly possible, experience shows that linear models often perform remarkably well. This is because the random convolutional features in MOSAIKS already capture and encode non-linear information from the underlying satellite imagery. This chapter will outline modeling approaches for different types of label data, and offer guidance on best practices for model evaluation.\nBefore jumping into the details, it is important to emphasize that all modeling tasks benefit from a systematic approach to training, validation, and testing:\nThis ensures that you have separate, unbiased datasets for both model tuning and final performance evaluation.",
+    "crumbs": [
+      "Task modeling",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Build, evaluate, deploy</span>"
+    ]
+  },
+  {
+    "objectID": "part-04-models/01-model-choice.html#overview",
+    "href": "part-04-models/01-model-choice.html#overview",
+    "title": "16  Build, evaluate, deploy",
+    "section": "",
+    "text": "Train/validation split (80% of the data)\n\n\nTest split (20% of the data)",
+    "crumbs": [
+      "Task modeling",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Build, evaluate, deploy</span>"
+    ]
+  },
+  {
+    "objectID": "part-04-models/01-model-choice.html#continuous-labels",
+    "href": "part-04-models/01-model-choice.html#continuous-labels",
+    "title": "16  Build, evaluate, deploy",
+    "section": "\n16.2 Continuous labels",
+    "text": "16.2 Continuous labels\nMany MOSAIKS applications involve predicting continuous outcomes such as forest cover percentage, population density, average income, crop yields, or building height. In these cases, penalized linear regression approaches (especially ridge regression) work well. These methods offer simplicity, computational efficiency, and interpretability, while mitigating overfitting through the use of regularization.\n\n16.2.1 Ridge regression\nRidge regression (L2 regularization) is often the default choice in MOSAIKS applications because it effectively handles the large number of potentially correlated features produced by the random convolution process. It achieves this via an L2 penalty on the regression coefficients, which shrinks coefficients towards zero and reduces variance, thereby improving generalization.\nThe ridge regression objective function:\n\\[\n\\min_{\\beta} \\|y - X\\beta\\|^2_2 + \\lambda\\|\\beta\\|^2_2\n\\]\nWhere:\n\n\n\\(\\lambda\\) controls the strength of the regularization,\n\n\\(\\beta\\) are the regression coefficients,\n\n\\(y\\) is the vector of observed labels,\n\n\\(X\\) is the feature matrix produced by the MOSAIKS pipeline.\n\n16.2.2 Lasso regression\nLasso regression (L1 regularization) is an alternative that shrinks some coefficients to zero, effectively performing feature selection. The L1 penalty helps enforce sparsity, which can be valuable when interpretability or identification of key features is a priority.\nThe lasso objective function:\n\\[\n\\min_{\\beta} \\|y - X\\beta\\|^2_2 + \\lambda\\|\\beta\\|_1\n\\]\nWhere:\n\n\n\\(\\lambda\\) again controls the strength of the penalty,\n\nThe \\(\\|\\beta\\|_1\\) term encourages some coefficients to be exactly zero.\n\n16.2.3 Why linear models work well\nThough the models themselves are linear, the features are not. MOSAIKS uses random convolutions, non-linear activation functions (ReLU), and average pooling to transform raw satellite imagery into highly expressive features. Because these transformations capture a broad range of non-linear spatial patterns, traditional linear methods can then perform well with minimal additional complexity.\n\n16.2.4 Evaluation metrics\nFor continuous outcomes, key evaluation metrics include:\n\n\nR² (coefficient of determination): Measures the proportion of variance in the label data explained by the model.\n\n\nRMSE (root mean squared error): Quantifies the average magnitude of the prediction errors.\n\n\nMAE (mean absolute error): Focuses on the absolute value of prediction errors, less sensitive to large outliers than RMSE.",
+    "crumbs": [
+      "Task modeling",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Build, evaluate, deploy</span>"
+    ]
+  },
+  {
+    "objectID": "part-04-models/01-model-choice.html#binary-classification",
+    "href": "part-04-models/01-model-choice.html#binary-classification",
+    "title": "16  Build, evaluate, deploy",
+    "section": "\n16.3 Binary classification",
+    "text": "16.3 Binary classification\nIn some MOSAIKS applications, your labels may be binary (e.g., building presence vs. absence, land use change vs. no change). Here, logistic regression often serves as a straightforward choice.\n\n16.3.1 Logistic regression\nLogistic regression models the probability that a given example belongs to the “positive” class:\n\\[\n\\text{logit}(p) = \\beta_0 + \\beta_1 x_1 + \\cdots + \\beta_n x_n\n\\]\nwhere \\(p\\) is the probability of belonging to the positive class. Despite its simplicity, logistic regression provides robust and interpretable performance for many binary classification tasks with MOSAIKS features.\n\n16.3.2 Evaluation metrics\nFor binary classification, common metrics include:\n\n\nAUC-ROC: The area under the ROC curve, assessing the trade-off between true positive rate and false positive rate across different threshold settings.\n\n\nAccuracy: The proportion of correct predictions.\n\n\nPrecision: Of the positive predictions made, how many were correct?\n\n\nRecall: Of the actual positives in the dataset, how many did we correctly identify?\n\n\nF1 score: The harmonic mean of precision and recall, often used in imbalanced classification settings.",
+    "crumbs": [
+      "Task modeling",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Build, evaluate, deploy</span>"
+    ]
+  },
+  {
+    "objectID": "part-04-models/01-model-choice.html#multi-class-classification",
+    "href": "part-04-models/01-model-choice.html#multi-class-classification",
+    "title": "16  Build, evaluate, deploy",
+    "section": "\n16.4 Multi-class classification",
+    "text": "16.4 Multi-class classification\nSome applications require predicting multiple categories (e.g., land cover types, crop variety, building categories). These are multi-class classification problems. Several approaches are possible:\n\n\nOne-vs-Rest: Train a binary classifier for each class; each classifier distinguishes one class from “all others.”\n\n\nMultinomial (softmax) regression: A single model to predict probabilities across all classes simultaneously.\n\n\nOrdinal regression: For predicting ordered categories (e.g., mild, moderate, severe damage).\n\n\n16.4.1 Evaluation metrics\nFor multi-class problems, consider:\n\n\nOverall accuracy: Percentage of examples correctly classified.\n\n\nPer-class accuracy: Accuracy within each class, useful if class sizes are imbalanced.\n\n\nConfusion matrix: Provides a detailed breakdown of predictions vs. actual classes.\n\n\nWeighted F1 score: Averages F1 across classes, weighting by class frequency.\n\n\nCohen’s kappa: Measures agreement between predicted and actual labels, adjusting for chance agreement.",
+    "crumbs": [
+      "Task modeling",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Build, evaluate, deploy</span>"
+    ]
+  },
+  {
+    "objectID": "part-04-models/01-model-choice.html#model-selection-workflow",
+    "href": "part-04-models/01-model-choice.html#model-selection-workflow",
+    "title": "16  Build, evaluate, deploy",
+    "section": "\n16.5 Model selection workflow",
+    "text": "16.5 Model selection workflow\n\n\nIdentify label type\n\nContinuous → Ridge or Lasso regression\n\nBinary → Logistic regression\n\nMulti-class → One-vs-Rest or Multinomial\n\n\n\nCross-validation\n\nSplit data into train, validation, and test sets, respecting spatial structure where possible (e.g., leave-cluster-out).\n\nSelect appropriate evaluation metrics (e.g., R² for continuous, ROC-AUC for binary).\n\nTune hyperparameters (\\(\\lambda\\) in ridge/lasso, regularization in logistic) using the validation set.\n\n\n\nModel deployment\n\nRetrain on the entire training set using the chosen hyperparameters.\n\nGenerate predictions on the test set (or new data).\n\nQuantify uncertainty (e.g., confidence intervals, out-of-sample error estimates).",
+    "crumbs": [
+      "Task modeling",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Build, evaluate, deploy</span>"
+    ]
+  },
+  {
+    "objectID": "part-04-models/01-model-choice.html#summary",
+    "href": "part-04-models/01-model-choice.html#summary",
+    "title": "16  Build, evaluate, deploy",
+    "section": "\n16.6 Summary",
+    "text": "16.6 Summary\n\n\nStart with simple linear models: Let MOSAIKS features do the heavy lifting of extracting non-linear patterns.\n\n\nMatch the metric to the task: R² or RMSE for continuous labels, AUC-ROC or F1 score for classification, etc.\n\n\nUse cross-validation: Always separate training and testing to maintain unbiased estimates of model performance.\n\n\nConsider spatial structure: When dealing with spatial data, standard random splits may lead to overly optimistic estimates of performance.\n\n\n\n\n\n\n\nLooking forward\n\n\n\nIn the next chapter, we’ll discuss strategies for accounting for spatial dependencies in your modeling workflow, including methods for spatially stratified cross-validation, spatial interpolation, and spatial extrapolation.",
     "crumbs": [
       "Task modeling",
       "<span class='chapter-number'>16</span>  <span class='chapter-title'>Build, evaluate, deploy</span>"
