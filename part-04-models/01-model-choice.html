@@ -348,30 +348,31 @@ window.Quarto = {
    
   <ul>
 <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">16.1</span> Overview</a></li>
+  <li><a href="#trainvalidation-and-test-splits" id="toc-trainvalidation-and-test-splits" class="nav-link" data-scroll-target="#trainvalidation-and-test-splits"><span class="header-section-number">16.2</span> Train/validation and test splits</a></li>
   <li>
-<a href="#continuous-labels" id="toc-continuous-labels" class="nav-link" data-scroll-target="#continuous-labels"><span class="header-section-number">16.2</span> Continuous labels</a>
+<a href="#continuous-labels" id="toc-continuous-labels" class="nav-link" data-scroll-target="#continuous-labels"><span class="header-section-number">16.3</span> Continuous labels</a>
   <ul class="collapse">
-<li><a href="#ridge-regression" id="toc-ridge-regression" class="nav-link" data-scroll-target="#ridge-regression"><span class="header-section-number">16.2.1</span> Ridge regression</a></li>
-  <li><a href="#lasso-regression" id="toc-lasso-regression" class="nav-link" data-scroll-target="#lasso-regression"><span class="header-section-number">16.2.2</span> Lasso regression</a></li>
-  <li><a href="#why-linear-models-work-well" id="toc-why-linear-models-work-well" class="nav-link" data-scroll-target="#why-linear-models-work-well"><span class="header-section-number">16.2.3</span> Why linear models work well</a></li>
-  <li><a href="#evaluation-metrics" id="toc-evaluation-metrics" class="nav-link" data-scroll-target="#evaluation-metrics"><span class="header-section-number">16.2.4</span> Evaluation metrics</a></li>
+<li><a href="#ridge-regression" id="toc-ridge-regression" class="nav-link" data-scroll-target="#ridge-regression"><span class="header-section-number">16.3.1</span> Ridge regression</a></li>
+  <li><a href="#lasso-regression" id="toc-lasso-regression" class="nav-link" data-scroll-target="#lasso-regression"><span class="header-section-number">16.3.2</span> Lasso regression</a></li>
+  <li><a href="#why-linear-models-work-well" id="toc-why-linear-models-work-well" class="nav-link" data-scroll-target="#why-linear-models-work-well"><span class="header-section-number">16.3.3</span> Why linear models work well</a></li>
+  <li><a href="#evaluation-metrics" id="toc-evaluation-metrics" class="nav-link" data-scroll-target="#evaluation-metrics"><span class="header-section-number">16.3.4</span> Evaluation metrics</a></li>
   </ul>
 </li>
   <li>
-<a href="#binary-classification" id="toc-binary-classification" class="nav-link" data-scroll-target="#binary-classification"><span class="header-section-number">16.3</span> Binary classification</a>
+<a href="#binary-classification" id="toc-binary-classification" class="nav-link" data-scroll-target="#binary-classification"><span class="header-section-number">16.4</span> Binary classification</a>
   <ul class="collapse">
-<li><a href="#logistic-regression" id="toc-logistic-regression" class="nav-link" data-scroll-target="#logistic-regression"><span class="header-section-number">16.3.1</span> Logistic regression</a></li>
-  <li><a href="#evaluation-metrics-1" id="toc-evaluation-metrics-1" class="nav-link" data-scroll-target="#evaluation-metrics-1"><span class="header-section-number">16.3.2</span> Evaluation metrics</a></li>
+<li><a href="#logistic-regression" id="toc-logistic-regression" class="nav-link" data-scroll-target="#logistic-regression"><span class="header-section-number">16.4.1</span> Logistic regression</a></li>
+  <li><a href="#evaluation-metrics-1" id="toc-evaluation-metrics-1" class="nav-link" data-scroll-target="#evaluation-metrics-1"><span class="header-section-number">16.4.2</span> Evaluation metrics</a></li>
   </ul>
 </li>
   <li>
-<a href="#multi-class-classification" id="toc-multi-class-classification" class="nav-link" data-scroll-target="#multi-class-classification"><span class="header-section-number">16.4</span> Multi-class classification</a>
+<a href="#multi-class-classification" id="toc-multi-class-classification" class="nav-link" data-scroll-target="#multi-class-classification"><span class="header-section-number">16.5</span> Multi-class classification</a>
   <ul class="collapse">
-<li><a href="#evaluation-metrics-2" id="toc-evaluation-metrics-2" class="nav-link" data-scroll-target="#evaluation-metrics-2"><span class="header-section-number">16.4.1</span> Evaluation metrics</a></li>
+<li><a href="#evaluation-metrics-2" id="toc-evaluation-metrics-2" class="nav-link" data-scroll-target="#evaluation-metrics-2"><span class="header-section-number">16.5.1</span> Evaluation metrics</a></li>
   </ul>
 </li>
-  <li><a href="#model-selection-workflow" id="toc-model-selection-workflow" class="nav-link" data-scroll-target="#model-selection-workflow"><span class="header-section-number">16.5</span> Model selection workflow</a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">16.6</span> Summary</a></li>
+  <li><a href="#model-selection-workflow" id="toc-model-selection-workflow" class="nav-link" data-scroll-target="#model-selection-workflow"><span class="header-section-number">16.6</span> Model selection workflow</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">16.7</span> Summary</a></li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/edit/main/part-04-models/01-model-choice.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
@@ -405,6 +406,8 @@ window.Quarto = {
 <section id="overview" class="level2" data-number="16.1"><h2 data-number="16.1" class="anchored" data-anchor-id="overview">
 <span class="header-section-number">16.1</span> Overview</h2>
 <p>When using MOSAIKS (Multi-task Observation using SAtellite Imagery &amp; Kitchen Sinks), model selection largely depends on your label data type. While more complex methods are certainly possible, experience shows that <strong>linear models</strong> often perform remarkably well. This is because the random convolutional features in MOSAIKS already capture and encode non-linear information from the underlying satellite imagery. This chapter will outline modeling approaches for different types of label data, and offer guidance on best practices for model evaluation.</p>
+</section><section id="trainvalidation-and-test-splits" class="level2" data-number="16.2"><h2 data-number="16.2" class="anchored" data-anchor-id="trainvalidation-and-test-splits">
+<span class="header-section-number">16.2</span> Train/validation and test splits</h2>
 <p>Before jumping into the details, it is important to emphasize that <strong>all modeling tasks</strong> benefit from a systematic approach to training, validation, and testing:</p>
 <ul>
 <li>
@@ -414,11 +417,19 @@ window.Quarto = {
 <strong>Test split</strong> (20% of the data)</li>
 </ul>
 <p>This ensures that you have separate, unbiased datasets for both model tuning and final performance evaluation.</p>
-</section><section id="continuous-labels" class="level2" data-number="16.2"><h2 data-number="16.2" class="anchored" data-anchor-id="continuous-labels">
-<span class="header-section-number">16.2</span> Continuous labels</h2>
+<div id="fig-train-val-test-splits" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-train-val-test-splits-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/kfold_cv_split.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-train-val-test-splits-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.1: Train/validation and test splits shown for a standard 5-fold cross validation procedure.
+</figcaption></figure>
+</div>
+</section><section id="continuous-labels" class="level2" data-number="16.3"><h2 data-number="16.3" class="anchored" data-anchor-id="continuous-labels">
+<span class="header-section-number">16.3</span> Continuous labels</h2>
 <p>Many MOSAIKS applications involve predicting continuous outcomes such as forest cover percentage, population density, average income, crop yields, or building height. In these cases, <strong>penalized linear regression</strong> approaches (especially <strong>ridge regression</strong>) work well. These methods offer simplicity, computational efficiency, and interpretability, while mitigating overfitting through the use of regularization.</p>
-<section id="ridge-regression" class="level3" data-number="16.2.1"><h3 data-number="16.2.1" class="anchored" data-anchor-id="ridge-regression">
-<span class="header-section-number">16.2.1</span> Ridge regression</h3>
+<section id="ridge-regression" class="level3" data-number="16.3.1"><h3 data-number="16.3.1" class="anchored" data-anchor-id="ridge-regression">
+<span class="header-section-number">16.3.1</span> Ridge regression</h3>
 <p><strong>Ridge regression</strong> (L2 regularization) is often the default choice in MOSAIKS applications because it effectively handles the large number of potentially correlated features produced by the random convolution process. It achieves this via an L2 penalty on the regression coefficients, which shrinks coefficients towards zero and reduces variance, thereby improving generalization.</p>
 <p>The ridge regression objective function:</p>
 <p><span class="math display">\[
@@ -434,8 +445,8 @@ window.Quarto = {
 <span class="math inline">\(y\)</span> is the vector of observed labels,</li>
 <li>
 <span class="math inline">\(X\)</span> is the feature matrix produced by the MOSAIKS pipeline.</li>
-</ul></section><section id="lasso-regression" class="level3" data-number="16.2.2"><h3 data-number="16.2.2" class="anchored" data-anchor-id="lasso-regression">
-<span class="header-section-number">16.2.2</span> Lasso regression</h3>
+</ul></section><section id="lasso-regression" class="level3" data-number="16.3.2"><h3 data-number="16.3.2" class="anchored" data-anchor-id="lasso-regression">
+<span class="header-section-number">16.3.2</span> Lasso regression</h3>
 <p><strong>Lasso regression</strong> (L1 regularization) is an alternative that shrinks some coefficients to zero, effectively performing feature selection. The L1 penalty helps enforce sparsity, which can be valuable when interpretability or identification of key features is a priority.</p>
 <p>The lasso objective function:</p>
 <p><span class="math display">\[
@@ -447,11 +458,11 @@ window.Quarto = {
 <span class="math inline">\(\lambda\)</span> again controls the strength of the penalty,<br>
 </li>
 <li>The <span class="math inline">\(\|\beta\|_1\)</span> term encourages some coefficients to be exactly zero.</li>
-</ul></section><section id="why-linear-models-work-well" class="level3" data-number="16.2.3"><h3 data-number="16.2.3" class="anchored" data-anchor-id="why-linear-models-work-well">
-<span class="header-section-number">16.2.3</span> Why linear models work well</h3>
+</ul></section><section id="why-linear-models-work-well" class="level3" data-number="16.3.3"><h3 data-number="16.3.3" class="anchored" data-anchor-id="why-linear-models-work-well">
+<span class="header-section-number">16.3.3</span> Why linear models work well</h3>
 <p>Though the models themselves are linear, <strong>the features are not</strong>. MOSAIKS uses random convolutions, non-linear activation functions (ReLU), and average pooling to transform raw satellite imagery into highly expressive features. Because these transformations capture a broad range of non-linear spatial patterns, traditional linear methods can then perform well with minimal additional complexity.</p>
-</section><section id="evaluation-metrics" class="level3" data-number="16.2.4"><h3 data-number="16.2.4" class="anchored" data-anchor-id="evaluation-metrics">
-<span class="header-section-number">16.2.4</span> Evaluation metrics</h3>
+</section><section id="evaluation-metrics" class="level3" data-number="16.3.4"><h3 data-number="16.3.4" class="anchored" data-anchor-id="evaluation-metrics">
+<span class="header-section-number">16.3.4</span> Evaluation metrics</h3>
 <p>For continuous outcomes, key evaluation metrics include:</p>
 <ul>
 <li>
@@ -462,18 +473,18 @@ window.Quarto = {
 </li>
 <li>
 <strong>MAE (mean absolute error)</strong>: Focuses on the absolute value of prediction errors, less sensitive to large outliers than RMSE.</li>
-</ul></section></section><section id="binary-classification" class="level2" data-number="16.3"><h2 data-number="16.3" class="anchored" data-anchor-id="binary-classification">
-<span class="header-section-number">16.3</span> Binary classification</h2>
+</ul></section></section><section id="binary-classification" class="level2" data-number="16.4"><h2 data-number="16.4" class="anchored" data-anchor-id="binary-classification">
+<span class="header-section-number">16.4</span> Binary classification</h2>
 <p>In some MOSAIKS applications, your labels may be binary (e.g., building presence vs.&nbsp;absence, land use change vs.&nbsp;no change). Here, <strong>logistic regression</strong> often serves as a straightforward choice.</p>
-<section id="logistic-regression" class="level3" data-number="16.3.1"><h3 data-number="16.3.1" class="anchored" data-anchor-id="logistic-regression">
-<span class="header-section-number">16.3.1</span> Logistic regression</h3>
+<section id="logistic-regression" class="level3" data-number="16.4.1"><h3 data-number="16.4.1" class="anchored" data-anchor-id="logistic-regression">
+<span class="header-section-number">16.4.1</span> Logistic regression</h3>
 <p>Logistic regression models the probability that a given example belongs to the “positive” class:</p>
 <p><span class="math display">\[
 \text{logit}(p) = \beta_0 + \beta_1 x_1 + \cdots + \beta_n x_n
 \]</span></p>
 <p>where <span class="math inline">\(p\)</span> is the probability of belonging to the positive class. Despite its simplicity, logistic regression provides robust and interpretable performance for many binary classification tasks with MOSAIKS features.</p>
-</section><section id="evaluation-metrics-1" class="level3" data-number="16.3.2"><h3 data-number="16.3.2" class="anchored" data-anchor-id="evaluation-metrics-1">
-<span class="header-section-number">16.3.2</span> Evaluation metrics</h3>
+</section><section id="evaluation-metrics-1" class="level3" data-number="16.4.2"><h3 data-number="16.4.2" class="anchored" data-anchor-id="evaluation-metrics-1">
+<span class="header-section-number">16.4.2</span> Evaluation metrics</h3>
 <p>For binary classification, common metrics include:</p>
 <ul>
 <li>
@@ -490,8 +501,8 @@ window.Quarto = {
 </li>
 <li>
 <strong>F1 score</strong>: The harmonic mean of precision and recall, often used in imbalanced classification settings.</li>
-</ul></section></section><section id="multi-class-classification" class="level2" data-number="16.4"><h2 data-number="16.4" class="anchored" data-anchor-id="multi-class-classification">
-<span class="header-section-number">16.4</span> Multi-class classification</h2>
+</ul></section></section><section id="multi-class-classification" class="level2" data-number="16.5"><h2 data-number="16.5" class="anchored" data-anchor-id="multi-class-classification">
+<span class="header-section-number">16.5</span> Multi-class classification</h2>
 <p>Some applications require predicting multiple categories (e.g., land cover types, crop variety, building categories). These are <strong>multi-class</strong> classification problems. Several approaches are possible:</p>
 <ol type="1">
 <li>
@@ -503,8 +514,8 @@ window.Quarto = {
 <li>
 <strong>Ordinal regression</strong>: For predicting ordered categories (e.g., mild, moderate, severe damage).</li>
 </ol>
-<section id="evaluation-metrics-2" class="level3" data-number="16.4.1"><h3 data-number="16.4.1" class="anchored" data-anchor-id="evaluation-metrics-2">
-<span class="header-section-number">16.4.1</span> Evaluation metrics</h3>
+<section id="evaluation-metrics-2" class="level3" data-number="16.5.1"><h3 data-number="16.5.1" class="anchored" data-anchor-id="evaluation-metrics-2">
+<span class="header-section-number">16.5.1</span> Evaluation metrics</h3>
 <p>For multi-class problems, consider:</p>
 <ul>
 <li>
@@ -521,8 +532,8 @@ window.Quarto = {
 </li>
 <li>
 <strong>Cohen’s kappa</strong>: Measures agreement between predicted and actual labels, adjusting for chance agreement.</li>
-</ul></section></section><section id="model-selection-workflow" class="level2" data-number="16.5"><h2 data-number="16.5" class="anchored" data-anchor-id="model-selection-workflow">
-<span class="header-section-number">16.5</span> Model selection workflow</h2>
+</ul></section></section><section id="model-selection-workflow" class="level2" data-number="16.6"><h2 data-number="16.6" class="anchored" data-anchor-id="model-selection-workflow">
+<span class="header-section-number">16.6</span> Model selection workflow</h2>
 <ol type="1">
 <li>
 <strong>Identify label type</strong>
@@ -554,8 +565,8 @@ window.Quarto = {
 <li>Quantify uncertainty (e.g., confidence intervals, out-of-sample error estimates).</li>
 </ul>
 </li>
-</ol></section><section id="summary" class="level2" data-number="16.6"><h2 data-number="16.6" class="anchored" data-anchor-id="summary">
-<span class="header-section-number">16.6</span> Summary</h2>
+</ol></section><section id="summary" class="level2" data-number="16.7"><h2 data-number="16.7" class="anchored" data-anchor-id="summary">
+<span class="header-section-number">16.7</span> Summary</h2>
 <ul>
 <li>
 <strong>Start with simple linear models</strong>: Let MOSAIKS features do the heavy lifting of extracting non-linear patterns.<br>
