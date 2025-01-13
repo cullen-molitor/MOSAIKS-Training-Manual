@@ -17,6 +17,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -447,7 +481,7 @@ Figure&nbsp;16.1: Train/validation and test splits shown for a standard 5-fold c
 <span class="math inline">\(X\)</span> is the feature matrix produced by the MOSAIKS pipeline.</li>
 </ul></section><section id="lasso-regression" class="level3" data-number="16.3.2"><h3 data-number="16.3.2" class="anchored" data-anchor-id="lasso-regression">
 <span class="header-section-number">16.3.2</span> Lasso regression</h3>
-<p><strong>Lasso regression</strong> (L1 regularization) is an alternative that shrinks some coefficients to zero, effectively performing feature selection. The L1 penalty helps enforce sparsity, which can be valuable when interpretability or identification of key features is a priority.</p>
+<p><strong>Lasso regression</strong> (L1 regularization) can actually set coefficients to exactly zero, effectively performing feature selection. The L1 penalty helps enforce sparsity, which can be valuable when interpretability or identification of key features is a priority. This property makes Lasso particularly valuable when you want to identify which MOSAIKS features contribute most strongly to predictions.</p>
 <p>The lasso objective function:</p>
 <p><span class="math display">\[
 \min_{\beta} \|y - X\beta\|^2_2 + \lambda\|\beta\|_1
@@ -458,7 +492,18 @@ Figure&nbsp;16.1: Train/validation and test splits shown for a standard 5-fold c
 <span class="math inline">\(\lambda\)</span> again controls the strength of the penalty,<br>
 </li>
 <li>The <span class="math inline">\(\|\beta\|_1\)</span> term encourages some coefficients to be exactly zero.</li>
-</ul></section><section id="why-linear-models-work-well" class="level3" data-number="16.3.3"><h3 data-number="16.3.3" class="anchored" data-anchor-id="why-linear-models-work-well">
+</ul>
+<p>Both can be easily implemented using scikit-learn:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> Ridge, Lasso</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Ridge regression</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>ridge <span class="op">=</span> Ridge(alpha<span class="op">=</span><span class="fl">1.0</span>)  <span class="co"># alpha is the regularization strength (λ)</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>ridge.fit(X_train, y_train)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Lasso regression</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>lasso <span class="op">=</span> Lasso(alpha<span class="op">=</span><span class="fl">1.0</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>lasso.fit(X_train, y_train)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section><section id="why-linear-models-work-well" class="level3" data-number="16.3.3"><h3 data-number="16.3.3" class="anchored" data-anchor-id="why-linear-models-work-well">
 <span class="header-section-number">16.3.3</span> Why linear models work well</h3>
 <p>Though the models themselves are linear, <strong>the features are not</strong>. MOSAIKS uses random convolutions, non-linear activation functions (ReLU), and average pooling to transform raw satellite imagery into highly expressive features. Because these transformations capture a broad range of non-linear spatial patterns, traditional linear methods can then perform well with minimal additional complexity.</p>
 </section><section id="evaluation-metrics" class="level3" data-number="16.3.4"><h3 data-number="16.3.4" class="anchored" data-anchor-id="evaluation-metrics">
@@ -472,7 +517,7 @@ Figure&nbsp;16.1: Train/validation and test splits shown for a standard 5-fold c
 <strong>RMSE (root mean squared error)</strong>: Quantifies the average magnitude of the prediction errors.<br>
 </li>
 <li>
-<strong>MAE (mean absolute error)</strong>: Focuses on the absolute value of prediction errors, less sensitive to large outliers than RMSE.</li>
+<strong>MAE (mean absolute error)</strong>: Average absolute difference between predictions and true values, less sensitive to large outliers than RMSE.</li>
 </ul></section></section><section id="binary-classification" class="level2" data-number="16.4"><h2 data-number="16.4" class="anchored" data-anchor-id="binary-classification">
 <span class="header-section-number">16.4</span> Binary classification</h2>
 <p>In some MOSAIKS applications, your labels may be binary (e.g., building presence vs.&nbsp;absence, land use change vs.&nbsp;no change). Here, <strong>logistic regression</strong> often serves as a straightforward choice.</p>
@@ -514,6 +559,14 @@ Figure&nbsp;16.1: Train/validation and test splits shown for a standard 5-fold c
 <li>
 <strong>Ordinal regression</strong>: For predicting ordered categories (e.g., mild, moderate, severe damage).</li>
 </ol>
+<div id="fig-multiclass-classification" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-multiclass-classification-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/proctor_et_al_100_ecoregions_comparison.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-multiclass-classification-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16.2: Example of multiclass classification
+</figcaption></figure>
+</div>
 <section id="evaluation-metrics-2" class="level3" data-number="16.5.1"><h3 data-number="16.5.1" class="anchored" data-anchor-id="evaluation-metrics-2">
 <span class="header-section-number">16.5.1</span> Evaluation metrics</h3>
 <p>For multi-class problems, consider:</p>
@@ -580,6 +633,42 @@ Figure&nbsp;16.1: Train/validation and test splits shown for a standard 5-fold c
 <li>
 <strong>Consider spatial structure</strong>: When dealing with spatial data, standard random splits may lead to overly optimistic estimates of performance.</li>
 </ul>
+<p>The key elements for successful model building include:</p>
+<ol type="1">
+<li>
+<strong>Algorithm Selection</strong>
+<ul>
+<li>Choose based on label type</li>
+<li>Consider computational needs</li>
+<li>Balance complexity vs performance</li>
+</ul>
+</li>
+<li>
+<strong>Cross Validation</strong>
+<ul>
+<li>Use spatial awareness in splits</li>
+<li>Select appropriate metrics</li>
+<li>Tune model parameters</li>
+</ul>
+</li>
+<li>
+<strong>Model Evaluation</strong>
+<ul>
+<li>Test out-of-sample performance</li>
+<li>Validate across space</li>
+<li>Quantify uncertainties</li>
+</ul>
+</li>
+<li>
+<strong>Deployment</strong>
+<ul>
+<li>Train final model</li>
+<li>Generate predictions</li>
+<li>Document process</li>
+<li>Monitor performance</li>
+</ul>
+</li>
+</ol>
 <div class="callout callout-style-simple callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
