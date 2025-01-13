@@ -46,7 +46,7 @@ Where:
 
 ### Lasso regression
 
-**Lasso regression** (L1 regularization) is an alternative that shrinks some coefficients to zero, effectively performing feature selection. The L1 penalty helps enforce sparsity, which can be valuable when interpretability or identification of key features is a priority.
+**Lasso regression** (L1 regularization) can actually set coefficients to exactly zero, effectively performing feature selection. The L1 penalty helps enforce sparsity, which can be valuable when interpretability or identification of key features is a priority. This property makes Lasso particularly valuable when you want to identify which MOSAIKS features contribute most strongly to predictions.
 
 The lasso objective function:
 
@@ -59,6 +59,20 @@ Where:
 - $\lambda$ again controls the strength of the penalty,  
 - The $\|\beta\|_1$ term encourages some coefficients to be exactly zero.
 
+Both can be easily implemented using scikit-learn:
+
+```python
+from sklearn.linear_model import Ridge, Lasso
+
+# Ridge regression
+ridge = Ridge(alpha=1.0)  # alpha is the regularization strength (λ)
+ridge.fit(X_train, y_train)
+
+# Lasso regression
+lasso = Lasso(alpha=1.0)
+lasso.fit(X_train, y_train)
+```
+
 ### Why linear models work well
 
 Though the models themselves are linear, **the features are not**. MOSAIKS uses random convolutions, non-linear activation functions (ReLU), and average pooling to transform raw satellite imagery into highly expressive features. Because these transformations capture a broad range of non-linear spatial patterns, traditional linear methods can then perform well with minimal additional complexity.
@@ -69,7 +83,7 @@ For continuous outcomes, key evaluation metrics include:
 
 - **R² (coefficient of determination)**: Measures the proportion of variance in the label data explained by the model.  
 - **RMSE (root mean squared error)**: Quantifies the average magnitude of the prediction errors.  
-- **MAE (mean absolute error)**: Focuses on the absolute value of prediction errors, less sensitive to large outliers than RMSE.
+- **MAE (mean absolute error)**: Average absolute difference between predictions and true values, less sensitive to large outliers than RMSE.
 
 ## Binary classification
 
@@ -102,6 +116,8 @@ Some applications require predicting multiple categories (e.g., land cover types
 1. **One-vs-Rest**: Train a binary classifier for each class; each classifier distinguishes one class from “all others.”  
 2. **Multinomial (softmax) regression**: A single model to predict probabilities across all classes simultaneously.  
 3. **Ordinal regression**: For predicting ordered categories (e.g., mild, moderate, severe damage).
+
+![Example of multiclass classification](../images/proctor_et_al_100_ecoregions_comparison.jpg){#fig-multiclass-classification}
 
 ### Evaluation metrics
 
@@ -136,6 +152,29 @@ For multi-class problems, consider:
 - **Match the metric to the task**: R² or RMSE for continuous labels, AUC-ROC or F1 score for classification, etc.  
 - **Use cross-validation**: Always separate training and testing to maintain unbiased estimates of model performance.  
 - **Consider spatial structure**: When dealing with spatial data, standard random splits may lead to overly optimistic estimates of performance.
+
+The key elements for successful model building include:
+
+1. **Algorithm Selection**
+   - Choose based on label type
+   - Consider computational needs
+   - Balance complexity vs performance
+
+2. **Cross Validation**
+   - Use spatial awareness in splits
+   - Select appropriate metrics
+   - Tune model parameters
+
+3. **Model Evaluation**
+   - Test out-of-sample performance
+   - Validate across space
+   - Quantify uncertainties
+
+4. **Deployment**
+   - Train final model
+   - Generate predictions
+   - Document process
+   - Monitor performance
 
 ::: {.callout-note}
 ## Looking forward
