@@ -1439,7 +1439,40 @@
     "href": "part-04-models/02-model-spatial.html",
     "title": "17  Going over space",
     "section": "",
-    "text": "This chapter is in early draft form and may be incomplete.\n\n\n\n\n\n\n\n\n\n\nLooking forward\n\n\n\nIn the next chapter,",
+    "text": "17.1 Label super-resolution",
+    "crumbs": [
+      "Task modeling",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Going over space</span>"
+    ]
+  },
+  {
+    "objectID": "part-04-models/02-model-spatial.html#label-super-resolution",
+    "href": "part-04-models/02-model-spatial.html#label-super-resolution",
+    "title": "17  Going over space",
+    "section": "",
+    "text": "HDI example",
+    "crumbs": [
+      "Task modeling",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Going over space</span>"
+    ]
+  },
+  {
+    "objectID": "part-04-models/02-model-spatial.html#spatial-extrapolation",
+    "href": "part-04-models/02-model-spatial.html#spatial-extrapolation",
+    "title": "17  Going over space",
+    "section": "\n17.2 Spatial extrapolation",
+    "text": "17.2 Spatial extrapolation\n\nASM example (predicting mines in new countries)\nGo over feature space and show reduced dimension\n\nconvergence of countries vs divergence in labels\n\n\n\n\n\n\n\n\n\nClick the badge to run the demo in Google Colab!\n\n\n\n↓↓↓↓↓↓↓↓↓↓↓\nRemember to click File -&gt; Save a copy in Drive to save any changes you make.",
+    "crumbs": [
+      "Task modeling",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Going over space</span>"
+    ]
+  },
+  {
+    "objectID": "part-04-models/02-model-spatial.html#spatial-interpolation",
+    "href": "part-04-models/02-model-spatial.html#spatial-interpolation",
+    "title": "17  Going over space",
+    "section": "\n17.3 Spatial interpolation",
+    "text": "17.3 Spatial interpolation\n\nFilling in gaps from survey data. eg. you have population data for some areas but not all.\n\n\n\n\n\n\n\nLooking forward\n\n\n\nIn the next chapter,",
     "crumbs": [
       "Task modeling",
       "<span class='chapter-number'>17</span>  <span class='chapter-title'>Going over space</span>"
@@ -1494,7 +1527,7 @@
     "href": "part-04-models/03-model-temporal.html#hands-on-with-time-series-data",
     "title": "18  Going over time",
     "section": "\n18.4 Hands on with time series data",
-    "text": "18.4 Hands on with time series data\nIn lieu of time series MOSAIKS features, we will instead demonstrate similar examples using MODIS NDVI data. This will allow us to explore the challenges and opportunities of time series analysis without the need for custom feature extraction.\nNOTE: UPDATE ME with new notebook link.\n\n\n\n\n\n\nClick the badge to run the demo in Google Colab!\n\n\n\n↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓\n↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑\nRemember to click File -&gt; Save a copy in Drive to save any changes you make.",
+    "text": "18.4 Hands on with time series data\nIn lieu of time series MOSAIKS features, we will instead demonstrate similar examples using MODIS NDVI data. This will allow us to explore the challenges and opportunities of time series analysis without the need for custom feature extraction.\nNOTE: UPDATE ME with new notebook link.\n\n\n\n\n\n\nClick the badge to run the demo in Google Colab!\n\n\n\n↓↓↓↓↓↓↓↓↓↓↓\nRemember to click File -&gt; Save a copy in Drive to save any changes you make.",
     "crumbs": [
       "Task modeling",
       "<span class='chapter-number'>18</span>  <span class='chapter-title'>Going over time</span>"
