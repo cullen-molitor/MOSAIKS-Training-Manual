@@ -1413,11 +1413,33 @@
     ]
   },
   {
+    "objectID": "part-04-models/01-model-choice.html#applying-the-model-to-make-predictions",
+    "href": "part-04-models/01-model-choice.html#applying-the-model-to-make-predictions",
+    "title": "16  Build, evaluate, deploy",
+    "section": "\n16.6 Applying the model to make predictions",
+    "text": "16.6 Applying the model to make predictions\nOnce you have selected a model and tuned it (e.g., via cross-validation), you can apply the model to new, unseen data. This step is often referred to as “inference” or “scoring”:\n\nPrepare features: The features for the new areas or times should be extracted using the same RCF model that was used to extract the original features. This means that a model made with custom made could not be able to features on the API. The features may be randomly created, but after the model is initialized, the weights are fixed.\nLoad the trained model: Ensure the model (along with any hyperparameters and preprocessing steps) is loaded exactly as it was trained. This consistency is critical for maintaining predictive accuracy.\n\nPredict: Pass the new feature matrix (X_new) into the trained model’s predict method to obtain predictions. For example, using scikit-learn:\ny_pred = ridge.predict(X_new)\nIf your task is classification, use predict_proba to get predicted probabilities:\np_pred = logistic_regression.predict_proba(X_new)\n\nInterpret and store results: Save the predictions in a structured format (e.g., CSV, GeoTIFF) for downstream analysis. Consider including metadata about the date and version of your model, the MOSAIKS feature extraction process, and any relevant notes on data quality.\n\nBy following these steps, you ensure that your MOSAIKS models are deployed effectively and consistently. From here, you can visualize the predictions, integrate them into downstream analyses, or inform policy and decision-making based on the model’s output.\n\n16.6.1 Addressing domain shift\nWhen applying your model to new geographic regions or under different conditions, be aware that the underlying data distribution (satellite imagery patterns, socioeconomic factors, land-use/land-cover types) may differ from your training set. This “domain shift” can lead to reduced predictive performance if the model has not been exposed to similar examples during training. To mitigate this, consider collecting additional representative training data from these new regions, adopting transfer learning or domain adaptation techniques, and quantifying predictive uncertainty so you can flag areas where the model may perform poorly. Periodic performance audits and retraining—especially when new data becomes available—help ensure robust generalization across diverse geographies.\nPredicting at higher resolution than the labels",
+    "crumbs": [
+      "Task modeling",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Build, evaluate, deploy</span>"
+    ]
+  },
+  {
+    "objectID": "part-04-models/01-model-choice.html#quantifying-uncertainty",
+    "href": "part-04-models/01-model-choice.html#quantifying-uncertainty",
+    "title": "16  Build, evaluate, deploy",
+    "section": "\n16.7 Quantifying uncertainty",
+    "text": "16.7 Quantifying uncertainty",
+    "crumbs": [
+      "Task modeling",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Build, evaluate, deploy</span>"
+    ]
+  },
+  {
     "objectID": "part-04-models/01-model-choice.html#model-selection-workflow",
     "href": "part-04-models/01-model-choice.html#model-selection-workflow",
     "title": "16  Build, evaluate, deploy",
-    "section": "\n16.6 Model selection workflow",
-    "text": "16.6 Model selection workflow\n\n\nIdentify label type\n\nContinuous → Ridge or Lasso regression\n\nBinary → Logistic regression\n\nMulti-class → One-vs-Rest or Multinomial\n\n\n\nCross-validation\n\nSplit data into train, validation, and test sets, respecting spatial structure where possible (e.g., leave-cluster-out).\n\nSelect appropriate evaluation metrics (e.g., R² for continuous, ROC-AUC for binary).\n\nTune hyperparameters (\\(\\lambda\\) in ridge/lasso, regularization in logistic) using the validation set.\n\n\n\nModel deployment\n\nRetrain on the entire training set using the chosen hyperparameters.\n\nGenerate predictions on the test set (or new data).\n\nQuantify uncertainty (e.g., confidence intervals, out-of-sample error estimates).",
+    "section": "\n16.8 Model selection workflow",
+    "text": "16.8 Model selection workflow\n\n\nIdentify label type\n\nContinuous → Ridge or Lasso regression\n\nBinary → Logistic regression\n\nMulti-class → One-vs-Rest or Multinomial\n\n\n\nCross-validation\n\nSplit data into train, validation, and test sets, respecting spatial structure where possible (e.g., leave-cluster-out).\n\nSelect appropriate evaluation metrics (e.g., R² for continuous, ROC-AUC for binary).\n\nTune hyperparameters (\\(\\lambda\\) in ridge/lasso, regularization in logistic) using the validation set.\n\n\n\nModel deployment\n\nRetrain on the entire training set using the chosen hyperparameters.\n\nGenerate predictions on the test set (or new data).\n\nQuantify uncertainty (e.g., confidence intervals, out-of-sample error estimates).",
     "crumbs": [
       "Task modeling",
       "<span class='chapter-number'>16</span>  <span class='chapter-title'>Build, evaluate, deploy</span>"
@@ -1427,8 +1449,8 @@
     "objectID": "part-04-models/01-model-choice.html#summary",
     "href": "part-04-models/01-model-choice.html#summary",
     "title": "16  Build, evaluate, deploy",
-    "section": "\n16.7 Summary",
-    "text": "16.7 Summary\n\n\nStart with simple linear models: Let MOSAIKS features do the heavy lifting of extracting non-linear patterns.\n\n\nMatch the metric to the task: R² or RMSE for continuous labels, AUC-ROC or F1 score for classification, etc.\n\n\nUse cross-validation: Always separate training and testing to maintain unbiased estimates of model performance.\n\n\nConsider spatial structure: When dealing with spatial data, standard random splits may lead to overly optimistic estimates of performance.\n\nThe key elements for successful model building include:\n\n\nAlgorithm Selection\n\nChoose based on label type\nConsider computational needs\nBalance complexity vs performance\n\n\n\nCross Validation\n\nUse spatial awareness in splits\nSelect appropriate metrics\nTune model parameters\n\n\n\nModel Evaluation\n\nTest out-of-sample performance\nValidate across space\nQuantify uncertainties\n\n\n\nDeployment\n\nTrain final model\nGenerate predictions\nDocument process\nMonitor performance\n\n\n\n\n\n\n\n\n\nLooking forward\n\n\n\nIn the next chapter, we’ll discuss strategies for accounting for spatial dependencies in your modeling workflow, including methods for spatially stratified cross-validation, spatial interpolation, and spatial extrapolation.",
+    "section": "\n16.9 Summary",
+    "text": "16.9 Summary\n\n\nStart with simple linear models: Let MOSAIKS features do the heavy lifting of extracting non-linear patterns.\n\n\nMatch the metric to the task: R² or RMSE for continuous labels, AUC-ROC or F1 score for classification, etc.\n\n\nUse cross-validation: Always separate training and testing to maintain unbiased estimates of model performance.\n\n\nConsider spatial structure: When dealing with spatial data, standard random splits may lead to overly optimistic estimates of performance.\n\nThe key elements for successful model building include:\n\n\nAlgorithm Selection\n\nChoose based on label type\nConsider computational needs\nBalance complexity vs performance\n\n\n\nCross Validation\n\nUse spatial awareness in splits\nSelect appropriate metrics\nTune model parameters\n\n\n\nModel Evaluation\n\nTest out-of-sample performance\nValidate across space\nQuantify uncertainties\n\n\n\nDeployment\n\nTrain final model\nGenerate predictions\nDocument process\nMonitor performance\n\n\n\n\n\n\n\n\n\nLooking forward\n\n\n\nIn the next chapter, we’ll discuss strategies for accounting for spatial dependencies in your modeling workflow, including methods for spatially stratified cross-validation, spatial interpolation, and spatial extrapolation.",
     "crumbs": [
       "Task modeling",
       "<span class='chapter-number'>16</span>  <span class='chapter-title'>Build, evaluate, deploy</span>"
@@ -1560,7 +1582,7 @@
     "href": "part-04-models/04-model-demo.html",
     "title": "19  Build a model",
     "section": "",
-    "text": "This chapter is in early draft form and may be incomplete.\n\n\n\n\n\n\n\n\n\n\nLooking forward\n\n\n\nIn the next chapter we will look at",
+    "text": "This chapter is in early draft form and may be incomplete.\n\n\n\n\n\n\n\n\n\n\nClick the badge to run the demonstration!\n\n\n\n↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Remember to click File -&gt; Save a copy in Drive to save any changes you make.\n\nOr to view a static version of the code on GitHub, click the badge below.\n\n\n\n\n\n\n\n\nLooking forward\n\n\n\nIn the next chapter we will look at",
     "crumbs": [
       "Task modeling",
       "<span class='chapter-number'>19</span>  <span class='chapter-title'>Build a model</span>"

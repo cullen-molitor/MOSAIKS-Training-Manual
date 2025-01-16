@@ -405,8 +405,15 @@ window.Quarto = {
 <li><a href="#evaluation-metrics-2" id="toc-evaluation-metrics-2" class="nav-link" data-scroll-target="#evaluation-metrics-2"><span class="header-section-number">16.5.1</span> Evaluation metrics</a></li>
   </ul>
 </li>
-  <li><a href="#model-selection-workflow" id="toc-model-selection-workflow" class="nav-link" data-scroll-target="#model-selection-workflow"><span class="header-section-number">16.6</span> Model selection workflow</a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">16.7</span> Summary</a></li>
+  <li>
+<a href="#applying-the-model-to-make-predictions" id="toc-applying-the-model-to-make-predictions" class="nav-link" data-scroll-target="#applying-the-model-to-make-predictions"><span class="header-section-number">16.6</span> Applying the model to make predictions</a>
+  <ul class="collapse">
+<li><a href="#addressing-domain-shift" id="toc-addressing-domain-shift" class="nav-link" data-scroll-target="#addressing-domain-shift"><span class="header-section-number">16.6.1</span> Addressing domain shift</a></li>
+  </ul>
+</li>
+  <li><a href="#quantifying-uncertainty" id="toc-quantifying-uncertainty" class="nav-link" data-scroll-target="#quantifying-uncertainty"><span class="header-section-number">16.7</span> Quantifying uncertainty</a></li>
+  <li><a href="#model-selection-workflow" id="toc-model-selection-workflow" class="nav-link" data-scroll-target="#model-selection-workflow"><span class="header-section-number">16.8</span> Model selection workflow</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">16.9</span> Summary</a></li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/edit/main/part-04-models/01-model-choice.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/cullen-molitor/MOSAIKS-Training-Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
@@ -585,8 +592,29 @@ Figure&nbsp;16.2: Example of multiclass classification
 </li>
 <li>
 <strong>Cohen’s kappa</strong>: Measures agreement between predicted and actual labels, adjusting for chance agreement.</li>
-</ul></section></section><section id="model-selection-workflow" class="level2" data-number="16.6"><h2 data-number="16.6" class="anchored" data-anchor-id="model-selection-workflow">
-<span class="header-section-number">16.6</span> Model selection workflow</h2>
+</ul></section></section><section id="applying-the-model-to-make-predictions" class="level2" data-number="16.6"><h2 data-number="16.6" class="anchored" data-anchor-id="applying-the-model-to-make-predictions">
+<span class="header-section-number">16.6</span> Applying the model to make predictions</h2>
+<p>Once you have selected a model and tuned it (e.g., via cross-validation), you can <strong>apply the model to new, unseen data</strong>. This step is often referred to as “inference” or “scoring”:</p>
+<ol type="1">
+<li><p><strong>Prepare features</strong>: The features for the new areas or times should be extracted using the same RCF model that was used to extract the original features. This means that a model made with custom made could not be able to features on the API. The features may be randomly created, but after the model is initialized, the weights are fixed.</p></li>
+<li><p><strong>Load the trained model</strong>: Ensure the model (along with any hyperparameters and preprocessing steps) is loaded exactly as it was trained. This consistency is critical for maintaining predictive accuracy.</p></li>
+<li>
+<p><strong>Predict</strong>: Pass the new feature matrix (<code>X_new</code>) into the trained model’s <code>predict</code> method to obtain predictions. For example, using scikit-learn:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> ridge.predict(X_new)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If your task is classification, use <code>predict_proba</code> to get predicted probabilities:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>p_pred <span class="op">=</span> logistic_regression.predict_proba(X_new)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</li>
+<li><p><strong>Interpret and store results</strong>: Save the predictions in a structured format (e.g., CSV, GeoTIFF) for downstream analysis. Consider including metadata about the date and version of your model, the MOSAIKS feature extraction process, and any relevant notes on data quality.</p></li>
+</ol>
+<p>By following these steps, you ensure that your MOSAIKS models are deployed effectively and consistently. From here, you can visualize the predictions, integrate them into downstream analyses, or inform policy and decision-making based on the model’s output.</p>
+<section id="addressing-domain-shift" class="level3" data-number="16.6.1"><h3 data-number="16.6.1" class="anchored" data-anchor-id="addressing-domain-shift">
+<span class="header-section-number">16.6.1</span> Addressing domain shift</h3>
+<p>When applying your model to new geographic regions or under different conditions, be aware that the underlying data distribution (satellite imagery patterns, socioeconomic factors, land-use/land-cover types) may differ from your training set. This “domain shift” can lead to reduced predictive performance if the model has not been exposed to similar examples during training. To mitigate this, consider collecting additional representative training data from these new regions, adopting transfer learning or domain adaptation techniques, and quantifying predictive uncertainty so you can flag areas where the model may perform poorly. Periodic performance audits and retraining—especially when new data becomes available—help ensure robust generalization across diverse geographies.</p>
+<p>Predicting at higher resolution than the labels</p>
+</section></section><section id="quantifying-uncertainty" class="level2" data-number="16.7"><h2 data-number="16.7" class="anchored" data-anchor-id="quantifying-uncertainty">
+<span class="header-section-number">16.7</span> Quantifying uncertainty</h2>
+</section><section id="model-selection-workflow" class="level2" data-number="16.8"><h2 data-number="16.8" class="anchored" data-anchor-id="model-selection-workflow">
+<span class="header-section-number">16.8</span> Model selection workflow</h2>
 <ol type="1">
 <li>
 <strong>Identify label type</strong>
@@ -618,8 +646,8 @@ Figure&nbsp;16.2: Example of multiclass classification
 <li>Quantify uncertainty (e.g., confidence intervals, out-of-sample error estimates).</li>
 </ul>
 </li>
-</ol></section><section id="summary" class="level2" data-number="16.7"><h2 data-number="16.7" class="anchored" data-anchor-id="summary">
-<span class="header-section-number">16.7</span> Summary</h2>
+</ol></section><section id="summary" class="level2" data-number="16.9"><h2 data-number="16.9" class="anchored" data-anchor-id="summary">
+<span class="header-section-number">16.9</span> Summary</h2>
 <ul>
 <li>
 <strong>Start with simple linear models</strong>: Let MOSAIKS features do the heavy lifting of extracting non-linear patterns.<br>
