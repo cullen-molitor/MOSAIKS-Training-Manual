@@ -1,0 +1,27 @@
+project:
+  type: book
+  output-dir: _book/fr
+
+book:
+  title: "Manuel de formation MOSAIKS"
+  language: fr
+  navbar:
+    right:
+      - text: "English"
+        href: ../en/index.html
+
+  page-footer:
+    left: |
+      Manuel de formation MOSAIKS
+    right: |
+      Ce livre a été créé avec <a href="https://quarto.org/">Quarto</a>.
+  chapters:
+    - fr/index.qmd
+    - part: fr/part-00-intro/00-intro.qmd
+      chapters:
+        - fr/part-00-intro/01-intro-compute.qmd
+        - fr/part-00-intro/02-intro-mosaiks.qmd
+        - fr/part-00-intro/03-intro-api.qmd
+        - fr/part-00-intro/04-intro-demo.qmd
+
+    - references.qmd

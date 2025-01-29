@@ -1,0 +1,64 @@
+---
+lang: fr
+---
+# Introduction 
+```{r}
+#| echo: false
+#| results: "asis"
+
+source("../../_common.R")
+status("review")
+```
+
+## Aperçu
+
+Cette section présente les concepts fondamentaux de MOSAIKS (observation multi-tâches à l'aide d'images satellites et d'évier de cuisine) et fournit des conseils pratiques pour commencer le système.Que vous soyez nouveau dans l'analyse des images satellites ou un praticien expérimenté, la compréhension de ces fondements est cruciale pour utiliser efficacement les mosaïques dans votre travail.
+
+Mosaiks comble le fossé entre le vaste potentiel de l'imagerie satellite et les applications pratiques en fournissant:
+
+- Outils d'apprentissage automatique accessibles pour les non-experts
+- Prédictions efficaces sur le calcul
+- Applications flexibles dans diverses tâches
+- Solutions évolutives pour les défis mondiaux
+
+## When to use MOSAIKS
+
+MOSAIKS is particularly valuable when you need to:
+
+- Generate predictions across large geographic areas
+- Work with limited computational resources
+- Analyze multiple outcomes using the same imagery
+- Create predictions without deep learning expertise
+- Scale analysis from local to global applications
+
+However, MOSAIKS may not be the best choice when:
+
+- You need predictions at sub-kilometer resolution
+- Your outcome requires specific spectral bands
+- Real-time predictions are essential
+- Your application requires interpretable features
+
+::: {.callout-tip}
+There may be an [existing tool](https://github.com/satellite-image-deep-learning) that meets your needs. MOSAIKS is not the best choice for every application.
+:::
+
+## Section outline
+
+The following chapters will guide you through getting started with MOSAIKS:
+
+| Chapter | Key Topics |
+|---------|:-----------|
+| @sec-intro-compute | Google Colab, data management, implementation practices |
+| @sec-intro-mosaiks | Core concepts, system architecture, capabilities |
+| @sec-intro-api | API access, data products, authentication |
+| @sec-intro-demo| Basic workflow, example analysis, common pitfalls |
+
+: Outline of the introduction section {#tbl-section-outline .striped .hover}
+
+These chapters provide both theoretical understanding and practical skills needed to begin working with MOSAIKS. The focus is on making satellite-based prediction accessible while maintaining scientific rigor and computational efficiency.
+
+::: {.callout-note}
+# Looking forward
+
+In the next chapter, we'll set up our computing environment using Google Colab. This course uses Colab to demonstrate various aspects of MOSAIKS, in a free and accessible environment.
+:::
