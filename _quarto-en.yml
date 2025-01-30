@@ -28,7 +28,6 @@ book:
     right: |
       This book was built with <a href="https://quarto.org/">Quarto</a>.
   chapters:
-    - en/index.qmd
     - part: en/part-00-intro/00-intro.qmd
       chapters:
         - en/part-00-intro/01-intro-compute.qmd
